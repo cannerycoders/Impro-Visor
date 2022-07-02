@@ -108,7 +108,7 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA
 </target>
 
 <!-- ivy start -->
-    <property name="ivy.install.version" value="2.1.0-rc2" />
+    <property name="ivy.install.version" value="2.5.0" />
     <condition property="ivy.home" value="${env.IVY_HOME}">
       <isset property="env.IVY_HOME" />
     </condition>
