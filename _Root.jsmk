@@ -1,14 +1,33 @@
 Project.EstablishDomain("Impro-Visor", /(vs17|gcc|clang)/);
 
-let apps = [
+let libs = [
     {
-        name: "parseVocab",
-        dir: "src_cpp/polya",
-        src:
-        {
-            appcpp: ["tokenizer.cpp", "Polylist.cpp"],
-        }
+        name: "libImproVisor",
+        dir: "src_cpp",
+        src: {
+            cpp: [
+                "*.cpp",
+                "data/*.cpp", 
+                "data/advice/*.cpp", 
+                "polya/*.cpp", 
+            ],
+        },
+        inc: ["."]
     }
 ];
 
-Project.BuildInlineCppProjects("apps", apps, "before");
+let tests = ["testConst", "testPolya", "testAdvisor"].map((v) =>
+{
+    return {
+        name: v,
+        dir: "src_cpp/test",
+        src:
+        {
+            appcpp: [`${v}.cpp`],
+        },
+        inc: [".."],
+        modules: "libImproVisor"
+    }
+});
+Project.BuildInlineCppProjects("libs", libs);
+Project.BuildInlineCppProjects("tests", tests, "before");

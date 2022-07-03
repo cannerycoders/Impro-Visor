@@ -64,10 +64,8 @@ Polylist::tokenizer::GetToken(std::istream & in, token &tok)
                     char prev = 0;
                     while(in.get(ch))
                     {
-                        if(ch == '/' && prev != '*')
-                        {
-                            break;
-                        }
+                        if(ch == '/' && prev == '*')
+                            break; // <-----------
                         else
                         {
                             if(ch == '\r')
@@ -167,20 +165,30 @@ Polylist::tokenizer::GetCharType(char ch)
 bool 
 Polylist::tokenizer::parseNumber(const std::string& str, token& tok) 
 {
-    try
+    if(!isdigit(str[0]) && str[0] != '.' && str[0] != '-') 
+        return false; // quick early-out
+    if(str.find(".") == std::string::npos)
     {
         size_t pos = 0;
-        long num = std::stol(str, &pos);
-        if(pos == str.size()) 
+        try
         {
-            tok.type = t_Token::integer;
-            tok.number.l = num;
-            return true;
+            long num = std::stol(str, &pos);
+            if(pos == str.size()) 
+            {
+                tok.type = t_Token::integer;
+                tok.number.l = num;
+                return true;
+            }
+        }
+        catch(std::exception const& )
+        {
+            // std::cout << str << " " << ex.what() << '\n';
+            return false;
         }
     }
-    catch(std::exception &)
+    else
     {
-        try 
+        try
         {
             size_t pos = 0;
             double num = std::stod(str, &pos);
@@ -190,10 +198,16 @@ Polylist::tokenizer::parseNumber(const std::string& str, token& tok)
                 tok.number.d = num;
                 return true;
             }
-        } 
-        catch (const std::exception&) 
+        }
+        catch(std::exception const& )
         {
+            // '.../F'
+            // std::cout << str << " " << ex.what() << '\n';
+            return false;
         }
     }
+    #if 0
+    std::cerr << "NaN:" << str << "\n";
+    #endif
     return false;
 }

@@ -6,6 +6,7 @@
 #include <iomanip> /* std::quoted */
 #include <list>
 #include <memory> /* std::shared_ptr */
+#include <unordered_set>
 
 class Polylist 
 {
@@ -20,6 +21,7 @@ public: /* builder, serializer */
             indent(out, level);
             write(out);
         }
+        virtual char const *getType() { return "object"; }
         void indent(std::ostream& out, int level) const
         {
             for (int i = 0; i < level; ++i)
@@ -31,33 +33,48 @@ public: /* builder, serializer */
     {
     public:
         explicit string(const std::string& str) : m_string(str) {}
-        void write(std::ostream& out) const { out << std::quoted(m_string); }
+        void write(std::ostream& out) const override { out << std::quoted(m_string); }
+        char const *getType() override { return "string"; }
+        char const *getValue() const { return m_string.c_str(); }
     private:
         std::string m_string;
     };
 
-    class symbol : public object
+    class symbol : public object // todo: tokenize symbols
     {
     public:
-        explicit symbol(const std::string& str) : m_string(str) {}
-        void write(std::ostream& out) const 
+        explicit symbol(std::string const& str) 
         {
-            for(char ch : m_string) 
+            m_token = getToken(str);
+        }
+        void write(std::ostream& out) const override
+        {
+            int i=0;
+            char ch;
+            while((ch=m_token[i++]))
             {
                 if(tokenizer::GetCharType(ch) != t_Char::other)
                     out << '\\';
                 out << ch;
             }
         }
+        char const *getType() override { return "symbol"; }
+        char const *getValue() const { return m_token; }
+
+        static char const *getToken(std::string const &);
+
     private:
-        std::string m_string;
+        char const *m_token;
+        static std::unordered_set<std::string> s_tokens;
     };
 
     class number : public object 
     {
     public:
         explicit number(double num) : m_number(num) {}
-        void write(std::ostream& out) const { out << m_number; }
+        void write(std::ostream& out) const override { out << m_number; }
+        char const *getType() override { return "number"; }
+        double getValue() { return m_number; }
     private:
         double m_number;
     };
@@ -66,14 +83,25 @@ public: /* builder, serializer */
     {
     public:
         explicit integer(long num) : m_number(num) {}
-        void write(std::ostream& out) const { out << m_number; }
+        void write(std::ostream& out) const override { out << m_number; }
+        char const *getType() override { return "integer"; }
+        long getValue() { return m_number; }
     private:
         long m_number;
     };
 
+    using ObjectPtr = std::shared_ptr<object>;
+    using SymbolPtr = std::shared_ptr<symbol>;
+    using StringPtr = std::shared_ptr<string>;
+    using LongPtr = std::shared_ptr<integer>;
+    using NumberPtr = std::shared_ptr<number>;
+
+    using OList = std::list<ObjectPtr>;
+    using OListIt = OList::iterator;
     class list : public object 
     {
     public:
+        char const *getType() override { return "list"; }
         void write(std::ostream& out) const
         {
             out << "(";
@@ -112,18 +140,65 @@ public: /* builder, serializer */
         {
             return m_list.size();
         }
+        OListIt getBegin()
+        {
+            return m_list.begin();
+        }
+        OListIt getEnd()
+        {
+            return m_list.end();
+        }
+        SymbolPtr firstSymbol()
+        {
+            std::shared_ptr<object> o = *m_list.begin();
+            std::shared_ptr<symbol> s = std::dynamic_pointer_cast<symbol>(o);
+            if(!s)
+                std::cerr << "type of first element " << o->getType() << "\n";
+            return s;
+        }
+        ObjectPtr getNth(unsigned n)
+        {
+            int i=0;
+            auto objIt = m_list.begin();
+            while(i != n)
+            {
+                objIt++;
+                i++;
+                if(objIt == m_list.end())
+                    return ObjectPtr(); // not-found
+            }
+            return *objIt;
+        }
+
+        std::shared_ptr<list> findSublist(char const *tok)
+        {
+            std::shared_ptr<list> ret;
+            for(auto e : m_list)
+            {
+                std::shared_ptr<list> l = std::dynamic_pointer_cast<list>(e);
+                if(l)
+                {
+                    auto sym = l->firstSymbol();
+                    if(sym && sym->getValue() == tok)
+                    {
+                        ret = l;
+                        break;
+                    }
+                }
+            }
+            return ret;
+        }
 
     private:
-        std::list<std::shared_ptr<object>> m_list;
+        OList m_list;
     };
+    using ListPtr = std::shared_ptr<list>;
 
-    std::shared_ptr<list> Parse(std::string const &str, bool dump=false);
-    std::shared_ptr<list> Parse(std::istream &istr, bool dump=false);
+    ListPtr Parse(std::string const &str, bool dump=false);
+    ListPtr Parse(std::istream &istr, bool dump=false);
 
 private:
-    std::shared_ptr<list> m_root;
-
-public: /* builder, serializer */
+    ListPtr m_root;
 
 private: /* tokenizer */
     enum class t_Token 

@@ -5,14 +5,14 @@
 #include <strstream>
 #include <string>
 
-std::shared_ptr<Polylist::list> 
+Polylist::ListPtr
 Polylist::Parse(std::string const& str, bool dump) 
 {
     std::istringstream iss(str);
     return Parse(iss, dump);
 }
 
-std::shared_ptr<Polylist::list> 
+Polylist::ListPtr
 Polylist::Parse(std::istream& istr, bool dump) 
 {
     tokenizer tokenizer(istr);
@@ -46,7 +46,7 @@ Polylist::parse(tokenizer& tokenizer)
     case t_Token::integer:
         return std::make_shared<integer>(tok.number.l);
     case t_Token::left_paren:
-        return parseList(tokenizer);
+        return parseList(tokenizer, false/*means require right-paren*/);
     default:
         break;
     }
@@ -57,7 +57,7 @@ std::shared_ptr<Polylist::list>
 Polylist::parseList(tokenizer& tok, bool skipOuter) 
 {
     std::shared_ptr<list> lst = std::make_shared<list>();
-    while (tok.next()) 
+    while(tok.next()) 
     {
         if (tok.current().type == t_Token::right_paren)
             return lst;
@@ -71,23 +71,18 @@ Polylist::parseList(tokenizer& tok, bool skipOuter)
         return lst;
 }
  
-#if 1
+ /* ------------------------------------------------------------- */
 
-int main(int argc, char** argv) 
+std::unordered_set<std::string> Polylist::symbol::s_tokens;
+
+/*static*/ char const *
+Polylist::symbol::getToken(std::string const &str)
 {
-    // std::ifstream is("../../vocab/My.voc", std::ios::binary); // no-comments, but large
-    std::ifstream is("../../vocab/My.substitutions", std::ios::binary); // comments
-    Polylist plist;
-    bool dump(true);
-    try 
+    auto x = s_tokens.find(str);
+    if(x == s_tokens.end())
     {
-        plist.Parse(is, dump);
-    } 
-    catch (const std::exception& ex) 
-    {
-        std::cerr << ex.what() << '\n';
+        s_tokens.insert(str);
+        x = s_tokens.find(str);
     }
-    return 0;
+    return x->c_str();
 }
-
-#endif
