@@ -2,6 +2,8 @@
 .ant/
 lib/
 build/
+_built/
+.vscode/
 .svn/
 nbproject/private/private.xml
 .DS_Store

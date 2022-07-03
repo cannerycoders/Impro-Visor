@@ -1,0 +1,14 @@
+Project.EstablishDomain("Impro-Visor", /(vs17|gcc|clang)/);
+
+let apps = [
+    {
+        name: "parseVocab",
+        dir: "src_cpp/polya",
+        src:
+        {
+            appcpp: ["tokenizer.cpp", "Polylist.cpp"],
+        }
+    }
+];
+
+Project.BuildInlineCppProjects("apps", apps, "before");
