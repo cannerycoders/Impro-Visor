@@ -6,4 +6,12 @@
 
 class LickForm
 {
+
+private:
+    int m_profileNumber;
+    int m_numSlots;
+    int m_halfBeats;
+    int m_serial;
+    int m_type;
+    int m_grade;
 };
