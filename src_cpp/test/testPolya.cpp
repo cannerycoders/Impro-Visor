@@ -6,6 +6,13 @@ int main(int argc, char** argv)
 {
     // std::ifstream is("../../vocab/My.voc", std::ios::binary); // no-comments, but large
     std::ifstream is("../../vocab/My.substitutions", std::ios::binary); // comments
+    if(!is.is_open())
+        is.open("../vocab/My.substitutions", std::ios::binary); 
+    if(!is.is_open())
+    {
+        std::cerr << "Can't find My.substitutions via relpath\n";
+        return -1;
+    }
     Polylist plist;
     bool dump(true);
     try 

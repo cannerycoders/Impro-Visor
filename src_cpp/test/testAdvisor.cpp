@@ -6,6 +6,8 @@ int main(int argc, char** argv)
 {
     // std::ifstream is("../../vocab/My.voc", std::ios::binary); // no-comments, but large
     std::ifstream is("../../vocab/My.voc", std::ios::binary); // comments
+    if(!is.is_open())
+        is.open("../vocab/My.voc", std::ios::binary);
     Polylist plist;
     Advisor adv;
     bool dump(false);

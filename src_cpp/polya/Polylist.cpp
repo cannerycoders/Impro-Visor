@@ -6,6 +6,15 @@
 #include <string>
 
 Polylist::ListPtr
+Polylist::FindSublist(char const *tok)
+{
+    ListPtr ret;
+    if(m_root)
+        ret = m_root->findSublist(tok);
+    return ret;
+}
+
+Polylist::ListPtr
 Polylist::Parse(std::string const& str, bool dump) 
 {
     std::istringstream iss(str);
@@ -76,7 +85,7 @@ Polylist::parseList(tokenizer& tok, bool skipOuter)
 std::unordered_set<std::string> Polylist::symbol::s_tokens;
 
 /*static*/ char const *
-Polylist::symbol::getToken(std::string const &str)
+Polylist::symbol::getSymbol(std::string const &str)
 {
     auto x = s_tokens.find(str);
     if(x == s_tokens.end())

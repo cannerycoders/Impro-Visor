@@ -13,16 +13,39 @@
 class Note : public IUnit
 {
 public:
-    Note(int midi, bool nat, bool sharp, int duration);
+    static const int UNDEFINED_PITCH;
+    static const int REST_PITCH;
+    static int DEFAULT_PITCH;
+    static int DEFAULT_VOLUME; // 0-127
+    static int maxRhythmValuePerLine;
 
-    enum
-    {
-        UNDEFINED = -2,
-        DEFAULT_PITCH = 60
-    };
+    static Note MakeNote(int pitch, int dur);
+    static Note MakeRest(int dur);
+    static bool isBlack(int pitch);
+    static Constants::Accidental getSharpOrFlat(bool x);
+    static Note getClosestMatch(int pitch, class Polylist tonesPL);
+
+    /* -------------------------------------------------- */
+
+    Note(int pitch, Constants::Accidental accidental, 
+        int rhythmValue=DEFAULT_RHYTHM_VALUE);
+    Note(int pitch, bool natural, bool sharp, int dur);
+    Note(int pitch, bool sharp, int dur=DEFAULT_RHYTHM_VALUE);
+    Note(int pitch, int dur=DEFAULT_RHYTHM_VALUE);
 
     void setRhythmValue(int r) override { m_rhythmValue = r; }
-    int getRhythmValue() override { return m_rhythmValue; }
+    int getRhythmValue() const override { return m_rhythmValue; }
+    bool isBlack() const ;
+    void setVolume(int v); // 0-127
+    int getVolume() const { return m_volume; }
+    bool equalsBasic(Note const &rhs) const;
+    int getPitch() const { return m_pitch; }
+    int setPitch(int p) { m_pitch = p; }
+    bool samePitch(Note const &rhs) const;
+    bool adjacentPitch(Note const &rhs) const;
+    void setAccidentalFromPitch();
+    void setAccidental(Constants::Accidental acc);
+    Constants::Accidental getAccidental() const { return m_accidental; }
 
 protected: // shared by Rest subclass
     int m_rhythmValue;
@@ -31,5 +54,7 @@ private:
     int m_pitch;
     int m_volume;
     Constants::Accidental m_accidental;
+
+    static int s_accumulatedRhythmValue;
 
 };

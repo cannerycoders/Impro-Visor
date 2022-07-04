@@ -24,7 +24,7 @@ public:
      * @param rhythmValue  an integer representing the Unit's rhythm value
      */
     virtual void setRhythmValue(int) = 0;
-    virtual int getRhythmValue() = 0;
+    virtual int getRhythmValue() const = 0;
 
     #if 0
      /**

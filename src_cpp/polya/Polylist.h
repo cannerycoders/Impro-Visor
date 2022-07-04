@@ -21,7 +21,8 @@ public: /* builder, serializer */
             indent(out, level);
             write(out);
         }
-        virtual char const *getType() { return "object"; }
+        virtual char const *getType() { return "object"; } // error
+        virtual std::string asString() { return std::string(); }
         void indent(std::ostream& out, int level) const
         {
             for (int i = 0; i < level; ++i)
@@ -35,6 +36,7 @@ public: /* builder, serializer */
         explicit string(const std::string& str) : m_string(str) {}
         void write(std::ostream& out) const override { out << std::quoted(m_string); }
         char const *getType() override { return "string"; }
+        std::string asString() override { return m_string; }
         char const *getValue() const { return m_string.c_str(); }
     private:
         std::string m_string;
@@ -45,7 +47,7 @@ public: /* builder, serializer */
     public:
         explicit symbol(std::string const& str) 
         {
-            m_token = getToken(str);
+            m_token = getSymbol(str);
         }
         void write(std::ostream& out) const override
         {
@@ -59,9 +61,10 @@ public: /* builder, serializer */
             }
         }
         char const *getType() override { return "symbol"; }
+        std::string asString() override { return std::string(m_token); }
         char const *getValue() const { return m_token; }
 
-        static char const *getToken(std::string const &);
+        static char const *getSymbol(std::string const &);
 
     private:
         char const *m_token;
@@ -74,6 +77,10 @@ public: /* builder, serializer */
         explicit number(double num) : m_number(num) {}
         void write(std::ostream& out) const override { out << m_number; }
         char const *getType() override { return "number"; }
+        std::string asString() override 
+        { 
+            return std::to_string(m_number); 
+        }
         double getValue() { return m_number; }
     private:
         double m_number;
@@ -85,6 +92,10 @@ public: /* builder, serializer */
         explicit integer(long num) : m_number(num) {}
         void write(std::ostream& out) const override { out << m_number; }
         char const *getType() override { return "integer"; }
+        std::string asString() override 
+        { 
+            return std::to_string(m_number); 
+        }
         long getValue() { return m_number; }
     private:
         long m_number;
@@ -131,6 +142,8 @@ public: /* builder, serializer */
             }
             indent(out, level);
             out << ")";
+            if(level == 0)
+                out << "\n";
         }
         void append(const std::shared_ptr<object>& ptr) 
         {
@@ -170,7 +183,7 @@ public: /* builder, serializer */
             return *objIt;
         }
 
-        std::shared_ptr<list> findSublist(char const *tok)
+        std::shared_ptr<list> findSublist(char const *tok, int debug=0)
         {
             std::shared_ptr<list> ret;
             for(auto e : m_list)
@@ -185,6 +198,14 @@ public: /* builder, serializer */
                         break;
                     }
                 }
+                else
+                {
+                    if(debug)
+                    {
+                        std::cerr << "sublist is-a " << e->getType() 
+                            << ": " << e->asString() << "\n";
+                    }
+                }
             }
             return ret;
         }
@@ -196,6 +217,8 @@ public: /* builder, serializer */
 
     ListPtr Parse(std::string const &str, bool dump=false);
     ListPtr Parse(std::istream &istr, bool dump=false);
+    ListPtr FindSublist(char const *tok);
+    void Write(std::ostream &o) { m_root->writeIndented(o, 0); }
 
 private:
     ListPtr m_root;
