@@ -55,35 +55,35 @@ public:
     static int findDelta(std::string &from, std::string &to);
     static PitchClass const &transpose(PitchClass const &pc, int semitones);
     static int findRise(std::string &from, std::string &to);
+    static int findRise(PitchClass const&fromClass, PitchClass const &toClass);
     static int findRise(PitchClass const &to);
     static int findRise(std::string &to);
     static int findRiseToC(PitchClass const &from);
     static int findRiseToC(std::string &from);
-    static bool enharmonic(PitchClass const &other);
-    static bool enharmonic(int otherIndex);
     static bool enharmonic(std::string &x, std::string &y);
     static Note makeNote(PitchClass const &, int midiBase, int duration);
     static Note makeNote(std::string &, int midiBase, int duration);
     static Note makeNoteAbove(std::string &, int midiBase, int minimum, int duration);
     static Note makeNoteAbove(PitchClass const &, int midiBase, int minimum, int duration);
-    static std::string const &keyToRomanNumerals(PitchClass const &);
-    static std::string const &keyToRomanNumerals(PitchClass const &current,
-                                                PitchClass const &home);
-    static std::string const &keyToRomanNumerals(std::string &current,
-                                                std::string &home);
+    static const std::string &keyToRomanNumerals(PitchClass const &current, PitchClass const &home);
+    static const std::string &keyToRomanNumerals(std::string &current, std::string &home);
 
 private:
     static const int BOTTOM_PITCH;
     static const int TOP_PITCH;
     static const int PITCH_NAME_SIZE;
 
-public: /* instance method */
-    int getIndex() { return m_index; }
-    int getSemitones() { return m_semitonesAboveC; }
-    int getNatural() { return m_natural; }
-    int getSharp() { return m_sharp; }
-    std::string const & getChordBase() { return m_chordBase; }
-    std::string const & toString() { return m_name; }
+public: /* instance methods */
+    int getIndex() const { return m_index; }
+    int getSemitones() const { return m_semitonesAboveC; }
+    int getNatural() const { return m_natural; }
+    int getSharp() const { return m_sharp; }
+    std::string const & getChordBase() const { return m_chordBase; }
+    std::string const & toString() const { return m_name; }
+    PitchClass const &transpose(int semitones) const;
+    bool enharmonic(PitchClass const &other) const;
+    bool enharmonic(int otherIndex) const;
+    const std::string &keyToRomanNumerals(PitchClass const &) const;
 
 private:
     std::string m_name;

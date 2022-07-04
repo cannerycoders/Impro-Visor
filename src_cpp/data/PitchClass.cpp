@@ -270,51 +270,181 @@ int PC::findDelta(std::string &from, std::string &to)
 }
 
 PitchClass const &PC::transpose(PitchClass const &pc, int semitones)
-{}
+{
+    return pc.transpose(semitones);
+}
 
+/**
+ * Find rise in semitones between two pitches in table, for purpose of 
+ * transposing other pitches by the same interval as between the given two pitches.
+ * The pitches are specified by strings which should be names of pitches.
+ */
 int PC::findRise(std::string &from, std::string &to)
-{}
+{
+    PitchClass const &fromClass = getPitchClass(from);
+    PitchClass const &toClass = getPitchClass(to);
+    assert( &fromClass != &sInvalid );
+    assert( &toClass != &sInvalid );
+    return findRise(fromClass, toClass);
+}
 
-int PC::findRise(PitchClass const &to)
-{}
+int PC::findRise(PitchClass const &fromClass, PitchClass const &toClass)
+{
+    int rise = toClass.getSemitones() - fromClass.getSemitones();
+    if(rise >= OCTAVE)
+    {
+        rise = rise%OCTAVE;
+    }
+    else 
+    if(rise < 0)
+    {
+        rise = OCTAVE - ((-rise)%OCTAVE);
+    }
 
+    // By making the rise negative, transposition will take this to 
+    // a scale preferring flats
+    if(rise > 0 && !toClass.m_sharpPreference)
+    {
+        rise = - (OCTAVE - rise);
+    }
+    else 
+    if(rise < 0 && toClass.m_sharpPreference)
+    {
+        rise = - (OCTAVE + rise);
+    }
+    //System.out.println("rise from " + from + " to " + to + " = " + rise);
+    return rise;
+}
+
+/**
+ * Find rise in semitones between C and a pitch in table, for purpose 
+ * of transposing other pitches by the same interval.
+ * The pitches is specified by a String in this version.
+ */
+int PC::findRise(PitchClass const &toClass)
+{
+    return findRise(cClass, toClass);
+}
+
+/**
+ * Find rise in semitones between C and a pitch in table, for purpose 
+ * of transposing other pitches by the same interval.
+ * The pitches is specified by a String in this version.
+ */
 int PC::findRise(std::string &to)
-{}
+{
+    PitchClass toClass = getPitchClass(to);
+    assert( &toClass != &sInvalid );
+    return findRise(toClass);
+}
 
+/**
+ * Find rise in semitones between a pitch and C in table, for purpose of 
+ * transposing other pitches by the same interval.
+ * The pitches is specified by a String in this version.
+ */
 int PC::findRiseToC(PitchClass const &from)
-{}
+{
+    return findRise(from, cClass);
+}
 
 int PC::findRiseToC(std::string &from)
-{}
-
-bool PC::enharmonic(PitchClass const &other)
-{}
-
-bool PC::enharmonic(int otherIndex)
-{}
+{
+    PitchClass fromClass = getPitchClass(from);
+    assert(&fromClass != &sInvalid);
+    return findRiseToC(fromClass);
+}
 
 bool PC::enharmonic(std::string &x, std::string &y)
-{}
+{
+    return getPitchClass(x).enharmonic(getPitchClass(y));
+}
 
-Note PC::makeNote(PitchClass const &, int midiBase, int duration)
-{}
+/**
+ * Make a note from a PitchClass name.  The specific pitch for the note
+ * is found by using the midiBase argument as C that beings the octave in
+ * which the desired note occurs.
+ *
+ * If there is a problem with the PitchClass name, Note.sInvalid is 
+ * returned.
+ */
+Note PC::makeNote(PitchClass const &pc, int midiBase, int duration)
+{
+    return makeNoteAbove(pc, midiBase, 0, duration);
+}
 
-Note PC::makeNote(std::string &, int midiBase, int duration)
-{}
+Note PC::makeNote(std::string &pcName, int midiBase, int duration)
+{
+    return makeNoteAbove(pcName, midiBase, 0, duration);
+}
 
-Note PC::makeNoteAbove(std::string &, int midiBase, int minimum, int duration)
-{}
+Note PC::makeNoteAbove(std::string &pcName, int midiBase, int minimum, int duration)
+{
+  PitchClass const &pc = getPitchClass(pcName);
+  return makeNoteAbove(pc, midiBase, minimum, duration);
+}
 
-Note PC::makeNoteAbove(PitchClass const &, int midiBase, int minimum, int duration)
-{}
-
-std::string const &PC::keyToRomanNumerals(PitchClass const &)
-{}
+Note PC::makeNoteAbove(PitchClass const &pc, int midiBase, int minimum, int duration)
+{
+    int midi = midiBase + pc.getSemitones();
+    while(midi < minimum)
+        midi += OCTAVE;
+    bool natural = pc.getNatural();
+    bool sharp = pc.getSharp();
+    return Note(midi, natural, sharp, duration);  
+}
 
 std::string const &PC::keyToRomanNumerals(PitchClass const &current,
-                                            PitchClass const &home)
-{}
+                                        PitchClass const &home)
+{
+    return current.keyToRomanNumerals(home);
+}
 
 std::string const &PC::keyToRomanNumerals(std::string &current,
                                             std::string &home)
-{}
+{
+    return keyToRomanNumerals(getPitchClass(current),
+                getPitchClass(home));
+}
+
+/* --instance methods -------------------------------------------- */
+PitchClass const &
+PC::transpose(int semitones) const 
+{
+    int newIndex;
+    if(semitones >= 0)
+    {
+        semitones = semitones%12;
+        if(semitones == 0)
+            return *this;
+        newIndex = upTranspositions[semitones][m_index];
+    }
+    else
+    {
+        semitones = (-semitones)%12;
+        if(semitones == 0)
+            return *this;
+        newIndex = downTranspositions[semitones][m_index];
+    }
+    return pitchClass[newIndex];
+}
+
+/**
+ * enharmonic determines whether this pitch classes
+ * is enharmonically equivalent to the argumen
+ */
+bool PC::enharmonic(PitchClass const &other) const
+{
+    return m_semitonesAboveC == other.m_semitonesAboveC;
+}
+
+bool PC::enharmonic(int otherIndex) const
+{
+    return (m_semitonesAboveC % 12) == (otherIndex % 12);
+}
+
+std::string const &PC::keyToRomanNumerals(PitchClass const &homeKey) const
+{
+    int index = transpose(findRiseToC(homeKey)).getIndex();
+    return romanNumerals[index];
+}
