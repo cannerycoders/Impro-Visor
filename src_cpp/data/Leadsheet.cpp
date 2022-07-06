@@ -14,8 +14,8 @@ namespace Leadsheet
 bool readLeadSheet(class Tokenizer &t, class Score &s)
 {
     return readLeadSheet(t, s, 
-            Preferences::get().getAlwaysUseState(),
-            Preferences::get().getStaveTypeFromPreferences());
+            Preferences::get().getAlwaysUseStave(),
+            Preferences::get().getStaveType());
 }
 
 /**

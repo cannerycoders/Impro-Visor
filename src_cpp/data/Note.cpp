@@ -15,6 +15,43 @@ static bool s_black[] =
     true, false, true, false, true, false
 };
 
+/** 
+ * Table used to give names of notes in the case that the accidental is flat.
+ */
+static char const *s_flatPitchFromMidi[] =
+{
+    "c", "db", "d", "eb", "fb", "f", "gb", "g", "ab", "a", "bb", "cb"
+};
+
+static char const *s_sharpPitchFromMidi[] =
+{
+    "b#", "c#", "d", "d#", "e", "e#", "f#", "g", "g#", "a", "a#", "b"
+};
+
+static char const *s_naturalPitchFromMidi[] =
+{
+    "c", "c", "d", "d", "e", "f", "f", "g", "g", "a", "a", "b"
+};
+
+/** 
+ * Table used by method isAccidentalInKeyto determine which pitches
+ * are accidental in sharp keys.
+ */
+static int s_sharpInKeysAbove[] =
+{
+    6, 1, 9, 3, 5, 9, 0, 9, 2, 9, 4, 9
+};	// 9 is like infinity
+
+/** 
+ * Table used by method isAccidentalInKeyto determine which pitches
+ * are accidental in flat keys.
+ */
+static int s_flatInKeysBelow[] =
+{
+    9, 4, 9, 2, 7, 9, 5, 9, 3, 9, 1, 6
+};	// 9 is like infinity
+//c  db d  eb fb f  gb g  ab a  bb cb
+
 /*static*/ bool Note::isBlack(int pitch)
 {
     while(pitch < 0)
@@ -22,16 +59,16 @@ static bool s_black[] =
     return s_black[pitch % 12];
 }
 
-/*static*/ Note
+/*static*/ Note *
 Note::MakeNote(int pitch, int dur)
 {
-    return Note(pitch, dur);
+    return new Note(pitch, dur);
 }
 
-/*static*/ Note
+/*static*/ Note *
 Note::MakeRest(int dur)
 {
-    return Note(REST_PITCH, Constants::Accidental::NOTHING, dur);
+    return new Note(REST_PITCH, Constants::Accidental::NOTHING, dur);
 }
 
 /*static*/Constants::Accidental
@@ -52,8 +89,10 @@ Note::getClosestMatch(int pitch, Polylist tonesPL)
 #if 0
     int originalPitch = pitch;
     if(!tonesPL.nonEmpty())
+    {
         ErrorLog.log(ErrorLog.WARNING, 
             "*** Error: No tones list to match against.");
+    }
 
     Polylist list = tonesPL;
     int[] tones = new int[list.length()];
@@ -105,6 +144,14 @@ Note::getClosestMatch(int pitch, Polylist tonesPL)
 }
 
 /* ---------------------------------------------------------------- */
+Note::Note(Note const &rhs)
+{
+    m_pitch = rhs.m_pitch;
+    m_accidental = rhs.m_accidental;
+    m_rhythmValue = rhs.m_rhythmValue;
+    m_volume = rhs.m_volume;
+}
+
 Note::Note(int pitch, Constants::Accidental accidental, int dur)
 {
     m_pitch = pitch;
@@ -141,6 +188,118 @@ Note::Note(int pitch, int dur)
             Constants::Accidental::NATURAL ;
     m_rhythmValue = dur;
     m_volume = DEFAULT_VOLUME;
+}
+
+IUnit *
+Note::copy() const
+{
+    Note *c = new Note(*this);
+    return c;
+}
+
+std::string
+Note::toString() const
+{
+    std::string result;
+    if(m_pitch == REST_PITCH)
+    {
+        result = "REST: [RhythmValue = ";
+        result.append(std::to_string(m_rhythmValue));
+        result.append("]");
+    }
+    else
+    {
+        result = "NOTE: [";
+        result.append(getPitchClassName());
+        result.append(", Pitch = ");
+        result.append(std::to_string(m_pitch));
+        // result.append(", ");
+        // result.append(std::_toString(drawnPitch));
+        result.append("][Accidental = ");
+        result.append(std::to_string((int) m_accidental));
+        result.append("][RhythmValue = ");
+        result.append(std::to_string(m_rhythmValue));
+        result.append("][volume = "); 
+        result.append(std::to_string(m_volume));
+        result.append("]");
+    }
+    return result;
+}
+
+std::string
+Note::getPitchClassName() const
+{
+    std::string result;
+    if(m_pitch == REST_PITCH)
+        result = "r";
+    else
+    {
+        int pitch_within_octave = m_pitch % Constants::OCTAVE;
+        switch(m_accidental)
+        {
+        case Constants::Accidental::SHARP:
+            result.append(s_sharpPitchFromMidi[pitch_within_octave]);
+            break;
+        case Constants::Accidental::FLAT:
+            result.append(s_flatPitchFromMidi[pitch_within_octave]);
+            break;
+        default:
+            result.append(s_naturalPitchFromMidi[pitch_within_octave]);
+            break;
+        }
+    }
+    return result;
+}
+
+bool 
+Note::isAccidentalInKey(int keySig)
+{
+    if(m_pitch >= 0)
+    {
+        if(keySig > 0)
+        {
+            return m_accidental == Constants::Accidental::FLAT //|| accidental == Accidental.NATURAL)  // See if this can be fixed.
+              && keySig > s_sharpInKeysAbove[m_pitch % 12];
+        }
+        else
+        if(keySig < 0)
+        {
+            return m_accidental == Constants::Accidental::SHARP // || accidental == Accidental.NATURAL) // See if this can be fixed.
+              && keySig <= -s_flatInKeysBelow[m_pitch % 12];
+        }
+    }
+    return false;
+}
+
+bool
+Note::toggleEnharmonic()
+{
+    int ps = m_pitch % Constants::SEMITONES;
+    if((ps == Constants::MODF && m_accidental == Constants::Accidental::SHARP) ||
+       (ps == Constants::MODE && m_accidental == Constants::Accidental::FLAT) ||
+       (ps == Constants::MODB && m_accidental == Constants::Accidental::FLAT) ||
+       (ps == Constants::MODC && m_accidental == Constants::Accidental::SHARP) )
+    {
+        m_accidental = Constants::Accidental::NATURAL;
+        return true;
+    }
+    else 
+    if(m_accidental == Constants::Accidental::SHARP ||
+       (m_accidental == Constants::Accidental::NATURAL && 
+         (ps == Constants::MODE) || ps == Constants::MODB))
+    {
+        m_accidental = Constants::Accidental::FLAT;
+        return true;
+    }
+    else 
+    if(m_accidental == Constants::Accidental::FLAT ||
+       m_accidental == Constants::Accidental::NATURAL && 
+       (ps == Constants::MODF || ps == Constants::MODC) )
+    {
+        m_accidental = Constants::Accidental::SHARP;
+        return true;
+    }
+    return false;
 }
 
 bool

@@ -35,7 +35,7 @@ static char const *s_defaultPrefs =
     "(show-tracking-line y)"
     "(tracker-delay 0)"
     "(contour-drawing-tones 1xx)"
-    "(always-use-buttons nnnn)"
+    "(always-use-buttons nnnn)" // are y or n for [CHORD, BASS, DRUMS, STAVE]
     "(create-roadmap n)"
     "(midi-in RealTimeSequencer)"
     "(midi-out Gervill)"
@@ -101,6 +101,7 @@ char const * P::DEFAULT_FRACTAL_FILE  = nullptr;
 char const * P::DEFAULT_COUNTS_FILE  = nullptr;
 char const * P::DEFAULT_STYLE_DIRECTORY  = nullptr;
 char const * P::DEFAULT_CHORD_FONT_SIZE  = nullptr;
+char const * P::ALWAYS_USE_BUTTONS = nullptr;
 
 /*static*/ Preferences &
 Preferences::get()
@@ -126,6 +127,7 @@ Preferences::get()
         P::DEFAULT_COUNTS_FILE = Polylist::symbol::getSymbol("default-counts-file");
         P::DEFAULT_STYLE_DIRECTORY = Polylist::symbol::getSymbol("default-style-directory");
         P::DEFAULT_CHORD_FONT_SIZE = Polylist::symbol::getSymbol("default-chord-font-size");
+        P::ALWAYS_USE_BUTTONS = Polylist::symbol::getSymbol("always-use-buttons");
     }
     return p;
 }
@@ -148,6 +150,18 @@ Preferences::getPreference(std::string &p)
     return getPreference(Polylist::symbol::getSymbol(p));
 }
 
+long
+Preferences::getLongPref(char const *nm)
+{
+    return std::stol(getPreference(nm));
+}
+
+double
+Preferences::getDoublePref(char const *nm)
+{
+    return std::stod(getPreference(nm));
+}
+
 std::string 
 Preferences::getPreference(char const *nm)
 {
@@ -164,14 +178,26 @@ Preferences::getPreference(char const *nm)
     return value;
 }
 
+
+// a string: 'nnnn' [CHORD, BASS, DRUMS, STAVE]
 bool 
-Preferences::getAlwaysUseState()
+Preferences::getAlwaysUse(int index) 
 {
-    return false;
+    std::string alwaysUseButtons = getPreference(ALWAYS_USE_BUTTONS);
+    if(index >= alwaysUseButtons.length())
+        return false;
+    return alwaysUseButtons[index] == 'y';
+}
+
+bool 
+Preferences::getAlwaysUseStave()
+{
+    return getAlwaysUse(3);
 }
 
 Constants::StaveType 
-Preferences::getStaveTypeFromPreferences()
+Preferences::getStaveType()
 {
-    return Constants::StaveType::GRAND; // XXX
+    long stave = getLongPref(DEFAULT_LOAD_STAVE);
+    return (Constants::StaveType) stave; // 1 is default (Treble)
 }

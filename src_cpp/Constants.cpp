@@ -243,27 +243,6 @@ namespace Constants
 
     std::vector<int> const blackNotes = {1, 3, 6, 8, 10};
 
-
-    /** "minimum" key signature used by Impro-Visor is six flats (Gb) */
-
-    const int MIN_KEY = -6;
-
-
-    /** "maximum" key signature used by Impro-Visor is seven sharps (C#) */
-
-    const int MAX_KEY = 7;
-    
-    const int MIN_TS = 1;
-    const int MAX_TS = 12;
-
-
-    /**
-     * The number of semitones in an octave.
-     */
-
-    const int OCTAVE = 12;
-
-
     /**
      * The one-and-only symbol for no chord
      */
@@ -310,13 +289,6 @@ namespace Constants
 
 
     std::string const DEFAULT_DURATION_MSG = "eighth note";
-
-    /**
-     * The midi number for middle C
-     */
-
-    const int CMIDI = 60;
-
 
     /**
      * The std::string representing a rest

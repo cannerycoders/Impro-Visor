@@ -159,24 +159,15 @@ namespace Constants
     extern const std::vector<int> blackNotes;
 
 
-    /** "minimum" key signature used by Impro-Visor is six flats (Gb) */
-
-    extern const int MIN_KEY;
-
-
-    /** "maximum" key signature used by Impro-Visor is seven sharps (C#) */
-
-    extern const int MAX_KEY;
-    
-    extern const int MIN_TS;
-    extern const int MAX_TS;
-
-
-    /**
-     * The number of semitones in an octave.
-     */
-
-    extern const int OCTAVE;
+    enum
+    {
+        MIN_KEY = -6, // "minimum" key signature - six flats (Gb)
+        MAX_KEY = 7,  // "maximum" key signature -  seven sharps (C#)
+        MIN_TS = 1,   // time-signature
+        MAX_TS = 12,
+        OCTAVE = 12,   // number of semitones in an octave.
+        CMIDI = 60
+    };
 
 
     /**
@@ -229,9 +220,6 @@ namespace Constants
     /**
      * The midi number for middle C
      */
-
-    extern const int CMIDI;
-
 
     /**
      * The std::string representing a rest

@@ -19,14 +19,16 @@ public:
     static int DEFAULT_VOLUME; // 0-127
     static int maxRhythmValuePerLine;
 
-    static Note MakeNote(int pitch, int dur);
-    static Note MakeRest(int dur);
+    static Note *MakeNote(int pitch, int dur);
+    static Note *MakeRest(int dur=DEFAULT_RHYTHM_VALUE);
     static bool isBlack(int pitch);
     static Constants::Accidental getSharpOrFlat(bool x);
     static Note getClosestMatch(int pitch, class Polylist tonesPL);
 
     /* -------------------------------------------------- */
+    using NotePtr = std::shared_ptr<Note>;
 
+    Note(Note const &rhs);
     Note(int pitch, Constants::Accidental accidental, 
         int rhythmValue=DEFAULT_RHYTHM_VALUE);
     Note(int pitch, bool natural, bool sharp, int dur);
@@ -35,7 +37,14 @@ public:
 
     void setRhythmValue(int r) override { m_rhythmValue = r; }
     int getRhythmValue() const override { return m_rhythmValue; }
-    bool isBlack() const ;
+    IUnit *copy() const override;
+    bool isActive() const override { return m_pitch != REST_PITCH; }
+    std::string toString() const override;
+    UnitType getUnitType() const override { return m_pitch == REST_PITCH ? UnitType::k_Rest : UnitType::k_Note; }
+
+    std::string getPitchClassName() const;
+    bool isBlack() const;
+    bool isValid() const { return m_pitch != UNDEFINED_PITCH; }
     void setVolume(int v); // 0-127
     int getVolume() const { return m_volume; }
     bool equalsBasic(Note const &rhs) const;
@@ -46,6 +55,8 @@ public:
     void setAccidentalFromPitch();
     void setAccidental(Constants::Accidental acc);
     Constants::Accidental getAccidental() const { return m_accidental; }
+    bool isAccidentalInKey(int keySig);
+    bool toggleEnharmonic();
 
 protected: // shared by Rest subclass
     int m_rhythmValue;

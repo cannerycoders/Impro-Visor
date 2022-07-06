@@ -11,10 +11,14 @@ public:
     Preferences();
 
     void write(std::ostream &);
-    std::string getPreference(char const *tok); // requires tokenized value
     std::string getPreference(std::string &nm);
-    bool getAlwaysUseState();
-    Constants::StaveType getStaveTypeFromPreferences();
+    std::string getPreference(char const *tok); // requires tokenized value
+    long getLongPref(char const *tok);
+    double getDoublePref(char const *tok);
+
+    bool getAlwaysUse(int index); // 0-3, [CHORD, BASS, DRUMS, STAVE]
+    bool getAlwaysUseStave();
+    Constants::StaveType getStaveType();
 
 public:
     static char const * DEFAULT_LOAD_STAVE;
@@ -33,6 +37,7 @@ public:
     static char const * DEFAULT_COUNTS_FILE;
     static char const * DEFAULT_STYLE_DIRECTORY;
     static char const * DEFAULT_CHORD_FONT_SIZE;
+    static char const * ALWAYS_USE_BUTTONS;
 
 protected:
     Polylist m_prefs;

@@ -23,8 +23,19 @@ public:
      * Sets the Unit's rhythm value.
      * @param rhythmValue  an integer representing the Unit's rhythm value
      */
+    enum class UnitType
+    {
+        k_Invalid,
+        k_Note,
+        k_Rest, /* a kind of note */
+        k_Chord
+    };
     virtual void setRhythmValue(int) = 0;
     virtual int getRhythmValue() const = 0;
+    virtual IUnit *copy() const = 0;
+    virtual bool isActive() const { return true; } // override for rest in Note
+    virtual std::string toString() const = 0;
+    virtual UnitType getUnitType() const { return UnitType::k_Invalid; }
 
     #if 0
      /**
