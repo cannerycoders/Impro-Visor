@@ -2,7 +2,7 @@
 
     #include <string>
 
-    class PListTokenizer 
+    class PlistTokenizer 
     {
     public:
         enum class t_Token 
@@ -29,8 +29,8 @@
         enum class t_ParseState { init, quote, symbol };
 
     public:
-        PListTokenizer(std::istream& in) : m_in(in) {}
-        ~PListTokenizer() {}
+        PlistTokenizer(std::istream& in) : m_in(in) {}
+        ~PlistTokenizer() {}
         bool next() 
         {
             if(m_putback)

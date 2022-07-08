@@ -3,7 +3,7 @@
 #include <cctype>
 
 bool 
-PListTokenizer::GetToken(std::istream & in, token &tok)
+PlistTokenizer::GetToken(std::istream & in, token &tok)
 {
     char ch;
     t_ParseState state = t_ParseState::init;
@@ -141,8 +141,8 @@ PListTokenizer::GetToken(std::istream & in, token &tok)
     return true;
 }
 
-PListTokenizer::t_Char 
-PListTokenizer::GetCharType(char ch)
+PlistTokenizer::t_Char 
+PlistTokenizer::GetCharType(char ch)
 {
     switch (ch) 
     {
@@ -163,7 +163,7 @@ PListTokenizer::GetCharType(char ch)
 }
 
 bool 
-PListTokenizer::parseNumber(const std::string& str, token& tok) 
+PlistTokenizer::parseNumber(const std::string& str, token& tok) 
 {
     if(!isdigit(str[0]) && str[0] != '.' && str[0] != '-') 
         return false; // quick early-out

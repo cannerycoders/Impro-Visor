@@ -109,11 +109,12 @@ public:
      *
      * @param chord the string naming the chord.
      */
-    static Polylist explodeChord(std::string const &chord);
+    static Polylist::Ptr explodeChord(std::string const &chord);
     /**
      * Return list of any invalid notes in the argument list.
+     * We expect L to be a list of string/value pairs.
      */
-    static Polylist invalidNotes(Polylist &L);
+    static Polylist::Ptr invalidNotes(Polylist &L);
     static int pitchFromLeadsheet(std::string const &str, int rise=0);
     static Note noteFromLeadsheet(std::string const &str, int rise, int slotsPerBeat);
     static Note noteFromLeadsheet(std::string const &str, int rise, int slotsPerBeat,

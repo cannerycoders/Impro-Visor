@@ -28,7 +28,7 @@ Part::Part(int size)
     {
         // empty part has one long rest
         m_slots.resize(size); // fills with size std::unique_ptr(nullptr)
-        m_slots[0] = std::unique_ptr<IUnit>(Note::MakeRest(size)); 
+        m_slots[0] = std::static_pointer_cast<IUnit>(Note::makeRestPtr(size)); 
         m_unitCount = 1;
     }
 }
@@ -329,7 +329,7 @@ Part::newSetUnit(int unitIndex, UnitPtr unit)
         int nextUnitEnd = getNextIndex(m_slots, nextUnitStart);
         if(this->GetType() == k_MelodyPart)
         {
-            m_slots[nextUnitStart] = UnitPtr(Note::MakeRest(nextUnitEnd - nextUnitStart));
+            m_slots[nextUnitStart] = UnitPtr(Note::makeRestPtr(nextUnitEnd - nextUnitStart));
         }
         else
         {
@@ -375,7 +375,7 @@ Part::makeConsistent()
 
     if(!prevUnit)
     {
-        m_slots[prevIndex] = UnitPtr(Note::MakeRest(60));
+        m_slots[prevIndex] = UnitPtr(Note::makeRestPtr(60));
     }
 
     int count = 1;
@@ -473,7 +473,7 @@ Part::delUnit(int unitIndex)
         else 
         if(this->GetType() == k_MelodyPart)
         {
-            setUnit(0, UnitPtr(Note::MakeRest()));
+            setUnit(0, UnitPtr(Note::makeRestPtr()));
         }
         else 
         if(this->GetType() == k_ChordPart)

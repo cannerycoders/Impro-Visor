@@ -27,7 +27,7 @@ Polylist::Parse(std::string const& str, bool dump)
 int
 Polylist::Parse(std::istream& istr, bool dump) 
 {
-    PListTokenizer tokenizer(istr);
+    PlistTokenizer tokenizer(istr);
     parseList(tokenizer, true/*skipOuter*/);
     std::cout << "polylist with " << this->size() << " elements\n";
     if(dump)
@@ -39,22 +39,22 @@ Polylist::Parse(std::istream& istr, bool dump)
 }
 
 Polylist::ObjPtr
-Polylist::parse(PListTokenizer& tokenizer) 
+Polylist::parse(PlistTokenizer& tokenizer) 
 {
     if(tokenizer.next())
     {
-        const PListTokenizer::token& tok = tokenizer.current();
+        const PlistTokenizer::token& tok = tokenizer.current();
         switch(tok.type) 
         {
-        case PListTokenizer::t_Token::string:
-            return std::make_shared<PListString>(tok.s);
-        case PListTokenizer::t_Token::symbol:
-            return std::make_shared<PListSymbol>(tok.s);
-        case PListTokenizer::t_Token::number:
-            return std::make_shared<PListNumber>(tok.number.d);
-        case PListTokenizer::t_Token::integer:
-            return std::make_shared<PListLong>(tok.number.l);
-        case PListTokenizer::t_Token::left_paren:
+        case PlistTokenizer::t_Token::string:
+            return std::make_shared<PlistString>(tok.s);
+        case PlistTokenizer::t_Token::symbol:
+            return std::make_shared<PlistSymbol>(tok.s);
+        case PlistTokenizer::t_Token::number:
+            return std::make_shared<PlistFloat>(tok.number.d);
+        case PlistTokenizer::t_Token::integer:
+            return std::make_shared<PlistInt>(tok.number.l);
+        case PlistTokenizer::t_Token::left_paren:
             return parseList(tokenizer, false/*means require right-paren*/);
         default:
             break;
@@ -64,7 +64,7 @@ Polylist::parse(PListTokenizer& tokenizer)
 }
 
 Polylist::ObjPtr
-Polylist::parseList(PListTokenizer&tok, bool skipOuter) 
+Polylist::parseList(PlistTokenizer&tok, bool skipOuter) 
 { 
     Polylist *pl;
     ObjPtr ret; // only when we allocate a new one
@@ -78,7 +78,7 @@ Polylist::parseList(PListTokenizer&tok, bool skipOuter)
     }
     while(tok.next()) 
     {
-        if(tok.current().type == PListTokenizer::t_Token::right_paren)
+        if(tok.current().type == PlistTokenizer::t_Token::right_paren)
         {
             closed = true;
             break;
@@ -94,10 +94,10 @@ Polylist::parseList(PListTokenizer&tok, bool skipOuter)
  
  /* ------------------------------------------------------------- */
 
-std::unordered_set<std::string> PListSymbol::s_tokens;
+std::unordered_set<std::string> PlistSymbol::s_tokens;
 
 /*static*/ char const *
-PListSymbol::getSymbol(std::string const &str)
+PlistSymbol::getSymbol(std::string const &str)
 {
     auto x = s_tokens.find(str);
     if(x == s_tokens.end())

@@ -111,23 +111,23 @@ Preferences::get()
     if(init == 0)
     {
         init = 1;
-        P::DEFAULT_LOAD_STAVE = PListSymbol::getSymbol("default-load-stave");
-        P::DEFAULT_MIXER_ALL = PListSymbol::getSymbol("default-mixer-all");
-        P::DEFAULT_MIXER_ENTRY = PListSymbol::getSymbol("default-mixer-entry");
-        P::DEFAULT_MIXER_BASS = PListSymbol::getSymbol("default-mixer-bass");
-        P::DEFAULT_MIXER_CHORDS = PListSymbol::getSymbol("default-mixer-chords");
-        P::DEFAULT_MIXER_DRUMS = PListSymbol::getSymbol("default-mixer-drums");
-        P::DEFAULT_MIXER_MELODY = PListSymbol::getSymbol("default-mixer-melody");
-        P::DEFAULT_STYLE = PListSymbol::getSymbol("default-style");
-        P::DEFAULT_TEMPO = PListSymbol::getSymbol("default-tempo");
-        P::DEFAULT_VOCAB_FILE = PListSymbol::getSymbol("default-vocab-file");
-        P::DEFAULT_GRAMMAR_FILE = PListSymbol::getSymbol("default-grammar-file");
-        P::DEFAULT_TRANSFORM_FILE = PListSymbol::getSymbol("default-transform-file");
-        P::DEFAULT_FRACTAL_FILE = PListSymbol::getSymbol("default-fractal-file");
-        P::DEFAULT_COUNTS_FILE = PListSymbol::getSymbol("default-counts-file");
-        P::DEFAULT_STYLE_DIRECTORY = PListSymbol::getSymbol("default-style-directory");
-        P::DEFAULT_CHORD_FONT_SIZE = PListSymbol::getSymbol("default-chord-font-size");
-        P::ALWAYS_USE_BUTTONS = PListSymbol::getSymbol("always-use-buttons");
+        P::DEFAULT_LOAD_STAVE = PlistSymbol::getSymbol("default-load-stave");
+        P::DEFAULT_MIXER_ALL = PlistSymbol::getSymbol("default-mixer-all");
+        P::DEFAULT_MIXER_ENTRY = PlistSymbol::getSymbol("default-mixer-entry");
+        P::DEFAULT_MIXER_BASS = PlistSymbol::getSymbol("default-mixer-bass");
+        P::DEFAULT_MIXER_CHORDS = PlistSymbol::getSymbol("default-mixer-chords");
+        P::DEFAULT_MIXER_DRUMS = PlistSymbol::getSymbol("default-mixer-drums");
+        P::DEFAULT_MIXER_MELODY = PlistSymbol::getSymbol("default-mixer-melody");
+        P::DEFAULT_STYLE = PlistSymbol::getSymbol("default-style");
+        P::DEFAULT_TEMPO = PlistSymbol::getSymbol("default-tempo");
+        P::DEFAULT_VOCAB_FILE = PlistSymbol::getSymbol("default-vocab-file");
+        P::DEFAULT_GRAMMAR_FILE = PlistSymbol::getSymbol("default-grammar-file");
+        P::DEFAULT_TRANSFORM_FILE = PlistSymbol::getSymbol("default-transform-file");
+        P::DEFAULT_FRACTAL_FILE = PlistSymbol::getSymbol("default-fractal-file");
+        P::DEFAULT_COUNTS_FILE = PlistSymbol::getSymbol("default-counts-file");
+        P::DEFAULT_STYLE_DIRECTORY = PlistSymbol::getSymbol("default-style-directory");
+        P::DEFAULT_CHORD_FONT_SIZE = PlistSymbol::getSymbol("default-chord-font-size");
+        P::ALWAYS_USE_BUTTONS = PlistSymbol::getSymbol("always-use-buttons");
     }
     return p;
 }
@@ -147,7 +147,7 @@ Preferences::write(std::ostream &o)
 std::string 
 Preferences::getPreference(std::string &p)
 {
-    return getPreference(PListSymbol::getSymbol(p));
+    return getPreference(PlistSymbol::getSymbol(p));
 }
 
 long

@@ -294,30 +294,16 @@ namespace Constants
      * The std::string representing a rest
      */
 
-    std::string const REST_String = "r";
+    std::string const REST_STRING = "r";
 
 
     /**
      * The std::string representing an eighth-rest
      */
 
-    std::string const EIGHTH_REST_String = "r8";
+    std::string const EIGHTH_REST_STRING = "r8";
 
 
-    /**
-     * Input and output symbols used for chords and notes
-     */
-
-    const char SHARP     = '#';
-    const char FLAT      = 'b';
-    const char BAR       = '|';
-    const char COMMA     = ',';
-    const char SLASH     = '/';
-    const char BACKSLASH = '\\';
-    const char DOT       = '.';
-    const char PLUS      = '+';
-    const char MINUS     = '-';
-    const char RESTCHAR  = 'r';
 
     /**
      * maps absolute notes to MIDI numbers

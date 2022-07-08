@@ -225,30 +225,33 @@ namespace Constants
      * The std::string representing a rest
      */
 
-    extern const std::string REST_String;
+    extern const std::string REST_STRING;
 
 
     /**
      * The std::string representing an eighth-rest
      */
 
-    extern const std::string EIGHTH_REST_String;
+    extern const std::string EIGHTH_REST_STRING;
 
 
     /**
      * Input and output symbols used for chords and notes
      */
+    enum IOSymbols
+    {
+        SHARP     = '#',
+        FLAT      = 'b',
+        BAR       = '|',
+        COMMA     = ',',
+        SLASH     = '/',
+        BACKSLASH = '\\',
+        DOT       = '.',
+        PLUS      = '+',
+        MINUS     = '-',
+        RESTCHAR  = 'r'
+    };
 
-    extern const char SHARP;
-    extern const char FLAT;
-    extern const char BAR;
-    extern const char COMMA;
-    extern const char SLASH;
-    extern const char BACKSLASH;
-    extern const char DOT;
-    extern const char PLUS;
-    extern const char MINUS;
-    extern const char RESTCHAR;
 
     /**
      * Modes of extracting stuff for transfer

@@ -1,5 +1,6 @@
 #include "Key.h"
 #include "util/String.h"
+#include "NoteSymbol.h"
 #include <cassert>
 
 Key Key::keys[] =
@@ -113,7 +114,7 @@ int Key::transpositions[][k_Octave] =
 Key::Key(int index, char const *nm, int cpos)
 {
     m_index = index;
-    m_name = PListSymbol::getSymbol(nm);
+    m_name = PlistSymbol::getSymbol(nm);
     m_cPosition = cpos; // position of c in this key
 }
 
@@ -157,7 +158,7 @@ Key::toString() { return m_name; }
 Key::getKey(std::string const &keynm)
 {
     std::string lkey = UtString::toLower(keynm);
-    return getKey(PListSymbol::getSymbol(lkey));
+    return getKey(PlistSymbol::getSymbol(lkey));
 }
 
 /*static*/ Key const *
@@ -232,13 +233,13 @@ Key::transposeChord(std::string const &chord, int rise, Key const &key)
       return chord;
 
     using OPtr = Polylist::ObjPtr;
-    Polylist exploded = explodeChord(chord);
-    if(exploded.size() == 0)
+    Polylist::Ptr exploded = explodeChord(chord);
+    if(exploded->size() == 0)
         return "";
 
-    OPtr a = exploded.first();
-    OPtr b = exploded.second();
-    OPtr c = exploded.third();
+    OPtr a = exploded->first();
+    OPtr b = exploded->second();
+    OPtr c = exploded->third();
 
     std::string root = a->asString();
     std::string body = b ? b->asString() : "";
@@ -254,7 +255,7 @@ Key::transposeChord(std::string const &chord, int rise, Key const &key)
         return newRoot.getChordBase() + body;
 
     // Deal with slash-chord
-    OPtr d = exploded.fourth();
+    OPtr d = exploded->fourth();
     PitchClass bass = PitchClass::getPitchClass(d->asString());
     assert(bass.isValid());
     std::string newBass = bass.transpose(rise).getChordBase();
@@ -268,18 +269,18 @@ std::string Key::makeCroot(std::string const &chord)
 
 std::string Key::makeRoot(std::string const &root, std::string const &chord)
 {
-    Polylist exploded = explodeChord(chord);
-    if(exploded.isValid())
+    Polylist::Ptr exploded = explodeChord(chord);
+    if(exploded->isValid())
     {
-        std::string body = exploded.second()->asString();
-        std::string afterSlash = exploded.third()->asString();
+        std::string body = exploded->second()->asString();
+        std::string afterSlash = exploded->third()->asString();
         if(afterSlash.size() == 0)
             return root + body;
 
-        std::string origRoot = exploded.first()->asString();
+        std::string origRoot = exploded->first()->asString();
         int rise = PitchClass::findRise(UtString::toLower(root), origRoot);
         // Deal with slash-chord
-        std::string bstr = exploded.fourth()->asString();
+        std::string bstr = exploded->fourth()->asString();
         PitchClass const &bass = PitchClass::getPitchClass(bstr);
         assert(bass.isValid());
         std::string newBass = bass.transpose(rise).getChordBase();
@@ -291,7 +292,7 @@ std::string Key::makeRoot(std::string const &root, std::string const &chord)
 
 std::string Key::getRoot(std::string const &chord)
 {
-    return explodeChord(chord).first()->asString();
+    return explodeChord(chord)->first()->asString();
 }
 
 bool Key::sameRoot(std::string const &chord1, std::string const &chord2)
@@ -319,11 +320,24 @@ bool Key::isValidStem(std::string const &stem)
 
 bool Key::hasValidStem(std::string const &chord)
 {
-    return explodeChord(chord).isValid();
+    return explodeChord(chord)->isValid();
 }
 
-Polylist Key::explodeChord(std::string const &chord)
+  /**
+   * Explode a chord from the leadsheet notation into four parts:
+   * the root, the type of chord, the string after a slash, if any,
+   * and the bass note.
+   * If there is no slash, the third component is the empty string, and
+   * the bass note is the same as the root.
+   *
+   * If the chord doen't make sense, then an empty Polylist is returned.
+   *
+   * @param chord the string naming the chord.
+   */
+Polylist::Ptr
+Key::explodeChord(std::string const &chord)
 {
+    Polylist::Ptr ret = Polylist::MakePtr();
     size_t len = chord.size();
     if(len > 0)
     {
@@ -370,22 +384,24 @@ Polylist Key::explodeChord(std::string const &chord)
                     afterSlash = buffer3;
                     std::string slashLower = UtString::toLower(afterSlash);
                     if(!PitchClass::isValidPitch(slashLower))
-                        return Polylist();
+                        return ret;
                     else
                         bass = slashLower;
                 }
                 std::vector<std::string> x = {root, body, afterSlash, bass};
-                return Polylist::Polylist(x);
+                ret->InitSymbols(x);
+                return ret;
             }
         }
     }
-    return Polylist();
+    return ret;
 }
 
-// here we expect L to be a list of string/value pairs
-Polylist Key::invalidNotes(Polylist &L)
+/*static*/Polylist::Ptr 
+Key::invalidNotes(Polylist &L)
 {
-    Polylist ret;
+    // re-implemented without recursion (needs validation!)
+    Polylist::Ptr ret;
     if(L.size() > 0)
     {
         using OPtr = Polylist::ObjPtr;
@@ -395,10 +411,20 @@ Polylist Key::invalidNotes(Polylist &L)
         while(a != b)
         {
             OPtr o = *a;
-            if(o->getType() == Polylist::k_list)
+            bool valid = false;
+            PlistString *s = o->asStringType();
+            if(s && NoteSymbol::isValidNote(s->getValue()))
+                continue;
+            else
+            if(o->getType() == PlistObj::k_list)
             {
-                OPtr f = L.first();
-            } 
+
+            }
+
+            if(!valid)
+            {
+            }
+
             a++;
         }
     }

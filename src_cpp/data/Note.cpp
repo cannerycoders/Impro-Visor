@@ -59,16 +59,28 @@ static int s_flatInKeysBelow[] =
     return s_black[pitch % 12];
 }
 
-/*static*/ Note *
-Note::MakeNote(int pitch, int dur)
+/*static*/ Note
+Note::makeNote(int pitch, int dur)
 {
-    return new Note(pitch, dur);
+    return Note(pitch, dur);
 }
 
-/*static*/ Note *
-Note::MakeRest(int dur)
+/*static*/ Note::NotePtr
+Note::makeNotePtr(int pitch, int dur)
 {
-    return new Note(REST_PITCH, Constants::Accidental::NOTHING, dur);
+    return std::make_shared<Note>(pitch, dur);
+}
+
+/*static*/ Note
+Note::makeRest(int dur)
+{
+    return Note(REST_PITCH, Constants::Accidental::NOTHING, dur);
+}
+
+/*static*/ Note::NotePtr
+Note::makeRestPtr(int dur)
+{
+    return std::make_shared<Note>(REST_PITCH, Constants::Accidental::NOTHING, dur);
 }
 
 /*static*/Constants::Accidental
@@ -141,6 +153,102 @@ Note::getClosestMatch(int pitch, Polylist tonesPL)
 #else
     return Note(60);
 #endif
+}
+
+inline int accumulateValue(int value, int duration, 
+    std::string &buf, char const *v)
+{
+    while(duration >= value)
+    {
+        buf.append(v);
+        duration -= value;
+    }
+    return duration;
+}
+
+inline int accumulateExactValue(int value, int duration, 
+    std::string &buf, char const *v)
+{
+    if(duration % value == 0)
+        return accumulateValue(value, duration, buf, v);
+    else
+        return duration;
+}
+
+/**
+ * @brief  convert incoming duration to a string representation
+ * @returns the residue (error)
+ */
+
+/*static*/int
+Note::getDurationString(int value, std::string &result)
+{
+    // Try decomposing in two different orders, then pick the shorter description
+    std::string buf1, buf2;
+    int saved_value = value;
+
+    // First decomposition
+    value = accumulateValue(Constants::WHOLE, value, buf1, "+1");
+    value = accumulateValue(Constants::HALF, value, buf1, "+2");
+    value = accumulateValue(Constants::QUARTER, value, buf1, "+4");
+    value = accumulateExactValue(Constants::QUARTER_QUINTUPLET, value, buf1, "+4/5");
+    value = accumulateValue(Constants::EIGHTH, value, buf1, "+8");
+    value = accumulateExactValue(Constants::EIGHTH_QUINTUPLET, value, buf1, "+8/5");
+    value = accumulateValue(Constants::SIXTEENTH, value, buf1, "+16");
+    value = accumulateExactValue(Constants::SIXTEENTH_QUINTUPLET, value, buf1, "+16/5");
+    value = accumulateValue(Constants::THIRTYSECOND, value, buf1, "+32");
+    value = accumulateExactValue(Constants::THIRTYSECOND_QUINTUPLET, value, buf1, "+32/5");
+    value = accumulateValue(Constants::HALF_TRIPLET, value, buf1, "+2/3");
+    value = accumulateValue(Constants::QUARTER_TRIPLET, value, buf1, "+4/3");
+    value = accumulateValue(Constants::EIGHTH_TRIPLET, value, buf1, "+8/3");
+    value = accumulateValue(Constants::SIXTEENTH_TRIPLET, value, buf1, "+16/3");
+    value = accumulateValue(Constants::THIRTYSECOND_TRIPLET, value, buf1, "+32/3");
+
+    // To make any residual concise
+    value = accumulateValue(Constants::SIXTIETH, value, buf1, "+60");
+    value = accumulateValue(Constants::ONETWENTIETH, value, buf1, "+120");
+    value = accumulateValue(Constants::TWOFORTIETH, value, buf1, "+240");
+    value = accumulateValue(Constants::FOUREIGHTIETH, value, buf1, "+480");
+    int residue1 = value;
+
+    // Second decomposition
+    value = saved_value;
+    value = accumulateValue(Constants::HALF_TRIPLET, value, buf2, "+2/3");
+    value = accumulateValue(Constants::QUARTER_TRIPLET, value, buf2, "+4/3");
+    value = accumulateValue(Constants::EIGHTH_TRIPLET, value, buf2, "+8/3");
+    value = accumulateValue(Constants::SIXTEENTH_TRIPLET, value, buf2, "+16/3");
+    value = accumulateValue(Constants::THIRTYSECOND_TRIPLET, value, buf2, "+32/3");
+    value = accumulateValue(Constants::WHOLE, value, buf2, "+1");
+    value = accumulateValue(Constants::HALF, value, buf2, "+2");
+    value = accumulateValue(Constants::QUARTER, value, buf2, "+4");
+    value = accumulateValue(Constants::EIGHTH, value, buf2, "+8");
+    value = accumulateValue(Constants::SIXTEENTH, value, buf2, "+16");
+    value = accumulateValue(Constants::THIRTYSECOND, value, buf2, "+32");
+    
+    // To make any residual concise
+    value = accumulateValue(Constants::SIXTIETH, value, buf2, "+60");
+    value = accumulateValue(Constants::ONETWENTIETH, value, buf2, "+120");
+    value = accumulateValue(Constants::TWOFORTIETH, value, buf2, "+240");
+    value = accumulateValue(Constants::FOUREIGHTIETH, value, buf2, "+480");
+    int residue2 = value;
+    
+    int choice;  // This is the choice of which decomposition to use.
+    // Both residues are 0, so make the choice based on length
+    if(buf1.size() <= buf2.size())
+        choice = 1;
+    else
+        choice = 2;
+    switch( choice )
+    {
+    default:
+    case 1:
+        result.append(buf1);
+        return residue1;
+
+    case 2:
+        result.append(buf2);
+        return residue2;
+    }
 }
 
 /* ---------------------------------------------------------------- */
@@ -257,7 +365,7 @@ Note::getPitchClassName() const
 }
 
 bool 
-Note::isAccidentalInKey(int keySig)
+Note::isAccidentalInKey(int keySig) const
 {
     if(m_pitch >= 0)
     {

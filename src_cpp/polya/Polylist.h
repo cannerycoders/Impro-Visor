@@ -10,11 +10,18 @@
 #include <memory> /* std::shared_ptr */
 #include <unordered_set>
 
+// fwd decls...
+class PlistString;
+class PlistSymbol;
+class PlistFloat;
+class PlistInt;
+class Polylist;
+
 /**
  * @brief base class for contents of Polylist
  * 
  */
-class PListObj
+class PlistObj
 {
 public:
     enum Type
@@ -22,13 +29,13 @@ public:
         k_object,
         k_symbol,
         k_string,
-        k_number,
+        k_float,
         k_integer,
         k_list,
         k_invalid
     };
 
-    virtual ~PListObj() {}
+    virtual ~PlistObj() {}
     virtual void write(std::ostream&) const {};
     virtual void writeIndented(std::ostream& out, int level) const 
     {
@@ -43,6 +50,10 @@ public:
         for (int i = 0; i < level; ++i)
             out << "   ";
     }
+    bool isType(Type t)
+    {
+        return this->getType() == t;
+    }
     void *asType(Type t)
     {
         if(this->getType() == t) 
@@ -50,16 +61,36 @@ public:
         else 
             return nullptr;
     }
+    PlistString *asStringType()
+    {
+        return static_cast<PlistString*>(this->asType(k_string));
+    }
+    PlistSymbol *asSymbolType()
+    {
+        return static_cast<PlistSymbol*>(this->asType(k_symbol));
+    }
+    PlistFloat *asFloatType()
+    {
+        return static_cast<PlistFloat*>(this->asType(k_float));
+    }
+    PlistInt *asIntType()
+    {
+        return static_cast<PlistInt*>(this->asType(k_integer));
+    }
+    Polylist *asListType()
+    {
+        return static_cast<Polylist*>(this->asType(k_list));
+    }
 };
 
 /**
  * @brief string entry in polylist
  * 
  */
-class PListString : public PListObj
+class PlistString : public PlistObj
 {
 public:
-    explicit PListString(const std::string& str) : m_string(str) {}
+    explicit PlistString(const std::string& str) : m_string(str) {}
     void write(std::ostream& out) const override { out << std::quoted(m_string); }
     char const *getTypeName() override { return "string"; }
     Type getType() override { return k_string; }
@@ -74,10 +105,10 @@ private:
  *    and are compared by "tokenized" pointers for efficiency.
  * 
  */
-class PListSymbol : public PListObj
+class PlistSymbol : public PlistObj
 {
 public:
-    explicit PListSymbol(std::string const& str) 
+    explicit PlistSymbol(std::string const& str) 
     {
         m_token = getSymbol(str);
     }
@@ -87,7 +118,7 @@ public:
         char ch;
         while((ch=m_token[i++]))
         {
-            if(PListTokenizer::GetCharType(ch) != PListTokenizer::t_Char::other)
+            if(PlistTokenizer::GetCharType(ch) != PlistTokenizer::t_Char::other)
                 out << '\\';
             out << ch;
         }
@@ -108,13 +139,13 @@ private:
  * @brief floating point number entries in Polylist
  * 
  */
-class PListNumber : public PListObj
+class PlistFloat : public PlistObj
 {
 public:
-    explicit PListNumber(double num) : m_number(num) {}
+    explicit PlistFloat(double num) : m_number(num) {}
     void write(std::ostream& out) const override { out << m_number; }
-    char const *getTypeName() override { return "number"; }
-    Type getType() override { return k_number; }
+    char const *getTypeName() override { return "float"; }
+    Type getType() override { return k_float; }
     std::string asString() override 
     { 
         return std::to_string(m_number); 
@@ -129,10 +160,10 @@ private:
  * @brief integral number entries in Polylist
  * 
  */
-class PListLong : public PListObj
+class PlistInt : public PlistObj
 {
 public:
-    explicit PListLong(long num) : m_number(num) {}
+    explicit PlistInt(long num) : m_number(num) {}
     void write(std::ostream& out) const override { out << m_number; }
     char const *getTypeName() override { return "integer"; }
     Type getType() override { return k_integer; }
@@ -151,10 +182,10 @@ private:
  * @brief  Polylist entry in polylist.
  * 
  */
-class Polylist : public PListObj
+class Polylist : public PlistObj
 {
 public:
-    using ObjPtr = std::shared_ptr<PListObj>;
+    using ObjPtr = std::shared_ptr<PlistObj>;
     using ObjList = std::list<ObjPtr>; // xxx: deque or vector might be preferred?
     using ObjListIt = ObjList::iterator;
     using Ptr = std::shared_ptr<Polylist>;
@@ -163,14 +194,12 @@ private:
     ObjList m_list;
 
 public: /* builder, serializer */
-    static Polylist::Ptr Make() { return std::make_shared<Polylist>(); }
+    static Polylist::Ptr MakePtr() { return std::make_shared<Polylist>(); }
 
     Polylist();
     virtual ~Polylist();
-    /** 
-     * constructor via a list of symbols 
-     */
-    Polylist(std::vector<std::string> &values)
+
+    void InitSymbols(std::vector<std::string> &values)
     {
         for(auto x : values)
             this->addSymbol(x);
@@ -193,7 +222,7 @@ public: /* builder, serializer */
      */
     int Parse(std::istream &istr, bool dump=false);
 
-    /* PListObj methods (custom method in next section) ----------------- */
+    /* PlistObj methods (custom method in next section) ----------------- */
     char const *getTypeName() override { return "plist"; }
     Type getType() override { return k_list; }
     void write(std::ostream& out) const
@@ -243,7 +272,7 @@ public: /* builder, serializer */
     }
     void addSymbol(const std::string &val)
     {
-        m_list.push_back(std::make_shared<PListSymbol>(val));
+        m_list.push_back(std::make_shared<PlistSymbol>(val));
     }
     size_t size()
     {
@@ -265,20 +294,20 @@ public: /* builder, serializer */
     {
         return m_list.end();
     }
-    PListSymbol const *firstSymbol()
+    PlistSymbol const *firstSymbol()
     {
         ObjPtr o = *m_list.begin();
-        PListSymbol const *s = static_cast<PListSymbol *>(o->asType(k_symbol));
+        PlistSymbol const *s = static_cast<PlistSymbol *>(o->asType(k_symbol));
         if(!s)
             std::cerr << "type of first element " << o->getType() << "\n";
         return s;
     }
-    PListSymbol const *findSymbol(char const *tok)
+    PlistSymbol const *findSymbol(char const *tok)
     {
         auto objIt = m_list.begin();
         while(objIt != m_list.end())
         {
-            PListSymbol const *s = static_cast<PListSymbol *>((*objIt)->asType(k_symbol));
+            PlistSymbol const *s = static_cast<PlistSymbol *>((*objIt)->asType(k_symbol));
             if(s) return s;
             objIt++;
         }
@@ -332,8 +361,8 @@ public: /* builder, serializer */
     }
 
 private: /* tokenizer */
-    ObjPtr parse(PListTokenizer &);
-    ObjPtr parseList(PListTokenizer& tok, bool skipOuter=false);
+    ObjPtr parse(PlistTokenizer &);
+    ObjPtr parseList(PlistTokenizer& tok, bool skipOuter=false);
     size_t m_iId;
     static size_t s_iCounter;
 }; // end Polylist

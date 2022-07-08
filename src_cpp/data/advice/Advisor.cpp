@@ -6,37 +6,37 @@
 
 Advisor::Advisor()
 {
-    k_adviceTok = PListSymbol::getSymbol("advice");
-    k_approachTok = PListSymbol::getSymbol("approach");
-    k_brickTok = PListSymbol::getSymbol("brick");
-    k_rhythmTok = PListSymbol::getSymbol("rhythm");
-    k_cellTok = PListSymbol::getSymbol("cell");
-    k_chordTok = PListSymbol::getSymbol("chord");
-    k_chordsTok = PListSymbol::getSymbol("chords");
-    k_colorTok = PListSymbol::getSymbol("color");
-    k_drumPatternTok = PListSymbol::getSymbol("drum-pattern");
-    k_extensionsTok = PListSymbol::getSymbol("extensions");
-    k_familyTok = PListSymbol::getSymbol("family");
-    k_gradeTok = PListSymbol::getSymbol("grade");
-    k_idiomTok = PListSymbol::getSymbol("idiom");
-    k_keyTok = PListSymbol::getSymbol("key");
-    k_lickTok = PListSymbol::getSymbol("lick");
-    k_markedTok = PListSymbol::getSymbol("marked");
-    k_nameTok = PListSymbol::getSymbol("name");
-    k_notesTok = PListSymbol::getSymbol("notes");
-    k_priorityTok = PListSymbol::getSymbol("priority");
-    k_quoteTok = PListSymbol::getSymbol("quote");
-    k_sameTok = PListSymbol::getSymbol("same");
-    k_scaleTok = PListSymbol::getSymbol("scale");
-    k_scalesTok = PListSymbol::getSymbol("scales");
-    k_sequenceTok = PListSymbol::getSymbol("sequence");
-    k_serialTok = PListSymbol::getSymbol("serial");
-    k_spellTok = PListSymbol::getSymbol("spell");
-    k_styleTok = PListSymbol::getSymbol("style");
-    k_substituteTok = PListSymbol::getSymbol("substitute");
-    k_voicingsTok = PListSymbol::getSymbol("voicings");
-    k_barTok = PListSymbol::getSymbol("|");
-    k_slashTok = PListSymbol::getSymbol("/");
+    k_adviceTok = PlistSymbol::getSymbol("advice");
+    k_approachTok = PlistSymbol::getSymbol("approach");
+    k_brickTok = PlistSymbol::getSymbol("brick");
+    k_rhythmTok = PlistSymbol::getSymbol("rhythm");
+    k_cellTok = PlistSymbol::getSymbol("cell");
+    k_chordTok = PlistSymbol::getSymbol("chord");
+    k_chordsTok = PlistSymbol::getSymbol("chords");
+    k_colorTok = PlistSymbol::getSymbol("color");
+    k_drumPatternTok = PlistSymbol::getSymbol("drum-pattern");
+    k_extensionsTok = PlistSymbol::getSymbol("extensions");
+    k_familyTok = PlistSymbol::getSymbol("family");
+    k_gradeTok = PlistSymbol::getSymbol("grade");
+    k_idiomTok = PlistSymbol::getSymbol("idiom");
+    k_keyTok = PlistSymbol::getSymbol("key");
+    k_lickTok = PlistSymbol::getSymbol("lick");
+    k_markedTok = PlistSymbol::getSymbol("marked");
+    k_nameTok = PlistSymbol::getSymbol("name");
+    k_notesTok = PlistSymbol::getSymbol("notes");
+    k_priorityTok = PlistSymbol::getSymbol("priority");
+    k_quoteTok = PlistSymbol::getSymbol("quote");
+    k_sameTok = PlistSymbol::getSymbol("same");
+    k_scaleTok = PlistSymbol::getSymbol("scale");
+    k_scalesTok = PlistSymbol::getSymbol("scales");
+    k_sequenceTok = PlistSymbol::getSymbol("sequence");
+    k_serialTok = PlistSymbol::getSymbol("serial");
+    k_spellTok = PlistSymbol::getSymbol("spell");
+    k_styleTok = PlistSymbol::getSymbol("style");
+    k_substituteTok = PlistSymbol::getSymbol("substitute");
+    k_voicingsTok = PlistSymbol::getSymbol("voicings");
+    k_barTok = PlistSymbol::getSymbol("|");
+    k_slashTok = PlistSymbol::getSymbol("/");
 }
 
 void
@@ -61,7 +61,7 @@ Advisor::SetRules(Polylist::Ptr rules)
 bool
 Advisor::addOneRule(Polylist::ObjPtr o, unsigned serial, bool marked, bool allowDups)
 {
-    Polylist *r = (Polylist *) o->asType(PListObj::k_list);
+    Polylist *r = (Polylist *) o->asType(PlistObj::k_list);
     if(!r)
     {
         std::cerr << "Advisor: invalid rule " << o->getType() << "\n";
@@ -143,7 +143,7 @@ Advisor::addLick(Polylist *r, LickFlavor f, unsigned serial, bool marked,
     if(list)
     {
         auto x = list->getNth(1);
-        PListLong *p = static_cast<PListLong *>(x->asType(Polylist::k_integer));
+        PlistInt *p = static_cast<PlistInt *>(x->asType(Polylist::k_integer));
         if(p)
             grade = p->getValue();
         else

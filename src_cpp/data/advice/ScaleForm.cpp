@@ -2,6 +2,6 @@
 #include "polya/Polylist.h"
 
 
-char const *ScaleForm::NAME = PListSymbol::getSymbol("name");
-char const *ScaleForm::SPELL = PListSymbol::getSymbol("spell");
-char const *ScaleForm::SAME = PListSymbol::getSymbol("same");
+char const *ScaleForm::NAME = PlistSymbol::getSymbol("name");
+char const *ScaleForm::SPELL = PlistSymbol::getSymbol("spell");
+char const *ScaleForm::SAME = PlistSymbol::getSymbol("same");

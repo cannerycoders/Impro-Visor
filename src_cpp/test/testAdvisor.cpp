@@ -8,7 +8,7 @@ int main(int argc, char** argv)
     std::ifstream is("../../vocab/My.voc", std::ios::binary); // comments
     if(!is.is_open())
         is.open("../vocab/My.voc", std::ios::binary);
-    Polylist::Ptr plist = Polylist::Make();
+    Polylist::Ptr plist = Polylist::MakePtr();
     Advisor adv;
     bool dump(false);
     try 

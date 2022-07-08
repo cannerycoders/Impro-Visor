@@ -19,11 +19,16 @@ public:
     static int DEFAULT_VOLUME; // 0-127
     static int maxRhythmValuePerLine;
 
-    static Note *MakeNote(int pitch, int dur);
-    static Note *MakeRest(int dur=DEFAULT_RHYTHM_VALUE);
+    using NotePtr = std::shared_ptr<Note>;
+
+    static Note makeNote(int pitch, int dur);
+    static Note makeRest(int dur=DEFAULT_RHYTHM_VALUE);
+    static NotePtr makeNotePtr(int pitch, int dur);
+    static NotePtr makeRestPtr(int dur=DEFAULT_RHYTHM_VALUE);
     static bool isBlack(int pitch);
     static Constants::Accidental getSharpOrFlat(bool x);
     static Note getClosestMatch(int pitch, class Polylist tonesPL);
+    static int getDurationString(int dur, std::string &result);
 
     /* -------------------------------------------------- */
     using NotePtr = std::shared_ptr<Note>;
@@ -56,8 +61,13 @@ public:
     void setAccidentalFromPitch();
     void setAccidental(Constants::Accidental acc);
     Constants::Accidental getAccidental() const { return m_accidental; }
-    bool isAccidentalInKey(int keySig);
+    bool isAccidentalInKey(int keySig) const;
     bool toggleEnharmonic();
+    int getDurationString(std::string result) const 
+    { 
+        return getDurationString(m_rhythmValue, result); 
+    }
+    std::string toLeadsheet() const;
 
 protected: // shared by Rest subclass
     int m_rhythmValue;
