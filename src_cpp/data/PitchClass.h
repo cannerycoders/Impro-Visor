@@ -5,6 +5,10 @@
 #include <vector>
 #include <string>
 
+/**
+ * PitchClass deals with immutable pitch classes, which are like 
+ * pitches but without a specific octave.
+ */
 class PitchClass
 {
 private:
@@ -16,7 +20,7 @@ private:
 public:
     static PitchClass const cClass;
     static PitchClass const pitchClass[];
-    static PitchClass const sInvalid;
+    static PitchClass const sInvalid; // index == -1, nm = ""
 
     static const int 
         fb,  // use e rather than fb
@@ -47,9 +51,9 @@ public:
     static const std::string romanNumerals[];
 
     static std::string upperCaseNote(std::string &s);
-    static bool isValidPitch(std::string &s);
+    static bool isValidPitch(std::string const &s);
     static bool isValidPitchStart(char c);
-    static PitchClass const &getPitchClass(std::string &);
+    static PitchClass const &getPitchClass(std::string const &);
     static PitchClass const &getPitchClass(int index);
     static PitchClass const &getPitchClassFromMidi(int midi);
     static int findDelta(std::string &from, std::string &to);
@@ -84,6 +88,7 @@ public: /* instance methods */
     bool enharmonic(PitchClass const &other) const;
     bool enharmonic(int otherIndex) const;
     const std::string &keyToRomanNumerals(PitchClass const &) const;
+    bool isValid() const { return m_index >= 0; }
 
 private:
     std::string m_name;

@@ -23,7 +23,7 @@ public:
      * Sets the Unit's rhythm value.
      * @param rhythmValue  an integer representing the Unit's rhythm value
      */
-    enum class UnitType
+    enum UnitType
     {
         k_Invalid,
         k_Note,

@@ -1,8 +1,11 @@
 #pragma once
 
 #include "polya/Polylist.h"
+#include "data/ChordForm.h"
+
 #include <array>
 #include <vector>
+#include <unordered_map>
 
 /**
  * Contains a set of rules read and processed during construction that can
@@ -11,20 +14,8 @@
 class Advisor
 {
 public:
-    using OListIt = Polylist::OListIt;
-    using ListPtr = Polylist::ListPtr;
-    using List = Polylist::list;
-    using SymbolPtr = Polylist::SymbolPtr;
-    using Symbol = Polylist::symbol;
-    using StringPtr = Polylist::StringPtr;
-    using String = Polylist::string;
-    using LongPtr = Polylist::LongPtr;
-    using Long = Polylist::integer;
-    using NumberPtr = Polylist::NumberPtr;
-    using Number = Polylist::number;
-
     Advisor();
-    void SetRules(ListPtr);
+    void SetRules(Polylist::Ptr p);
 
     enum class CellFlavor
     {
@@ -41,15 +32,15 @@ public:
     };
 
 private:
-    void addRules(ListPtr);
-    bool addOneRule(ListPtr r, unsigned serial, bool marked, bool allowDups);
-    bool addLick(ListPtr r, LickFlavor f, unsigned serial, bool marked,
+    bool addOneRule(Polylist::ObjPtr r, unsigned serial, bool marked, bool allowDups);
+    bool addLick(Polylist* r, LickFlavor f, unsigned serial, bool marked,
                 bool allowDups, LickFlavor otherFlavor);
-    ListPtr addLickForm(ListPtr r, unsigned serial, bool marked, ListPtr old,
-                long grade, bool allowDups, ListPtr otherFlavor);
-    bool addCell(ListPtr r, CellFlavor f, unsigned serial, bool marked);
-    bool addChord(ListPtr r);
-    bool addScale(ListPtr r);
+    Polylist::Ptr addLickForm(Polylist *r, unsigned serial, bool marked, 
+                Polylist::Ptr old, long grade, bool allowDups, 
+                Polylist::Ptr otherFlavor);
+    bool addCell(Polylist *r, CellFlavor f, unsigned serial, bool marked);
+    bool addChord(Polylist *r);
+    bool addScale(Polylist *r);
 
     char const *k_adviceTok;
     char const *k_approachTok;
@@ -84,20 +75,20 @@ private:
     char const *k_slashTok;
 
 private:
-    std::array<ListPtr, 2> m_cells; // indexed by cell flavor
-    std::array<ListPtr, 3> m_licks; // indexed by lick flavor
-    ListPtr m_scales; 
-    ListPtr m_chords; 
-    ListPtr m_rhythms; 
-    ListPtr m_ruleArray; // arrives via SetRules
-    std::vector<ListPtr> m_markArray;
+    Polylist::Ptr m_ruleArray; // arrives via SetRules
+    std::unordered_map<char const *, Polylist::Ptr> m_scales;
+    std::unordered_map<char const *, ChordForm::Ptr> m_chords;
+    std::array<Polylist::Ptr, 2> m_cells; // indexed by cell flavor
+    std::array<Polylist::Ptr, 3> m_licks; // indexed by lick flavor
+    Polylist m_rhythms; 
+    std::vector<Polylist::Ptr> m_markArray;
 
     /**
      * the table listing, for each chord, the chords it extends
      * (either directly, or indirectly)
      */
-    ListPtr m_extensionsTable;
-    ListPtr m_invertedExtensionsTable;
+    Polylist m_extensionsTable;
+    Polylist m_invertedExtensionsTable;
 
     unsigned m_serialNo; // used to number licks and cell advice items
     unsigned m_interChordTolerance; // half-beats, used in matching

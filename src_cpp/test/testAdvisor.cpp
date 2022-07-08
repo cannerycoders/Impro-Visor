@@ -8,12 +8,13 @@ int main(int argc, char** argv)
     std::ifstream is("../../vocab/My.voc", std::ios::binary); // comments
     if(!is.is_open())
         is.open("../vocab/My.voc", std::ios::binary);
-    Polylist plist;
+    Polylist::Ptr plist = Polylist::Make();
     Advisor adv;
     bool dump(false);
     try 
     {
-        adv.SetRules(plist.Parse(is, dump));
+        plist->Parse(is, dump);
+        adv.SetRules(plist);
     } 
     catch (const std::exception& ex) 
     {

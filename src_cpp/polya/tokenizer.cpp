@@ -1,9 +1,9 @@
-#include "Polylist.h"
+#include "tokenizer.h"
 
 #include <cctype>
 
 bool 
-Polylist::tokenizer::GetToken(std::istream & in, token &tok)
+PListTokenizer::GetToken(std::istream & in, token &tok)
 {
     char ch;
     t_ParseState state = t_ParseState::init;
@@ -141,8 +141,8 @@ Polylist::tokenizer::GetToken(std::istream & in, token &tok)
     return true;
 }
 
-Polylist::t_Char 
-Polylist::tokenizer::GetCharType(char ch)
+PListTokenizer::t_Char 
+PListTokenizer::GetCharType(char ch)
 {
     switch (ch) 
     {
@@ -163,7 +163,7 @@ Polylist::tokenizer::GetCharType(char ch)
 }
 
 bool 
-Polylist::tokenizer::parseNumber(const std::string& str, token& tok) 
+PListTokenizer::parseNumber(const std::string& str, token& tok) 
 {
     if(!isdigit(str[0]) && str[0] != '.' && str[0] != '-') 
         return false; // quick early-out

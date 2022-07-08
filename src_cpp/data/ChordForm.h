@@ -16,12 +16,12 @@ class ChordForm
 private:
     /**
      * The constructor is private. A factory is used so that
-    * error-checking can be done prior to construction
-    */
+     * error-checking can be done prior to construction
+     */
     int PRIORITY_PREFIX_MAX = 5; 
     std::string m_name;
     std::string m_same;
-    Key const &m_key;
+    Key const *m_key;
     std::string m_family;
     Polylist m_pronounce;
     Polylist m_spell;
@@ -36,28 +36,28 @@ private:
     ChordForm();
 
 public:
-    using ConstString = std::string;
-    static ConstString APPROACH;
-    static ConstString AVOID;
-    static ConstString COLOR;
-    static ConstString EXTENSION;
-    static ConstString EXTENSIONS;
-    static ConstString FAMILY;
-    static ConstString KEY;
-    static ConstString NAME;
-    static ConstString NOTES;
-    static ConstString PRIORITY;
-    static ConstString PRONOUNCE;
-    static ConstString SAME;
-    static ConstString SCALES;
-    static ConstString SPELL;
-    static ConstString SUBS;
-    static ConstString TYPE;
-    static ConstString DEFAULT_FAMILY;
-    static ConstString VOICINGS;
-    static ConstString VOICING_WILD_CARD;
+    static char const * APPROACH;
+    static char const * AVOID;
+    static char const * COLOR;
+    static char const * EXTENSION;
+    static char const * EXTENSIONS;
+    static char const * FAMILY;
+    static char const * KEY;
+    static char const * NAME;
+    static char const * NOTES;
+    static char const * PRIORITY;
+    static char const * PRONOUNCE;
+    static char const * SAME;
+    static char const * SCALES;
+    static char const * SPELL;
+    static char const * SUBS;
+    static char const * TYPE;
+    static char const * DEFAULT_FAMILY;
+    static char const * VOICINGS;
+    static char const * VOICING_WILD_CARD;
 
-    static ChordForm makeChordForm(Polylist arg);
+    using Ptr = std::shared_ptr<ChordForm>;
+    static Ptr makeChordForm(Polylist &arg);
     static Polylist keepPositiveProbs(Polylist &L);
 
 private:
@@ -121,8 +121,8 @@ public:
     Polylist getColor(std::string &root);
     Polylist getColor(std::string &root, Key key);
 
-    Key const &getKey(std::string &root);
-    Key const &getKey() { return m_key; }
+    Key const *getKey(std::string &root);
+    Key const *getKey() { return m_key; }
     std::string const &getPrononunce();
 
     Polylist toPolylist();

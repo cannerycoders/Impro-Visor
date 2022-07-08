@@ -5,87 +5,99 @@
 #include <strstream>
 #include <string>
 
-Polylist::ListPtr
-Polylist::FindSublist(char const *tok)
+size_t Polylist::s_iCounter = 0;
+
+Polylist::Polylist()
 {
-    ListPtr ret;
-    if(m_root)
-        ret = m_root->findSublist(tok);
-    return ret;
+    m_iId = s_iCounter++; // for memory debuggin
 }
 
-Polylist::ListPtr
+Polylist::~Polylist()
+{
+    // std::cerr << "Adios " << m_iId << "\n";
+}
+
+int
 Polylist::Parse(std::string const& str, bool dump) 
 {
     std::istringstream iss(str);
     return Parse(iss, dump);
 }
 
-Polylist::ListPtr
+int
 Polylist::Parse(std::istream& istr, bool dump) 
 {
-    tokenizer tokenizer(istr);
-    m_root = parseList(tokenizer, true/*skipOuter*/);
-    if(m_root != nullptr) 
+    PListTokenizer tokenizer(istr);
+    parseList(tokenizer, true/*skipOuter*/);
+    std::cout << "polylist with " << this->size() << " elements\n";
+    if(dump)
     {
-        std::cout << "polylist with " << m_root->size() << " elements\n";
-        if(dump)
+        this->writeIndented(std::cout, 0);
+        std::cout << '\n';
+    }
+    return m_list.size() > 0;
+}
+
+Polylist::ObjPtr
+Polylist::parse(PListTokenizer& tokenizer) 
+{
+    if(tokenizer.next())
+    {
+        const PListTokenizer::token& tok = tokenizer.current();
+        switch(tok.type) 
         {
-            m_root->writeIndented(std::cout, 0);
-            std::cout << '\n';
+        case PListTokenizer::t_Token::string:
+            return std::make_shared<PListString>(tok.s);
+        case PListTokenizer::t_Token::symbol:
+            return std::make_shared<PListSymbol>(tok.s);
+        case PListTokenizer::t_Token::number:
+            return std::make_shared<PListNumber>(tok.number.d);
+        case PListTokenizer::t_Token::integer:
+            return std::make_shared<PListLong>(tok.number.l);
+        case PListTokenizer::t_Token::left_paren:
+            return parseList(tokenizer, false/*means require right-paren*/);
+        default:
+            break;
         }
     }
-    return m_root;
+    return ObjPtr();
 }
 
-std::shared_ptr<Polylist::object> 
-Polylist::parse(tokenizer& tokenizer) 
-{
-    if (!tokenizer.next())
-        return nullptr;
-    const token& tok = tokenizer.current();
-    switch (tok.type) 
+Polylist::ObjPtr
+Polylist::parseList(PListTokenizer&tok, bool skipOuter) 
+{ 
+    Polylist *pl;
+    ObjPtr ret; // only when we allocate a new one
+    bool closed = false;
+    if(skipOuter)
+        pl = this;
+    else
     {
-    case t_Token::string:
-        return std::make_shared<string>(tok.s);
-    case t_Token::symbol:
-        return std::make_shared<symbol>(tok.s);
-    case t_Token::number:
-        return std::make_shared<number>(tok.number.d);
-    case t_Token::integer:
-        return std::make_shared<integer>(tok.number.l);
-    case t_Token::left_paren:
-        return parseList(tokenizer, false/*means require right-paren*/);
-    default:
-        break;
+        pl = new Polylist();
+        ret = ObjPtr(pl);
     }
-    throw std::runtime_error("syntax error: unexpected token");
-}
-
-std::shared_ptr<Polylist::list> 
-Polylist::parseList(tokenizer& tok, bool skipOuter) 
-{
-    std::shared_ptr<list> lst = std::make_shared<list>();
     while(tok.next()) 
     {
-        if (tok.current().type == t_Token::right_paren)
-            return lst;
+        if(tok.current().type == PListTokenizer::t_Token::right_paren)
+        {
+            closed = true;
+            break;
+        }
         else
             tok.putback();
-        lst->append(parse(tok));
+        pl->append(parse(tok));
     }
-    if(!skipOuter)
-        throw std::runtime_error("syntax error: unclosed list");
-    else
-        return lst;
+    if(!skipOuter && !closed)
+        throw std::runtime_error("syntax error: unclosed plist");
+    return ret;
 }
  
  /* ------------------------------------------------------------- */
 
-std::unordered_set<std::string> Polylist::symbol::s_tokens;
+std::unordered_set<std::string> PListSymbol::s_tokens;
 
 /*static*/ char const *
-Polylist::symbol::getSymbol(std::string const &str)
+PListSymbol::getSymbol(std::string const &str)
 {
     auto x = s_tokens.find(str);
     if(x == s_tokens.end())

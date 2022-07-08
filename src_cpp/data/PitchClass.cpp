@@ -1,8 +1,7 @@
 #include "PitchClass.h"
 #include "Constants.h"
+#include "util/String.h"
 
-#include <algorithm>
-#include <cctype>
 #include <string>
 #include <cassert>
 
@@ -22,7 +21,7 @@ PitchClass::PitchClass(char const *name, int index,
     m_chordBase = name;
 }
 
-PitchClass const PitchClass::sInvalid("", 0, 0, true, false, false, "");
+PitchClass const PitchClass::sInvalid("", -1, 0, true, false, false, "");
 PitchClass const PitchClass::cClass("c", 8, 0, true, false, false, "C");
 PitchClass const PitchClass::pitchClass[] = 
 {
@@ -174,28 +173,12 @@ const std::string PC::romanNumerals[] =
 };
 
 /* ---------------------------------------------------------------- */
-inline std::string tolower(std::string &s)
-{
-    std::string l(s);
-    std::transform(l.begin(), l.end(), l.begin(),
-            [](unsigned char c){ return std::tolower(c); });
-    return l;
-}
-
 std::string PC::upperCaseNote(std::string &s)
 {
-    std::string ret;
-    size_t len = ret.length();
-    if(len > 0)
-    {
-        ret.push_back(std::toupper(s[0]));
-        if(len > 1)
-            ret.push_back(std::toupper(s[1]));
-    }
-    return ret;
+    return UtString::toUpper(s);
 }
 
-bool PC::isValidPitch(std::string &name)
+bool PC::isValidPitch(std::string const &name)
 {
   return &getPitchClass(name) != &sInvalid;
 }
@@ -208,10 +191,10 @@ bool PC::isValidPitchStart(char c)
         return false;
 }
 
-PitchClass const &PC::getPitchClass(std::string &name)
+PitchClass const &PC::getPitchClass(std::string const &name)
 {
     if(name.length() == 0) return sInvalid;
-    std::string lcName = tolower(name);
+    std::string lcName = UtString::toLower(name);
     int index = -1;
     switch(lcName[0])
     {

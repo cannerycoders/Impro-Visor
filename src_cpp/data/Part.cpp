@@ -217,7 +217,7 @@ Part::addUnit(UnitPtr unit)
 
     //rk Hack to remove accidental if key signature covers it.
     // This tends to reduce the number of accidentals in the notation.
-    auto note = std::dynamic_pointer_cast<Note>(unit);
+    Note *note = (unit->getUnitType() != IUnit::k_Note) ? nullptr : static_cast<Note *>(unit.get());
     if(note)
     {
         if(note->isAccidentalInKey(m_keySig))
@@ -327,7 +327,7 @@ Part::newSetUnit(int unitIndex, UnitPtr unit)
     if(nextUnitStart < m_slots.size() && !m_slots[nextUnitStart])
     {
         int nextUnitEnd = getNextIndex(m_slots, nextUnitStart);
-        if(dynamic_cast<MelodyPart *>(this))
+        if(this->GetType() == k_MelodyPart)
         {
             m_slots[nextUnitStart] = UnitPtr(Note::MakeRest(nextUnitEnd - nextUnitStart));
         }
@@ -471,12 +471,12 @@ Part::delUnit(int unitIndex)
         // If there was no Unit before it, then we just deleted the
         // 0 slot, which must never be empty, so put something appropriate there.
         else 
-        if(dynamic_cast<MelodyPart *>(this))
+        if(this->GetType() == k_MelodyPart)
         {
             setUnit(0, UnitPtr(Note::MakeRest()));
         }
         else 
-        if(dynamic_cast<ChordPart *>(this))
+        if(this->GetType() == k_ChordPart)
         {
             setUnit(0, UnitPtr(new Chord(Constants::NOCHORD)));
         }

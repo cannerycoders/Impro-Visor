@@ -28,6 +28,7 @@ public:
     /* -------------------------------------------------- */
     using NotePtr = std::shared_ptr<Note>;
 
+    Note();
     Note(Note const &rhs);
     Note(int pitch, Constants::Accidental accidental, 
         int rhythmValue=DEFAULT_RHYTHM_VALUE);

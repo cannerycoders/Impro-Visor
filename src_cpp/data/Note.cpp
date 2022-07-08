@@ -144,6 +144,11 @@ Note::getClosestMatch(int pitch, Polylist tonesPL)
 }
 
 /* ---------------------------------------------------------------- */
+Note::Note()
+{
+    m_pitch = UNDEFINED_PITCH;
+}
+
 Note::Note(Note const &rhs)
 {
     m_pitch = rhs.m_pitch;

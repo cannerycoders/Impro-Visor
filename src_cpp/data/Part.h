@@ -27,10 +27,19 @@ public:
     using UnitPtr = std::shared_ptr<IUnit>;
     using t_UnitList = std::vector<UnitPtr>;
 
+    enum PartType
+    {
+        k_Part,
+        k_MelodyPart,
+        k_ChordPart
+    };
+
 public:
     Part(int size);
     Part() : Part(DEFAULT_SIZE) {};
     virtual ~Part() {}
+
+    virtual PartType GetType() { return k_Part; }
 
     void setTitle(std::string &t) { m_title = t; }
     std::string const &getTitle() { return m_title; }

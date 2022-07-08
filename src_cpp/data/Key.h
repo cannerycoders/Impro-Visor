@@ -14,7 +14,7 @@
 class Key
 {
 public:
-    static Key key[]; // table of all Keys organized as a line of fifths
+    static Key keys[]; // table of all Keys organized as a line of fifths
     static Key &Ckey;
     enum KeyId
     {
@@ -76,8 +76,9 @@ public:
     static int adjustPitchInKey[k_numKeys][k_Octave];
     static int transpositions[k_numKeys][k_Octave];
 
-    static Key const &getKey(std::string &nm);
-    static std::string const &getKeyName(int index);
+    static Key const *getKey(std::string const &);
+    static Key const *getKey(char const *tok);
+    static char const *getKeyName(int index);
 
     /**
      * Get the delta in the line of fifths, corresponding to a key
@@ -85,23 +86,37 @@ public:
     * and a number of semitones transposition.
     */
     static int getKeyDelta(int sharps, int rise);
+    static PitchClass const &transpose(PitchClass pc, int semitones);
     static Polylist transposeChordList(Polylist &chordSeq, int rise);
     static Polylist transposeChordList(Polylist &chordSeq, int rise, Key const &key);
-    static std::string transposeChord(std::string &chord, int rise, Key const &key);
-    static std::string makeCroot(std::string &chord);
+    static std::string transposeChord(std::string const &chord, int rise, Key const &key);
+    static std::string makeCroot(std::string const &chord);
     /**
      * Change the root of the chord to specified note.
      */
-    static std::string makeRoot(std::string &root, std::string &chord);
-    static std::string getRoot(std::string &chord);
-    static bool sameRoot(std::string &chord1, std::string &chord2);
-    static bool isValidStem(std::string &stem);
-    static bool hasValidStep(std::string &chord);
-    static Polylist explodeChord(std::string &chord);
+    static std::string makeRoot(std::string const &root, std::string const &chord);
+    static std::string getRoot(std::string const &chord);
+    static bool sameRoot(std::string const &chord1, std::string const &chord2);
+    static bool isValidStem(std::string const &stem);
+    static bool hasValidStem(std::string const &chord);
+    /**
+     * Explode a chord from the leadsheet notation into four parts:
+     * the root, the type of chord, the string after a slash, if any,
+     * and the bass note.
+     * If there is no slash, the third component is the null string, and
+     * the bass note is the same as the root.
+     * If the chord doen't make sense, then null is returned.
+     *
+     * @param chord the string naming the chord.
+     */
+    static Polylist explodeChord(std::string const &chord);
+    /**
+     * Return list of any invalid notes in the argument list.
+     */
     static Polylist invalidNotes(Polylist &L);
-    static int pitchFromLeadsheet(std::string &str, int rise=0);
-    static Note noteFromLeadsheet(std::string &str, int rise, int slotsPerBeat);
-    static Note noteFromLeadsheet(std::string &str, int rise, int slotsPerBeat,
+    static int pitchFromLeadsheet(std::string const &str, int rise=0);
+    static Note noteFromLeadsheet(std::string const &str, int rise, int slotsPerBeat);
+    static Note noteFromLeadsheet(std::string const &str, int rise, int slotsPerBeat,
                                 Key const &);
     /**
      * Return a profile of a list of note Strings.
@@ -117,7 +132,7 @@ public:
      * Transpose a note String in leadsheet form by a certain rise
     * returning a String.  Returns null if the note String is not well-formed.
     */
-    static std::string transposeNoteString(std::string &noteString, int rise, 
+    static std::string transposeNoteString(std::string const &noteString, int rise, 
                                             Key const &key);
     /**
      * Transpose list of note Strings in leadsheet form by a certain rise
@@ -129,35 +144,35 @@ public:
      * Transpose a note String in leadsheet form by a certain rise
     * returning a String representing a number, such as "3", "b5", "#2", etc.
     */
-    static std::string transposeNoteStringToNumbers(std::string &noteString,
+    static std::string transposeNoteStringToNumbers(std::string const &noteString,
                                                     int rise, Key const &key);
-    /*
-    * transposeOne transposes one pitch class
-    */
-    static std::string transposeOne(std::string &from, std::string &to, 
-                                std::string &p, Key const &key);
+    /**
+     * transposeOne transposes one pitch class
+     */
+    static std::string transposeOne(std::string const &from, std::string const &to, 
+                                std::string const &p, Key const &key);
 
-    /*
-    * transposeList is a list version of transposePitch.
-    * It transposes a whole list of pitches by the interval between
-    * the from and to strings.
+    /**
+     * transposeList is a list version of transposePitch.
+     * It transposes a whole list of pitches by the interval between
+     * the from and to strings.
     */
-    static Polylist transposeList(std::string &from, std::string &to, 
+    static Polylist transposeList(std::string const &from, std::string const &to, 
                             Polylist &L, Key const &key);
     /**
      * enharmonic determines whether the pitches represented by
-    * two strings representing pitch are enharmonically equivalent
-    */
-    static bool enharmonic(std::string &x, std::string &y);
+     * two strings representing pitch are enharmonically equivalent
+     */
+    static bool enharmonic(std::string const &x, std::string const &y);
     /**
      * enMember determines whether the first pitch is enharmonically
     * equivalent to some member of a list
     */
-    static bool enhMember(std::string &x, Polylist &L);
+    static bool enhMember(std::string const &x, Polylist &L);
     /**
      * Auxiliary unit test method for Key.
      */
-    static bool test(std::string &name);
+    static bool test(std::string const &name);
 
     /**
      * Make a note from a pitch class name specified as one of the Strings
@@ -168,7 +183,7 @@ public:
      *
      * If there is a problem with the String, null is returned.
      */
-    static Note makeNote(std::string &pitchClassName, int midiBase,
+    static Note makeNote(std::string const &pitchClassName, int midiBase,
                                 int duration);
     /**
      * Make a note from a pitch class specified as one of the Strings
@@ -183,31 +198,34 @@ public:
      *
      * If there is a problem with the input, null is returned.
      */
-    static Note makeNoteAbove(std::string &pitchClassName, int midiBase,
+    static Note makeNoteAbove(std::string const &pitchClassName, int midiBase,
                             int minimum, int duration);
 
 private:
-    Key(int index, std::string &nm, int cPos);
+    Key(int index, char const *nm, int cPos);
 
 public:
     /**
      * Render chromatic pitch as it would be in this key.
-    */
-    PitchClass const &renderInKey(std::string &name) const;
+     * @returns PitchClass::sInvalid on error.
+     */
+    PitchClass const &renderInKey(std::string const &name) const;
     /**
      * Defines how an offset of some number of semitones from the tonic of the key 
      * maps into pitch names.
      */
     PitchClass const &rep(int offset) const;
     int getIndex() const  { return m_index; }
-    Key const &transpose(int semis);
-    Key const &transpose(PitchClass const &, int semis);
-    Key const &transposeKey(std::string &from, std::string &to);
+    /**
+     * Transpose this key to another, by the given number of semitones.
+    */
+    Key const *transpose(int semis) const;
+
     std::string toString();
 
 private:
     int m_index; // unique id into table of known keys
-    std::string m_name;
+    char const *m_name;
     int m_cPosition; // position of c in this key
 
 };

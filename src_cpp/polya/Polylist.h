@@ -1,6 +1,8 @@
 #pragma once
 // Reference: https://rosettacode.org/wiki/S-expressions#C.2B.2B
 
+#include "tokenizer.h"
+
 #include <iostream>
 #include <string>
 #include <iomanip> /* std::quoted */
@@ -8,278 +10,330 @@
 #include <memory> /* std::shared_ptr */
 #include <unordered_set>
 
-class Polylist 
+/**
+ * @brief base class for contents of Polylist
+ * 
+ */
+class PListObj
 {
-public: /* builder, serializer */
-    class object
+public:
+    enum Type
     {
-    public:
-        virtual ~object() {}
-        virtual void write(std::ostream&) const {};
-        virtual void writeIndented(std::ostream& out, int level) const 
-        {
-            indent(out, level);
-            write(out);
-        }
-        virtual char const *getType() { return "object"; } // error
-        virtual std::string asString() { return std::string(); }
-        void indent(std::ostream& out, int level) const
-        {
-            for (int i = 0; i < level; ++i)
-                out << "   ";
-        }
+        k_object,
+        k_symbol,
+        k_string,
+        k_number,
+        k_integer,
+        k_list,
+        k_invalid
     };
 
-    class string : public object
+    virtual ~PListObj() {}
+    virtual void write(std::ostream&) const {};
+    virtual void writeIndented(std::ostream& out, int level) const 
     {
-    public:
-        explicit string(const std::string& str) : m_string(str) {}
-        void write(std::ostream& out) const override { out << std::quoted(m_string); }
-        char const *getType() override { return "string"; }
-        std::string asString() override { return m_string; }
-        char const *getValue() const { return m_string.c_str(); }
-    private:
-        std::string m_string;
-    };
-
-    class symbol : public object // todo: tokenize symbols
+        indent(out, level);
+        write(out);
+    }
+    virtual char const *getTypeName() { return "object"; }
+    virtual Type getType() { return k_object;  } 
+    virtual std::string asString() { return std::string(); }
+    void indent(std::ostream& out, int level) const
     {
-    public:
-        explicit symbol(std::string const& str) 
-        {
-            m_token = getSymbol(str);
-        }
-        void write(std::ostream& out) const override
-        {
-            int i=0;
-            char ch;
-            while((ch=m_token[i++]))
-            {
-                if(tokenizer::GetCharType(ch) != t_Char::other)
-                    out << '\\';
-                out << ch;
-            }
-        }
-        char const *getType() override { return "symbol"; }
-        std::string asString() override { return std::string(m_token); }
-        char const *getValue() const { return m_token; }
-
-        static char const *getSymbol(std::string const &);
-
-    private:
-        char const *m_token;
-        static std::unordered_set<std::string> s_tokens;
-    };
-
-    class number : public object 
+        for (int i = 0; i < level; ++i)
+            out << "   ";
+    }
+    void *asType(Type t)
     {
-    public:
-        explicit number(double num) : m_number(num) {}
-        void write(std::ostream& out) const override { out << m_number; }
-        char const *getType() override { return "number"; }
-        std::string asString() override 
-        { 
-            return std::to_string(m_number); 
-        }
-        double getValue() { return m_number; }
-    private:
-        double m_number;
-    };
+        if(this->getType() == t) 
+            return this;
+        else 
+            return nullptr;
+    }
+};
 
-    class integer : public object 
+/**
+ * @brief string entry in polylist
+ * 
+ */
+class PListString : public PListObj
+{
+public:
+    explicit PListString(const std::string& str) : m_string(str) {}
+    void write(std::ostream& out) const override { out << std::quoted(m_string); }
+    char const *getTypeName() override { return "string"; }
+    Type getType() override { return k_string; }
+    std::string asString() override { return m_string; }
+    char const *getValue() const { return m_string.c_str(); }
+private:
+    std::string m_string;
+};
+
+/**
+ * @brief symbol entry in polylist.  Symbols are analogous to contants
+ *    and are compared by "tokenized" pointers for efficiency.
+ * 
+ */
+class PListSymbol : public PListObj
+{
+public:
+    explicit PListSymbol(std::string const& str) 
     {
-    public:
-        explicit integer(long num) : m_number(num) {}
-        void write(std::ostream& out) const override { out << m_number; }
-        char const *getType() override { return "integer"; }
-        std::string asString() override 
-        { 
-            return std::to_string(m_number); 
-        }
-        long getValue() { return m_number; }
-    private:
-        long m_number;
-    };
-
-    using ObjectPtr = std::shared_ptr<object>;
-    using SymbolPtr = std::shared_ptr<symbol>;
-    using StringPtr = std::shared_ptr<string>;
-    using LongPtr = std::shared_ptr<integer>;
-    using NumberPtr = std::shared_ptr<number>;
-
-    using OList = std::list<ObjectPtr>;
-    using OListIt = OList::iterator;
-    class list : public object 
+        m_token = getSymbol(str);
+    }
+    void write(std::ostream& out) const override
     {
-    public:
-        char const *getType() override { return "list"; }
-        void write(std::ostream& out) const
+        int i=0;
+        char ch;
+        while((ch=m_token[i++]))
         {
-            out << "(";
-            if (!m_list.empty()) 
-            {
-                auto i = m_list.begin();
-                (*i)->write(out);
-                while (++i != m_list.end())
-                {
-                    out << ' ';
-                    (*i)->write(out);
-                }
-            }
-            out << ")";
+            if(PListTokenizer::GetCharType(ch) != PListTokenizer::t_Char::other)
+                out << '\\';
+            out << ch;
         }
-        void writeIndented(std::ostream& out, int level) const
-        {
-            indent(out, level);
-            out << "(\n";
-            if (!m_list.empty()) 
-            {
-                for(auto i = m_list.begin(); i != m_list.end(); ++i) 
-                {
-                    (*i)->writeIndented(out, level + 1);
-                    out << '\n';
-                }
-            }
-            indent(out, level);
-            out << ")";
-            if(level == 0)
-                out << "\n";
-        }
-        void append(const std::shared_ptr<object>& ptr) 
-        {
-            m_list.push_back(ptr);
-        }
-        size_t size()
-        {
-            return m_list.size();
-        }
-        OListIt getBegin()
-        {
-            return m_list.begin();
-        }
-        OListIt getEnd()
-        {
-            return m_list.end();
-        }
-        SymbolPtr firstSymbol()
-        {
-            std::shared_ptr<object> o = *m_list.begin();
-            std::shared_ptr<symbol> s = std::dynamic_pointer_cast<symbol>(o);
-            if(!s)
-                std::cerr << "type of first element " << o->getType() << "\n";
-            return s;
-        }
-        ObjectPtr getNth(unsigned n)
-        {
-            int i=0;
-            auto objIt = m_list.begin();
-            while(i != n)
-            {
-                objIt++;
-                i++;
-                if(objIt == m_list.end())
-                    return ObjectPtr(); // not-found
-            }
-            return *objIt;
-        }
+    }
+    char const *getTypeName() override { return "symbol"; }
+    Type getType() override { return k_symbol; }
+    std::string asString() override { return std::string(m_token); }
+    char const *getValue() const { return m_token; }
 
-        std::shared_ptr<list> findSublist(char const *tok, int debug=0)
-        {
-            std::shared_ptr<list> ret;
-            for(auto e : m_list)
-            {
-                std::shared_ptr<list> l = std::dynamic_pointer_cast<list>(e);
-                if(l)
-                {
-                    auto sym = l->firstSymbol();
-                    if(sym && sym->getValue() == tok)
-                    {
-                        ret = l;
-                        break;
-                    }
-                }
-                else
-                {
-                    if(debug)
-                    {
-                        std::cerr << "sublist is-a " << e->getType() 
-                            << ": " << e->asString() << "\n";
-                    }
-                }
-            }
-            return ret;
-        }
-
-    private:
-        OList m_list;
-    };
-    using ListPtr = std::shared_ptr<list>;
-
-    ListPtr Parse(std::string const &str, bool dump=false);
-    ListPtr Parse(std::istream &istr, bool dump=false);
-    ListPtr FindSublist(char const *tok);
-    void Write(std::ostream &o) { m_root->writeIndented(o, 0); }
+    static char const *getSymbol(std::string const &); // aka tokenize
 
 private:
-    ListPtr m_root;
+    char const *m_token;
+    static std::unordered_set<std::string> s_tokens;
+};
+
+/**
+ * @brief floating point number entries in Polylist
+ * 
+ */
+class PListNumber : public PListObj
+{
+public:
+    explicit PListNumber(double num) : m_number(num) {}
+    void write(std::ostream& out) const override { out << m_number; }
+    char const *getTypeName() override { return "number"; }
+    Type getType() override { return k_number; }
+    std::string asString() override 
+    { 
+        return std::to_string(m_number); 
+    }
+    double getValue() { return m_number; }
+
+private:
+    double m_number;
+};
+
+/**
+ * @brief integral number entries in Polylist
+ * 
+ */
+class PListLong : public PListObj
+{
+public:
+    explicit PListLong(long num) : m_number(num) {}
+    void write(std::ostream& out) const override { out << m_number; }
+    char const *getTypeName() override { return "integer"; }
+    Type getType() override { return k_integer; }
+    std::string asString() override 
+    { 
+        return std::to_string(m_number); 
+    }
+    long getValue() { return m_number; }
+private:
+    long m_number;
+};
+
+
+/* ------------------------------------------------------------------- */
+/**
+ * @brief  Polylist entry in polylist.
+ * 
+ */
+class Polylist : public PListObj
+{
+public:
+    using ObjPtr = std::shared_ptr<PListObj>;
+    using ObjList = std::list<ObjPtr>; // xxx: deque or vector might be preferred?
+    using ObjListIt = ObjList::iterator;
+    using Ptr = std::shared_ptr<Polylist>;
+
+private:
+    ObjList m_list;
+
+public: /* builder, serializer */
+    static Polylist::Ptr Make() { return std::make_shared<Polylist>(); }
+
+    Polylist();
+    virtual ~Polylist();
+    /** 
+     * constructor via a list of symbols 
+     */
+    Polylist(std::vector<std::string> &values)
+    {
+        for(auto x : values)
+            this->addSymbol(x);
+    }
+
+    /**
+     * @brief Parse a string containing plist serialization.
+     * 
+     * @param str 
+     * @param dump signals to print results
+     * @return int 0 on non-empty result, 1 on empty.
+     */
+    int Parse(std::string const &str, bool dump=false);
+    /**
+     * @brief  Parse a istream containing plist serialization.
+     * 
+     * @param istr 
+     * @param dump signals to print results
+     * @return int 
+     */
+    int Parse(std::istream &istr, bool dump=false);
+
+    /* PListObj methods (custom method in next section) ----------------- */
+    char const *getTypeName() override { return "plist"; }
+    Type getType() override { return k_list; }
+    void write(std::ostream& out) const
+    {
+        out << "(";
+        if (!m_list.empty()) 
+        {
+            auto i = m_list.begin();
+            (*i)->write(out);
+            while (++i != m_list.end())
+            {
+                out << ' ';
+                (*i)->write(out);
+            }
+        }
+        out << ")";
+    }
+
+    /**
+     * @brief  recursively serialize the Plist
+     * 
+     * @param out 
+     * @param level 
+     */
+    void writeIndented(std::ostream& out, int level) const
+    {
+        indent(out, level);
+        out << "(\n";
+        if (!m_list.empty()) 
+        {
+            for(auto i = m_list.begin(); i != m_list.end(); ++i) 
+            {
+                (*i)->writeIndented(out, level + 1);
+                out << '\n';
+            }
+        }
+        indent(out, level);
+        out << ")";
+        if(level == 0)
+            out << "\n";
+    }
+
+    /* custom methods ------------------------------------------------- */
+    void append(const ObjPtr & ptr) 
+    {
+        m_list.push_back(ptr);
+    }
+    void addSymbol(const std::string &val)
+    {
+        m_list.push_back(std::make_shared<PListSymbol>(val));
+    }
+    size_t size()
+    {
+        return m_list.size();
+    }
+    bool isValid()  { return !isEmpty(); }
+    bool isEmpty() 
+    { 
+        if(m_list.size() > 0) 
+            return false;
+        else
+            return true;
+    }
+    ObjListIt getBegin()
+    {
+        return m_list.begin();
+    }
+    ObjListIt getEnd()
+    {
+        return m_list.end();
+    }
+    PListSymbol const *firstSymbol()
+    {
+        ObjPtr o = *m_list.begin();
+        PListSymbol const *s = static_cast<PListSymbol *>(o->asType(k_symbol));
+        if(!s)
+            std::cerr << "type of first element " << o->getType() << "\n";
+        return s;
+    }
+    PListSymbol const *findSymbol(char const *tok)
+    {
+        auto objIt = m_list.begin();
+        while(objIt != m_list.end())
+        {
+            PListSymbol const *s = static_cast<PListSymbol *>((*objIt)->asType(k_symbol));
+            if(s) return s;
+            objIt++;
+        }
+        return nullptr;
+    }
+    ObjPtr first() { return getNth(0); }
+    ObjPtr second() { return getNth(1); }
+    ObjPtr third() { return getNth(2); }
+    ObjPtr fourth() { return getNth(3); }
+
+    ObjPtr getNth(unsigned n)
+    {
+        int i=0;
+        auto objIt = m_list.begin();
+        while(i != n)
+        {
+            objIt++;
+            i++;
+            if(objIt == m_list.end())
+                return ObjPtr(); // not-found
+        }
+        return *objIt;
+    }
+
+    /** 
+     * return the Polylist child of this whose first field matches tok
+     */
+    Polylist *findSublist(char const *tok, int debug=0)
+    {
+        for(auto e : m_list)
+        {
+            Polylist *l = static_cast<Polylist*>(e->asType(k_list));
+            if(l)
+            {
+                auto sym = l->firstSymbol();
+                if(sym && sym->getValue() == tok)
+                {
+                    return l;
+                }
+            }
+            else
+            {
+                if(debug)
+                {
+                    std::cerr << "sublist is-a " << e->getType() 
+                        << ": " << e->asString() << "\n";
+                }
+            }
+        }
+        return nullptr;
+    }
 
 private: /* tokenizer */
-    enum class t_Token 
-    { 
-        none, 
-        left_paren, right_paren, 
-        symbol, string, 
-        integer, number 
-    };
-    struct token
-    {
-        t_Token type = t_Token::none;
-        union Number
-        {
-            double d;
-            long l;
-        } number;
-        std::string s;
-    };
-    enum class t_Char { left_paren, right_paren, quote, escape, space, other };
-    enum class t_ParseState { init, quote, symbol };
-
-    class tokenizer 
-    {
-    public:
-        tokenizer(std::istream& in) : m_in(in) {}
-        ~tokenizer() {}
-        bool next() 
-        {
-            if(m_putback)
-            {
-                m_putback = false;
-                return true;
-            }
-            return GetToken(m_in, m_current);
-        }
-        const token& current() const 
-        {
-            return m_current;
-        }
-        void putback() 
-        {
-            m_putback = true;
-        }
-        bool GetToken(std::istream & in, token &tok);
-
-    static t_Char GetCharType(char ch);
-
-    private:
-        bool parseNumber(const std::string& str, token& tok);
-
-    private:
-        std::istream& m_in;
-        bool m_putback = false;
-        token m_current;
-    };
-
-    std::shared_ptr<object> parse(tokenizer &);
-    std::shared_ptr<list> parseList(tokenizer& tok, bool skipOuter=false);
-
-};
+    ObjPtr parse(PListTokenizer &);
+    ObjPtr parseList(PListTokenizer& tok, bool skipOuter=false);
+    size_t m_iId;
+    static size_t s_iCounter;
+}; // end Polylist

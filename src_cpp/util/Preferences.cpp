@@ -111,23 +111,23 @@ Preferences::get()
     if(init == 0)
     {
         init = 1;
-        P::DEFAULT_LOAD_STAVE = Polylist::symbol::getSymbol("default-load-stave");
-        P::DEFAULT_MIXER_ALL = Polylist::symbol::getSymbol("default-mixer-all");
-        P::DEFAULT_MIXER_ENTRY = Polylist::symbol::getSymbol("default-mixer-entry");
-        P::DEFAULT_MIXER_BASS = Polylist::symbol::getSymbol("default-mixer-bass");
-        P::DEFAULT_MIXER_CHORDS = Polylist::symbol::getSymbol("default-mixer-chords");
-        P::DEFAULT_MIXER_DRUMS = Polylist::symbol::getSymbol("default-mixer-drums");
-        P::DEFAULT_MIXER_MELODY = Polylist::symbol::getSymbol("default-mixer-melody");
-        P::DEFAULT_STYLE = Polylist::symbol::getSymbol("default-style");
-        P::DEFAULT_TEMPO = Polylist::symbol::getSymbol("default-tempo");
-        P::DEFAULT_VOCAB_FILE = Polylist::symbol::getSymbol("default-vocab-file");
-        P::DEFAULT_GRAMMAR_FILE = Polylist::symbol::getSymbol("default-grammar-file");
-        P::DEFAULT_TRANSFORM_FILE = Polylist::symbol::getSymbol("default-transform-file");
-        P::DEFAULT_FRACTAL_FILE = Polylist::symbol::getSymbol("default-fractal-file");
-        P::DEFAULT_COUNTS_FILE = Polylist::symbol::getSymbol("default-counts-file");
-        P::DEFAULT_STYLE_DIRECTORY = Polylist::symbol::getSymbol("default-style-directory");
-        P::DEFAULT_CHORD_FONT_SIZE = Polylist::symbol::getSymbol("default-chord-font-size");
-        P::ALWAYS_USE_BUTTONS = Polylist::symbol::getSymbol("always-use-buttons");
+        P::DEFAULT_LOAD_STAVE = PListSymbol::getSymbol("default-load-stave");
+        P::DEFAULT_MIXER_ALL = PListSymbol::getSymbol("default-mixer-all");
+        P::DEFAULT_MIXER_ENTRY = PListSymbol::getSymbol("default-mixer-entry");
+        P::DEFAULT_MIXER_BASS = PListSymbol::getSymbol("default-mixer-bass");
+        P::DEFAULT_MIXER_CHORDS = PListSymbol::getSymbol("default-mixer-chords");
+        P::DEFAULT_MIXER_DRUMS = PListSymbol::getSymbol("default-mixer-drums");
+        P::DEFAULT_MIXER_MELODY = PListSymbol::getSymbol("default-mixer-melody");
+        P::DEFAULT_STYLE = PListSymbol::getSymbol("default-style");
+        P::DEFAULT_TEMPO = PListSymbol::getSymbol("default-tempo");
+        P::DEFAULT_VOCAB_FILE = PListSymbol::getSymbol("default-vocab-file");
+        P::DEFAULT_GRAMMAR_FILE = PListSymbol::getSymbol("default-grammar-file");
+        P::DEFAULT_TRANSFORM_FILE = PListSymbol::getSymbol("default-transform-file");
+        P::DEFAULT_FRACTAL_FILE = PListSymbol::getSymbol("default-fractal-file");
+        P::DEFAULT_COUNTS_FILE = PListSymbol::getSymbol("default-counts-file");
+        P::DEFAULT_STYLE_DIRECTORY = PListSymbol::getSymbol("default-style-directory");
+        P::DEFAULT_CHORD_FONT_SIZE = PListSymbol::getSymbol("default-chord-font-size");
+        P::ALWAYS_USE_BUTTONS = PListSymbol::getSymbol("always-use-buttons");
     }
     return p;
 }
@@ -141,13 +141,13 @@ Preferences::Preferences()
 void
 Preferences::write(std::ostream &o)
 {
-    m_prefs.Write(o);
+    m_prefs.write(o);
 }
 
 std::string 
 Preferences::getPreference(std::string &p)
 {
-    return getPreference(Polylist::symbol::getSymbol(p));
+    return getPreference(PListSymbol::getSymbol(p));
 }
 
 long
@@ -167,7 +167,7 @@ Preferences::getPreference(char const *nm)
 {
     std::string value;
 
-    auto l = m_prefs.FindSublist(nm);
+    auto l = m_prefs.findSublist(nm);
     if(l)
         value = l->getNth(1)->asString();
     else

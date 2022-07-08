@@ -1,14 +1,14 @@
-#include "ErrorLog.h"
+#include "Log.h"
 
 #include <iostream>
 #include <stdio.h>
 
-namespace ErrorLog
+namespace Log
 {
     Level Filter = DEBUG;
     const int MaxMsgLength = 4000;
     char buf[MaxMsgLength];
-    char const *lastMsg = buf;
+    char const *LastMsg = buf;
 
     void Log(Level level, char const *fmt, ...)
     {
