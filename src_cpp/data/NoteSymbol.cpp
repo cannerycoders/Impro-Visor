@@ -248,10 +248,10 @@ NoteSymbol::makeNoteSymbolList(Polylist &stringList, int rise)
             // vocabulary
             if(L->size() == 2 
                 && L->first()->isType(PlistObj::k_string) 
-                && L->second()->isType(PlistObj::k_float))
+                && L->second()->isType(PlistObj::k_number))
             {
                 std::string str = L->first()->asString();
-                double prob = L->second()->asFloatType()->getValue();
+                double prob = L->second()->asNumberType()->getFloat();
                 NSPtr ns = makeNoteSymbol(str);
                 if(ns) // Ignore invalid NoteSymbol
                 {
@@ -264,7 +264,7 @@ NoteSymbol::makeNoteSymbolList(Polylist &stringList, int rise)
         else
         {
             std::string str;
-            if(ob->getType() == PlistObj::k_integer)
+            if(ob->getType() == PlistObj::k_number)
             {
                 // Make an integer into a note for subsequent use
                 str = DEFAULT_PITCH_SYMBOL;
@@ -299,6 +299,18 @@ NoteSymbol::transposeNoteSymbolList(NSList &nslist, int rise)
     }
     //System.out.println(", rise = " + rise + " to " + R.reverse());
     return nl;
+}
+
+/*static*/ NoteSymbol::PSList 
+NoteSymbol::makeStringList(NSList &nsList, int rise)
+{
+    PSList result;
+    for(auto x : nsList)
+    {
+        std::string s = x->transpose(rise)->toString();
+        result.push_back(s);
+    }
+    return result;
 }
 
 /* ------------------------------------------------------------------------ */
@@ -499,21 +511,6 @@ std::string NoteSymbol::getDurationString() const
     return dur;
 }
 
-#if 0
-
-static Polylist noteSymbolListToStringList(Polylist noteSymbolList, int rise)
-  {
-  Polylist R = Polylist.nil;
-  while( noteSymbolList.nonEmpty() )
-    {
-    NoteSymbol noteSymbol = (NoteSymbol)noteSymbolList.first();
-    String string = noteSymbol.transpose(rise).toString();
-    R = R.cons(string);
-    noteSymbolList = noteSymbolList.rest();
-    }
-  return R.reverse();
-  }
-
 
 /**
  * Convert a list of NoteSymbols, transposed by a specified distance, to a
@@ -523,104 +520,46 @@ static Polylist noteSymbolListToStringList(Polylist noteSymbolList, int rise)
  * @return an array of booleans representing the notes in the argument list
  *         after transposition by rise
  */
-static boolean[] noteSymbolListToBitVector(Polylist noteSymbolList, int rise)
-  {
-  boolean result[] = new boolean[OCTAVE];
-  for( int i = 0; i < OCTAVE; i++ )
+/*static*/ std::array<bool, Constants::OCTAVE>
+NoteSymbol::makeBitVector(NSList &nsList, int rise)
+{
+    std::array<bool, Constants::OCTAVE> result;
+    for(int i = 0; i < Constants::OCTAVE; i++)
+        result[i] = false;
+    for(auto x : nsList)
     {
-      result[i] = false;
+        if(x->getPitchClass().isValid())
+        {
+            NSPtr transposed = x->transpose(rise);
+            result[transposed->getPitchClassIndex()%Constants::OCTAVE] = true;
+        }
     }
-  
-  while( noteSymbolList.nonEmpty() )
+    return result;
+  }
+
+
+/*static*/ std::vector<int> 
+NoteSymbol::makeMIDIarray(NSList &nsList, int rise)
+{
+    std::vector<int> result;
+    result.reserve(nsList.size());
+    for(auto x : nsList)
     {
-    NoteSymbol noteSymbol = (NoteSymbol)noteSymbolList.first();
-    if( noteSymbol.getPitchClass() != null )
-      {
-      NoteSymbol transposed = noteSymbol.transpose(rise);
-      result[transposed.getPitchClassIndex()%OCTAVE] = true;
-      }
-    noteSymbolList = noteSymbolList.rest();
+        if(x->getPitchClass().isValid())
+        {
+            NSPtr transposed = x->transpose(rise);
+            result.push_back(transposed->getMIDI());
+        }
     }
-  return result;
-  }
+    return result;
+}
 
-static ArrayList<Integer> noteSymbolListToMIDIarray(Polylist noteSymbolList, int rise)
-  {
-    ArrayList<Integer> result = new ArrayList<Integer>();
-    while( noteSymbolList.nonEmpty() )
-    {
-    NoteSymbol noteSymbol = (NoteSymbol)noteSymbolList.first();
-    
-    if( noteSymbol.getPitchClass() != null )
-      {
-      NoteSymbol transposed = noteSymbol.transpose(rise);
-      result.add(transposed.getMIDI());
-      }
-    noteSymbolList = noteSymbolList.rest();
-    }
-    
-  return result;
-  }
+#define S Constants::Accidental::SHARP
+#define F Constants::Accidental::FLAT
+#define N Constants::Accidental::NATURAL
 
-static ArrayList<Integer> noteSymbolListToMIDIarray(Polylist noteSymbolList)
-  {
-  return noteSymbolListToMIDIarray(noteSymbolList, 0);
-  }
-
-/**
- * Show the contents of an array of booleans;
- * @param array
- * @return 
- */
-static String showContents(boolean[] array)
-  {
-    StringBuilder buffer = new StringBuilder();
-    buffer.append("[");
-    for( boolean x: array)
-      {
-        buffer.append(x ? "1 " : "0 ");
-      }
-    buffer.append("]");
-    return buffer.toString();
-  }
-
-/**
- * Show the notes of an array of booleans;
- * @param array
- * @return 
- */
-static String showNoteContents(boolean[] array)
-  {
-    String[] notes = {"C", "C#", "D", "D#", "E", "F", "F#", "G", "G#", "A", "A#", "B"};
-    StringBuilder buffer = new StringBuilder();
-    buffer.append("[");
-    for(int i = 0; i < array.length; i++)
-      {
-          if(array[i]==true){
-        buffer.append(notes[i] + " ");
-          }
-      }
-    buffer.append("]");
-    return buffer.toString();
-  }
-
-/**
- * Convert a list of NoteSymbols to a bitVector, i.e. an array of booleans
- * @param noteSymbolList
- * @return an array of booleans representing the notes in the argument list
-  */
-static boolean[] noteSymbolListToBitVector(Polylist noteSymbolList)
-  {
-    return noteSymbolListToBitVector(noteSymbolList, 0);
-  }
-
-  
-
-private static final Accidental S = Accidental.SHARP;
-private static final Accidental F = Accidental.FLAT;
-private static final Accidental N = Accidental.NATURAL;
-
-public static final Accidental accidentalByKey[][] = 
+/*static*/ const Constants::Accidental 
+NoteSymbol::accidentalByKey[Constants::NUMKEYS][Constants::OCTAVE] = 
 {
     { N, F,  N,  F,  F,  N, F,  N, F,  N, F, F}, /* gb */
     { N, F,  N,  F,  F,  N, F,  N, F,  N, F, F}, /* db */
@@ -637,56 +576,46 @@ public static final Accidental accidentalByKey[][] =
     { S, S,  N,  S,  N,  S, S,  N, S,  N, S, N}, /* f# */
     { S, S,  N,  S,  N,  S, S,  N, S,  N, S, N}  /* c# */
 };
+
 /**
- * newPitchesForNotes makes from a Polylist notes of NoteSymbols a new
- * Polylist of NoteSymbols, with the same durations as in notes, but
- * with pitches determined from Polylist pitches of NoteSymbols.
- * If there are few NoteSymbols in pitches than there are in notes,
- * then pitches is used again from the beginning, and so on, until
+ * newPitchesForNotes makes from a NSList a new NSList
+ * with the same durations as in notes, but with pitches 
+ * determined from NSList pitches.
+ * If there are fewer NoteSymbols in pitches than there are in notes,
+ * then pitches are used again from the beginning, and so on, until
  * all NoteSymbols in notes are used up.
  * @param notes
  * @param pitches
  * @return 
  */
 
-static public Polylist newPitchesForNotes(Polylist notes, Polylist pitches)
-  {
-      if( pitches.isEmpty() )
-        {
-          return notes;
-        }
-      Polylist L = notes;
-      Polylist M = Polylist.nil;
-      PolylistBuffer buffer = new PolylistBuffer();
-      int i = 0;
-      while( L.nonEmpty() )
-        {
-        if( M.isEmpty() )
-          {
-            M = pitches;
-          }
-        NoteSymbol noteSymbol = (NoteSymbol)L.first();
-        if( noteSymbol.isRest() )
-          {
-            buffer.append(noteSymbol);
-          }
-        else
-          {
-            NoteSymbol newPitchNoteSymbol = (NoteSymbol)M.first();
-            int dur = noteSymbol.getDuration();
-            if( newPitchNoteSymbol.isRest() )
-              {
-              buffer.append(NoteSymbol.getRestSymbol(dur));
-              }
-            else
-              {
-              buffer.append(NoteSymbol.makeNoteSymbol(newPitchNoteSymbol.getMIDI(), dur));
-              }
-          }
-        L = L.rest();
-        M = M.rest();
-        }
-      return buffer.toPolylist();
-  }
+/*static*/ NoteSymbol::NSList 
+NoteSymbol::newPitchesForNotes(NSList &notes, NSList &pitches)
+{
+    if(pitches.size() == 0)
+        return notes;
 
-  #endif
+    NSList result;
+    auto itP = pitches.begin();
+    for(auto x : notes)
+    {
+
+        if(itP == pitches.end())
+            itP = pitches.begin();
+
+        if(x->isRest())
+        {
+            result.push_back(x);
+        }
+        else
+        {
+            auto y = *itP++;
+            int dur = x->getDuration();
+            if( y->isRest() )
+              result.push_back(NoteSymbol::getRestSymbol(dur));
+            else
+              result.push_back(NoteSymbol::makeNoteSymbol(y->getMIDI(), dur));
+        }
+    }
+    return result;
+}

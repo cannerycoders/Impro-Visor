@@ -13,8 +13,7 @@
 // fwd decls...
 class PlistString;
 class PlistSymbol;
-class PlistFloat;
-class PlistInt;
+class PlistNumber;
 class Polylist;
 
 /**
@@ -29,8 +28,7 @@ public:
         k_object,
         k_symbol,
         k_string,
-        k_float,
-        k_integer,
+        k_number,
         k_list,
         k_invalid
     };
@@ -44,7 +42,7 @@ public:
     }
     virtual char const *getTypeName() { return "object"; }
     virtual Type getType() { return k_object;  } 
-    virtual std::string asString() { return std::string(); }
+    virtual std::string asString() const { return std::string(); }
     void indent(std::ostream& out, int level) const
     {
         for (int i = 0; i < level; ++i)
@@ -69,13 +67,9 @@ public:
     {
         return static_cast<PlistSymbol*>(this->asType(k_symbol));
     }
-    PlistFloat *asFloatType()
+    PlistNumber *asNumberType()
     {
-        return static_cast<PlistFloat*>(this->asType(k_float));
-    }
-    PlistInt *asIntType()
-    {
-        return static_cast<PlistInt*>(this->asType(k_integer));
+        return static_cast<PlistNumber*>(this->asType(k_number));
     }
     Polylist *asListType()
     {
@@ -94,7 +88,7 @@ public:
     void write(std::ostream& out) const override { out << std::quoted(m_string); }
     char const *getTypeName() override { return "string"; }
     Type getType() override { return k_string; }
-    std::string asString() override { return m_string; }
+    std::string asString() const override { return m_string; }
     char const *getValue() const { return m_string.c_str(); }
 private:
     std::string m_string;
@@ -125,7 +119,7 @@ public:
     }
     char const *getTypeName() override { return "symbol"; }
     Type getType() override { return k_symbol; }
-    std::string asString() override { return std::string(m_token); }
+    std::string asString() const override { return std::string(m_token); }
     char const *getValue() const { return m_token; }
 
     static char const *getSymbol(std::string const &); // aka tokenize
@@ -139,43 +133,46 @@ private:
  * @brief floating point number entries in Polylist
  * 
  */
-class PlistFloat : public PlistObj
+class PlistNumber : public PlistObj
 {
 public:
-    explicit PlistFloat(double num) : m_number(num) {}
-    void write(std::ostream& out) const override { out << m_number; }
+    explicit PlistNumber(double num) 
+    {
+        m_isFloat = true;
+        m_value.f = (float) num;
+    } 
+    explicit PlistNumber(long num) 
+    {
+        m_isFloat = false;
+        m_value.l = num;
+    } 
+    void write(std::ostream& out) const override { out << asString(); }
     char const *getTypeName() override { return "float"; }
-    Type getType() override { return k_float; }
-    std::string asString() override 
+    Type getType() override { return k_number; }
+    std::string asString() const override 
     { 
-        return std::to_string(m_number); 
+        if(m_isFloat)
+            return std::to_string(m_value.f); 
+        else
+            return std::to_string(m_value.l); 
     }
-    double getValue() { return m_number; }
+    float getFloat() 
+    { 
+        return m_isFloat ? m_value.f : (float) m_value.l; 
+    }
+    long getInt() 
+    { 
+        return m_isFloat ? (long) m_value.f : m_value.l; 
+    }
 
 private:
-    double m_number;
+    bool m_isFloat;
+    union
+    {
+        float f;
+        long l;
+    } m_value;
 };
-
-/**
- * @brief integral number entries in Polylist
- * 
- */
-class PlistInt : public PlistObj
-{
-public:
-    explicit PlistInt(long num) : m_number(num) {}
-    void write(std::ostream& out) const override { out << m_number; }
-    char const *getTypeName() override { return "integer"; }
-    Type getType() override { return k_integer; }
-    std::string asString() override 
-    { 
-        return std::to_string(m_number); 
-    }
-    long getValue() { return m_number; }
-private:
-    long m_number;
-};
-
 
 /* ------------------------------------------------------------------- */
 /**

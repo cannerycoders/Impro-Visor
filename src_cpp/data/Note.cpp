@@ -465,3 +465,9 @@ Note::setAccidental(Constants::Accidental acc)
 {
     m_accidental = acc;
 }
+
+std::string
+Note::toLeadsheet() const
+{
+    return std::string();
+}

@@ -51,9 +51,9 @@ Polylist::parse(PlistTokenizer& tokenizer)
         case PlistTokenizer::t_Token::symbol:
             return std::make_shared<PlistSymbol>(tok.s);
         case PlistTokenizer::t_Token::number:
-            return std::make_shared<PlistFloat>(tok.number.d);
+            return std::make_shared<PlistNumber>(tok.number.d);
         case PlistTokenizer::t_Token::integer:
-            return std::make_shared<PlistInt>(tok.number.l);
+            return std::make_shared<PlistNumber>(tok.number.l);
         case PlistTokenizer::t_Token::left_paren:
             return parseList(tokenizer, false/*means require right-paren*/);
         default:

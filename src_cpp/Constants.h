@@ -166,9 +166,9 @@ namespace Constants
         MIN_TS = 1,   // time-signature
         MAX_TS = 12,
         OCTAVE = 12,   // number of semitones in an octave.
+        NUMKEYS = 14,  // some are enharmonic
         CMIDI = 60
     };
-
 
     /**
      * The one-and-only symbol for no chord

@@ -7,6 +7,7 @@
 #include "polya/Polylist.h"
 
 #include <list>
+#include <array>
 
 /**
  * A NoteSymbol represents a note symbolically, and is typically created
@@ -19,6 +20,8 @@ class NoteSymbol : public MelodySymbol
 {
 public:
     static char const *DEFAULT_PITCH_SYMBOL;
+    static const Constants::Accidental accidentalByKey[Constants::NUMKEYS][Constants::OCTAVE];
+
     /**
      * Creates a NoteSymbol from a leadsheet String.
      * Because the String could be ill-formed, we use a factory rather than a constructor
@@ -85,6 +88,14 @@ public:
 
     static bool isomorphicNoteSequences(NSList &x, NSList &y);
     static PSList makePitchStringList(NSList &noteSymbolList);
+    static PSList makeStringList(NSList &noteSymbolList, int rise);
+        // aka: noteSymbolListToStringList
+    static std::array<bool, Constants::OCTAVE> 
+            makeBitVector(NSList &nsList, int rise=0);
+    static std::vector<int> 
+            makeMIDIarray(NSList &nsList, int rise=0);
+    static NSList 
+            newPitchesForNotes(NSList &notes, NSList &pitches);
 
     /* -------------------------------------------------------------------- */
     NoteSymbol(PitchClass const &pitchClass) :

@@ -514,6 +514,7 @@ Part::partIterator::hasNext()
     return this->unitIndex < this->unitCount && 
             this->nextIndex < slots.size();
 }
+
 bool 
 Part::partIterator::hasPrevious()
 {

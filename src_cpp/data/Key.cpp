@@ -418,13 +418,22 @@ Key::invalidNotes(Polylist &L)
             else
             if(o->getType() == PlistObj::k_list)
             {
-
+                Polylist *l =  o->asListType();
+                if(l->size() == 2 &&
+                   l->first()->asType(PlistObj::k_string) &&
+                   l->second()->asType(PlistObj::k_number) &&
+                   NoteSymbol::isValidNote(l->first()->asStringType()->getValue()))
+                {
+                    continue; // valid
+                }
             }
-
-            if(!valid)
+            else
             {
+                // invalid
+                if(!ret)
+                    ret = std::make_shared<Polylist>();
+                ret->append(*a);
             }
-
             a++;
         }
     }

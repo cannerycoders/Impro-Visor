@@ -143,9 +143,9 @@ Advisor::addLick(Polylist *r, LickFlavor f, unsigned serial, bool marked,
     if(list)
     {
         auto x = list->getNth(1);
-        PlistInt *p = static_cast<PlistInt *>(x->asType(Polylist::k_integer));
+        PlistNumber *p = x->asNumberType();
         if(p)
-            grade = p->getValue();
+            grade = p->getInt();
         else
             std::cerr << "addLick::getGrade fail\n";
     }
