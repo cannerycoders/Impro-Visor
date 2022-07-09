@@ -408,6 +408,13 @@ NoteSymbol::toNote()
 {
     return toNote(m_volume);
 }
+
+Note::NotePtr
+NoteSymbol::toNotePtr()
+{
+    Note n = toNote(m_volume);
+    return std::make_shared<Note>(n);
+}
   
 Note 
 NoteSymbol::toNote(int volume)

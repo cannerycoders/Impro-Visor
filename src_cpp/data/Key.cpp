@@ -1,5 +1,6 @@
 #include "Key.h"
 #include "util/String.h"
+#include "util/Log.h"
 #include "NoteSymbol.h"
 #include <cassert>
 
@@ -149,9 +150,6 @@ Key::transpose(int semis) const
     assert (newIndex >= 0 && newIndex < KEY_SIZE);
     return &keys[newIndex];
 }
-
-std::string 
-Key::toString() { return m_name; }
 
 /* - class methods -------------------------------------------------------- */
 /*static*/ Key const *
@@ -440,74 +438,114 @@ Key::invalidNotes(Polylist &L)
     return ret;
 }
 
-int Key::pitchFromLeadsheet(std::string const &str, int rise)
+/*static*/int 
+Key::pitchFromLeadsheet(std::string const &str, int rise)
 {
-    return 0;
+    Note::NotePtr note = noteFromLeadsheet(str, rise, Constants::BEAT);
+    if(!note)
+        return -1;
+    return note->getPitch();
 }
 
-Note Key::noteFromLeadsheet(std::string const &str, int rise, int slotsPerBeat)
+/*static*/ std::string 
+Key::profileNoteStringList(NoteSymbol::NSList &l, bool includeTrailer)
 {
-    return Note();
+    std::string buffer;
+    char UP = '/';
+    char DOWN = '\\';
+    char NEUTRAL = ' ';
+    char const *LEADER = " ";
+    char const *GAP = " ";
+    char const *TRAILER = "-note:";
+
+    int noteCount = 0;
+    int previousPitch = -1;
+    char previousSymbol = NEUTRAL;
+
+    buffer.append(LEADER);
+
+    for(auto x : l)
+    {
+        int pitch = x->getMIDI();
+        if(pitch >= 0)
+        {
+            noteCount++;
+            if(previousPitch == -1)
+                previousPitch = pitch;
+            else
+            if(pitch > previousPitch)
+            {
+                if(previousSymbol != UP)
+                {
+                    buffer.push_back(UP);
+                    previousSymbol = UP;
+                }
+            }
+            else 
+            if(pitch < previousPitch)
+            {
+                if( previousSymbol != DOWN )
+                {
+                    buffer.push_back(DOWN);
+                    previousSymbol = DOWN;
+                }
+            }
+            previousPitch = pitch;
+        }
+    }
+
+    if(includeTrailer)
+    {
+        buffer.append(GAP);
+        buffer.append(std::to_string(noteCount));
+        buffer.append(TRAILER);
+    }
+
+    return buffer;
 }
 
-Note Key::noteFromLeadsheet(std::string const &str, int rise, int slotsPerBeat,
-                            Key const &)
+/*static*/Note::NotePtr
+Key::noteFromLeadsheet(std::string const &str, int rise, 
+                int slotsPerBeat, Key const &)
 {
-    return Note();
+    return NoteSymbol::makeNoteSymbol(str, rise)->toNotePtr();
 }
 
-Polylist Key::transposeNoteStringList(Polylist &L, int rise, 
-                                        Key const &key)
+/*static*/bool Key::enharmonic(std::string const &x, std::string const &y)
 {
-    return Polylist();
+    return PitchClass::findRise(x, y) == 0;
 }
 
-std::string Key::transposeNoteString(std::string const &noteString, int rise, 
-                                        Key const &key)
-{ 
-    return std::string();
-}
-
-Polylist Key::transposeNoteStringListToNumbers(Polylist &L, int rise,
-                                                Key const &key)
+/*static*/bool Key::enhMember(std::string const &x, Polylist &L)
 {
-    return Polylist();
-}
-std::string Key::transposeNoteStringToNumbers(std::string const &noteString,
-                                                int rise, Key const &key)
-{
-    return std::string();
-}
-std::string Key::transposeOne(std::string const &from, std::string const &to, 
-                            std::string const &p, Key const &key)
-{
-    return std::string();
-}
-
-Polylist Key::transposeList(std::string const &from, std::string const &to, 
-                        Polylist &L, Key const &key)
-{
-    return Polylist();
-}
-bool Key::enharmonic(std::string const &x, std::string const &y)
-{
+    assert(0); // unused
     return false;
 }
-bool Key::enhMember(std::string const &x, Polylist &L)
+
+/*static*/bool Key::test(std::string const &name)
 {
-    return false;
-}
-bool Key::test(std::string const &name)
-{
-    return false;
+    Key const *key = getKey(name);
+    if(key && UtString::toLower(name).compare(key->toString()) == 0)
+    {
+        Log::Log(Log::COMMENT, "Key test passed for %s",  name.c_str());
+        return true;
+    }
+    else
+    {
+        Log::Log(Log::WARNING, "Key test failed for %s", name.c_str());
+        return false;
+    }
 }
 
-Note Key::makeNote(std::string const &pitchClassName, int midiBase,
+/*static*/Note 
+Key::makeNote(std::string const &pitchClassName, int midiBase,
                             int duration)
 {
-    return Note();
+    return makeNoteAbove(pitchClassName, midiBase, 0, duration);
 }
-Note Key::makeNoteAbove(std::string const &pitchClassName, int midiBase,
+
+/*static*/Note 
+Key::makeNoteAbove(std::string const &pitchClassName, int midiBase,
                         int minimum, int duration)
 {
     return Note();

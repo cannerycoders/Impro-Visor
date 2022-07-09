@@ -4,6 +4,7 @@
 #include "PitchClass.h"
 #include "Note.h"
 #include "polya/Polylist.h"
+#include "NoteSymbol.h"
 
 #include <string>
 
@@ -116,13 +117,19 @@ public:
      */
     static Polylist::Ptr invalidNotes(Polylist &L);
     static int pitchFromLeadsheet(std::string const &str, int rise=0);
-    static Note noteFromLeadsheet(std::string const &str, int rise, int slotsPerBeat);
-    static Note noteFromLeadsheet(std::string const &str, int rise, int slotsPerBeat,
-                                Key const &);
+    /**
+     * Transform a leadsheet melody note or rest given as a string to 
+     * a Note, e.g. for insertion into a Score.  Note that octave
+     * shifts and durations are accepted in leadsheet melody notation.
+     */
+    static Note::NotePtr noteFromLeadsheet(std::string const &str, int rise, 
+                int slotsPerBeat, Key const &k=Ckey);
     /**
      * Return a profile of a list of note Strings.
      */
-    static std::string profileNoteStringList(Polylist &l, bool includeTrailer);
+    static std::string profileNoteStringList(NoteSymbol::NSList &l, bool includeTrailer);
+
+    #if 0 /* unused */
     /**
      * Transpose list of note Strings in leadsheet form by a certain rise
      * returning a list of note Strings.
@@ -152,7 +159,6 @@ public:
      */
     static std::string transposeOne(std::string const &from, std::string const &to, 
                                 std::string const &p, Key const &key);
-
     /**
      * transposeList is a list version of transposePitch.
      * It transposes a whole list of pitches by the interval between
@@ -160,6 +166,8 @@ public:
     */
     static Polylist transposeList(std::string const &from, std::string const &to, 
                             Polylist &L, Key const &key);
+    #endif
+
     /**
      * enharmonic determines whether the pitches represented by
      * two strings representing pitch are enharmonically equivalent
@@ -222,11 +230,14 @@ public:
     */
     Key const *transpose(int semis) const;
 
-    std::string toString();
+    std::string toString() const 
+    { 
+        return std::string(m_name); 
+    }
 
 private:
     int m_index; // unique id into table of known keys
-    char const *m_name;
+    char const *m_name; // tokenized
     int m_cPosition; // position of c in this key
 
 };

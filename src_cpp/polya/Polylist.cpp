@@ -4,6 +4,7 @@
 #include <sstream>
 #include <strstream>
 #include <string>
+#include <unordered_set>
 
 size_t Polylist::s_iCounter = 0;
 
@@ -94,16 +95,15 @@ Polylist::parseList(PlistTokenizer&tok, bool skipOuter)
  
  /* ------------------------------------------------------------- */
 
-std::unordered_set<std::string> PlistSymbol::s_tokens;
-
 /*static*/ char const *
 PlistSymbol::getSymbol(std::string const &str)
 {
-    auto x = s_tokens.find(str);
-    if(x == s_tokens.end())
+    static std::unordered_set<std::string> tokens;
+    auto x = tokens.find(str);
+    if(x == tokens.end())
     {
-        s_tokens.insert(str);
-        x = s_tokens.find(str);
+        tokens.insert(str);
+        x = tokens.find(str);
     }
     return x->c_str();
 }

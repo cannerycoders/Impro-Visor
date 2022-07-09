@@ -45,6 +45,15 @@ public:
             return Note();
     }
 
+    static Note::NotePtr toNotePtr(std::string const &str)
+    {
+        NSPtr p = makeNoteSymbol(str);
+        if(p)
+            return p->toNotePtr();
+        else
+            return Note::NotePtr();
+    }
+
     static NSPtr makeNoteSymbol(std::string string)
     {
         return makeNoteSymbol(string, 0);
@@ -146,6 +155,7 @@ public:
     void enhDrop(NSList &noteSymbols);
     NSPtr findNextHigher(NSList &nsList);
     Note toNote();
+    Note::NotePtr toNotePtr();
     Note toNote(int volume);
     NSPtr transpose(int rise);
     bool isRest() const { return !m_pitchClass.isValid(); }

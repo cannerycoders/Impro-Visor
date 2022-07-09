@@ -56,9 +56,9 @@ public:
     static PitchClass const &getPitchClass(std::string const &);
     static PitchClass const &getPitchClass(int index);
     static PitchClass const &getPitchClassFromMidi(int midi);
-    static int findDelta(std::string &from, std::string &to);
+    static int findDelta(std::string const &from, std::string const &to);
     static PitchClass const &transpose(PitchClass const &pc, int semitones);
-    static int findRise(std::string &from, std::string &to);
+    static int findRise(std::string const &from, std::string const &to);
     static int findRise(PitchClass const&fromClass, PitchClass const &toClass);
     static int findRise(PitchClass const &to);
     static int findRise(std::string &to);

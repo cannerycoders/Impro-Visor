@@ -243,7 +243,7 @@ PitchClass const &PC::getPitchClassFromMidi(int midi)
  * (This might not be needed given findRise below.)
  * The pitches are specified by strings which should be names of pitches.
  */
-int PC::findDelta(std::string &from, std::string &to)
+int PC::findDelta(std::string const &from, std::string const &to)
 {
     PitchClass fromClass = getPitchClass(from);
     PitchClass   toClass = getPitchClass(to);
@@ -262,7 +262,7 @@ PitchClass const &PC::transpose(PitchClass const &pc, int semitones)
  * transposing other pitches by the same interval as between the given two pitches.
  * The pitches are specified by strings which should be names of pitches.
  */
-int PC::findRise(std::string &from, std::string &to)
+int PC::findRise(std::string const &from, std::string const &to)
 {
     PitchClass const &fromClass = getPitchClass(from);
     PitchClass const &toClass = getPitchClass(to);

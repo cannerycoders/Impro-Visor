@@ -8,7 +8,7 @@
 #include <iomanip> /* std::quoted */
 #include <list>
 #include <memory> /* std::shared_ptr */
-#include <unordered_set>
+#include <vector>
 
 // fwd decls...
 class PlistString;
@@ -126,7 +126,6 @@ public:
 
 private:
     char const *m_token;
-    static std::unordered_set<std::string> s_tokens;
 };
 
 /**
