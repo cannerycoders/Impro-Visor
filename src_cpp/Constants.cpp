@@ -184,7 +184,7 @@ namespace Constants
 
     const int DEFAULT_DURATION = BEAT/2;	// eighth note value
 
-    const int DEFAULT_METRE[2] = {4, 4};
+    const std::array<int, 2> DEFAULT_METRE = {4, 4};
 
     /**
      * Types of notes

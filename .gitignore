@@ -8,3 +8,4 @@ _built/
 nbproject/private/private.xml
 .DS_Store
 /nbproject/private/
+node_modules/

@@ -14,6 +14,7 @@ public:
     std::string getPreference(std::string &nm);
     std::string getPreference(char const *tok); // requires tokenized value
     long getLongPref(char const *tok);
+    int getPref(char const *tok) { return (int) getLongPref(tok); }
     double getDoublePref(char const *tok);
 
     bool getAlwaysUse(int index); // 0-3, [CHORD, BASS, DRUMS, STAVE]
@@ -38,6 +39,16 @@ public:
     static char const * DEFAULT_STYLE_DIRECTORY;
     static char const * DEFAULT_CHORD_FONT_SIZE;
     static char const * ALWAYS_USE_BUTTONS;
+
+    static char const *DEFAULT_MELODY_INSTRUMENT;
+    static char const *DEFAULT_AUX_INSTRUMENT;
+    static char const *DEFAULT_CHORD_INSTRUMENT;
+    static char const *DEFAULT_BASS_INSTRUMENT;
+
+    static char const *DEFAULT_MELODY_TRANSPOSITION;
+    static char const *DEFAULT_AUX_TRANSPOSITION;
+    static char const *DEFAULT_CHORD_TRANSPOSITION;
+    static char const *DEFAULT_BASS_TRANSPOSITION;
 
 protected:
     Polylist m_prefs;

@@ -10,20 +10,22 @@ let libs = [
                 "data/*.cpp", 
                 "data/advice/*.cpp", 
                 "polya/*.cpp", 
+                "util/*.cpp", 
             ],
         },
         inc: ["."]
     }
 ];
 
-let tests = ["testConst", "testPolya", "testAdvisor"].map((v) =>
+let tests = Project.Glob("src_cpp/test/*.cpp").map((v) =>
 {
+    let pp = jsmk.path.parse(v);
     return {
-        name: v,
+        name: pp.name,
         dir: "src_cpp/test",
         src:
         {
-            appcpp: [`${v}.cpp`],
+            appcpp: [pp.base]
         },
         inc: [".."],
         modules: "libImproVisor"

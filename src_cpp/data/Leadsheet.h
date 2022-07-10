@@ -3,6 +3,13 @@
 #include "Constants.h"
 #include <ostream>
 
+class Score;
+class Polylist;
+class PlistTokenizer;
+class MelodyPart;
+class ChordPart;
+class Key;
+
 namespace Leadsheet
 {
     enum Component
@@ -45,35 +52,33 @@ namespace Leadsheet
         ROADMAP = 36,
         VOICING_FILE = 36,
         MELODY_VOLUME = 37,
+        k_NumComponents,
         UNKNOWN = 128
     };
 
-    bool readLeadSheet(class Tokenizer &k, class Score &);
-    bool readLeadSheet(class Tokenizer &, 
-                        class Score &, 
-                        bool overrideStaveType, 
-                        Constants::StaveType useStaveType);
-    void saveLeadSheet(class Score &, bool saveRoadMap, std::ostream &);
-    std::string concatElements(class Polylist &);
-    bool extractChordsAndMelody(class Polylist &chordsAndMelody,
-                                       class Polylist &result);
-    void addToMelodyPart(class Polylist &melodyInputReversed,
-                        class MelodyPart &melody, 
+    void saveLeadSheet(Score &, bool saveRoadMap, std::ostream &);
+    bool readLeadSheet(PlistTokenizer &k, Score &);
+    bool readLeadSheet(PlistTokenizer &, Score &, 
+            bool overrideStaveType, Constants::StaveType useStaveType);
+    std::string concatElements(Polylist &);
+    bool extractChordsAndMelody(Polylist &chordsAndMelody,
+                        Polylist &result);
+    void addToMelodyPart(Polylist &melodyInputReversed,
+                        MelodyPart &melody, 
                         int rise, int beatValue, 
-                        class Key &key);
-    bool populatePartWithChords(class ChordPart &chordProg,
-                        class Polylist &chords,
+                        Key &key);
+    bool populatePartWithChords(ChordPart &chordProg,
+                        Polylist &chords,
                         int slotsAvailable,
                         int slotsPerBar);
-    void addToChordPart(class Polylist &chordInputReversed, 
-                        class ChordPart &chords,
+    void addToChordPart(Polylist &chordInputReversed, 
+                        ChordPart &chords,
                         int rise, int slotsPerBar, 
-                        class Key &key);
-    void addToMelodyFromPolylist(class Polylist &in, 
-                        class MelodyPart &melody,
+                        Key &key);
+    void addToMelodyFromPolylist(Polylist &in, 
+                        MelodyPart &melody,
                         int rise, int slotsPerBeat,
-                        class Key &key);
+                        Key &key);
     int lookup(std::string &arg, std::vector<std::string> &table);
-    void classifyNotes(class MelodyPart& melody, class ChordPart& chords);
-
+    void classifyNotes(MelodyPart& melody, ChordPart& chords);
 };

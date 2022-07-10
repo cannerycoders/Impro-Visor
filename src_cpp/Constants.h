@@ -2,6 +2,7 @@
 
 #include <string>
 #include <vector>
+#include <array>
 
 /**
  * A namespace to hold all Impro-Visor shared constants.
@@ -91,7 +92,7 @@ namespace Constants
 
     extern const int DEFAULT_DURATION;	// eighth note value
 
-    extern const int DEFAULT_METRE[2];
+    extern const std::array<int, 2> DEFAULT_METRE;
 
     /**
      * Types of notes

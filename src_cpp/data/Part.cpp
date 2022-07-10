@@ -3,6 +3,10 @@
 #include "ChordPart.h"
 #include "Note.h"
 #include "Chord.h"
+#include "style/SectionInfo.h"
+#include "util/Log.h"
+
+#include <cassert>
 
 /* ------------------------------------------------------------------- */
 
@@ -33,7 +37,16 @@ Part::Part(int size)
     }
 }
 
-/* currently we anticipate that the default copy-constructor works */
+// inlined:
+//   setIntrument
+//   setVolume
+//   getVolume
+//   setTitle
+//   getTitle
+//   setComposer
+//   getComposer
+//   setStaveType
+//   getMeasureLength
 
 void
 Part::setMetre(int top, int bottom)
@@ -43,6 +56,15 @@ Part::setMetre(int top, int bottom)
     m_beatValue = Constants::WHOLE / m_metre[1];
     m_measureLength = m_beatValue * m_metre[0];
 }
+
+// inlined:
+//   getMetre
+//   setKeySignature
+//   setSwing
+//   getNumBeats
+//   getSize
+//   size
+//   getEndTime
 
 int
 Part::getBars()
@@ -70,10 +92,13 @@ Part::getLastActiveSlot()
     for(size_t j = m_slots.size() - 1; j >= 0; j--)
     {
         UnitPtr o = m_slots[j];
-        if(o && o->isActive()) return (int) j;
+        // instanceof Chord or Note (which includes Rest)
+        if(o) return (int) j;
     }
     return -1;
 }
+
+// instanced: getInstrument
 
 /**
  * @brief get that subset of slots that contain valid units.
@@ -89,6 +114,8 @@ Part::getUnitList()
         ret.push_back(it.next());
     return ret;
 }
+
+// instance: setSize (vector resize (auto-fills with empty))
 
 /**
  * Returns the Unit at the specified slotIndex
@@ -124,43 +151,8 @@ Part::setSize(int sz)
         m_slots[lastUnitIndex]->setRhythmValue(sz - lastUnitIndex);
 }
 
-Part::UnitPtr 
-Part::getPrevUnit(int slotIndex)
-{
-    int i = getPrevIndex(m_slots, slotIndex);
-    if(i == -1)
-        return UnitPtr();
-    else
-        return m_slots[i];
-}
-
-/*static*/ int
-Part::getNextIndex(t_UnitList const &slots, int si)
-{
-    for(int i = si + 1; i < slots.size(); i++)
-    {
-        UnitPtr unit = slots[i];
-        if(unit)
-           return i;
-    }
-    return (int) slots.size();
-}
-
-/*static*/ int
-Part::getPrevIndex(t_UnitList const &slots, int si)
-{
-    if(si < 0)
-        return -1;
-    
-    partIterator i(slots, si);
-    while(i.hasPrevious())
-    {
-        UnitPtr unit = i.previous();
-        if(unit)
-            return i.nextIndex;
-    }
-    return -1;
-}
+// inlined 
+//  copy - (default copy-construct)
 
 std::string 
 Part::toString()
@@ -217,18 +209,16 @@ Part::addUnit(UnitPtr unit)
 
     //rk Hack to remove accidental if key signature covers it.
     // This tends to reduce the number of accidentals in the notation.
-    Note *note = (unit->getUnitType() != IUnit::k_Note) ? nullptr : static_cast<Note *>(unit.get());
-    if(note)
+    Note *note = (unit->getUnitType() != IUnit::k_Note) ? 
+                    nullptr : static_cast<Note *>(unit.get());
+    if(note && note->isAccidentalInKey(m_keySig))
     {
+        // If the note shows as accidentaly in the key,
+        // see if toggling it will help, and if not, 
+        // toggle back.
+        note->toggleEnharmonic();
         if(note->isAccidentalInKey(m_keySig))
-        {
-            // If the note shows as accidentaly in the key,
-            // see if toggling it will help, and if not, 
-            // toggle back.
             note->toggleEnharmonic();
-            if(note->isAccidentalInKey(m_keySig))
-                note->toggleEnharmonic();
-        }
     }
 }
 
@@ -327,7 +317,7 @@ Part::newSetUnit(int unitIndex, UnitPtr unit)
     if(nextUnitStart < m_slots.size() && !m_slots[nextUnitStart])
     {
         int nextUnitEnd = getNextIndex(m_slots, nextUnitStart);
-        if(this->GetType() == k_MelodyPart)
+        if(m_type == k_MelodyPart)
         {
             m_slots[nextUnitStart] = UnitPtr(Note::makeRestPtr(nextUnitEnd - nextUnitStart));
         }
@@ -359,6 +349,46 @@ Part::setSlot(int index, UnitPtr unit, char const *msg)
     //System.out.println("part after setting slot:  " + this);
 }
 
+// inlined:
+//  isRest
+
+/**
+ * Check whether or not the part is consistent.
+ */
+bool 
+Part::checkConsistency(std::string &message)
+{
+    int sum = 0;
+    int count = 0;
+    for(auto x : m_slots)
+    {
+        if(x.get())
+        {
+            //System.out.println("non-null unit " + unit);
+            count++;
+            sum += x->getRhythmValue();
+        }
+    }
+    if(sum != m_slots.size() || count != m_unitCount)
+    {
+        Log::Log(Log::WARNING, 
+            "*** In %s consistency check failed: "
+            "size = %d vs duration sum = %d " 
+            "unitCount = %d vs %d (%s)",
+            message.c_str(), 
+            m_slots.size(), sum, 
+            m_unitCount, count,
+            this->toString().c_str());
+        assert(false);
+        return false;
+    }
+    //System.out.println("In " + message + " integrity check succeeded: size = " + size + " unitCount = " + unitCount);
+    return true;
+}
+
+/**
+ * Force the part to be consistent.
+ */
 void 
 Part::makeConsistent()
 {
@@ -371,15 +401,12 @@ Part::makeConsistent()
     //checkConsistency("start makeConsistent");
     int prevIndex = 0;
     UnitPtr prevUnit = m_slots[prevIndex];
-    UnitPtr thisUnit;
-
     if(!prevUnit)
-    {
         m_slots[prevIndex] = UnitPtr(Note::makeRestPtr(60));
-    }
 
     int count = 1;
     int index = 1;
+    UnitPtr thisUnit;
     for( ; index < m_slots.size() ; index++)
     {
         thisUnit = m_slots[index];
@@ -410,6 +437,203 @@ Part::makeConsistent()
     m_unitCount = count;
     //System.out.println("makeConsistent result " + this);
     // re-enable this checkConsistency("end makeConsistent");
+}
+
+void 
+Part::splitUnit(int slotIndex)
+{
+    UnitPtr origSplitUnit = getUnit(slotIndex);
+    if(origSplitUnit) return;
+
+    int prevIndex = getPrevIndex(m_slots, slotIndex);
+    origSplitUnit = getUnit(prevIndex);
+    int origRhythmValue = origSplitUnit->getRhythmValue();
+
+    // if previous unit extends into this slot, we need to split it
+    if(prevIndex + origRhythmValue >= slotIndex)
+    {
+        UnitPtr splitUnit(origSplitUnit->copy());
+        splitUnit->setRhythmValue(origRhythmValue + prevIndex - slotIndex);
+        setUnit(slotIndex, splitUnit);  // this call shortens the original note too
+    }
+    else
+    {
+        // nothing to split, but if we actually did get here, things would be 
+        // broken since the slot to split at is null
+        //Trace.log(3, "Error: SplitUnitCommand found inconsistencies with the Part");
+    }
+}
+
+/**
+ * Return the index at the start of the measure in which index occurs.
+ */
+int 
+Part::startMeasure(int index, int measuresOffset)
+{
+    // nb: integer division assumed
+    return m_measureLength * (measuresOffset + index / m_measureLength);
+}
+
+/**
+ * Deletes the unit at the specified index, adjusting the rhythm value of the
+ * preceding Unit.
+ *
+ * @param unitIndex the slot containing the Unit to delete
+ */
+void 
+Part::delUnit(int unitIndex)
+{
+    if(unitIndex < 0 || unitIndex >= m_slots.size()) return;
+
+    UnitPtr unit = m_slots[unitIndex];
+    if(!unit)
+    {
+        //Trace.log(0, "delUnit at " + unitIndex + ", was " + unit);
+        int rv = unit->getRhythmValue();
+        m_slots[unitIndex] = UnitPtr();
+        m_unitCount--;
+        UnitPtr prevUnit = getPrevUnit(unitIndex);
+
+        //Trace.log(3, "prevUnit = " + prevUnit);
+
+        // If there was a Unit before it, we need to adjust its rv.
+
+        if(!prevUnit)
+        {
+            //Trace.log(0, "in delUnit, setting rhythmValue");
+            prevUnit->setRhythmValue(prevUnit->getRhythmValue() + rv);
+        }
+        // If there was no Unit before it, then we just deleted the
+        // 0 slot, which must never be empty, so put something appropriate there.
+        else 
+        if(m_type == k_MelodyPart)
+        {
+            setUnit(0, UnitPtr(Note::makeRestPtr()));
+        }
+        else 
+        if(m_type == k_ChordPart)
+        {
+            setUnit(0, UnitPtr(new Chord(Constants::NOCHORD)));
+        }
+    }
+}
+
+/**
+ * Deletes all Units in the specified range, adjusting the rhythm value of the
+ * preceding Unit.
+ *
+ * @param first the index of the first Unit in the range
+ * @param last the index of the last Unit in the range
+ */
+
+void 
+Part::delUnits(int first, int last)
+{
+    //Trace.log(2, "delUnits from " + last + " down to " + first);
+    // It seems like this approach could be fairly slow
+    for(int i = last; i >= first; i-- )
+    {
+        delUnit(i);
+    }
+}
+
+/**
+ * Totally empties the Part and resets the size to zero.
+ */
+void 
+Part::empty()
+{
+    m_slots.clear();
+    m_unitCount = 0;
+}
+
+Part::UnitPtr 
+Part::getPrevUnit(int slotIndex)
+{
+    int i = getPrevIndex(m_slots, slotIndex);
+    if(i == -1)
+        return UnitPtr();
+    else
+        return m_slots[i];
+}
+
+/*static*/ int // static cuz iterator wants access
+Part::getPrevIndex(t_UnitList const &slots, int si)
+{
+    if(si < 0)
+        return -1;
+    
+    partIterator i(slots, si);
+    while(i.hasPrevious())
+    {
+        UnitPtr unit = i.previous();
+        if(unit)
+            return i.nextIndex;
+    }
+    return -1;
+}
+
+/**
+ * Returns the next Unit after the indicated slot.
+ *
+ * @param slotIndex the index of the slot to start searching from
+ * @return Unit the next Unit
+ */
+
+Part::UnitPtr
+Part::getNextUnit(int slotIndex)
+{
+    int i = getNextIndex(m_slots, slotIndex);
+    if(i >= m_slots.size())
+        return UnitPtr();
+    else
+        return m_slots[i];
+}
+
+/**
+ * Return the first index of a slot not containing null.
+ * If no such index, return -1.
+ */
+int 
+Part::getFirstIndex()
+{
+    int i=0;
+    for(auto x : m_slots)
+    {
+        if(x.get())
+            return i;
+        else
+            i++;
+    }
+    return -1;
+}
+
+Part::UnitPtr
+Part::getFirstUnit()
+{
+    int i = getFirstIndex();
+    if(i == -1)
+        return UnitPtr();
+    else
+        return m_slots[i];
+}
+
+/**
+ * Returns the index of the next Unit after the indicated slot.
+ *
+ * @param slotIndex the index of the slot to start searching from
+ * @return int the index of the next Unit
+ */
+/*static*/ int
+Part::getNextIndex(t_UnitList const &slots, int si)
+{
+    for(int i = si + 1; i < slots.size(); i++)
+    {
+        UnitPtr unit = slots[i];
+        if(unit)
+           return i;
+    }
+    return (int) slots.size();
 }
 
 /**
@@ -444,43 +668,111 @@ Part::getUnitRhythmValue(int unitIndex)
     return (int) (m_slots.size() - unitIndex);
 }
 
-void 
-Part::delUnit(int unitIndex)
+Part::PartPtr
+Part::fitPart(int freeSlots) 
 {
-    if(unitIndex < 0 || unitIndex >= m_slots.size()) return;
-
-    UnitPtr unit = m_slots[unitIndex];
-
-    if(!unit)
+    PartPtr result;
+    if(freeSlots == 0)
+        return result;
+    result = std::make_shared<Part>(*this); // copy-construct
+    while(result->getSize() > freeSlots) 
     {
-        //Trace.log(0, "delUnit at " + unitIndex + ", was " + unit);
-        int rv = unit->getRhythmValue();
-        m_slots[unitIndex] = UnitPtr();
-        m_unitCount--;
-        UnitPtr prevUnit = getPrevUnit(unitIndex);
-
-        //Trace.log(3, "prevUnit = " + prevUnit);
-
-        // If there was a Unit before it, we need to adjust its rv.
-
-        if(!prevUnit)
+        PartPtr scaledPart = std::make_shared<Part>(); // empty
+        Part::partIterator i = result->iterator();
+        while(i.hasNext()) 
         {
-            //Trace.log(0, "in delUnit, setting rhythmValue");
-            prevUnit->setRhythmValue(prevUnit->getRhythmValue() + rv);
+            UnitPtr unit = i.next();
+            assert(unit);
+            if(unit->getRhythmValue() != 1) 
+            {
+                // Log::Log(Log::TRACE, "in fitPart, setting rhythmValue");
+                unit->setRhythmValue(unit->getRhythmValue()/2);
+                if(unit->getRhythmValue() <= Constants::MIN_RHYTHM_VALUE)
+                    return PartPtr();
+            }
+            scaledPart->addUnit(unit);
         }
-        // If there was no Unit before it, then we just deleted the
-        // 0 slot, which must never be empty, so put something appropriate there.
-        else 
-        if(this->GetType() == k_MelodyPart)
+        result = scaledPart;
+    }
+    return result;
+}
+
+void 
+Part::makeSwing(SectionInfo &sectionInfo) 
+{
+#if 0
+    // The index here iterates through the start of every beat
+    Style previousStyle = Style::getStyle("swing"); // TEMP: FIX!
+    for(int i = 0; i+m_beatValue-1 < m_slots.size(); i += m_beatValue) 
+    {
+        SectionRecord record = sectionInfo.getSectionRecordBySlot(i);
+        Style s;
+        if( record.getUsePreviousStyle() )
         {
-            setUnit(0, UnitPtr(Note::makeRestPtr()));
+            s = previousStyle;
         }
-        else 
-        if(this->GetType() == k_ChordPart)
+        else
         {
-            setUnit(0, UnitPtr(new Chord(Constants::NOCHORD)));
+            s = record.getStyle();
+            previousStyle = s;
+        }
+                        
+        if( s == null )
+        {
+            ErrorLog.log(ErrorLog.FATAL, "It will not be possible to continue");
+        }
+            
+        double swingValue = s.getSwing();
+
+        //System.out.println("i = " + i + ", style = " + s + " swing = " + swingValue);
+
+        // FIX: Notice the problem here when i < size, the original condition, is used.
+
+        // we get the Units where a second sixteenth note would fall,
+        // an eighth note, and a fourth sixteenth note
+
+        Unit unit1 = slots.get(i+1*beatValue/4);
+        Unit unit2 = slots.get(i+1*beatValue/2);
+        Unit unit3 = slots.get(i+3*beatValue/4);
+
+        // we only use swingValue if there is no second sixteenth note
+        // (we don't want to swingValue a beat of four sixteenths)
+        
+        if(unit1 == null && unit2 != null) 
+        {
+
+                /* formerly:
+                // swingValue if there is a second eighth note
+                if(unit2.getRhythmValue() == beatValue/2) {
+                    slots.set(i+beatValue/2, null);
+                    slots.set(i+(int)(beatValue*swingValue), unit2);
+                }
+                */
+
+                int trailingRhythm = unit2.getRhythmValue();
+
+                // swingValue if there is a second eighth note or longer
+                if( trailingRhythm >= beatValue/2) {
+                    
+                    int offset = (int)(beatValue*swingValue);
+                    Unit unit2mod = unit2.copy();
+                    unit2mod.setRhythmValue(unit2.getRhythmValue()-offset);
+                    slots.set(i+beatValue/2, null);
+                    slots.set(i+offset, unit2mod);
+                }
+
         }
     }
+
+    // After the Units are shifted, go through and reset each rhythm value
+    Part::PartIterator i = iterator();
+    while(i.hasNext()) 
+    {
+        int index = i.nextIndex();
+        m_slots[index]->setRhythmValue(getUnitRhythmValue(index));
+        i.next();
+    }
+#endif
 }
 
 /* -------------------------------------------------------------------------- */

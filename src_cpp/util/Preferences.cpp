@@ -103,6 +103,16 @@ char const * P::DEFAULT_STYLE_DIRECTORY  = nullptr;
 char const * P::DEFAULT_CHORD_FONT_SIZE  = nullptr;
 char const * P::ALWAYS_USE_BUTTONS = nullptr;
 
+char const * P::DEFAULT_MELODY_INSTRUMENT;
+char const * P::DEFAULT_AUX_INSTRUMENT;
+char const * P::DEFAULT_CHORD_INSTRUMENT;
+char const * P::DEFAULT_BASS_INSTRUMENT;
+
+char const * P::DEFAULT_MELODY_TRANSPOSITION;
+char const * P::DEFAULT_AUX_TRANSPOSITION;
+char const * P::DEFAULT_CHORD_TRANSPOSITION;
+char const * P::DEFAULT_BASS_TRANSPOSITION;
+
 /*static*/ Preferences &
 Preferences::get()
 {
@@ -128,6 +138,16 @@ Preferences::get()
         P::DEFAULT_STYLE_DIRECTORY = PlistSymbol::getSymbol("default-style-directory");
         P::DEFAULT_CHORD_FONT_SIZE = PlistSymbol::getSymbol("default-chord-font-size");
         P::ALWAYS_USE_BUTTONS = PlistSymbol::getSymbol("always-use-buttons");
+
+        P::DEFAULT_MELODY_INSTRUMENT = PlistSymbol::getSymbol("default-melody-instrument");
+        P::DEFAULT_AUX_INSTRUMENT = PlistSymbol::getSymbol("default-aux-instrument");
+        P::DEFAULT_CHORD_INSTRUMENT = PlistSymbol::getSymbol("default-chord-instrument");
+        P::DEFAULT_BASS_INSTRUMENT = PlistSymbol::getSymbol("default-bass-instrument");
+
+        P::DEFAULT_MELODY_TRANSPOSITION = PlistSymbol::getSymbol("default-melody-transposition");
+        P::DEFAULT_AUX_TRANSPOSITION = PlistSymbol::getSymbol("default-aux-transposition");
+        P::DEFAULT_CHORD_TRANSPOSITION = PlistSymbol::getSymbol("default-chord-transposition");
+        P::DEFAULT_BASS_TRANSPOSITION = PlistSymbol::getSymbol("default-bass-transposition");
     }
     return p;
 }

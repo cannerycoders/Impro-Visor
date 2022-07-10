@@ -4,6 +4,7 @@
 #include "Constants.h"
 #include "util/Preferences.h"
 
+#include <array>
 #include <vector>
 
 /**
@@ -26,6 +27,8 @@ public:
 
     using UnitPtr = std::shared_ptr<IUnit>;
     using t_UnitList = std::vector<UnitPtr>;
+    using PartPtr = std::shared_ptr<Part>;
+    using List = std::vector<PartPtr>;
 
     enum PartType
     {
@@ -35,11 +38,9 @@ public:
     };
 
 public:
-    Part(int size);
-    Part() : Part(DEFAULT_SIZE) {};
-    virtual ~Part() {}
+    Part(int size=DEFAULT_SIZE);
 
-    virtual PartType GetType() { return k_Part; }
+    virtual ~Part() {}
 
     void setTitle(std::string &t) { m_title = t; }
     std::string const &getTitle() { return m_title; }
@@ -54,7 +55,7 @@ public:
     int getVolume() { return m_volume; }
     int getMeasureLength() { return m_measureLength; }
     void setMetre(int top, int bottom);
-    int const *getMetre() { return m_metre; }
+    int const *getMetre() { return m_metre.data(); }
     void setKeySignature(int k) { m_keySig = k; }
     int getKeySignature() { return m_keySig; }
     float getSwing() { return m_swing; }
@@ -70,23 +71,46 @@ public:
     std::string toString();
     void addUnit(UnitPtr u);
     void setUnit(int unitIndex, UnitPtr unit);
-    UnitPtr getUnit(int slotIndex);
     void newSetUnit(int unitIndex, UnitPtr unit);
+    UnitPtr getUnit(int slotIndex);
+    UnitPtr getNextUnit(int slotIndex);
+    UnitPtr getPrevUnit(int slotIndex);
+    UnitPtr getFirstUnit();
     void delUnit(int unitIndex);
+    void delUnits(int first, int last);
+    void empty(); // clears all
     int getUnitRhythmValue(int unitIndex);
+    void splitUnit(int slotIndex);
+    int startMeasure(int index, int measuresOffset);
+
+    PartPtr fitPart(int freeSlots);
+    void makeSwing(class SectionInfo &info);
+
+    /**
+     * Returns the index of the prev/next Unit after the indicated slot.
+     * Static since it's used in interator and Part.
+     *
+     * @param slotIndex the index of the slot to start searching from
+     * @return int the index of the next Unit
+     */
+    static int getNextIndex(t_UnitList const &m_slots, int slotIndex);
+    static int getPrevIndex(t_UnitList const &m_slots, int slotIndex);
+    int getFirstIndex();
 
 private:
     void setSlot(int index, UnitPtr unit, char const *msg);
     bool isRest(UnitPtr p) { return !p->isActive(); }
     void makeConsistent();
+    bool checkConsistency(std::string &message);
 
 protected: //shared by MelodyPart et al
+    PartType m_type; 
     std::string m_title;
     std::string m_composer;
     int m_instrument;
     int m_volume;
     int m_keySig;
-    int m_metre[2];
+    std::array<int, 2> m_metre;
     int m_beatValue;
     int m_measureLength;
     float m_swing;
@@ -95,17 +119,8 @@ protected: //shared by MelodyPart et al
     t_UnitList m_slots; // notes, rests, chords, etc.
     int m_unitCount; // number of slots that contain a Unit
 
-    /**
-     * Returns the index of the next Unit after the indicated slot.
-     * Static since it's used in interator and Part.
-     *
-     * @param slotIndex the index of the slot to start searching from
-     * @return int the index of the next Unit
-     */
-    static int getNextIndex(t_UnitList const &m_slots, int slotIndex);
-    static int getPrevIndex(t_UnitList const &m_slots, int slotIndex);
 
-    UnitPtr getPrevUnit(int slotIndex);
+    PartPtr copy() { return std::make_shared<Part>(*this); }
 
 protected:
     struct partIterator
@@ -136,7 +151,7 @@ protected:
      * @param index 
      * @return partIterator& 
      */
-    partIterator &iterator(int index)
+    partIterator iterator(int index=0)
     {
         return partIterator(m_slots, index);
     }

@@ -1,9 +1,17 @@
 #include "Leadsheet.h"
 #include "polya/Polylist.h"
 #include "util/Preferences.h"
+#include "Score.h"
+#include "Key.h"
+#include "MelodyPart.h"
+#include "ChordPart.h"
 
 namespace Leadsheet
 {
+
+void saveLeadSheet(Score &score, bool saveRoadMap, std::ostream &ostr)
+{
+}
 
 /**
  * Read leadsheet from tokens provided by Tokenizer into Score
@@ -11,7 +19,7 @@ namespace Leadsheet
  * @param score
  * @return 
 */
-bool readLeadSheet(class Tokenizer &t, class Score &s)
+bool readLeadSheet(PlistTokenizer &t, Score &s)
 {
     return readLeadSheet(t, s, 
             Preferences::get().getAlwaysUseStave(),
@@ -25,58 +33,52 @@ bool readLeadSheet(class Tokenizer &t, class Score &s)
  * @param score
  * @return 
  */
-bool readLeadSheet(class Tokenizer &, 
-                    class Score &, 
-                    bool overrideStaveType, 
-                    Constants::StaveType useStaveType)
+bool readLeadSheet(PlistTokenizer &, Score &, 
+                bool overrideStaveType, 
+                Constants::StaveType useStaveType)
 {
     return false;
 }
 
-
-void saveLeadSheet(class Score &, bool saveRoadMap, std::ostream &)
-{
-}
-
-std::string concatElements(class Polylist &)
+std::string concatElements(Polylist &)
 {
     return std::string();
 }
 
-bool extractChordsAndMelody(class Polylist &chordsAndMelody,
-                    class Polylist &result)
+bool extractChordsAndMelody(Polylist &chordsAndMelody,
+                    Polylist &result)
 {
     return false;
 }
 
-void addToMelodyPart(class Polylist &melodyInputReversed,
-                    class MelodyPart &melody, 
+void addToMelodyPart(Polylist &melodyInputReversed,
+                    MelodyPart &melody, 
                     int rise, int beatValue, 
-                    class Key &key)
+                    Key &key)
 {
 
 }
 
-bool populatePartWithChords(class ChordPart &chordProg,
-                    class Polylist &chords,
+bool populatePartWithChords(ChordPart &chordProg,
+                    Polylist &chords,
                     int slotsAvailable,
                     int slotsPerBar)
 {
     return false;
 }
 
-void addToChordPart(class Polylist &chordInputReversed, 
-                    class ChordPart &chords,
+void addToChordPart(Polylist &chordInputReversed, 
+                    ChordPart &chords,
                     int rise, int slotsPerBar, 
-                    class Key &key)
+                    Key &key)
 {
 
 }
 
-void addToMelodyFromPolylist(class Polylist &in, 
-                    class MelodyPart &melody,
+void addToMelodyFromPolylist(Polylist &in, 
+                    MelodyPart &melody,
                     int rise, int slotsPerBeat,
-                    class Key &key)
+                    Key &key)
 {
 
 }
@@ -86,7 +88,7 @@ int lookup(std::string &arg, std::vector<std::string> &table)
     return -1;
 }
 
-void classifyNotes(class MelodyPart& melody, class ChordPart& chords)
+void classifyNotes(MelodyPart& melody, ChordPart& chords)
 {
 }
 
