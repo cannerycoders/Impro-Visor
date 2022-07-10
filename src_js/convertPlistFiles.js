@@ -29,7 +29,7 @@ async function convertFile(ifile)
             if(plist.length == 0)
             {
                 // reject("Problem reading " + ifile);
-                console.warn("WARNING Problem reading " + ifile);
+                console.warn("WARNING problem reading " + ifile);
                 resolve(0);
             }
             else
