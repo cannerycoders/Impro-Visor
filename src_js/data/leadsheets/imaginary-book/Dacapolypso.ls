@@ -1,0 +1,62 @@
+# Converted from Impro-Visor src on 2022-07-10T22:13:09.062Z
+# Impro-Visor is GPL-3, copyright 2005-2017 Robert Keller and Harvey Mudd College
+# see: https://github.com/Impro-Visor/Impro-Visor
+- - title
+  - Dacapolypso
+- - composer
+  - Chuck
+  - Israels
+- - show
+- - year
+- - comments
+- - meter
+  - 4
+  - 4
+- - key
+  - 1
+- - tempo
+  - 160
+- - volume
+  - 127
+- - playback-transpose
+  - 0
+- - bass-instrument
+  - 33
+- - bass-volume
+  - 60
+- - drum-volume
+  - 60
+- - chord-volume
+  - 40
+- - breakpoint
+  - 54
+- - layout
+- - style
+  - latin
+  - [swing, 0.55]
+  - [comp-swing, 0.55]
+  - [bass-high, g-]
+  - [bass-low, g---]
+  - [bass-base, c--]
+  - [chord-high, a]
+  - [chord-low, c-]
+  - [chord-base, c-, e-, g-]
+- - part
+  - [type, chords]
+  - [title]
+  - [composer]
+  - [instrument, 0]
+  - [volume, 65]
+  - [key, 1]
+- - section
+  - [style, latin]
+  - [body, "Am7 A#o7 | Bm7 Em7 | Am7 D7 | GM7 | \nC C#o7 | G/D E7 | Am7 / / D7 / / G69 / | / | \nAm7 D7 | G69 Em7 | Am7 D7 | GM7 Em7 | \nAm7 D7 | GM7 E7 | Am7 / / D7 / / G69 / | / | \nGM7 F7 | E7 | Cm7 F7 | Bb69 | \nDM7 / / / C7 / / B7 | / | Gm7 C7 | F69 | \nAm7 D7 | G69 Em7 | Am7 D7 | GM7 Em7 | \nAm7 D7 | GM7 E7 | Am7 / / D7 / / G69 / | / | \nAm7 A#o7 | Bm7 Em7 | Am7 D7 | G | \nC C#o7 | G/D E7 | Am7 / / D7 / / G69 / | / | \n\n"]
+- - part
+  - [type, melody]
+  - [title]
+  - [composer]
+  - [instrument, 11]
+  - [volume, 85]
+  - [key, 1]
+  - [stave, treble]
+  - [body, "c8 r1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+2+4+8\n"]

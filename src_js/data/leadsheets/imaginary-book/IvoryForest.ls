@@ -1,0 +1,36 @@
+# Converted from Impro-Visor src on 2022-07-10T19:24:34.197Z
+# Impro-Visor is GPL-3, copyright 2005-2017 Robert Keller and Harvey Mudd College
+# see: https://github.com/Impro-Visor/Impro-Visor
+- Cm7b9
+- '|'
+- Dm7b9
+- '|'
+- Ebm7b9
+- '|'
+- Em7b9
+- '|'
+- Cm7b9
+- '|'
+- Dm7b9
+- '|'
+- Ebm7b9
+- '|'
+- Em7b9
+- '|'
+- Cm7b9
+- '|'
+- Dm7b9
+- '|'
+- Ebm7b9
+- '|'
+- Em7b9
+- '|'
+- Cm7b9
+- '|'
+- Dm7b9
+- '|'
+- Ebm7b9
+- '|'
+- F9sus4
+- '|'
+- '|'

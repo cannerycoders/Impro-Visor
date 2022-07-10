@@ -1,0 +1,64 @@
+# Converted from Impro-Visor src on 2022-07-10T22:13:09.359Z
+# Impro-Visor is GPL-3, copyright 2005-2017 Robert Keller and Harvey Mudd College
+# see: https://github.com/Impro-Visor/Impro-Visor
+- - title
+  - A
+  - Foggy
+  - Day
+- - composer
+  - George
+  - Gershwin
+- - comments
+- - meter
+  - 4
+  - 4
+- - key
+  - -1
+- - tempo
+  - 180
+- - volume
+  - 127
+- - bass-volume
+  - 60
+- - drum-volume
+  - 60
+- - chord-volume
+  - 60
+- - breakpoint
+  - 54
+- - layout
+- - style
+  - swing
+  - [swing, 0.67]
+  - [comp-swing, 0.67]
+  - [bass-high, g-]
+  - [bass-low, g---]
+  - [bass-base, c--]
+  - [chord-high, a]
+  - [chord-low, c-]
+  - [chord-base, c-, e-, g-]
+- - part
+  - [type, chords]
+  - [title, Untitled, Part]
+  - [composer]
+  - [instrument, 0]
+  - [volume, 65]
+  - [key, -1]
+- - section
+  - [style, swing]
+  - [body, "FM7 | Ab7 | Gm7 | C7 | \nFM7 | D7alt | G7 | C7 | \nFM7 | Cm7 F7 | BbM7 | Bbm7 | \nFM7 | D7 | G7 | C7alt | \nFM7 | Ab7 | Gm7 | C7 | \nFM7 | D7alt | G7 | C7 | \nFM7 | F7 | BbM7 | Bbm7 | \n\n"]
+- - section
+  - [style, pedal-bass-5]
+  - [body, "FM7/C Gm7/C | Am7/C Gm7/C | \n"]
+- - section
+  - [style, swing]
+  - [body, "FM7 G7 | Gm7 C7 | \nFM7 | Gm7 C7b9 | \n"]
+- - part
+  - [type, melody]
+  - [title]
+  - [composer]
+  - [instrument, 73]
+  - [volume, 85]
+  - [key, -1]
+  - [stave, treble]
+  - [body, 'r1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1 ']

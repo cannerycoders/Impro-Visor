@@ -1,0 +1,67 @@
+# Converted from Impro-Visor src on 2022-07-10T22:13:10.427Z
+# Impro-Visor is GPL-3, copyright 2005-2017 Robert Keller and Harvey Mudd College
+# see: https://github.com/Impro-Visor/Impro-Visor
+- - title
+  - Moon
+  - and
+  - Sand
+- - composer
+  - Alec
+  - Wilder
+  - and
+  - Morty
+  - Palitz
+- - show
+- - year
+- - comments
+- - meter
+  - 4
+  - 4
+- - key
+  - -1
+- - tempo
+  - 120
+- - volume
+  - 127
+- - playback-transpose
+  - 0
+- - bass-instrument
+  - 33
+- - bass-volume
+  - 60
+- - drum-volume
+  - 60
+- - chord-volume
+  - 60
+- - breakpoint
+  - 54
+- - layout
+- - style
+  - latin
+  - [swing, 0.55]
+  - [comp-swing, 0.55]
+  - [bass-high, g-]
+  - [bass-low, g---]
+  - [bass-base, c--]
+  - [chord-high, a]
+  - [chord-low, c-]
+  - [chord-base, c-, e-, g-]
+- - part
+  - [type, chords]
+  - [title, Untitled, Part]
+  - [composer]
+  - [instrument, 0]
+  - [volume, 65]
+  - [key, -1]
+- - section
+  - [style, latin]
+  - [body, "Dm7 | BbM7 | AbM7 | Fm7/Bb | \nEbM7 A7#11 | AbM7 | Am7b5 | D7alt | \nGm7 | C7b9 | FM7 | / | \nBm7b5 | E7alt | Em7b5 | A7alt | \nDm7 | G7b9 | Cm7 | F7b9 | \nBbM7 | Eb7 | Em7b5 | A7alt | \n/ | BbM7 | AbM7 | Fm7/Bb | \nEbM7 A7#11 | AbM7 | Am7b5 | D7alt | \n\n"]
+- - part
+  - [type, melody]
+  - [title]
+  - [composer]
+  - [instrument, 0]
+  - [volume, 85]
+  - [key, -1]
+  - [stave, treble]
+  - [body, "a2+8 r1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+4+8\n"]

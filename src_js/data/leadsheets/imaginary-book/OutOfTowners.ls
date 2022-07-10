@@ -1,0 +1,71 @@
+# Converted from Impro-Visor src on 2022-07-10T22:13:10.705Z
+# Impro-Visor is GPL-3, copyright 2005-2017 Robert Keller and Harvey Mudd College
+# see: https://github.com/Impro-Visor/Impro-Visor
+- - title
+  - Theme
+  - from
+  - the
+  - Out-of-Towners
+- - composer
+  - Quincy
+  - Jones
+- - show
+  - 'film:'
+  - The
+  - Out
+  - of
+  - Towners
+- - year
+  - 1970
+- - comments
+- - meter
+  - 4
+  - 4
+- - key
+  - -1
+- - tempo
+  - 160
+- - volume
+  - 127
+- - playback-transpose
+  - 0
+- - bass-instrument
+  - 33
+- - bass-volume
+  - 60
+- - drum-volume
+  - 60
+- - chord-volume
+  - 60
+- - breakpoint
+  - 54
+- - layout
+- - style
+  - swing
+  - [swing, 0.67]
+  - [comp-swing, 0.67]
+  - [bass-high, g-]
+  - [bass-low, g---]
+  - [bass-base, c--]
+  - [chord-high, a]
+  - [chord-low, a--]
+  - [chord-base, c-, e-, g-]
+- - part
+  - [type, chords]
+  - [title]
+  - [composer]
+  - [instrument, 0]
+  - [volume, 65]
+  - [key, -1]
+- - section
+  - [style, swing]
+  - [body, "FM7 | F11 | FM7 | F11 | \nFM7 | F11 | FM7 | DbM7 | \nBbM7 | Bbm7 Eb7 | AbM7 | Abm7 Db7 | \nGbM7 | Cbsus Cb | G7sus G7 | C11 C9 | \nFM7 | F11 | FM7 | F11 | \nFM7 | F11 | FM7 | DbM7 | \nBbM7 | Bm7b5 E7 | Am7 / / D7b9 | / | \nG7 / / C11 | / | FM7 | F11 | \nFM7 | F11 | BbM7 G11 | AbM7 Db6 | \nFM7 | / | \n"]
+- - part
+  - [type, melody]
+  - [title]
+  - [composer]
+  - [instrument, 11]
+  - [volume, 85]
+  - [key, -1]
+  - [stave, treble]
+  - [body, "f8 r1+2+4+8\n\n r1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1\n"]

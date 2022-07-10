@@ -1,20 +1,28 @@
 import fs from "fs";
 import Stream from "stream";
 import yaml from "js-yaml";
+import path from "path";
 
 const tEsc = "escape";
 const tQuote = "quote";
+const tInit = "init";
 const tBegin = "begin";
 const tEnd = "end";
 const tSymbol = "sym";
 const tNumber = "num";
 const tSpace = "space";
 const tEOL = "eol";
+const tCaptureBlock = "grabblock";
+const tCaptureLine = "grabline";
 const tCommentBlock = "cblock";
 const tCommentEOL = "ceol";
 const tString = "string";
+const tStringBlock = "stringblock";
 const tSlash = "/";
 const tStar = "*";
+const tSection = "section";
+const tPart = "part";
+const tJSON = "json";
 
 class tokenizer
 {
@@ -26,7 +34,7 @@ class tokenizer
         this.parseCtx = 
         {
             pending: [],
-            state: "init",
+            state: tInit,
             escape: false,
             tokenType: null,
             processed: [],
@@ -37,7 +45,7 @@ class tokenizer
                 // One transition, from symbol to comment, requires
                 // that we don't reset to init state
                 if(force || (this.state != tCommentEOL && this.state != tCommentBlock))
-                    this.state = "init";
+                    this.state = tInit;
                 this.escape = false;
                 this.tokenType = null;
                 this.lastChar = null; // for comment-blocks
@@ -63,6 +71,16 @@ class tokenizer
         });
         this.rstream.on("end", () =>
         {
+            if(this.parseCtx.state == tCaptureBlock ||
+               this.parseCtx.state == tCaptureLine)
+            {
+                let tok = {
+                    type: tStringBlock,
+                    value: this.parseCtx.processed.join("")
+                };
+                this.onToken(tok, this.parseCtx);
+                this.parseCtx.reset();
+            }
             this.finish();
         });
     }
@@ -76,7 +94,7 @@ class tokenizer
         let tok;
         while((tok = this.getToken(this.parseCtx)))
         {
-            this.onToken(tok);
+            this.onToken(tok, this.parseCtx);
         }
     }
 
@@ -102,6 +120,38 @@ class tokenizer
                 ctx.escape = true;
                 continue;
             }
+
+            if(ctx.state == tCaptureBlock)
+            {
+                // a block is defined as all characters up to the next begin
+                if(ctype == tBegin)
+                {
+                    ctx.pending.unshift(ch); // putback
+                    tok = {
+                        type: tStringBlock,
+                        value: ctx.processed.join("")
+                    };
+                    break;
+                }
+                else
+                    ctx.processed.push(ch);
+            }
+            else
+            if(ctx.state == tCaptureLine)
+            {
+                if(ctype == tEOL)
+                {
+                    ctx.pending.unshift(ch); // putback
+                    tok = {
+                        type: tString,
+                        value: ctx.processed.join("")
+                    };
+                    break;
+                }
+                else
+                    ctx.processed.push(ch);
+            }
+            else
             if(ctx.state == tCommentEOL)
             {
                 if(ctype == tEOL)
@@ -226,16 +276,15 @@ class tokenizer
     {
         // no more to read, finish processing chunks
         let err = 0;
-        if(this.parseCtx.state != "init" )
+        if(this.parseCtx.state != tInit)
         {
-            err = 1;
             console.warn("invalid parse session\n" + JSON.stringify(this.parseCtx));
         }
         this.onDone(err);
     }
 }
 
-export class PlistParser
+export default class PlistParser
 {
     constructor()
     {
@@ -243,12 +292,18 @@ export class PlistParser
 
     load(file)
     {
-        this.begin();
-        let stream = fs.createReadStream(file);
-        stream.setEncoding("utf8");
-        this.tokenizer = new tokenizer(stream, 
-                            this.getTokenHandler(),
-                            this.onDone.bind(this));
+        return new Promise((resolve, reject) =>
+        {
+            this.begin();
+            let stream = fs.createReadStream(file);
+            stream.setEncoding("utf8");
+            this.tokenizer = new tokenizer(stream, 
+                                this.getTokenHandler(),
+                                (err) =>
+                                {
+                                    resolve(err ? {} : this.plist);
+                                });
+        });
     }
 
     parse(str)
@@ -270,9 +325,10 @@ export class PlistParser
     {
         this.plist = [];
         this.stack = [this.plist];
+        this.processMode = null;
     }
 
-    onTokenPlist(tok)
+    onTokenPlist(tok, parseCtx)
     {
         switch(tok.type)
         {
@@ -290,7 +346,49 @@ export class PlistParser
         case tString:
         case tNumber:
             console.assert(this.stack.length);
-            this.stack[0].push(tok.value);
+            if(this.stack[0] != this.plist)
+                this.stack[0].push(tok.value);
+            else
+            {
+                // handle the leadsheet case where we have outerscoped
+                // non-list tokens comprising the "body".  Currently we 
+                // create a new 'body' sublist which is a "<pre>" multiline 
+                // string
+                let last = this.plist[this.plist.length-1];
+                if(last)
+                {
+                    let lastType = last[0];
+                    let lastEnd = last[last.length-1];
+                    let lastEndType;
+                    if(Array.isArray(lastEnd))
+                    {
+                        lastEndType = lastEnd[0];
+                        console.assert(lastEndType != "body");
+                    }
+                    switch(lastType)
+                    {
+                    case tSection:
+                    case tPart:
+                        {
+                            let body = ["body", [tok.value+" "]];
+                            last.push(body); // add to end of current section/part
+                            this.stack.unshift(body);
+                            parseCtx.state = tCaptureBlock;
+                        }
+                        break;
+                    default:
+                        // console.warn("Unhandled root-level symbol following " + last[0]);
+                        this.stack[0].push(tok.value);
+                        break;
+                    }
+                }
+            }
+            break;
+        case tStringBlock:
+            console.assert(this.stack[0][0] == "body");
+            this.stack[0][1] = this.stack[0][1] + tok.value;
+            this.stack.shift(); // body
+            console.assert(this.stack[0] == this.plist);
             break;
         default:
             console.log("unhandled " + tok.type);
@@ -301,7 +399,7 @@ export class PlistParser
     {
         if(!err)
         {
-            if(false)
+            if(this.target == tJSON)
                 console.log(JSON.stringify(this.plist));
             else
             {
@@ -339,8 +437,53 @@ function testString()
 function testFile()
 {
     let p = new PlistParser();
-    p.load("../../vocab/My.voc");
+    p.load("../../vocab/My.voc")
+    .then((plist) =>
+    {
+        let opts =
+        {
+            noArrayIndent: false,
+            flowLevel: 2, /* lower numbers means more (shorter) lines */
+        };
+        console.log(yaml.dump(plist, opts));
+    });
 }
 
-// testFile();
-testString();
+function testLeadsheet()
+{
+    let p = new PlistParser();
+    p.load("../../leadsheets/_test.ls")
+    .then((plist) =>
+    {
+        let opts =
+        {
+            noArrayIndent: false,
+            flowLevel: 2, /* lower numbers means more (shorter) lines */
+        };
+        console.log(yaml.dump(plist, opts));
+    });
+}
+
+function testGrammar()
+{
+    let p = new PlistParser();
+    p.load("../../grammars/ParkerMotif.grammar")
+    .then((plist) =>
+    {
+        let opts =
+        {
+            noArrayIndent: false,
+            flowLevel: 2, /* lower numbers means more (shorter) lines */
+        };
+        console.log(yaml.dump(plist, opts));
+    });
+}
+
+
+if(path.basename(process.argv[1]) == "parser.js")
+{
+    // testFile();
+    // testString();
+    // testLeadsheet();
+    testGrammar();
+}

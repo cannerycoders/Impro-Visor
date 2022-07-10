@@ -1,0 +1,63 @@
+# Converted from Impro-Visor src on 2022-07-10T22:13:11.619Z
+# Impro-Visor is GPL-3, copyright 2005-2017 Robert Keller and Harvey Mudd College
+# see: https://github.com/Impro-Visor/Impro-Visor
+- - title
+  - When
+  - I
+  - Need
+  - You
+- - composer
+- - show
+- - year
+- - comments
+- - meter
+  - 3
+  - 4
+- - key
+  - 0
+- - tempo
+  - 120
+- - volume
+  - 127
+- - playback-transpose
+  - 0
+- - bass-instrument
+  - 33
+- - bass-volume
+  - 60
+- - drum-volume
+  - 60
+- - chord-volume
+  - 60
+- - breakpoint
+  - 54
+- - layout
+- - style
+  - waltz
+  - [swing, 0.67]
+  - [comp-swing, 0.67]
+  - [bass-high, g-]
+  - [bass-low, g---]
+  - [bass-base, c--]
+  - [chord-high, a]
+  - [chord-low, c-]
+  - [chord-base, c-, e-, g-]
+- - part
+  - [type, chords]
+  - [title]
+  - [composer]
+  - [instrument, 0]
+  - [volume, 65]
+  - [key, 0]
+- - section
+  - [style, waltz]
+  - [body, "C/A# | / / C | F/A | F | \nFm/G# | Dm7b5 / Fm | C | / | \nAm | / | G | / / Em/G | \nF | G7sus / G9 | C | / | \n/ | / | G/B | G/D | \nG | G#dim / E7 | Am | Am/G | \nAm/F# | Am/E / D7 | G | / / G7 | \nC | / | / | C/G C/A C/A# | \nG7/B | / | G7 | E7/G# | \nAm | / | / | / Am7 D7 | \nG | / | Am | / | \nG | / | Am | / | \nG | / Am7 G7/B | C | Am7 | \nDm | / | / | / | \nG11 | G7 G7/A G7/B | C | / | \n\n"]
+- - part
+  - [type, melody]
+  - [title]
+  - [composer]
+  - [instrument, 11]
+  - [volume, 85]
+  - [key, 0]
+  - [stave, treble]
+  - [body, 'r1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1 ']

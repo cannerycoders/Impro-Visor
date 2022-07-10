@@ -1,0 +1,68 @@
+# Converted from Impro-Visor src on 2022-07-10T22:13:09.267Z
+# Impro-Visor is GPL-3, copyright 2005-2017 Robert Keller and Harvey Mudd College
+# see: https://github.com/Impro-Visor/Impro-Visor
+- - title
+  - Estate.ls
+- - composer
+  - Bruno
+  - Martino
+  - and
+  - Joel
+  - E.
+  - Siegel
+- - show
+- - year
+- - comments
+  - 'pron:'
+  - Eh-stah'-teh
+- - meter
+  - 4
+  - 4
+- - key
+  - 0
+- - tempo
+  - 160
+- - volume
+  - 127
+- - playback-transpose
+  - 0
+- - bass-instrument
+  - 33
+- - bass-volume
+  - 60
+- - drum-volume
+  - 60
+- - chord-volume
+  - 60
+- - breakpoint
+  - 54
+- - layout
+- - style
+  - latin
+  - [swing, 0.55]
+  - [comp-swing, 0.55]
+  - [bass-high, g-]
+  - [bass-low, g---]
+  - [bass-base, c--]
+  - [chord-high, a]
+  - [chord-low, c-]
+  - [chord-base, c-, e-, g-]
+- - part
+  - [type, chords]
+  - [title, Untitled, Part]
+  - [composer]
+  - [instrument, 0]
+  - [volume, 65]
+  - [key, 0]
+- - section
+  - [style, latin]
+  - [body, "Am7 | / | Dm7 | E7alt | \nAm7 | / | Dm7 | G7 | \nGm7/C | C7 | FM7 | Bb7#11 | \nBm7/E | E7alt | Am7 | / | \nDm7 | E7alt | Am7 | / | \nDm7 | G7 | Gm7/C | C7 | \nFM7 | Bb7#11 | Bm7/E | E7 | \nAM7 | / | Ebm7b5 | Ab7 | \nDbm7 | Gb7 | Dm7 | G7 | \nGm7 | C7 | FM7 | Bb7#11 | \nBm7/E | E7alt | Am7 | / | \nDm7 | E7alt | Am7 | / | \nDm7 | G7 | Gm7/C | C7 | \nFM7 | Bb7#11 | Bm7/E | E7alt | \nAm7 | / | Dm7 | E7alt | \nAm7 | / | Dm7 | G7 | \nGm7/C | C7 | FM7 | Bb7#11 | \nBm7/E | Em6 | \n"]
+- - part
+  - [type, melody]
+  - [title]
+  - [composer]
+  - [instrument, 73]
+  - [volume, 85]
+  - [key, 0]
+  - [stave, treble]
+  - [body, "e8 r1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+2+4+8\n"]

@@ -1,0 +1,63 @@
+# Converted from Impro-Visor src on 2022-07-10T22:13:11.347Z
+# Impro-Visor is GPL-3, copyright 2005-2017 Robert Keller and Harvey Mudd College
+# see: https://github.com/Impro-Visor/Impro-Visor
+- - title
+  - Thier's
+  - Tears
+- - composer
+  - Clare
+  - Fischer
+- - show
+- - year
+- - comments
+- - meter
+  - 4
+  - 4
+- - key
+  - -4
+- - tempo
+  - 160
+- - volume
+  - 127
+- - playback-transpose
+  - 0
+- - bass-instrument
+  - 33
+- - bass-volume
+  - 60
+- - drum-volume
+  - 60
+- - chord-volume
+  - 40
+- - breakpoint
+  - 54
+- - layout
+- - style
+  - bossa
+  - [swing, 0.55]
+  - [comp-swing, 0.55]
+  - [bass-high, g-]
+  - [bass-low, g---]
+  - [bass-base, c--]
+  - [chord-high, a]
+  - [chord-low, c-]
+  - [chord-base, c-, e-, g-]
+- - part
+  - [type, chords]
+  - [title]
+  - [composer]
+  - [instrument, 0]
+  - [volume, 65]
+  - [key, -4]
+- - section
+  - [style, bossa]
+  - [body, "Fm | Fm/Eb | DbM7#11 | C7#9 | \nDbM7#11 | C7 | Fm | / | \nF7#9 | / | Bbm7 | Eb7 | \nA7#9 | D7b9 | AbM7#11 G7 | C69 Gb7#11 | \nFm | Fm/Eb | DbM7#11 | C7#9 | \nDbM7#11 | C7 | Fm | / | \nF7#9 | / | Bbm7 | Eb7 | \nA7#9 | D7b9 | AbM7#11 G7 | C69 Gb7#11 | \nDbM7 | G7alt C7+ | Fm69 | / | \n\n"]
+- - part
+  - [type, melody]
+  - [title]
+  - [composer]
+  - [instrument, 11]
+  - [volume, 85]
+  - [key, -4]
+  - [stave, treble]
+  - [body, "f8 r1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+2+4+8\n"]

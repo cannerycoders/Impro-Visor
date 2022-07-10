@@ -1,0 +1,76 @@
+# Converted from Impro-Visor src on 2022-07-10T22:13:12.073Z
+# Impro-Visor is GPL-3, copyright 2005-2017 Robert Keller and Harvey Mudd College
+# see: https://github.com/Impro-Visor/Impro-Visor
+- - title
+  - Saturday
+  - Morning
+  - Hallelujah
+- - composer
+  - Bob
+  - Keller
+- - show
+  - Copyright
+  - by
+  - Bob
+  - Keller
+- - year
+  - 2005-2008
+- - comments
+- - meter
+  - 4
+  - 4
+- - key
+  - -3
+- - tempo
+  - 180
+- - volume
+  - 127
+- - playback-transpose
+  - 0
+- - bass-instrument
+  - 33
+- - bass-volume
+  - 60
+- - drum-volume
+  - 33
+- - chord-volume
+  - 60
+- - breakpoint
+  - 54
+- - layout
+  - 4
+  - 4
+  - 4
+  - 4
+  - 4
+  - 4
+  - 3
+- - style
+  - rock-heavy-even
+  - [swing, 0.5]
+  - [comp-swing, 0.5]
+  - [bass-high, c-]
+  - [bass-low, c--]
+  - [bass-base, g--]
+  - [chord-high, c]
+  - [chord-low, c-]
+  - [chord-base, c-, e-, g-]
+- - part
+  - [type, chords]
+  - [title, Untitled, Part]
+  - [composer]
+  - [instrument, 0]
+  - [volume, 65]
+  - [key, -3]
+- - section
+  - [style, rock-heavy-even]
+  - [body, "NC | Am7b5 / / / Abm7 / / Gm7 | / / F#m7 / / NC / / | Fm7 / / / Bb7sus4 / / Eb6 | \n/ NC | Am7b5 / / / Abm7 / / Gm7 | / / F#m7 / / NC / / | Fm7 / / / Bb7sus4 / / Eb6 | \n/ | Gm7 / / / C7 / / Fm7 | / | Gm7 C7 | \nFm7 | Am7 / / / D7 / / Gm7 | / | Fm7 | \nBb7sus4 | Am7b5 / / / Abm7 / / Gm7 | / / F#m7 / / NC / / | Fm7 / / / Bb7sus4 / / Eb6 | \n/ NC | Am7b5 / / / Abm7 / / Gm7 | / / F#m7 / / NC / / | Fm7 Bb7sus4 | \n/ | NC Fm7 | EM7 Eb6 | \n"]
+- - part
+  - [type, melody]
+  - [title, Head]
+  - [composer]
+  - [instrument, 11]
+  - [volume, 85]
+  - [key, -3]
+  - [stave, treble]
+  - [body, "r2+8 c8 eb8 f8\n\n g8 f8 eb8 c8 eb4 r8 eb8\n\n r4 eb4+8 c8 eb8 f8\n\n g8 f8 eb8 c8 eb8 eb4 eb2+8\n\n r8 c8 eb8 f8\n\n g8 f8 eb8 c8 eb4 r8 eb8\n\n r4 eb4+8 c8 eb8 f8\n\n g8 f8 eb8 c8 eb8 eb4 eb2+4\n\n r4+8\n\n bb8 r8 bb8 g8 bb8 c+4 ab4+8\n\n g4 f4 eb4\n\n bb8 r8 bb8 g8 bb8 d+4 c+2+4+8\n\n r4\n\n c+8 r8 c+8 b8 c+8 d+4 bb4+8\n\n g4 f4 e4\n\n g8 f8 eb8 c8 eb8 c8 eb8 g8\n\n c+8 r8 bb8 c+8 g8 f8 eb8 c8\n\n g8 f8 eb8 c8 eb4 r8 eb8\n\n r4 eb4+8 c8 eb8 f8\n\n g8 f8 eb8 c8 eb8 eb4 eb2+8\n\n r8 c8 eb8 f8\n\n g8 f8 eb8 c8 eb4 r8 eb8\n\n r4 eb4+8 c8 eb8 f8\n\n g8 f8 eb8 c8 eb8 eb1+4+8\n\n r8\n\n c8 eb8 f8 g8 f8 eb8 c8\n\n eb8 eb4 eb4+8 r4\n"]

@@ -1,0 +1,59 @@
+# Converted from Impro-Visor src on 2022-07-10T22:13:09.517Z
+# Impro-Visor is GPL-3, copyright 2005-2017 Robert Keller and Harvey Mudd College
+# see: https://github.com/Impro-Visor/Impro-Visor
+- - title
+  - Goody
+  - Goody
+- - composer
+  - Johnny
+  - Mercer
+  - and
+  - Matt
+  - Malneck
+- - comments
+- - meter
+  - 4
+  - 4
+- - key
+  - 0
+- - tempo
+  - 160
+- - volume
+  - 127
+- - bass-volume
+  - 60
+- - drum-volume
+  - 60
+- - chord-volume
+  - 60
+- - breakpoint
+  - 54
+- - layout
+- - style
+  - swing
+  - [swing, 0.67]
+  - [bass-high, g-]
+  - [bass-low, g---]
+  - [bass-base, c--]
+  - [chord-high, a]
+  - [chord-low, c-]
+  - [chord-base, c-, e-, g-]
+- - part
+  - [type, chords]
+  - [title]
+  - [composer]
+  - [instrument, 0]
+  - [volume, 65]
+  - [key, 0]
+- - section
+  - [style, swing]
+  - [body, "C | / / / G+ | C6 | B C / / | \nC | / / / Bb7 | A7 | Ao7 A7 / / | \nDm A7 | Dm A7 | Dm A7b9 | Dm | \nD7 | / | Am7 D7 | G7 Dm7 G7 NC | \nC | / / / G+ | C6 | B C / / | \nC7 | / C7+ | F A7 | Dm | \nF | Fm | C | A7 | \nD7 | Dm7 / G7+ G7b9 | C / Dm7 G7 | C | \n\n"]
+- - part
+  - [type, melody]
+  - [title]
+  - [composer]
+  - [instrument, 11]
+  - [volume, 85]
+  - [key, 0]
+  - [stave, treble]
+  - [body, "c+4 r1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+2+4\n"]

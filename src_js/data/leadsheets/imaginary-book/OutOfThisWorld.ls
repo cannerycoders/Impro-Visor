@@ -1,0 +1,70 @@
+# Converted from Impro-Visor src on 2022-07-10T22:13:10.704Z
+# Impro-Visor is GPL-3, copyright 2005-2017 Robert Keller and Harvey Mudd College
+# see: https://github.com/Impro-Visor/Impro-Visor
+- - title
+  - Out
+  - Of
+  - This
+  - World
+- - composer
+  - Harold
+  - Arlen
+- - show
+  - Out
+  - of
+  - This
+  - World
+- - year
+  - 1945
+- - comments
+- - meter
+  - 4
+  - 4
+- - key
+  - -5
+- - tempo
+  - 160
+- - volume
+  - 127
+- - playback-transpose
+  - 0
+- - bass-instrument
+  - 33
+- - bass-volume
+  - 60
+- - drum-volume
+  - 60
+- - chord-volume
+  - 60
+- - breakpoint
+  - 54
+- - layout
+- - style
+  - swing
+  - [swing, 0.67]
+  - [comp-swing, 0.67]
+  - [bass-high, g-]
+  - [bass-low, g--]
+  - [bass-base, c--]
+  - [chord-high, a]
+  - [chord-low, a--]
+  - [chord-base, c-, e-, g-]
+- - part
+  - [type, chords]
+  - [title, Untitled, Part]
+  - [composer]
+  - [instrument, 0]
+  - [volume, 65]
+  - [key, -5]
+- - section
+  - [style, swing]
+  - [body, "Bbm | GbM7 | Eb7 / / Eb9 | GbM7 | \nBbm | GbM7 | Bbm7 | Eb9 / / Eb7 | \nGbM7 | Ebm6 | Cb | Ab7 | \nEb6 | Eo7 | Fm7 | Bb+ | \nBbm | GbM7 | Eb7 / / Eb9 | GbM7 | \nBbm | GbM7 | Bbm7 | Eb9 / / Eb7 | \nGbM7 | Ebm6 | Cb | Ab7 | \nEb6 | Eo7 | Fm7 | Bb9 Bb7 | \nEb | / | Db Cm | Bbm / Ab7 G7 | \nCm | / | / | / | \nCm | Co7 | Ab9 | G7b9 | \nCm7 | AbM7 | Cm6 | Ab7 | \nCm | Ab7 | G9 | / | \nC9 | F7 / / Bb7 | Bbm | GbM7 | \nEb7 / / Eb9 | GbM7 | Bbm | GbM7 | \nBbm7 | Eb9 / / Eb7 | GbM7 | Ebm6 | \nCb | Abo7 | Eb6 | Eo7 | \n/ | / | Eb | / | \nDb Cm | Gm7 Fm6 | Fm | Do7 | \n\n"]
+- - part
+  - [type, melody]
+  - [title]
+  - [composer]
+  - [instrument, 73]
+  - [volume, 85]
+  - [key, -5]
+  - [stave, treble]
+  - [body, "db+2+4 r1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+4\n"]

@@ -1,0 +1,65 @@
+# Converted from Impro-Visor src on 2022-07-10T22:13:10.596Z
+# Impro-Visor is GPL-3, copyright 2005-2017 Robert Keller and Harvey Mudd College
+# see: https://github.com/Impro-Visor/Impro-Visor
+- - title
+  - Nuages
+- - composer
+  - Django
+  - Reinhardt
+  - and
+  - Jacques
+  - Larme
+- - show
+- - year
+- - comments
+- - meter
+  - 4
+  - 4
+- - key
+  - -5
+- - tempo
+  - 100
+- - volume
+  - 127
+- - playback-transpose
+  - 0
+- - bass-instrument
+  - 33
+- - bass-volume
+  - 60
+- - drum-volume
+  - 60
+- - chord-volume
+  - 60
+- - breakpoint
+  - 54
+- - layout
+- - style
+  - swing
+  - [swing, 0.67]
+  - [comp-swing, 0.67]
+  - [bass-high, g-]
+  - [bass-low, g---]
+  - [bass-base, c--]
+  - [chord-high, a]
+  - [chord-low, b--]
+  - [chord-base, c-, e-, g-]
+- - part
+  - [type, chords]
+  - [title, Untitled, Part]
+  - [composer]
+  - [instrument, 0]
+  - [volume, 65]
+  - [key, -5]
+- - section
+  - [style, swing]
+  - [body, "Bbm7 Eb7 | Am7b5 D7 | G Am7 | Bm7 Em7 | \nBbm7 Eb7 | Am7b5 D7 | GM7 | / | \nF#m7 B7 | F#m7 B7 | Em7 B7 | Em7 | \nA7 Ab7 | A7 | D7 Am7 | D7 Bbm7 Eb7 | \nAm7b5 D7 | G Em7 | Ebm7 Ab7 | Dm7b5 G7 | \nCM7 | / | Cm7 | F7 | \nGM7 Am7 | Bm7 Em7 | Bbm7 Eb7 | Am7b5 D7 | \nG | / | \n"]
+- - part
+  - [type, melody]
+  - [title]
+  - [composer]
+  - [instrument, 73]
+  - [volume, 85]
+  - [key, -5]
+  - [stave, treble]
+  - [body, 'r1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1 ']

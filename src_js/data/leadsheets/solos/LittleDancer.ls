@@ -1,0 +1,81 @@
+# Converted from Impro-Visor src on 2022-07-10T22:13:12.502Z
+# Impro-Visor is GPL-3, copyright 2005-2017 Robert Keller and Harvey Mudd College
+# see: https://github.com/Impro-Visor/Impro-Visor
+- - title
+  - Little
+  - Dancer
+- - composer
+  - Tom
+  - Harrell
+- - show
+- - year
+- - comments
+- - meter
+  - 3
+  - 4
+- - key
+  - -5
+- - tempo
+  - 150
+- - volume
+  - 127
+- - playback-transpose
+  - 0
+- - bass-instrument
+  - 33
+- - bass-volume
+  - 60
+- - drum-volume
+  - 60
+- - chord-volume
+  - 60
+- - breakpoint
+  - 54
+- - layout
+- - style
+  - waltz
+  - [swing, 0.67]
+  - [comp-swing, 0.67]
+  - [bass-high, g-]
+  - [bass-low, g---]
+  - [bass-base, c--]
+  - [chord-high, a]
+  - [chord-low, c-]
+  - [chord-base, c-, e-, g-]
+- - part
+  - [type, chords]
+  - [title]
+  - [composer]
+  - [instrument, 0]
+  - [volume, 65]
+  - [key, -5]
+- - section
+  - [style, waltz]
+  - [body, "Gm7b5 | C7b9 | Fm7b5 | Bb7b9 | \nEbm7 | Ab7b9 | DbM7 | G7#11 | \nGbM7 | / | F#m7 | B7 | \nBbm7 | Eb7 | Em7 A7 | Ebm7 Ab7 | \nGm7b5 | C7b9 | Fm7b5 | Bb7b9 | \nEbm7 | Ab7b9 | DbM7 | G7#11 | \nGbM7 | / | F#m7 | B7 | \nBbm7 | Bbm7/Ab | Gm7b5 | F#m7 / B7 | \nEM7 | Bb7b9 | AM7 | DM7#11 | \nEbm7/Ab | Ab7 | Ebm7/Ab | Ab7 | \nEbm7/Ab | Ab7 | Ebm7/Ab | Ab7 | \n\n"]
+- - part
+  - [type, melody]
+  - [title, Chorus, 1]
+  - [composer, Bob, Keller, and, Impro-Visor]
+  - [instrument, 11]
+  - [volume, 85]
+  - [key, -5]
+  - [stave, treble]
+  - [body, "g8 f8 bb4 db+8/3 f+8/3 bb+8/3 e+8 c+8\n\n bb8 r4 eb8 f8 eb8 ab4\n\n cb8/3 eb+8/3 ab+8/3 d+8 f+8 b8 r4 ab8\n\n bb8 db+8 f+8 ab+8 eb8 f8 a8 c+4\n\n r4 a8 ab2+4+8\n\n r8 b8 db+8 f+4\n\n bb8 f8 r4 gb8 db8 c8/3 f8/3 ab8/3\n\n db+8 gb+8 f+8 eb+8 gb+4 a+8 e+8\n\n b8 db+8 eb+8 gb+8 r4+8 f+8\n\n ab8 f8 r8 bb16 a16 ab8 f8 db4\n\n g2 g+8 r4 e+8\n\n eb+4 gb+8 r4 eb+8 d+4\n\n g4+8 db8 f8 a8 bb4\n\n c+8 e+8 r8 db+8 eb+4 f+8 ab+8\n\n bb+8 f+8 e+8 d+8 b8 d+8 ab8 bb8\n\n db+8 eb+4 bb4 r4+8\n\n gb8 c+8 ab8 c+8 ab+8 f+8 db+8 c+8\n\n ab8 f8 eb4 db8 g8 db+8 b8\n\n c+4/3 gb4/3 f4/3 bb4 eb+8 gb+8\n\n ab+4 bb+8 f+8 a2\n\n r8 eb16 gb16 b8 g8 db+8/3 a8/3 f8/3 eb8 ab8\n\n ab8 db+8 f+4 r8 bb+8 ab+8 f+8\n\n db+4+8 bb8 g8 db+8 f+4\n\n r8 bb+8 a+8 gb+8 db+4+8 c+8\n\n b8 e+8 ab+8 eb+8 gb+8 db+8 d+8 r2\n\n bb8 a8 db+8 ab8 r4\n\n a8 d+8 b8 db+8 gb+8 r4\n\n db+8 gb+8 r8 c+8 ab8 eb8 c4\n\n gb4 bb8 eb+8 eb+8 ab+8 r8 db+8\n\n bb8 f8 eb4 ab4 c+8 f+8\n\n f+8 bb+8 r8 eb+8 c+8 f+8 r8 c+8\n\n bb8 eb+8 r8 gb+8 f+8 db+8 eb+8 c+8\n\n bb8 c+8 ab2+4\n"]
+- - part
+  - [type, melody]
+  - [title, Chorus, 2]
+  - [composer, Impro-Visor, and, Bob, Keller]
+  - [instrument, 11]
+  - [volume, 85]
+  - [key, -5]
+  - [stave, treble]
+  - [body, "g+2 bb+4 e+4\n\n bb8 c+8 db+8 ab8 r8 b8 f8 eb8\n\n ab8 g8 bb8 e8 d8 gb8 b8 db+8\n\n r8 bb8 db+8 eb+8 gb+8 ab+8 a+4\n\n f+8 c+8 a8 ab8 f8 db8 c4\n\n r4+8 f8 g8 b4 r8\n\n f8 bb8 gb4 r8 db8 f4\n\n gb4+8 ab8 a4 db+8 e+8\n\n gb+8 eb+4 b8 a8 f8 eb8 ab8\n\n eb8 g8 bb8 f8 db8 f8 r4\n\n eb+8 bb8 g8 e8 g8 b8 e+8 db+8\n\n g+4 gb8 bb8 eb+8 c+8 gb+4\n\n f8 r8 g8 db8 c8 db8 e8 bb8\n\n a8/3 c+8/3 db+8/3 eb+8 ab+8 eb+4 b8/3 eb8/3 f8/3\n\n ab8/3 bb8/3 g8/3 db8 gb8 d8 ab8 d+8 ab+8\n\n db+4+8 gb+8 eb+8 ab+8 a+8 f+8\n\n r8 c+8 gb8 a8 ab4 bb4\n\n db+8 f+8 bb+8 g+8 db+4+8 eb+8\n\n db+8 f+8 bb+8 gb+8 db+8 bb8 gb8 db8\n\n f4 r8 f8 r4 eb8 gb8\n\n db8 e8 a4 d+8 gb+8 g+8 ab+8\n\n bb+8 ab+8 f+8 c+8 db+8 bb8 f8 db8\n\n g8 ab8 r4 g4 db8 f8\n\n bb8 db+8 r4+8 e+16 gb+16 eb+8 b8\n\n ab+4/3 eb+4/3 e+4/3 db+8 b8 bb8 ab8\n\n d+4+8 b8 a+8 e+8 db+8 ab4\n\n e8 a4 gb2\n\n c+8 bb4 eb+8 db+8 gb+8 ab+8 d+8\n\n ab8 c+8 gb8 c8 eb+8 db+4 gb+8\n\n eb+8 ab+8 bb+8 fb+8 bb8 d+8 ab8 d8\n\n r8 d+8 f+8/3 eb+8/3 db+8/3 eb+8/3 db+8/3 c+8/3 db+8/3 c+8/3 bb8/3\n\n c+8/3 bb8/3 ab8/3 gb8 d8 eb2+8\n\n gb8 ab8 eb8 gb8 c+8 d+4\n"]
+- - part
+  - [type, melody]
+  - [title, Chorus, 3]
+  - [composer, Impro-Visor]
+  - [instrument, 11]
+  - [volume, 85]
+  - [key, -5]
+  - [stave, treble]
+  - [body, "g+8 bb+8 a+8 f+4 r8 ab+8 bb+8\n\n e+4+8 eb+8 b8 ab8 f8 eb8\n\n f8 bb8 d+8 ab+4 r8 bb+8 ab+8\n\n gb+4 eb+8 db+8 ab4 e8 gb8\n\n a8 c+8 gb+8 ab+4 g+8 f+8 db+8\n\n ab4+8 eb8 db8 g16 a16 ab8 f8\n\n bb4/3 db+4/3 f+4/3 ab+8 gb+8 bb+8 bb+8\n\n f+16 e+16 f+8 db+4 gb+8 a+8 e+8 db+8\n\n ab8 e4 r8 gb4 f2\n\n db8 g8 db+4+8 b8\n\n bb8 eb+8 a+8 g+8 d+4 e+8 bb+8\n\n a+8 gb+8 eb+8 db+8 eb8 e8 eb8 c8\n\n db4 g8 f8 bb8 db+8 r8 e+8\n\n bb+8 g+8 e+8/3 c+8/3 ab8/3 eb8 db8 f8 b8\n\n eb+8/3 ab+8/3 f+8/3 gb+4 d+8 ab8 d8 gb8\n\n bb8/3 db+8/3 c+8/3 db+8 gb+8 eb+8 c+8 ab8/3 e8/3 c8/3\n\n r8 gb8 a4+8 g8 db4\n\n eb8 ab8 r8 e8 bb8/3 db+8/3 b8/3 f8 db8\n\n gb8 bb8 bb8 c+8 gb+8 r8 c+8 db+8\n\n f+4/3 ab+4/3 bb+4/3 e+8 eb+8 a+4\n\n gb+8 db+8 b8 gb4 eb8 a8 eb+8\n\n f+8 c+8 ab8 bb8 f8 db4 r8\n\n g4 c+8 eb+8 r4 db+4+8\n\n a8 gb8 e8 db8 db8 g8/3 f8/3 g8/3\n\n ab4 b8 e+8 r8 ab+8 d+8 r8\n\n b8 bb8 gb8 ab8 e4 db4\n\n db4 d4 gb8 a8 ab8 db+8\n\n r4+8 f+8 eb+4 gb+4/3 e+4/3\n\n ab+4/3 gb+8 c8 gb8/3 bb8/3 db+8/3 gb+8 f+8\n\n c+8 eb+8 ab+8 gb+8 ab+8 eb+8 c+8 ab8\n\n db+8 bb8 f4 gb4 eb8 c8\n\n gb4 e8 ab8 f4+8 db8\n\n eb8 r8 c8 eb8 e8 a8 eb+8 r8\n"]

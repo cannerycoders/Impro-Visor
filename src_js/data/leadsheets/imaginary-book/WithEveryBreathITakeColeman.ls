@@ -1,0 +1,66 @@
+# Converted from Impro-Visor src on 2022-07-10T22:13:11.741Z
+# Impro-Visor is GPL-3, copyright 2005-2017 Robert Keller and Harvey Mudd College
+# see: https://github.com/Impro-Visor/Impro-Visor
+- - title
+  - With
+  - Every
+  - Breath
+  - I
+  - Take
+- - composer
+  - Cy
+  - Coleman
+- - show
+- - year
+- - comments
+- - meter
+  - 4
+  - 4
+- - key
+  - -2
+- - tempo
+  - 100
+- - volume
+  - 127
+- - playback-transpose
+  - 0
+- - bass-instrument
+  - 33
+- - bass-volume
+  - 60
+- - drum-volume
+  - 60
+- - chord-volume
+  - 60
+- - breakpoint
+  - 54
+- - layout
+- - style
+  - swing
+  - [swing, 0.67]
+  - [comp-swing, 0.67]
+  - [bass-high, g-]
+  - [bass-low, g---]
+  - [bass-base, c--]
+  - [chord-high, a]
+  - [chord-low, c-]
+  - [chord-base, c-, e-, g-]
+- - part
+  - [type, chords]
+  - [title]
+  - [composer]
+  - [instrument, 0]
+  - [volume, 65]
+  - [key, -2]
+- - section
+  - [style, swing]
+  - [body, "Gm7 | Cm7 | F7 D7b9 | Gm7 | \nG9sus G7b9 | Cm7 | Eb/Bb F7/A | Eb7 D7b9 | \nGm7 | C7 | Gm7 | C7 | \nCm7 Cm7/Bb | Am7b5 D7b9 | Gm7 / / Gm7/F | EbM7 | \nA7+ | D7b9 | Gm7 | C7 | \nEbM7 | Gm7/D | AbM7 | DbM7 | \nD7 Ab/D | Gm7 | Cm7 | F7 D7b9 | \nGm7 | G9sus G7b9 | Cm7 | Eb/F F/Eb | \nBb/D / Fm7 E7 | EbM7 | Bb/D | B/D | \nD7#11 Ab7 | Gm7 | C7 | \n"]
+- - part
+  - [type, melody]
+  - [title]
+  - [composer]
+  - [instrument, 11]
+  - [volume, 85]
+  - [key, -2]
+  - [stave, treble]
+  - [body, "r8 d+8 r1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+2+4\n"]

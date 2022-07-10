@@ -1,0 +1,63 @@
+# Converted from Impro-Visor src on 2022-07-10T22:13:10.957Z
+# Impro-Visor is GPL-3, copyright 2005-2017 Robert Keller and Harvey Mudd College
+# see: https://github.com/Impro-Visor/Impro-Visor
+- - title
+  - Seabrook
+  - Revisited
+- - composer
+  - Jack
+  - Zucker
+- - show
+- - year
+- - comments
+- - meter
+  - 4
+  - 4
+- - key
+  - 3
+- - tempo
+  - 160
+- - volume
+  - 127
+- - playback-transpose
+  - 0
+- - bass-instrument
+  - 33
+- - bass-volume
+  - 60
+- - drum-volume
+  - 60
+- - chord-volume
+  - 40
+- - breakpoint
+  - 54
+- - layout
+- - style
+  - samba
+  - [swing, 0.5]
+  - [comp-swing, 0.5]
+  - [bass-high, c-]
+  - [bass-low, c--]
+  - [bass-base, g--]
+  - [chord-high, c]
+  - [chord-low, c-]
+  - [chord-base, c-, e-, g-]
+- - part
+  - [type, chords]
+  - [title]
+  - [composer]
+  - [instrument, 0]
+  - [volume, 65]
+  - [key, 3]
+- - section
+  - [style, samba]
+  - [body, "AM7 | / | FM7 | / | \nAM7 | / | Em7 | A7alt | \nDM7 | C#7b9 | F#m7 | B7b9#11 | \nGM7#11 | / | FM7#11 | / | \nAM7 | / | FM7 | / | \nAM7 | / | Em7 | A7alt | \nDM7 | C#7b9 | F#m7 | B7b9#11 | \nGM7#11 | / | FM7#11 | / | \nAm7b5 | D7b9 | Gm7 | Gm7/F | \nBM7 | E7 | Ebm7 | Dm7 G7 | \nF#M7 | EM7 | DM7 | CM7 | \nA/B | / | BbM7#11 | / | \nAM7 | / | FM7 | / | \nAM7 | / | Em7 | A7alt | \nDM7 | C#7b9 | F#m7 | B7b9#11 | \nGM7#11 | / | FM7#11 | / | \n\n"]
+- - part
+  - [type, melody]
+  - [title]
+  - [composer]
+  - [instrument, 11]
+  - [volume, 85]
+  - [key, 3]
+  - [stave, treble]
+  - [body, "c#+8 r1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+2+4+8\n"]

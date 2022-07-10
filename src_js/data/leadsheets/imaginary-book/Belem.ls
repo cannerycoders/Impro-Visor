@@ -1,0 +1,80 @@
+# Converted from Impro-Visor src on 2022-07-10T22:13:08.603Z
+# Impro-Visor is GPL-3, copyright 2005-2017 Robert Keller and Harvey Mudd College
+# see: https://github.com/Impro-Visor/Impro-Visor
+- - title
+  - Belem
+- - composer
+  - Kenny
+  - Barron
+- - show
+- - year
+- - comments
+- - meter
+  - 4
+  - 4
+- - key
+  - 0
+- - tempo
+  - 174
+- - volume
+  - 80
+- - playback-transpose
+  - 0
+  - 0
+  - 0
+- - chord-font-size
+  - 16
+- - bass-instrument
+  - 33
+- - bass-volume
+  - 123
+- - drum-volume
+  - 68
+- - chord-volume
+  - 120
+- - breakpoint
+  - 54
+- - layout
+  - 4
+- - roadmap-layout
+  - 8
+- - melody-volume
+  - 115
+- - style
+  - latin-plain
+  - [swing, 0.55]
+  - [comp-swing, 0.55]
+  - [bass-high, c]
+  - [bass-low, g--]
+  - [chord-high, a]
+  - [chord-low, c-]
+  - [voicing-name, default.fv]
+  - [chord-base, c-, e-, g-]
+- - part
+  - [type, chords]
+  - [title]
+  - [composer]
+  - [instrument, 0]
+  - [volume, 65]
+  - [key, 0]
+- - section
+  - [style, latin-plain]
+  - [body, "G69 | B7#5#9 | C69 | C#7#5 | \nF#m7 | G#m7 | Am7 | D9 | \nE69 | C7#5#9 | AM7 | Ab7#5 | \nDbm9 | Ab7#5 | Dbm9 | D9 | \n\n\n"]
+- - section
+  - [style]
+  - [body, "G69 | B7#5#9 | C69 | C#7#5 | \nF#m7 | G#m7 | Am7 | D9 | \nE69 | C7#5#9 | AM7 | Ab7#5 | \nDbm9 | Ab7#5 | Dbm9 | G7#5#9 | \n\n\n"]
+- - section
+  - [style]
+  - [body, "Gm7/C | C9 | Gm7/C | C7b9#11 | \nGm7/C | C9 | Gm7/C | C7b9#11 | \nFm7/Bb | Bb7b9 | Fm7/Bb | Bb7b9 | \nFm7/Bb | Bb7b9 | Fm7/Bb | A7 D9 | \n\n\n"]
+- - section
+  - [style]
+  - [body, "G69 | B7#5#9 | C69 | C#7#5 | \nF#m7 | G#m7 | Am7 | D9 | \nE69 | C7#5#9 | AM7 | Ab7#5 | \nDbm9 | Ab7#5 | Dbm9 | D9 | \n\n"]
+- - part
+  - [type, melody]
+  - [title]
+  - [composer]
+  - [instrument, 0]
+  - [volume, 85]
+  - [key, 0]
+  - [stave, treble]
+  - [body, 'r1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1 ']

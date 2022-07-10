@@ -1,0 +1,86 @@
+# Converted from Impro-Visor src on 2022-07-10T22:13:11.917Z
+# Impro-Visor is GPL-3, copyright 2005-2017 Robert Keller and Harvey Mudd College
+# see: https://github.com/Impro-Visor/Impro-Visor
+- - title
+  - Alice
+  - In
+  - Wonderland
+- - composer
+  - Sammy
+  - Fain
+  - and
+  - Bob
+  - Hilliard
+- - show
+- - year
+- - comments
+- - meter
+  - 3
+  - 4
+- - key
+  - 0
+- - tempo
+  - 160
+- - volume
+  - 80
+- - playback-transpose
+  - 0
+- - chord-font-size
+  - 16
+- - bass-instrument
+  - 33
+- - bass-volume
+  - 60
+- - drum-volume
+  - 60
+- - chord-volume
+  - 31
+- - breakpoint
+  - 54
+- - layout
+- - roadmap-layout
+  - 8
+- - style
+  - waltz
+  - [swing, 0.67]
+  - [comp-swing, 0.67]
+  - [bass-high, g-]
+  - [bass-low, g---]
+  - [bass-base, c--]
+  - [chord-high, a]
+  - [chord-low, c-]
+  - [chord-base, c-, e-, g-]
+- - part
+  - [type, chords]
+  - [title, Untitled, Part]
+  - [composer]
+  - [instrument, 0]
+  - [volume, 65]
+  - [key, 0]
+- - section
+  - [style, waltz]
+  - [body, "Dm7 | G7 | CM7 | FM7 | \nBm7b5 | E7 | Am7 | Eb7 | \n\n\n"]
+- - section
+  - [style]
+  - [body, "Dm7 | G7 | Em7 | Am7 | \nDm7 | G7 | Em7 A7 | Dm7 G7 | \n\n\n"]
+- - section
+  - [style]
+  - [body, "Dm7 | G7 | CM7 | FM7 | \nBm7b5 | E7 | Am7 | Eb7 | \n\n\n"]
+- - section
+  - [style]
+  - [body, "Dm7 | G7 | Em7 | Am7 | \nDm7 | G7 | CM7 | A7 | \n\n\n"]
+- - section
+  - [style]
+  - [body, "D7 | G7 | Em7 | Am7 | \nDm7 | G7 | CM7 | FM7 | \n\n\n"]
+- - section
+  - [style]
+  - [body, "F#m7b5 | B7b9 | Em7 | A7 | \nDm7 / A7 | Dm7 / A7 | Dm7 / Ab7 | G7 | \n\n"]
+- - part
+  - [type, melody]
+  - [title]
+  - [composer]
+  - [instrument, 73]
+  - [volume, 85]
+  - [key, 0]
+  - [stave, treble]
+  - [body, 'r1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1 ']
