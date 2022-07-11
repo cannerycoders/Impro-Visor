@@ -1,67 +1,33 @@
-# Converted from Impro-Visor src on 2022-07-10T22:13:07.550Z
+# Converted from Impro-Visor src on 2022-07-11T18:12:06.028Z
 # Impro-Visor is GPL-3, copyright 2005-2017 Robert Keller and Harvey Mudd College
 # see: https://github.com/Impro-Visor/Impro-Visor
-- - title
-  - Jordu
-- - composer
-  - Duke
-  - Jordan
-- - show
-- - year
-  - 1953
-- - comments
-- - meter
-  - 4
-  - 4
-- - key
-  - -3
-- - tempo
-  - 160
-- - volume
-  - 80
-- - playback-transpose
-  - 0
-- - chord-font-size
-  - 16
-- - bass-instrument
-  - 33
-- - bass-volume
-  - 60
-- - drum-volume
-  - 60
-- - chord-volume
-  - 40
-- - breakpoint
-  - 54
-- - layout
-- - roadmap-layout
-  - 8
-- - style
-  - swing
-  - [swing, 0.67]
-  - [comp-swing, 0.67]
-  - [bass-high, g-]
-  - [bass-low, c---]
-  - [bass-base, e--]
-  - [chord-high, a]
-  - [chord-low, d-]
-  - [chord-base, c-, e-, g-]
-- - part
-  - [type, chords]
-  - [title]
-  - [composer]
-  - [instrument, 0]
-  - [volume, 65]
-  - [key, -3]
-- - phrase
-  - [style, swing]
+- [title, Jordu]
+- [composer, Duke, Jordan]
+- [show]
+- [year, 1953]
+- [comments]
+- [meter, 4, 4]
+- [key, -3]
+- [tempo, 160]
+- [volume, 80]
+- [playback-transpose, 0]
+- [chord-font-size, 16]
+- [bass-instrument, 33]
+- [bass-volume, 60]
+- [drum-volume, 60]
+- [chord-volume, 40]
+- [breakpoint, 54]
+- [layout]
+- [roadmap-layout, 8]
+- [style, swing, [swing, 0.67], [comp-swing, 0.67], [bass-high, g-], [bass-low, c---], [bass-base, e--], [chord-high, a], [chord-low, d-], [chord-base, c-, e-, g-]]
+- [part, [type, chords], [title], [composer], [instrument, 0], [volume, 65], [key, -3]]
+- [phrase, [style, swing]]
 - D7
 - G7
 - '|'
 - Cm
 - '|'
-- - phrase
-  - [style]
+- [phrase, [style]]
 - F7
 - Bb7
 - '|'
@@ -72,21 +38,18 @@
 - '|'
 - Cm
 - '|'
-- - phrase
-  - [style]
+- [phrase, [style]]
 - Ab7
 - '|'
 - Cm
 - '|'
-- - phrase
-  - [style]
+- [phrase, [style]]
 - D7
 - G7
 - '|'
 - Cm
 - '|'
-- - phrase
-  - [style]
+- [phrase, [style]]
 - F7
 - Bb7
 - '|'
@@ -97,14 +60,12 @@
 - '|'
 - Cm
 - '|'
-- - phrase
-  - [style]
+- [phrase, [style]]
 - Ab7
 - '|'
 - Cm
 - '|'
-- - phrase
-  - [style]
+- [phrase, [style]]
 - G7
 - C7
 - '|'
@@ -130,15 +91,13 @@
 - /
 - /
 - '|'
-- - phrase
-  - [style]
+- [phrase, [style]]
 - D7
 - G7
 - '|'
 - Cm
 - '|'
-- - phrase
-  - [style]
+- [phrase, [style]]
 - F7
 - Bb7
 - '|'
@@ -149,15 +108,5 @@
 - '|'
 - Cm
 - '|'
-- - section
-  - [style]
-  - [body, "Ab7 | Cm | \n\n"]
-- - part
-  - [type, melody]
-  - [title]
-  - [composer]
-  - [instrument, 11]
-  - [volume, 85]
-  - [key, -3]
-  - [stave, treble]
-  - [body, "f#2 r1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+2\n"]
+- [section, [style], [body, "Ab7 | Cm | \n\n"]]
+- [part, [type, melody], [title], [composer], [instrument, 11], [volume, 85], [key, -3], [stave, treble], [body, "f#2 r1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+2\n"]]

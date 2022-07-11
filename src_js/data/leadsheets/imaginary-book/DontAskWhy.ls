@@ -1,64 +1,23 @@
-# Converted from Impro-Visor src on 2022-07-10T22:13:09.151Z
+# Converted from Impro-Visor src on 2022-07-11T18:12:07.432Z
 # Impro-Visor is GPL-3, copyright 2005-2017 Robert Keller and Harvey Mudd College
 # see: https://github.com/Impro-Visor/Impro-Visor
-- - title
-  - Don't
-  - Ask
-  - Why
-- - composer
-  - Alan
-  - Broadbent
-- - show
-- - year
-- - comments
-- - meter
-  - 4
-  - 4
-- - key
-  - -4
-- - tempo
-  - 110
-- - volume
-  - 127
-- - playback-transpose
-  - 0
-- - bass-instrument
-  - 33
-- - bass-volume
-  - 60
-- - drum-volume
-  - 60
-- - chord-volume
-  - 40
-- - breakpoint
-  - 54
-- - layout
-- - style
-  - ballad
-  - [swing, 0.67]
-  - [comp-swing, 0.67]
-  - [bass-high, g-]
-  - [bass-low, g---]
-  - [bass-base, c--]
-  - [chord-high, b]
-  - [chord-low, b--]
-  - [chord-base, c-, e-, g-]
-- - part
-  - [type, chords]
-  - [title]
-  - [composer]
-  - [instrument, 0]
-  - [volume, 65]
-  - [key, -4]
-- - section
-  - [style, ballad]
-  - [body, "Fm69 Dm7b5 | Gm7b5 C7b9 | Fm69 Dm7b5 | Bbm7 Eb7b9 | \nEbm7 Ab7b9 | Dbm7 Bb7b9 | Bm7 E7b9 | Am7 Abm7 Gm7 Gbm7 | \nFm69 Dm7b5 | Gm7b5 C7b9 | Fm69 Dm7b5 | Bbm7 Eb7b9 | \nEbm7 Ab7b9 | Dbm7 Bb7b9 | CbM7 EM7 | Fm7 Bb7b9 | \nEbM7 / BbM7 DbM7 | EbM7 / CbM7 DbM7 | EbM7 / DbM7 D7 | EbM7 Ab7/D | \nDbM7 / AM7 CbM7 | DbM7 / Ab7sus Ao7 | Bbm7 GbM7 | Gm7b5 C7b9 | \nFM7 / Dm7 D7b9 | Gm7 / C7 Eb7/Bb | Am7 Dm7 | Bbm7 Eb7b9 | \nEbm7 Ab7 Dm7 G7 | Dbm7 Gb7 | Cm7 F7#9 | Bbm7b5 Eb7b9 | \nGbM7/Ab | Gbm7 | \n"]
-- - part
-  - [type, melody]
-  - [title]
-  - [composer]
-  - [instrument, 11]
-  - [volume, 85]
-  - [key, -4]
-  - [stave, treble]
-  - [body, "c8 r1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+2+4+8\n"]
+- [title, Don't, Ask, Why]
+- [composer, Alan, Broadbent]
+- [show]
+- [year]
+- [comments]
+- [meter, 4, 4]
+- [key, -4]
+- [tempo, 110]
+- [volume, 127]
+- [playback-transpose, 0]
+- [bass-instrument, 33]
+- [bass-volume, 60]
+- [drum-volume, 60]
+- [chord-volume, 40]
+- [breakpoint, 54]
+- [layout]
+- [style, ballad, [swing, 0.67], [comp-swing, 0.67], [bass-high, g-], [bass-low, g---], [bass-base, c--], [chord-high, b], [chord-low, b--], [chord-base, c-, e-, g-]]
+- [part, [type, chords], [title], [composer], [instrument, 0], [volume, 65], [key, -4]]
+- [section, [style, ballad], [body, "Fm69 Dm7b5 | Gm7b5 C7b9 | Fm69 Dm7b5 | Bbm7 Eb7b9 | \nEbm7 Ab7b9 | Dbm7 Bb7b9 | Bm7 E7b9 | Am7 Abm7 Gm7 Gbm7 | \nFm69 Dm7b5 | Gm7b5 C7b9 | Fm69 Dm7b5 | Bbm7 Eb7b9 | \nEbm7 Ab7b9 | Dbm7 Bb7b9 | CbM7 EM7 | Fm7 Bb7b9 | \nEbM7 / BbM7 DbM7 | EbM7 / CbM7 DbM7 | EbM7 / DbM7 D7 | EbM7 Ab7/D | \nDbM7 / AM7 CbM7 | DbM7 / Ab7sus Ao7 | Bbm7 GbM7 | Gm7b5 C7b9 | \nFM7 / Dm7 D7b9 | Gm7 / C7 Eb7/Bb | Am7 Dm7 | Bbm7 Eb7b9 | \nEbm7 Ab7 Dm7 G7 | Dbm7 Gb7 | Cm7 F7#9 | Bbm7b5 Eb7b9 | \nGbM7/Ab | Gbm7 | \n"]]
+- [part, [type, melody], [title], [composer], [instrument, 11], [volume, 85], [key, -4], [stave, treble], [body, "c8 r1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+2+4+8\n"]]

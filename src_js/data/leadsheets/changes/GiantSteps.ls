@@ -1,80 +1,28 @@
-# Converted from Impro-Visor src on 2022-07-10T22:13:07.532Z
+# Converted from Impro-Visor src on 2022-07-11T18:12:06.011Z
 # Impro-Visor is GPL-3, copyright 2005-2017 Robert Keller and Harvey Mudd College
 # see: https://github.com/Impro-Visor/Impro-Visor
-- - title
-  - Giant
-  - Steps
-- - composer
-  - John
-  - Coltrane
-- - show
-  - Giant
-  - Steps
-- - year
-  - 1960
-- - comments
-- - meter
-  - 4
-  - 4
-- - key
-  - -3
-- - tempo
-  - 220
-- - volume
-  - 80
-- - playback-transpose
-  - 0
-- - chord-font-size
-  - 16
-- - bass-instrument
-  - 32
-- - bass-volume
-  - 41
-- - drum-volume
-  - 60
-- - chord-volume
-  - 40
-- - breakpoint
-  - 54
-- - layout
-  - 4
-- - roadmap-layout
-  - 4
-- - style
-  - swing
-  - [swing, 0.67]
-  - [comp-swing, 0.67]
-  - [bass-high, g-]
-  - [bass-low, g--]
-  - [bass-base, c--]
-  - [chord-high, a]
-  - [chord-low, a--]
-  - [chord-base, c-, e-, g-]
-- - part
-  - [type, chords]
-  - [title]
-  - [composer]
-  - [instrument, 0]
-  - [volume, 65]
-  - [key, -3]
-- - section
-  - [style, swing]
-  - [body, "BM7 D9 | GM7 Bb9 | EbM7 | Am9 D9 | \n\n\n"]
-- - section
-  - [style]
-  - [body, "GM7 Bb9 | EbM7 F#9 | BM7 | Fm9 Bb9 | \n\n\n"]
-- - section
-  - [style]
-  - [body, "EbM9 | Am9 D9 | GM7 | C#m7 F#9 | \n\n\n"]
-- - section
-  - [style]
-  - [body, "BM7 | Fm9 Bb9 | EbM7 | C#m7 F#9 | \n\n"]
-- - part
-  - [type, melody]
-  - [title]
-  - [composer]
-  - [instrument, 11]
-  - [volume, 85]
-  - [key, -3]
-  - [stave, treble]
-  - [body, "f#+2 r1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+2\n"]
+- [title, Giant, Steps]
+- [composer, John, Coltrane]
+- [show, Giant, Steps]
+- [year, 1960]
+- [comments]
+- [meter, 4, 4]
+- [key, -3]
+- [tempo, 220]
+- [volume, 80]
+- [playback-transpose, 0]
+- [chord-font-size, 16]
+- [bass-instrument, 32]
+- [bass-volume, 41]
+- [drum-volume, 60]
+- [chord-volume, 40]
+- [breakpoint, 54]
+- [layout, 4]
+- [roadmap-layout, 4]
+- [style, swing, [swing, 0.67], [comp-swing, 0.67], [bass-high, g-], [bass-low, g--], [bass-base, c--], [chord-high, a], [chord-low, a--], [chord-base, c-, e-, g-]]
+- [part, [type, chords], [title], [composer], [instrument, 0], [volume, 65], [key, -3]]
+- [section, [style, swing], [body, "BM7 D9 | GM7 Bb9 | EbM7 | Am9 D9 | \n\n\n"]]
+- [section, [style], [body, "GM7 Bb9 | EbM7 F#9 | BM7 | Fm9 Bb9 | \n\n\n"]]
+- [section, [style], [body, "EbM9 | Am9 D9 | GM7 | C#m7 F#9 | \n\n\n"]]
+- [section, [style], [body, "BM7 | Fm9 Bb9 | EbM7 | C#m7 F#9 | \n\n"]]
+- [part, [type, melody], [title], [composer], [instrument, 11], [volume, 85], [key, -3], [stave, treble], [body, "f#+2 r1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+2\n"]]

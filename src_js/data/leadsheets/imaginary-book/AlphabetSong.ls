@@ -1,62 +1,23 @@
-# Converted from Impro-Visor src on 2022-07-10T22:13:08.368Z
+# Converted from Impro-Visor src on 2022-07-11T18:12:06.765Z
 # Impro-Visor is GPL-3, copyright 2005-2017 Robert Keller and Harvey Mudd College
 # see: https://github.com/Impro-Visor/Impro-Visor
-- - title
-  - The
-  - Alphabet
-  - Song
-- - composer
-- - show
-- - year
-- - comments
-- - meter
-  - 4
-  - 4
-- - key
-  - 0
-- - tempo
-  - 160
-- - volume
-  - 127
-- - playback-transpose
-  - 0
-- - bass-instrument
-  - 33
-- - bass-volume
-  - 60
-- - drum-volume
-  - 60
-- - chord-volume
-  - 60
-- - breakpoint
-  - 54
-- - layout
-- - style
-  - swing
-  - [swing, 0.67]
-  - [comp-swing, 0.67]
-  - [bass-high, g-]
-  - [bass-low, g---]
-  - [bass-base, c--]
-  - [chord-high, a]
-  - [chord-low, b--]
-  - [chord-base, c-, e-, g-]
-- - part
-  - [type, chords]
-  - [title]
-  - [composer]
-  - [instrument, 0]
-  - [volume, 65]
-  - [key, 0]
-- - section
-  - [style, swing]
-  - [body, "C | A7 | D7 | / | \nDm7 | Em7 A7 | Dm7 G9 | C | \nC | A7 | D7 | / | \nDm7 | Em7 A7 | Dm7 G7 | C | \nF G9 | Em7 Am7 | Dm7 G7 | C | \nF G9 | Em7 Cm/D# | G/D D7 | G7 | \nC | A7 | D7 | / | \nF F#dim | C/G A7+ | Dm7 G7 | C | \n\n"]
-- - part
-  - [type, melody]
-  - [title]
-  - [composer]
-  - [instrument, 11]
-  - [volume, 85]
-  - [key, 0]
-  - [stave, treble]
-  - [body, "c4 r1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+2+4\n"]
+- [title, The, Alphabet, Song]
+- [composer]
+- [show]
+- [year]
+- [comments]
+- [meter, 4, 4]
+- [key, 0]
+- [tempo, 160]
+- [volume, 127]
+- [playback-transpose, 0]
+- [bass-instrument, 33]
+- [bass-volume, 60]
+- [drum-volume, 60]
+- [chord-volume, 60]
+- [breakpoint, 54]
+- [layout]
+- [style, swing, [swing, 0.67], [comp-swing, 0.67], [bass-high, g-], [bass-low, g---], [bass-base, c--], [chord-high, a], [chord-low, b--], [chord-base, c-, e-, g-]]
+- [part, [type, chords], [title], [composer], [instrument, 0], [volume, 65], [key, 0]]
+- [section, [style, swing], [body, "C | A7 | D7 | / | \nDm7 | Em7 A7 | Dm7 G9 | C | \nC | A7 | D7 | / | \nDm7 | Em7 A7 | Dm7 G7 | C | \nF G9 | Em7 Am7 | Dm7 G7 | C | \nF G9 | Em7 Cm/D# | G/D D7 | G7 | \nC | A7 | D7 | / | \nF F#dim | C/G A7+ | Dm7 G7 | C | \n\n"]]
+- [part, [type, melody], [title], [composer], [instrument, 11], [volume, 85], [key, 0], [stave, treble], [body, "c4 r1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+2+4\n"]]

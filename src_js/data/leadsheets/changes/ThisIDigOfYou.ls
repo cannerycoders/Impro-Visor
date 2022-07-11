@@ -1,69 +1,28 @@
-# Converted from Impro-Visor src on 2022-07-10T22:13:07.589Z
+# Converted from Impro-Visor src on 2022-07-11T18:12:06.062Z
 # Impro-Visor is GPL-3, copyright 2005-2017 Robert Keller and Harvey Mudd College
 # see: https://github.com/Impro-Visor/Impro-Visor
-- - title
-  - This
-  - I
-  - Dig
-  - Of
-  - You
-- - composer
-  - Hank
-  - Mobley
-- - show
-  - Soul
-  - Station
-- - year
-  - 1960
-- - comments
-- - meter
-  - 4
-  - 4
-- - key
-  - -1
-- - tempo
-  - 180
-- - volume
-  - 80
-- - playback-transpose
-  - 0
-- - chord-font-size
-  - 16
-- - bass-instrument
-  - 33
-- - bass-volume
-  - 60
-- - drum-volume
-  - 60
-- - chord-volume
-  - 40
-- - breakpoint
-  - 54
-- - layout
-- - roadmap-layout
-  - 8
-- - style
-  - pedal-bass-1
-  - [swing, 0.5]
-  - [comp-swing, 0.5]
-  - [bass-high, g-]
-  - [bass-low, c---]
-  - [bass-base, c--]
-  - [chord-high, a]
-  - [chord-low, c-]
-  - [chord-base, c-, e-, g-]
-- - part
-  - [type, chords]
-  - [title]
-  - [composer]
-  - [instrument, 0]
-  - [volume, 65]
-  - [key, -1]
-- - section
-  - [style, pedal-bass-1]
-  - [body, "BbM7/F | Cm7/F | BbM7/F | Cm7/F | \nBbM7/F | Cm7/F | BbM7/F | Fm7 Bb7 | \n\n"]
-- - phrase
-  - [style, swing]
+- [title, This, I, Dig, Of, You]
+- [composer, Hank, Mobley]
+- [show, Soul, Station]
+- [year, 1960]
+- [comments]
+- [meter, 4, 4]
+- [key, -1]
+- [tempo, 180]
+- [volume, 80]
+- [playback-transpose, 0]
+- [chord-font-size, 16]
+- [bass-instrument, 33]
+- [bass-volume, 60]
+- [drum-volume, 60]
+- [chord-volume, 40]
+- [breakpoint, 54]
+- [layout]
+- [roadmap-layout, 8]
+- [style, pedal-bass-1, [swing, 0.5], [comp-swing, 0.5], [bass-high, g-], [bass-low, c---], [bass-base, c--], [chord-high, a], [chord-low, c-], [chord-base, c-, e-, g-]]
+- [part, [type, chords], [title], [composer], [instrument, 0], [volume, 65], [key, -1]]
+- [section, [style, pedal-bass-1], [body, "BbM7/F | Cm7/F | BbM7/F | Cm7/F | \nBbM7/F | Cm7/F | BbM7/F | Fm7 Bb7 | \n\n"]]
+- [phrase, [style, swing]]
 - Eb
 - '|'
 - Em7b5
@@ -73,11 +32,8 @@
 - '|'
 - G7
 - '|'
-- - section
-  - [style]
-  - [body, "Dbm7 | Gb7 | Cm7 | F7 | \n\n"]
-- - phrase
-  - [style, pedal-bass-1]
+- [section, [style], [body, "Dbm7 | Gb7 | Cm7 | F7 | \n\n"]]
+- [phrase, [style, pedal-bass-1]]
 - BbM7/F
 - '|'
 - Cm7/F
@@ -95,8 +51,7 @@
 - Fm7
 - Bb7
 - '|'
-- - phrase
-  - [style, swing]
+- [phrase, [style, swing]]
 - Eb
 - '|'
 - Em7b5
@@ -106,15 +61,5 @@
 - '|'
 - G7
 - '|'
-- - section
-  - [style]
-  - [body, "Cm7 | F7 | Bb | Cm7 F7 | \n\n"]
-- - part
-  - [type, melody]
-  - [title]
-  - [composer]
-  - [instrument, 11]
-  - [volume, 85]
-  - [key, -1]
-  - [stave, treble]
-  - [body, 'r1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1 ']
+- [section, [style], [body, "Cm7 | F7 | Bb | Cm7 F7 | \n\n"]]
+- [part, [type, melody], [title], [composer], [instrument, 11], [volume, 85], [key, -1], [stave, treble], [body, 'r1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1 ']]

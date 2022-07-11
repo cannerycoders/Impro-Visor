@@ -1,40 +1,16 @@
-# Converted from Impro-Visor src on 2022-07-10T22:13:08.565Z
+# Converted from Impro-Visor src on 2022-07-11T18:12:06.908Z
 # Impro-Visor is GPL-3, copyright 2005-2017 Robert Keller and Harvey Mudd College
 # see: https://github.com/Impro-Visor/Impro-Visor
-- - title
-  - Untitled
-  - Leadsheet
-- - composer
-- - comments
-- - meter
-  - 4
-  - 4
-- - key
-  - 0
-- - tempo
-  - 160
-- - volume
-  - 127
-- - bass-volume
-  - 60
-- - style
-  - swing
-- - breakpoint
-  - 54
-- - layout
-- - part
-  - [type, chords]
-  - [title, Untitled, Part]
-  - [composer]
-  - [instrument, 0]
-  - [volume, 65]
-  - [key, 0]
-  - [body, "G7 | / | C7 | / | \nF7 | / | Bb D7 | Eb7 D7 | \nG7 | / | C7 | / | \nGb7 | Bb/F G7 | Cm7 | F7 Bb | \n\n"]
-- - part
-  - [type, melody]
-  - [title, Untitled, Part]
-  - [composer]
-  - [instrument, 73]
-  - [volume, 85]
-  - [key, 0]
-  - [stave, treble]
+- [title, Untitled, Leadsheet]
+- [composer]
+- [comments]
+- [meter, 4, 4]
+- [key, 0]
+- [tempo, 160]
+- [volume, 127]
+- [bass-volume, 60]
+- [style, swing]
+- [breakpoint, 54]
+- [layout]
+- [part, [type, chords], [title, Untitled, Part], [composer], [instrument, 0], [volume, 65], [key, 0], [body, "G7 | / | C7 | / | \nF7 | / | Bb D7 | Eb7 D7 | \nG7 | / | C7 | / | \nGb7 | Bb/F G7 | Cm7 | F7 Bb | \n\n"]]
+- [part, [type, melody], [title, Untitled, Part], [composer], [instrument, 73], [volume, 85], [key, 0], [stave, treble]]

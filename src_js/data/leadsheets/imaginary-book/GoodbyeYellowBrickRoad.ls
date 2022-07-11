@@ -1,69 +1,23 @@
-# Converted from Impro-Visor src on 2022-07-10T22:13:09.508Z
+# Converted from Impro-Visor src on 2022-07-11T18:12:07.782Z
 # Impro-Visor is GPL-3, copyright 2005-2017 Robert Keller and Harvey Mudd College
 # see: https://github.com/Impro-Visor/Impro-Visor
-- - title
-  - Goodbye
-  - Yellow
-  - Brick
-  - Road
-- - composer
-  - Elton
-  - John
-  - and
-  - Bernie
-  - Taupin
-- - show
-- - year
-  - 1973
-- - comments
-- - meter
-  - 4
-  - 4
-- - key
-  - -1
-- - tempo
-  - 130
-- - volume
-  - 127
-- - playback-transpose
-  - 0
-- - bass-instrument
-  - 33
-- - bass-volume
-  - 60
-- - drum-volume
-  - 60
-- - chord-volume
-  - 40
-- - breakpoint
-  - 54
-- - layout
-- - style
-  - rock-light
-  - [swing, 0.55]
-  - [comp-swing, 0.55]
-  - [bass-high, g-]
-  - [bass-low, g---]
-  - [bass-base, c--]
-  - [chord-high, a]
-  - [chord-low, c-]
-  - [chord-base, c-, e-, g-]
-- - part
-  - [type, chords]
-  - [title]
-  - [composer]
-  - [instrument, 0]
-  - [volume, 65]
-  - [key, -1]
-- - section
-  - [style, rock-light]
-  - [body, "Gm | C | F | Bb | \nEb | C7 | F | / | \nGm7 Bb | C7 | F | Bb | \nEb | C7 | F | / | \nDb | Eb7 | Ab | Db | \nBbm | C7 | F | A7 | \nBb | F | D7 | Gm | \nC7 | F | Dm | A | \nBb | Db | / Eb | F Am | \nDm | Bb C7 | Db | Eb | \nAb | Db | Bbm | C7 | \nF | / | \n"]
-- - part
-  - [type, melody]
-  - [title]
-  - [composer]
-  - [instrument, 11]
-  - [volume, 85]
-  - [key, -1]
-  - [stave, treble]
-  - [body, "g8 r1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+2+4+8\n"]
+- [title, Goodbye, Yellow, Brick, Road]
+- [composer, Elton, John, and, Bernie, Taupin]
+- [show]
+- [year, 1973]
+- [comments]
+- [meter, 4, 4]
+- [key, -1]
+- [tempo, 130]
+- [volume, 127]
+- [playback-transpose, 0]
+- [bass-instrument, 33]
+- [bass-volume, 60]
+- [drum-volume, 60]
+- [chord-volume, 40]
+- [breakpoint, 54]
+- [layout]
+- [style, rock-light, [swing, 0.55], [comp-swing, 0.55], [bass-high, g-], [bass-low, g---], [bass-base, c--], [chord-high, a], [chord-low, c-], [chord-base, c-, e-, g-]]
+- [part, [type, chords], [title], [composer], [instrument, 0], [volume, 65], [key, -1]]
+- [section, [style, rock-light], [body, "Gm | C | F | Bb | \nEb | C7 | F | / | \nGm7 Bb | C7 | F | Bb | \nEb | C7 | F | / | \nDb | Eb7 | Ab | Db | \nBbm | C7 | F | A7 | \nBb | F | D7 | Gm | \nC7 | F | Dm | A | \nBb | Db | / Eb | F Am | \nDm | Bb C7 | Db | Eb | \nAb | Db | Bbm | C7 | \nF | / | \n"]]
+- [part, [type, melody], [title], [composer], [instrument, 11], [volume, 85], [key, -1], [stave, treble], [body, "g8 r1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+2+4+8\n"]]

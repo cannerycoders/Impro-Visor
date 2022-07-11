@@ -27,11 +27,9 @@
         * to-midi
         * to-fgrid
 * detach view from model 
-  * dump javabeans, etc
-  * eliminate java runtime requirements
-
+    * dump javabeans, etc
+    * eliminate java runtime requirements
 * accessible grammar tools
-* a
 
 
 

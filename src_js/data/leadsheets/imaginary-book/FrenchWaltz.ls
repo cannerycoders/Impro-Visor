@@ -1,63 +1,23 @@
-# Converted from Impro-Visor src on 2022-07-10T22:13:09.402Z
+# Converted from Impro-Visor src on 2022-07-11T18:12:07.681Z
 # Impro-Visor is GPL-3, copyright 2005-2017 Robert Keller and Harvey Mudd College
 # see: https://github.com/Impro-Visor/Impro-Visor
-- - title
-  - French
-  - Waltz
-- - composer
-  - Dudley
-  - Moore
-- - show
-- - year
-- - comments
-- - meter
-  - 3
-  - 4
-- - key
-  - 1
-- - tempo
-  - 120
-- - volume
-  - 127
-- - playback-transpose
-  - 0
-- - bass-instrument
-  - 33
-- - bass-volume
-  - 60
-- - drum-volume
-  - 60
-- - chord-volume
-  - 40
-- - breakpoint
-  - 54
-- - layout
-- - style
-  - swing
-  - [swing, 0.67]
-  - [comp-swing, 0.67]
-  - [bass-high, g-]
-  - [bass-low, g---]
-  - [bass-base, c--]
-  - [chord-high, b]
-  - [chord-low, g--]
-  - [chord-base, c-, e-, g-]
-- - part
-  - [type, chords]
-  - [title]
-  - [composer]
-  - [instrument, 0]
-  - [volume, 65]
-  - [key, 1]
-- - section
-  - [style, swing]
-  - [body, "Em7 | EmM7 | Em7 | / | \nAm | Am/G# | Am/G | Am/F# | \nB7b9/D# | B7 | Em7 | CM7 | \nD | G/B | CM7 | Am | \nEm7 | EmM7 | Em7 | / | \nAm | Am/G# | Am/G | Am/F# | \nB7b9/D# | B7 | Em7 | CM7 | \nD | G/B | CM7 | C/B | \nF#/A# | D7/A | E/G# | GM7 | \nF#7+ | Bm | Gm7 | Cm7 | \nFm7 | Bb7b9 | Dm7b5/Ab | G7 | \nGb | F7 | AbM7/Eb | Dm7b5 | \nF7 | Gb7 | Cm/G | Ab7 | \nEm7 | EmM7 | Em7 | / | \nAm | Am/G# | Am/G | Am/F# | \nB7b9/D# | B7 | Em7 | CM7 | \nAm | G/B | E/G# | Am | \nD/C | B7 | C7 | F#7+ | \nB7b9 | A13 | \n"]
-- - part
-  - [type, melody]
-  - [title]
-  - [composer]
-  - [instrument, 11]
-  - [volume, 85]
-  - [key, 1]
-  - [stave, treble]
-  - [body, "b2 r1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1\n"]
+- [title, French, Waltz]
+- [composer, Dudley, Moore]
+- [show]
+- [year]
+- [comments]
+- [meter, 3, 4]
+- [key, 1]
+- [tempo, 120]
+- [volume, 127]
+- [playback-transpose, 0]
+- [bass-instrument, 33]
+- [bass-volume, 60]
+- [drum-volume, 60]
+- [chord-volume, 40]
+- [breakpoint, 54]
+- [layout]
+- [style, swing, [swing, 0.67], [comp-swing, 0.67], [bass-high, g-], [bass-low, g---], [bass-base, c--], [chord-high, b], [chord-low, g--], [chord-base, c-, e-, g-]]
+- [part, [type, chords], [title], [composer], [instrument, 0], [volume, 65], [key, 1]]
+- [section, [style, swing], [body, "Em7 | EmM7 | Em7 | / | \nAm | Am/G# | Am/G | Am/F# | \nB7b9/D# | B7 | Em7 | CM7 | \nD | G/B | CM7 | Am | \nEm7 | EmM7 | Em7 | / | \nAm | Am/G# | Am/G | Am/F# | \nB7b9/D# | B7 | Em7 | CM7 | \nD | G/B | CM7 | C/B | \nF#/A# | D7/A | E/G# | GM7 | \nF#7+ | Bm | Gm7 | Cm7 | \nFm7 | Bb7b9 | Dm7b5/Ab | G7 | \nGb | F7 | AbM7/Eb | Dm7b5 | \nF7 | Gb7 | Cm/G | Ab7 | \nEm7 | EmM7 | Em7 | / | \nAm | Am/G# | Am/G | Am/F# | \nB7b9/D# | B7 | Em7 | CM7 | \nAm | G/B | E/G# | Am | \nD/C | B7 | C7 | F#7+ | \nB7b9 | A13 | \n"]]
+- [part, [type, melody], [title], [composer], [instrument, 11], [volume, 85], [key, 1], [stave, treble], [body, "b2 r1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1\n"]]

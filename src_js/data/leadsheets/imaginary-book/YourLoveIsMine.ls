@@ -1,63 +1,23 @@
-# Converted from Impro-Visor src on 2022-07-10T22:13:11.885Z
+# Converted from Impro-Visor src on 2022-07-11T18:12:09.977Z
 # Impro-Visor is GPL-3, copyright 2005-2017 Robert Keller and Harvey Mudd College
 # see: https://github.com/Impro-Visor/Impro-Visor
-- - title
-  - Your
-  - Love
-  - Is
-  - Mine
-- - composer
-- - show
-- - year
-- - comments
-- - meter
-  - 4
-  - 4
-- - key
-  - 0
-- - tempo
-  - 160
-- - volume
-  - 127
-- - playback-transpose
-  - 0
-- - bass-instrument
-  - 33
-- - bass-volume
-  - 60
-- - drum-volume
-  - 60
-- - chord-volume
-  - 60
-- - breakpoint
-  - 54
-- - layout
-- - style
-  - swing
-  - [swing, 0.67]
-  - [comp-swing, 0.67]
-  - [bass-high, g-]
-  - [bass-low, g---]
-  - [bass-base, c--]
-  - [chord-high, a]
-  - [chord-low, b--]
-  - [chord-base, c-, e-, g-]
-- - part
-  - [type, chords]
-  - [title]
-  - [composer]
-  - [instrument, 0]
-  - [volume, 65]
-  - [key, 0]
-- - section
-  - [style, swing]
-  - [body, "Gm7 | C7 | Fmaj7 | F6 Abdim | \nBbm6 | C7 | F | Cm7 F7b9 | \nBb | Bbm C7 | F | / | \nDm7 G7 | Dm7 G7 | Gm7 | C7 | \nGm7 | C7 | Fmaj7 | F6 Abdim | \nBbm6 | C7 | Am7 | D7 | \nBb | Bbm C7 | F | D7b9 / D7 G | \nGm7 | C7 / Gm7 C7b9 | F6 Eb9 | Fmaj7 | \n\n"]
-- - part
-  - [type, melody]
-  - [title]
-  - [composer]
-  - [instrument, 11]
-  - [volume, 85]
-  - [key, 0]
-  - [stave, treble]
-  - [body, 'r1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1 ']
+- [title, Your, Love, Is, Mine]
+- [composer]
+- [show]
+- [year]
+- [comments]
+- [meter, 4, 4]
+- [key, 0]
+- [tempo, 160]
+- [volume, 127]
+- [playback-transpose, 0]
+- [bass-instrument, 33]
+- [bass-volume, 60]
+- [drum-volume, 60]
+- [chord-volume, 60]
+- [breakpoint, 54]
+- [layout]
+- [style, swing, [swing, 0.67], [comp-swing, 0.67], [bass-high, g-], [bass-low, g---], [bass-base, c--], [chord-high, a], [chord-low, b--], [chord-base, c-, e-, g-]]
+- [part, [type, chords], [title], [composer], [instrument, 0], [volume, 65], [key, 0]]
+- [section, [style, swing], [body, "Gm7 | C7 | Fmaj7 | F6 Abdim | \nBbm6 | C7 | F | Cm7 F7b9 | \nBb | Bbm C7 | F | / | \nDm7 G7 | Dm7 G7 | Gm7 | C7 | \nGm7 | C7 | Fmaj7 | F6 Abdim | \nBbm6 | C7 | Am7 | D7 | \nBb | Bbm C7 | F | D7b9 / D7 G | \nGm7 | C7 / Gm7 C7b9 | F6 Eb9 | Fmaj7 | \n\n"]]
+- [part, [type, melody], [title], [composer], [instrument, 11], [volume, 85], [key, 0], [stave, treble], [body, 'r1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1 ']]

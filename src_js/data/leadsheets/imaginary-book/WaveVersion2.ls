@@ -1,72 +1,26 @@
-# Converted from Impro-Visor src on 2022-07-10T22:13:11.558Z
+# Converted from Impro-Visor src on 2022-07-11T18:12:09.685Z
 # Impro-Visor is GPL-3, copyright 2005-2017 Robert Keller and Harvey Mudd College
 # see: https://github.com/Impro-Visor/Impro-Visor
-- - title
-  - Wave
-- - composer
-  - Antonio
-  - Carlos
-  - Jobim
-- - show
-- - year
-- - comments
-- - meter
-  - 4
-  - 4
-- - key
-  - 0
-- - tempo
-  - 160
-- - volume
-  - 127
-- - playback-transpose
-  - 0
-- - bass-instrument
-  - 33
-- - bass-volume
-  - 60
-- - drum-volume
-  - 41
-- - chord-volume
-  - 60
-- - breakpoint
-  - 54
-- - layout
-- - style
-  - bossaA
-  - [swing, 0.5]
-  - [comp-swing, 0.5]
-  - [bass-high, c-]
-  - [bass-low, c--]
-  - [bass-base, g--]
-  - [chord-high, c]
-  - [chord-low, c-]
-  - [chord-base, c-, e-, g-]
-- - part
-  - [type, chords]
-  - [title]
-  - [composer]
-  - [instrument, 0]
-  - [volume, 65]
-  - [key, 0]
-- - section
-  - [style, bossaA]
-  - [body, "Dmaj7 | Bbdim | Am7 | D7 | \nGmaj7 | Gm6 | F#13 F#9+ | B9 B7b9 | \n\n"]
-- - section
-  - [style, bossaB]
-  - [body, "Bm7 E7 | Bb9 A7 | Dm7 G7 | Dm7 G7 | \nDmaj7 | Bbdim | Am7 | D7 | \nGmaj7 | Gm6 | \n"]
-- - section
-  - [style, bossaA]
-  - [body, "F#13 F#9+ | B9 B7b9 | \nBm7 E7 | Bb9 A7 | Dm7 G7 | Dm7 G7 | \nGm7 | C7 | \n"]
-- - section
-  - [style, bossaB]
-  - [body, "Am7 | / | \nFm7 | Bb7 | Gm7 | A7+ | \nDmaj7 | Bbdim | Am7 | D7 | \nGmaj7 | Gm6 | F#13 F#9+ | B9 B7b9 | \nBm7 E7 | Bb9 A7 | Dm7 G7 | Dm7 / G7 | \n\n"]
-- - part
-  - [type, melody]
-  - [title]
-  - [composer]
-  - [instrument, 11]
-  - [volume, 85]
-  - [key, 0]
-  - [stave, treble]
-  - [body, 'r1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1 ']
+- [title, Wave]
+- [composer, Antonio, Carlos, Jobim]
+- [show]
+- [year]
+- [comments]
+- [meter, 4, 4]
+- [key, 0]
+- [tempo, 160]
+- [volume, 127]
+- [playback-transpose, 0]
+- [bass-instrument, 33]
+- [bass-volume, 60]
+- [drum-volume, 41]
+- [chord-volume, 60]
+- [breakpoint, 54]
+- [layout]
+- [style, bossaA, [swing, 0.5], [comp-swing, 0.5], [bass-high, c-], [bass-low, c--], [bass-base, g--], [chord-high, c], [chord-low, c-], [chord-base, c-, e-, g-]]
+- [part, [type, chords], [title], [composer], [instrument, 0], [volume, 65], [key, 0]]
+- [section, [style, bossaA], [body, "Dmaj7 | Bbdim | Am7 | D7 | \nGmaj7 | Gm6 | F#13 F#9+ | B9 B7b9 | \n\n"]]
+- [section, [style, bossaB], [body, "Bm7 E7 | Bb9 A7 | Dm7 G7 | Dm7 G7 | \nDmaj7 | Bbdim | Am7 | D7 | \nGmaj7 | Gm6 | \n"]]
+- [section, [style, bossaA], [body, "F#13 F#9+ | B9 B7b9 | \nBm7 E7 | Bb9 A7 | Dm7 G7 | Dm7 G7 | \nGm7 | C7 | \n"]]
+- [section, [style, bossaB], [body, "Am7 | / | \nFm7 | Bb7 | Gm7 | A7+ | \nDmaj7 | Bbdim | Am7 | D7 | \nGmaj7 | Gm6 | F#13 F#9+ | B9 B7b9 | \nBm7 E7 | Bb9 A7 | Dm7 G7 | Dm7 / G7 | \n\n"]]
+- [part, [type, melody], [title], [composer], [instrument, 11], [volume, 85], [key, 0], [stave, treble], [body, 'r1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1 ']]

@@ -1,76 +1,23 @@
-# Converted from Impro-Visor src on 2022-07-10T22:13:10.478Z
+# Converted from Impro-Visor src on 2022-07-11T18:12:08.686Z
 # Impro-Visor is GPL-3, copyright 2005-2017 Robert Keller and Harvey Mudd College
 # see: https://github.com/Impro-Visor/Impro-Visor
-- - title
-  - Theme
-  - from
-  - Murder
-  - 'on'
-  - the
-  - Orient
-  - Express
-- - composer
-  - Richard
-  - Rodney
-  - Bennett
-- - show
-  - 'film:'
-  - Murder
-  - 'on'
-  - the
-  - Orient
-  - Express
-- - year
-  - 1974
-- - comments
-- - meter
-  - 4
-  - 4
-- - key
-  - -1
-- - tempo
-  - 140
-- - volume
-  - 127
-- - playback-transpose
-  - 0
-- - bass-instrument
-  - 33
-- - bass-volume
-  - 60
-- - drum-volume
-  - 60
-- - chord-volume
-  - 60
-- - breakpoint
-  - 54
-- - layout
-- - style
-  - swing
-  - [swing, 0.67]
-  - [comp-swing, 0.67]
-  - [bass-high, g-]
-  - [bass-low, g---]
-  - [bass-base, c--]
-  - [chord-high, a]
-  - [chord-low, a--]
-  - [chord-base, c-, e-, g-]
-- - part
-  - [type, chords]
-  - [title]
-  - [composer]
-  - [instrument, 0]
-  - [volume, 65]
-  - [key, -1]
-- - section
-  - [style, swing]
-  - [body, "Fo7 F | / | Gm7b5 | G9 C13 | \nFo7 F | / | Am7b5 | / D7b9 | \nG9 | / | Bbm6 | / C13 / C7#5#9 | \nFM9 | G#o7 | Gm7b5 | Db9 C13 | \nFm9 Fm | / | DbM7 Db | / | \nC7sus | C7 | Fo7 F | / | \nGm7b5 | G9 C13 | Fo7 F | / | \nAm7b5 | / D7b9 | G9 | / | \nBbm6 | / C13 / C7#5#9 | FM9 | G#o7 | \nGm7b5 | Db9 C13 | Fo7 F | / | \nDb9 | / | C7sus | C7 | \nF Bbm | F | \n"]
-- - part
-  - [type, melody]
-  - [title]
-  - [composer]
-  - [instrument, 11]
-  - [volume, 85]
-  - [key, -1]
-  - [stave, treble]
-  - [body, "b-2 r1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+2\n"]
+- [title, Theme, from, Murder, 'on', the, Orient, Express]
+- [composer, Richard, Rodney, Bennett]
+- [show, 'film:', Murder, 'on', the, Orient, Express]
+- [year, 1974]
+- [comments]
+- [meter, 4, 4]
+- [key, -1]
+- [tempo, 140]
+- [volume, 127]
+- [playback-transpose, 0]
+- [bass-instrument, 33]
+- [bass-volume, 60]
+- [drum-volume, 60]
+- [chord-volume, 60]
+- [breakpoint, 54]
+- [layout]
+- [style, swing, [swing, 0.67], [comp-swing, 0.67], [bass-high, g-], [bass-low, g---], [bass-base, c--], [chord-high, a], [chord-low, a--], [chord-base, c-, e-, g-]]
+- [part, [type, chords], [title], [composer], [instrument, 0], [volume, 65], [key, -1]]
+- [section, [style, swing], [body, "Fo7 F | / | Gm7b5 | G9 C13 | \nFo7 F | / | Am7b5 | / D7b9 | \nG9 | / | Bbm6 | / C13 / C7#5#9 | \nFM9 | G#o7 | Gm7b5 | Db9 C13 | \nFm9 Fm | / | DbM7 Db | / | \nC7sus | C7 | Fo7 F | / | \nGm7b5 | G9 C13 | Fo7 F | / | \nAm7b5 | / D7b9 | G9 | / | \nBbm6 | / C13 / C7#5#9 | FM9 | G#o7 | \nGm7b5 | Db9 C13 | Fo7 F | / | \nDb9 | / | C7sus | C7 | \nF Bbm | F | \n"]]
+- [part, [type, melody], [title], [composer], [instrument, 11], [volume, 85], [key, -1], [stave, treble], [body, "b-2 r1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+2\n"]]

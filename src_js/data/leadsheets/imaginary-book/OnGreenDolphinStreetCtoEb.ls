@@ -1,146 +1,36 @@
-# Converted from Impro-Visor src on 2022-07-10T22:13:10.661Z
+# Converted from Impro-Visor src on 2022-07-11T18:12:08.857Z
 # Impro-Visor is GPL-3, copyright 2005-2017 Robert Keller and Harvey Mudd College
 # see: https://github.com/Impro-Visor/Impro-Visor
-- - title
-  - 'On'
-  - Green
-  - Dolphin
-  - Street
-  - [C, to, Eb, version]
-- - composer
-  - Bronislau
-  - Kaper
-- - show
-- - year
-- - comments
-- - meter
-  - 4
-  - 4
-- - key
-  - 0
-- - tempo
-  - 180
-- - volume
-  - 80
-- - playback-transpose
-  - 0
-  - 0
-  - 0
-- - chord-font-size
-  - 16
-- - bass-instrument
-  - 33
-- - bass-volume
-  - 127
-- - drum-volume
-  - 118
-- - chord-volume
-  - 91
-- - breakpoint
-  - 54
-- - layout
-- - roadmap-layout
-  - 8
-- - melody-volume
-  - 127
-- - style
-  - latin-enhanced
-  - [swing, 0.55]
-  - [comp-swing, 0.55]
-  - [bass-high, c]
-  - [bass-low, g--]
-  - [chord-high, a]
-  - [chord-low, c-]
-  - [voicing-name, default.fv]
-  - [chord-base, c-, e-, g-]
-- - part
-  - [type, chords]
-  - [title, 'On', Green, Dolphin, Street]
-  - [composer]
-  - [instrument, 0]
-  - [volume, 65]
-  - [key, 0]
-- - section
-  - [style, latin-enhanced]
-  - [body, "CM9 | / | Cm9 | / | \nD7/C | DbM7/C | CM9 | A7alt | \n\n\n"]
-- - section
-  - [style, swing-SonnyClark]
-  - [body, "Dm9 | G13b9 | CM9 | Gm9 C13 | \nFm7 | Bb7 | EbM7 | Fm7 Bb7 | \n\n\n"]
-- - section
-  - [style, latin-enhanced]
-  - [body, "EbM9 | / | Ebm9 | / | \nF7/Eb | EM7/Eb | EbM9 | C7alt | \n\n\n"]
-- - section
-  - [style, swing-SonnyClark]
-  - [body, "Fm7 Fm7/Eb | Dm7b5 G7b9 | Cm7 Cm7/Bb | Am7b5 D7 | \nGm7 C7alt | Fm7 Bb7alt | EbM7 | Fm7 Bb7 | \n\n"]
-- - part
-  - [type, melody]
-  - [title]
-  - [composer]
-  - [instrument, 73]
-  - [volume, 85]
-  - [key, 0]
-  - [stave, treble]
-  - [body, "c+2 c+1\n\n b4/3 g4/3 e4/3\n\n bb1+2+4\n\n r4\n\n a2 a1\n\n ab4/3 f4/3 db4/3\n\n g1+2+4\n\n r4+8\n\n g4+8 d4 r8 e8\n\n f4 g4 ab4 bb4\n\n g4 g1+4\n\n r4 g4\n\n bb4+8 f2 g8\n\n ab4 bb4 b4 db+4\n\n bb2 g4/3 f4/3 eb4/3\n\n g2+4 a16 bb16 c+16 d+16\n\n eb+2 eb+1\n\n d+4/3 bb4/3 g4/3\n\n db+1+1\n\n c+2\n\n c+1\n\n b4/3 ab4/3 e4/3\n\n bb1+2+4\n\n r4+8\n\n bb4+8 f4+8 g8\n\n ab4 bb4 b4 g+4\n\n f+2 eb+4+8 r8\n\n eb4+8 f8 f#8 d+4+8\n\n c+2 bb2\n\n r8 bb4+8 bb8 r8 bb4\n\n bb1+2+4\n\n r4\n"]
-- - part
-  - [type, melody]
-  - [title]
-  - [composer]
-  - [instrument, 73]
-  - [volume, 85]
-  - [key, 0]
-  - [stave, treble]
-  - [body, 'r1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1 ']
-- - part
-  - [type, melody]
-  - [title]
-  - [composer]
-  - [instrument, 73]
-  - [volume, 85]
-  - [key, 0]
-  - [stave, treble]
-  - [body, 'r1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1 ']
-- - part
-  - [type, melody]
-  - [title]
-  - [composer]
-  - [instrument, 73]
-  - [volume, 85]
-  - [key, 0]
-  - [stave, treble]
-  - [body, 'r1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1 ']
-- - part
-  - [type, melody]
-  - [title]
-  - [composer]
-  - [instrument, 73]
-  - [volume, 85]
-  - [key, 0]
-  - [stave, treble]
-  - [body, 'r1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1 ']
-- - part
-  - [type, melody]
-  - [title]
-  - [composer]
-  - [instrument, 73]
-  - [volume, 85]
-  - [key, 0]
-  - [stave, treble]
-  - [body, 'r1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1 ']
-- - part
-  - [type, melody]
-  - [title]
-  - [composer]
-  - [instrument, 73]
-  - [volume, 85]
-  - [key, 0]
-  - [stave, treble]
-  - [body, 'r1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1 ']
-- - part
-  - [type, melody]
-  - [title]
-  - [composer]
-  - [instrument, 73]
-  - [volume, 85]
-  - [key, 0]
-  - [stave, treble]
-  - [body, "c+2 c+1\n\n b4/3 g4/3 e4/3\n\n bb1+2+4\n\n r4\n\n a2 a1\n\n ab4/3 f4/3 db4/3\n\n g1+2+4\n\n r4+8\n\n g4+8 d4 r8 e8\n\n f4 g4 ab4 bb4\n\n g4 g1+4\n\n r4 g4\n\n bb4+8 f2 g8\n\n ab4 bb4 b4 db+4\n\n bb2 g4/3 f4/3 eb4/3\n\n g2+4 a16 bb16 c+16 d+16\n\n eb+2 eb+1\n\n d+4/3 bb4/3 g4/3\n\n db+1+1\n\n c+2\n\n c+1\n\n b4/3 ab4/3 e4/3\n\n bb1+2+4\n\n r4+8\n\n bb4+8 f4+8 g8\n\n ab4 bb4 b4 g+4\n\n f+2 eb+4+8 r8\n\n eb4+8 f8 f#8 d+4+8\n\n c+2 bb2\n\n r8 bb4+8 bb8 r8 bb4\n\n bb1+2+4\n\n r4\n"]
+- [title, 'On', Green, Dolphin, Street, [C, to, Eb, version]]
+- [composer, Bronislau, Kaper]
+- [show]
+- [year]
+- [comments]
+- [meter, 4, 4]
+- [key, 0]
+- [tempo, 180]
+- [volume, 80]
+- [playback-transpose, 0, 0, 0]
+- [chord-font-size, 16]
+- [bass-instrument, 33]
+- [bass-volume, 127]
+- [drum-volume, 118]
+- [chord-volume, 91]
+- [breakpoint, 54]
+- [layout]
+- [roadmap-layout, 8]
+- [melody-volume, 127]
+- [style, latin-enhanced, [swing, 0.55], [comp-swing, 0.55], [bass-high, c], [bass-low, g--], [chord-high, a], [chord-low, c-], [voicing-name, default.fv], [chord-base, c-, e-, g-]]
+- [part, [type, chords], [title, 'On', Green, Dolphin, Street], [composer], [instrument, 0], [volume, 65], [key, 0]]
+- [section, [style, latin-enhanced], [body, "CM9 | / | Cm9 | / | \nD7/C | DbM7/C | CM9 | A7alt | \n\n\n"]]
+- [section, [style, swing-SonnyClark], [body, "Dm9 | G13b9 | CM9 | Gm9 C13 | \nFm7 | Bb7 | EbM7 | Fm7 Bb7 | \n\n\n"]]
+- [section, [style, latin-enhanced], [body, "EbM9 | / | Ebm9 | / | \nF7/Eb | EM7/Eb | EbM9 | C7alt | \n\n\n"]]
+- [section, [style, swing-SonnyClark], [body, "Fm7 Fm7/Eb | Dm7b5 G7b9 | Cm7 Cm7/Bb | Am7b5 D7 | \nGm7 C7alt | Fm7 Bb7alt | EbM7 | Fm7 Bb7 | \n\n"]]
+- [part, [type, melody], [title], [composer], [instrument, 73], [volume, 85], [key, 0], [stave, treble], [body, "c+2 c+1\n\n b4/3 g4/3 e4/3\n\n bb1+2+4\n\n r4\n\n a2 a1\n\n ab4/3 f4/3 db4/3\n\n g1+2+4\n\n r4+8\n\n g4+8 d4 r8 e8\n\n f4 g4 ab4 bb4\n\n g4 g1+4\n\n r4 g4\n\n bb4+8 f2 g8\n\n ab4 bb4 b4 db+4\n\n bb2 g4/3 f4/3 eb4/3\n\n g2+4 a16 bb16 c+16 d+16\n\n eb+2 eb+1\n\n d+4/3 bb4/3 g4/3\n\n db+1+1\n\n c+2\n\n c+1\n\n b4/3 ab4/3 e4/3\n\n bb1+2+4\n\n r4+8\n\n bb4+8 f4+8 g8\n\n ab4 bb4 b4 g+4\n\n f+2 eb+4+8 r8\n\n eb4+8 f8 f#8 d+4+8\n\n c+2 bb2\n\n r8 bb4+8 bb8 r8 bb4\n\n bb1+2+4\n\n r4\n"]]
+- [part, [type, melody], [title], [composer], [instrument, 73], [volume, 85], [key, 0], [stave, treble], [body, 'r1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1 ']]
+- [part, [type, melody], [title], [composer], [instrument, 73], [volume, 85], [key, 0], [stave, treble], [body, 'r1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1 ']]
+- [part, [type, melody], [title], [composer], [instrument, 73], [volume, 85], [key, 0], [stave, treble], [body, 'r1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1 ']]
+- [part, [type, melody], [title], [composer], [instrument, 73], [volume, 85], [key, 0], [stave, treble], [body, 'r1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1 ']]
+- [part, [type, melody], [title], [composer], [instrument, 73], [volume, 85], [key, 0], [stave, treble], [body, 'r1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1 ']]
+- [part, [type, melody], [title], [composer], [instrument, 73], [volume, 85], [key, 0], [stave, treble], [body, 'r1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1 ']]
+- [part, [type, melody], [title], [composer], [instrument, 73], [volume, 85], [key, 0], [stave, treble], [body, "c+2 c+1\n\n b4/3 g4/3 e4/3\n\n bb1+2+4\n\n r4\n\n a2 a1\n\n ab4/3 f4/3 db4/3\n\n g1+2+4\n\n r4+8\n\n g4+8 d4 r8 e8\n\n f4 g4 ab4 bb4\n\n g4 g1+4\n\n r4 g4\n\n bb4+8 f2 g8\n\n ab4 bb4 b4 db+4\n\n bb2 g4/3 f4/3 eb4/3\n\n g2+4 a16 bb16 c+16 d+16\n\n eb+2 eb+1\n\n d+4/3 bb4/3 g4/3\n\n db+1+1\n\n c+2\n\n c+1\n\n b4/3 ab4/3 e4/3\n\n bb1+2+4\n\n r4+8\n\n bb4+8 f4+8 g8\n\n ab4 bb4 b4 g+4\n\n f+2 eb+4+8 r8\n\n eb4+8 f8 f#8 d+4+8\n\n c+2 bb2\n\n r8 bb4+8 bb8 r8 bb4\n\n bb1+2+4\n\n r4\n"]]

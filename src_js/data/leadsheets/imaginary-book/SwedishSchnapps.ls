@@ -1,43 +1,16 @@
-# Converted from Impro-Visor src on 2022-07-10T22:13:11.222Z
+# Converted from Impro-Visor src on 2022-07-11T18:12:09.377Z
 # Impro-Visor is GPL-3, copyright 2005-2017 Robert Keller and Harvey Mudd College
 # see: https://github.com/Impro-Visor/Impro-Visor
-- - title
-  - Swedish
-  - Schnapps
-- - composer
-  - Charlie
-  - Shavers
-- - comments
-- - meter
-  - 4
-  - 4
-- - key
-  - -2
-- - tempo
-  - 160
-- - volume
-  - 127
-- - bass-volume
-  - 60
-- - style
-  - swing
-- - breakpoint
-  - 54
-- - layout
-- - part
-  - [type, chords]
-  - [title, Untitled, Part]
-  - [composer]
-  - [instrument, 0]
-  - [volume, 65]
-  - [key, -2]
-  - [body, "Bb | Cm7 F7b9 | Bb | Cm7 F7b9 | \nBb7 | Eb Ab7 | Bb | Cm7 F7 | \nBb | Cm7 F7b9 | Bb | Cm7 F7b9 | \nBb7 | Eb Ab7 | Bb | / | \nD7 | / | G7 | / | \nC7 | / | F7 | / | \nBb | Cm7 F7b9 | Bb | Cm7 F7b9 | \nBb7 | Eb Ab7 | Bb | / | \n\n"]
-- - part
-  - [type, melody]
-  - [title, Swedish, Schnapps]
-  - [composer]
-  - [instrument, 73]
-  - [volume, 85]
-  - [key, -2]
-  - [stave, treble]
-  - [body, "f+8 r1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+2+2/3+16/3\n"]
+- [title, Swedish, Schnapps]
+- [composer, Charlie, Shavers]
+- [comments]
+- [meter, 4, 4]
+- [key, -2]
+- [tempo, 160]
+- [volume, 127]
+- [bass-volume, 60]
+- [style, swing]
+- [breakpoint, 54]
+- [layout]
+- [part, [type, chords], [title, Untitled, Part], [composer], [instrument, 0], [volume, 65], [key, -2], [body, "Bb | Cm7 F7b9 | Bb | Cm7 F7b9 | \nBb7 | Eb Ab7 | Bb | Cm7 F7 | \nBb | Cm7 F7b9 | Bb | Cm7 F7b9 | \nBb7 | Eb Ab7 | Bb | / | \nD7 | / | G7 | / | \nC7 | / | F7 | / | \nBb | Cm7 F7b9 | Bb | Cm7 F7b9 | \nBb7 | Eb Ab7 | Bb | / | \n\n"]]
+- [part, [type, melody], [title, Swedish, Schnapps], [composer], [instrument, 73], [volume, 85], [key, -2], [stave, treble], [body, "f+8 r1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+2+2/3+16/3\n"]]

@@ -1,62 +1,27 @@
-# Converted from Impro-Visor src on 2022-07-10T22:13:07.567Z
+# Converted from Impro-Visor src on 2022-07-11T18:12:06.043Z
 # Impro-Visor is GPL-3, copyright 2005-2017 Robert Keller and Harvey Mudd College
 # see: https://github.com/Impro-Visor/Impro-Visor
-- - title
-  - Out
-  - of
-  - Nowhere
-- - composer
-  - Johnny
-  - Green
-- - show
-- - year
-  - 1931
-- - comments
-- - meter
-  - 4
-  - 4
-- - key
-  - 1
-- - tempo
-  - 160
-- - volume
-  - 80
-- - playback-transpose
-  - 0
-- - chord-font-size
-  - 16
-- - bass-instrument
-  - 33
-- - bass-volume
-  - 60
-- - drum-volume
-  - 60
-- - chord-volume
-  - 40
-- - breakpoint
-  - 54
-- - layout
-- - roadmap-layout
-  - 8
-- - style
-  - swing
-  - [swing, 0.67]
-  - [comp-swing, 0.67]
-  - [bass-high, g-]
-  - [bass-low, c---]
-  - [bass-base, e--]
-  - [chord-high, a]
-  - [chord-low, d-]
-  - [chord-base, c-, e-, g-]
-- - part
-  - [type, chords]
-  - [title]
-  - [composer]
-  - [instrument, 0]
-  - [volume, 65]
-  - [key, 1]
-- - phrase
-  - [style, swing]
+- [title, Out, of, Nowhere]
+- [composer, Johnny, Green]
+- [show]
+- [year, 1931]
+- [comments]
+- [meter, 4, 4]
+- [key, 1]
+- [tempo, 160]
+- [volume, 80]
+- [playback-transpose, 0]
+- [chord-font-size, 16]
+- [bass-instrument, 33]
+- [bass-volume, 60]
+- [drum-volume, 60]
+- [chord-volume, 40]
+- [breakpoint, 54]
+- [layout]
+- [roadmap-layout, 8]
+- [style, swing, [swing, 0.67], [comp-swing, 0.67], [bass-high, g-], [bass-low, c---], [bass-base, e--], [chord-high, a], [chord-low, d-], [chord-base, c-, e-, g-]]
+- [part, [type, chords], [title], [composer], [instrument, 0], [volume, 65], [key, 1]]
+- [phrase, [style, swing]]
 - GM7
 - '|'
 - /
@@ -65,11 +30,8 @@
 - '|'
 - Eb7
 - '|'
-- - section
-  - [style]
-  - [body, "GM7 | / | Bm7 | E7 | \n\n"]
-- - phrase
-  - [style]
+- [section, [style], [body, "GM7 | / | Bm7 | E7 | \n\n"]]
+- [phrase, [style]]
 - Am7
 - '|'
 - E7
@@ -78,11 +40,8 @@
 - '|'
 - /
 - '|'
-- - section
-  - [style]
-  - [body, "Bbm7 | Eb7 | Am7 | D7 | \n\n"]
-- - phrase
-  - [style]
+- [section, [style], [body, "Bbm7 | Eb7 | Am7 | D7 | \n\n"]]
+- [phrase, [style]]
 - GM7
 - '|'
 - /
@@ -91,11 +50,8 @@
 - '|'
 - Eb7
 - '|'
-- - section
-  - [style]
-  - [body, "GM7 | / | Bm7 | E7 | \n\n"]
-- - phrase
-  - [style]
+- [section, [style], [body, "GM7 | / | Bm7 | E7 | \n\n"]]
+- [phrase, [style]]
 - Am7
 - '|'
 - E7
@@ -104,8 +60,7 @@
 - '|'
 - F7#11
 - '|'
-- - phrase
-  - [style]
+- [phrase, [style]]
 - Bm7
 - Bbo
 - '|'
@@ -114,15 +69,5 @@
 - '|'
 - GM7
 - '|'
-- - section
-  - [style]
-  - [body, "Am7 D7 | \n\n"]
-- - part
-  - [type, melody]
-  - [title]
-  - [composer]
-  - [instrument, 11]
-  - [volume, 85]
-  - [key, 1]
-  - [stave, treble]
-  - [body, "d8 r1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+2+4+8\n"]
+- [section, [style], [body, "Am7 D7 | \n\n"]]
+- [part, [type, melody], [title], [composer], [instrument, 11], [volume, 85], [key, 1], [stave, treble], [body, "d8 r1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+2+4+8\n"]]

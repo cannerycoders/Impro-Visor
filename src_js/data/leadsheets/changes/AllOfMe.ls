@@ -1,68 +1,28 @@
-# Converted from Impro-Visor src on 2022-07-10T22:13:07.489Z
+# Converted from Impro-Visor src on 2022-07-11T18:12:05.965Z
 # Impro-Visor is GPL-3, copyright 2005-2017 Robert Keller and Harvey Mudd College
 # see: https://github.com/Impro-Visor/Impro-Visor
-- - title
-  - All
-  - Of
-  - Me
-- - composer
-  - Gerald
-  - Marks
-  - and
-  - Seymour
-  - Simons
-- - show
-- - year
-  - 1931
-- - comments
-- - meter
-  - 4
-  - 4
-- - key
-  - 0
-- - tempo
-  - 160
-- - volume
-  - 80
-- - playback-transpose
-  - 0
-- - chord-font-size
-  - 16
-- - bass-instrument
-  - 33
-- - bass-volume
-  - 60
-- - drum-volume
-  - 60
-- - chord-volume
-  - 40
-- - breakpoint
-  - 54
-- - layout
-- - roadmap-layout
-  - 8
-- - style
-  - swing
-  - [swing, 0.67]
-  - [comp-swing, 0.67]
-  - [bass-high, g-]
-  - [bass-low, g---]
-  - [bass-base, c--]
-  - [chord-high, a]
-  - [chord-low, c-]
-  - [chord-base, c-, e-, g-]
-- - part
-  - [type, chords]
-  - [title]
-  - [composer]
-  - [instrument, 0]
-  - [volume, 65]
-  - [key, 0]
-- - section
-  - [style, swing]
-  - [body, "C6 | / | E7 | / | \nA7 | / | A7 Dm | / | \n\n"]
-- - phrase
-  - [style]
+- [title, All, Of, Me]
+- [composer, Gerald, Marks, and, Seymour, Simons]
+- [show]
+- [year, 1931]
+- [comments]
+- [meter, 4, 4]
+- [key, 0]
+- [tempo, 160]
+- [volume, 80]
+- [playback-transpose, 0]
+- [chord-font-size, 16]
+- [bass-instrument, 33]
+- [bass-volume, 60]
+- [drum-volume, 60]
+- [chord-volume, 40]
+- [breakpoint, 54]
+- [layout]
+- [roadmap-layout, 8]
+- [style, swing, [swing, 0.67], [comp-swing, 0.67], [bass-high, g-], [bass-low, g---], [bass-base, c--], [chord-high, a], [chord-low, c-], [chord-base, c-, e-, g-]]
+- [part, [type, chords], [title], [composer], [instrument, 0], [volume, 65], [key, 0]]
+- [section, [style, swing], [body, "C6 | / | E7 | / | \nA7 | / | A7 Dm | / | \n\n"]]
+- [phrase, [style]]
 - E7
 - '|'
 - /
@@ -71,14 +31,9 @@
 - '|'
 - /
 - '|'
-- - section
-  - [style]
-  - [body, "D7 | / | G7 | / | \n\n\n"]
-- - section
-  - [style]
-  - [body, "C6 | / | E7 | / | \nA7 | / | A7 Dm | / | \n\n"]
-- - phrase
-  - [style]
+- [section, [style], [body, "D7 | / | G7 | / | \n\n\n"]]
+- [section, [style], [body, "C6 | / | E7 | / | \nA7 | / | A7 Dm | / | \n\n"]]
+- [phrase, [style]]
 - F6
 - '|'
 - Fm
@@ -88,15 +43,5 @@
 - '|'
 - A7
 - '|'
-- - section
-  - [style]
-  - [body, "Dm7b5 | G7 | C6 Ebo7 | Dm7 G7 | \n\n"]
-- - part
-  - [type, melody]
-  - [title]
-  - [composer]
-  - [instrument, 11]
-  - [volume, 85]
-  - [key, 0]
-  - [stave, treble]
-  - [body, "c+4 r1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+2+4\n"]
+- [section, [style], [body, "Dm7b5 | G7 | C6 Ebo7 | Dm7 G7 | \n\n"]]
+- [part, [type, melody], [title], [composer], [instrument, 11], [volume, 85], [key, 0], [stave, treble], [body, "c+4 r1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+2+4\n"]]

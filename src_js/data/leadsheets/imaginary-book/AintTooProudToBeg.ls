@@ -1,70 +1,23 @@
-# Converted from Impro-Visor src on 2022-07-10T22:13:08.114Z
+# Converted from Impro-Visor src on 2022-07-11T18:12:06.563Z
 # Impro-Visor is GPL-3, copyright 2005-2017 Robert Keller and Harvey Mudd College
 # see: https://github.com/Impro-Visor/Impro-Visor
-- - title
-  - Ain't
-  - Too
-  - Proud
-  - to
-  - Beg
-- - composer
-  - Eddie
-  - Holland
-  - and
-  - Norman
-  - Whitfield
-- - show
-- - year
-  - 1966
-- - comments
-- - meter
-  - 4
-  - 4
-- - key
-  - 0
-- - tempo
-  - 160
-- - volume
-  - 127
-- - playback-transpose
-  - 0
-- - bass-instrument
-  - 33
-- - bass-volume
-  - 60
-- - drum-volume
-  - 60
-- - chord-volume
-  - 60
-- - breakpoint
-  - 54
-- - layout
-- - style
-  - rock-heavy-even
-  - [swing, 0.5]
-  - [comp-swing, 0.5]
-  - [bass-high, c-]
-  - [bass-low, c--]
-  - [bass-base, g--]
-  - [chord-high, c]
-  - [chord-low, c-]
-  - [chord-base, c-, e-, g-]
-- - part
-  - [type, chords]
-  - [title]
-  - [composer]
-  - [instrument, 0]
-  - [volume, 65]
-  - [key, 0]
-- - section
-  - [style, rock-heavy-even]
-  - [body, "C | / F | C | / F | \nC | / F | C | / | \nC F | C F | C F | C F | \nC FM | C F | C F | C F | \nC F | C F | C F | C F | \nC FM | C F | C F | C F | \n\n"]
-- - part
-  - [type, melody]
-  - [title]
-  - [composer]
-  - [instrument, 11]
-  - [volume, 85]
-  - [key, 0]
-  - [stave, treble]
-  - [body, "r4 e+8 r1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+2+8\n"]
+- [title, Ain't, Too, Proud, to, Beg]
+- [composer, Eddie, Holland, and, Norman, Whitfield]
+- [show]
+- [year, 1966]
+- [comments]
+- [meter, 4, 4]
+- [key, 0]
+- [tempo, 160]
+- [volume, 127]
+- [playback-transpose, 0]
+- [bass-instrument, 33]
+- [bass-volume, 60]
+- [drum-volume, 60]
+- [chord-volume, 60]
+- [breakpoint, 54]
+- [layout]
+- [style, rock-heavy-even, [swing, 0.5], [comp-swing, 0.5], [bass-high, c-], [bass-low, c--], [bass-base, g--], [chord-high, c], [chord-low, c-], [chord-base, c-, e-, g-]]
+- [part, [type, chords], [title], [composer], [instrument, 0], [volume, 65], [key, 0]]
+- [section, [style, rock-heavy-even], [body, "C | / F | C | / F | \nC | / F | C | / | \nC F | C F | C F | C F | \nC FM | C F | C F | C F | \nC F | C F | C F | C F | \nC FM | C F | C F | C F | \n\n"]]
+- [part, [type, melody], [title], [composer], [instrument, 11], [volume, 85], [key, 0], [stave, treble], [body, "r4 e+8 r1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+2+8\n"]]

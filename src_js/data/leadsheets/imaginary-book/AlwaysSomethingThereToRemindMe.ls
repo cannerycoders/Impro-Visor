@@ -1,67 +1,23 @@
-# Converted from Impro-Visor src on 2022-07-10T22:13:08.377Z
+# Converted from Impro-Visor src on 2022-07-11T18:12:06.773Z
 # Impro-Visor is GPL-3, copyright 2005-2017 Robert Keller and Harvey Mudd College
 # see: https://github.com/Impro-Visor/Impro-Visor
-- - title
-  - Always
-  - Something
-  - There
-  - to
-  - Remind
-  - Me
-- - composer
-  - Burt
-  - Bacharach
-- - show
-- - year
-- - comments
-- - meter
-  - 4
-  - 4
-- - key
-  - 0
-- - tempo
-  - 120
-- - volume
-  - 127
-- - playback-transpose
-  - 0
-- - bass-instrument
-  - 33
-- - bass-volume
-  - 60
-- - drum-volume
-  - 60
-- - chord-volume
-  - 60
-- - breakpoint
-  - 54
-- - layout
-- - style
-  - rock-light
-  - [swing, 0.55]
-  - [comp-swing, 0.55]
-  - [bass-high, g-]
-  - [bass-low, g---]
-  - [bass-base, c--]
-  - [chord-high, a]
-  - [chord-low, c-]
-  - [chord-base, c-, e-, g-]
-- - part
-  - [type, chords]
-  - [title]
-  - [composer]
-  - [instrument, 0]
-  - [volume, 65]
-  - [key, 0]
-- - section
-  - [style, rock-light]
-  - [body, "C | CM7 | C7 | F | \nFm6 | C | CM7 | C7 | \nF | / | F | C | \nG7 | C7 | F / / G7 | C | \n/ | C7 | F | C | \n/ | Em7 | Am7 | / | \nFM7 | G | C | / | \n/ | / | \n"]
-- - part
-  - [type, melody]
-  - [title]
-  - [composer]
-  - [instrument, 11]
-  - [volume, 85]
-  - [key, 0]
-  - [stave, treble]
-  - [body, "r2/3+16/3 c8 r1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+2\n"]
+- [title, Always, Something, There, to, Remind, Me]
+- [composer, Burt, Bacharach]
+- [show]
+- [year]
+- [comments]
+- [meter, 4, 4]
+- [key, 0]
+- [tempo, 120]
+- [volume, 127]
+- [playback-transpose, 0]
+- [bass-instrument, 33]
+- [bass-volume, 60]
+- [drum-volume, 60]
+- [chord-volume, 60]
+- [breakpoint, 54]
+- [layout]
+- [style, rock-light, [swing, 0.55], [comp-swing, 0.55], [bass-high, g-], [bass-low, g---], [bass-base, c--], [chord-high, a], [chord-low, c-], [chord-base, c-, e-, g-]]
+- [part, [type, chords], [title], [composer], [instrument, 0], [volume, 65], [key, 0]]
+- [section, [style, rock-light], [body, "C | CM7 | C7 | F | \nFm6 | C | CM7 | C7 | \nF | / | F | C | \nG7 | C7 | F / / G7 | C | \n/ | C7 | F | C | \n/ | Em7 | Am7 | / | \nFM7 | G | C | / | \n/ | / | \n"]]
+- [part, [type, melody], [title], [composer], [instrument, 11], [volume, 85], [key, 0], [stave, treble], [body, "r2/3+16/3 c8 r1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+2\n"]]

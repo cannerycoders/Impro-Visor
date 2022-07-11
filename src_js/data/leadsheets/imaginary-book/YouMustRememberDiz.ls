@@ -1,67 +1,23 @@
-# Converted from Impro-Visor src on 2022-07-10T22:13:11.842Z
+# Converted from Impro-Visor src on 2022-07-11T18:12:09.938Z
 # Impro-Visor is GPL-3, copyright 2005-2017 Robert Keller and Harvey Mudd College
 # see: https://github.com/Impro-Visor/Impro-Visor
-- - title
-  - You
-  - Must
-  - Remember
-  - Diz'
-- - composer
-  - Bob
-  - Keller
-- - show
-- - year
-  - 2007
-- - comments
-- - meter
-  - 4
-  - 4
-- - key
-  - -5
-- - tempo
-  - 168
-- - volume
-  - 127
-- - playback-transpose
-  - 0
-- - bass-instrument
-  - 33
-- - bass-volume
-  - 48
-- - drum-volume
-  - 29
-- - chord-volume
-  - 40
-- - breakpoint
-  - 54
-- - layout
-  - 4
-- - style
-  - latin
-  - [swing, 0.55]
-  - [comp-swing, 0.55]
-  - [bass-high, g-]
-  - [bass-low, g---]
-  - [bass-base, c--]
-  - [chord-high, a]
-  - [chord-low, c-]
-  - [chord-base, c-, e-, g-]
-- - part
-  - [type, chords]
-  - [title]
-  - [composer]
-  - [instrument, 0]
-  - [volume, 65]
-  - [key, -5]
-- - section
-  - [style, latin]
-  - [body, "DbM7 | C7 | BM7 | Bb7b9 | \nEbm9b5 | Ab7#5#9 | DbM7 | Ab7sus4 | \nDbM7 | C7 | BM7 | Bb7b9 | \nEbm9b5 | Ab7#5#9 | DbM7 | / | \nGm7b5 | C7#9 | Fm7b5 | Bb7alt | \nEbm9b5 | Ab7#5#9 | DbM7 | / | \nDbm7 | Gb7+ | BM7 | / | \nF#m7 | B7#5 B7b9 | Em7 A7 | Ebm7 Ab7#11 | \nDbM7 | C7 | BM7 | Bb7b9 | \nEbm7b5 | Ab7#5#9 | DbM7 | Ab7sus4 | \n\n"]
-- - part
-  - [type, melody]
-  - [title]
-  - [composer]
-  - [instrument, 11]
-  - [volume, 85]
-  - [key, -5]
-  - [stave, treble]
-  - [body, 'r1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1 ']
+- [title, You, Must, Remember, Diz']
+- [composer, Bob, Keller]
+- [show]
+- [year, 2007]
+- [comments]
+- [meter, 4, 4]
+- [key, -5]
+- [tempo, 168]
+- [volume, 127]
+- [playback-transpose, 0]
+- [bass-instrument, 33]
+- [bass-volume, 48]
+- [drum-volume, 29]
+- [chord-volume, 40]
+- [breakpoint, 54]
+- [layout, 4]
+- [style, latin, [swing, 0.55], [comp-swing, 0.55], [bass-high, g-], [bass-low, g---], [bass-base, c--], [chord-high, a], [chord-low, c-], [chord-base, c-, e-, g-]]
+- [part, [type, chords], [title], [composer], [instrument, 0], [volume, 65], [key, -5]]
+- [section, [style, latin], [body, "DbM7 | C7 | BM7 | Bb7b9 | \nEbm9b5 | Ab7#5#9 | DbM7 | Ab7sus4 | \nDbM7 | C7 | BM7 | Bb7b9 | \nEbm9b5 | Ab7#5#9 | DbM7 | / | \nGm7b5 | C7#9 | Fm7b5 | Bb7alt | \nEbm9b5 | Ab7#5#9 | DbM7 | / | \nDbm7 | Gb7+ | BM7 | / | \nF#m7 | B7#5 B7b9 | Em7 A7 | Ebm7 Ab7#11 | \nDbM7 | C7 | BM7 | Bb7b9 | \nEbm7b5 | Ab7#5#9 | DbM7 | Ab7sus4 | \n\n"]]
+- [part, [type, melody], [title], [composer], [instrument, 11], [volume, 85], [key, -5], [stave, treble], [body, 'r1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1 ']]

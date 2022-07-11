@@ -1,71 +1,27 @@
-# Converted from Impro-Visor src on 2022-07-10T22:13:07.594Z
+# Converted from Impro-Visor src on 2022-07-11T18:12:06.067Z
 # Impro-Visor is GPL-3, copyright 2005-2017 Robert Keller and Harvey Mudd College
 # see: https://github.com/Impro-Visor/Impro-Visor
-- - title
-  - Where
-  - Is
-  - The
-  - Love
-- - composer
-  - Ralph
-  - MacDonald
-  - and
-  - William
-  - Salter
-- - show
-  - Roberta
-  - Flack
-  - and
-  - Donny
-  - Hathaway
-- - year
-  - 1972
-- - comments
-- - meter
-  - 4
-  - 4
-- - key
-  - 1
-- - tempo
-  - 160
-- - volume
-  - 80
-- - playback-transpose
-  - 0
-- - chord-font-size
-  - 16
-- - bass-instrument
-  - 33
-- - bass-volume
-  - 60
-- - drum-volume
-  - 60
-- - chord-volume
-  - 40
-- - breakpoint
-  - 54
-- - layout
-- - roadmap-layout
-  - 8
-- - style
-  - rock-light-even
-  - [swing, 0.55]
-  - [comp-swing, 0.55]
-  - [bass-high, g-]
-  - [bass-low, c---]
-  - [bass-base, c--]
-  - [chord-high, a]
-  - [chord-low, c-]
-  - [chord-base, c-, e-, g-]
-- - part
-  - [type, chords]
-  - [title]
-  - [composer]
-  - [instrument, 0]
-  - [volume, 65]
-  - [key, 1]
-- - phrase
-  - [style, rock-light-even]
+- [title, Where, Is, The, Love]
+- [composer, Ralph, MacDonald, and, William, Salter]
+- [show, Roberta, Flack, and, Donny, Hathaway]
+- [year, 1972]
+- [comments]
+- [meter, 4, 4]
+- [key, 1]
+- [tempo, 160]
+- [volume, 80]
+- [playback-transpose, 0]
+- [chord-font-size, 16]
+- [bass-instrument, 33]
+- [bass-volume, 60]
+- [drum-volume, 60]
+- [chord-volume, 40]
+- [breakpoint, 54]
+- [layout]
+- [roadmap-layout, 8]
+- [style, rock-light-even, [swing, 0.55], [comp-swing, 0.55], [bass-high, g-], [bass-low, c---], [bass-base, c--], [chord-high, a], [chord-low, c-], [chord-base, c-, e-, g-]]
+- [part, [type, chords], [title], [composer], [instrument, 0], [volume, 65], [key, 1]]
+- [phrase, [style, rock-light-even]]
 - G6
 - '|'
 - Eb7
@@ -74,8 +30,7 @@
 - '|'
 - Db7
 - '|'
-- - phrase
-  - [style]
+- [phrase, [style]]
 - Gb6
 - '|'
 - BM7
@@ -84,8 +39,7 @@
 - '|'
 - Bb7
 - '|'
-- - phrase
-  - [style]
+- [phrase, [style]]
 - Eb
 - '|'
 - Gb7
@@ -95,11 +49,8 @@
 - Bb7sus4
 - Bb7
 - '|'
-- - section
-  - [style]
-  - [body, "Eb | Gb7 B | Bb7sus4 | / Bb7 | \n\n"]
-- - phrase
-  - [style]
+- [section, [style], [body, "Eb | Gb7 B | Bb7sus4 | / Bb7 | \n\n"]]
+- [phrase, [style]]
 - Eb
 - '|'
 - Eb7
@@ -108,8 +59,7 @@
 - '|'
 - Db7
 - '|'
-- - phrase
-  - [style]
+- [phrase, [style]]
 - Gb6
 - '|'
 - BM7
@@ -118,8 +68,7 @@
 - '|'
 - Bb7
 - '|'
-- - phrase
-  - [style]
+- [phrase, [style]]
 - Eb
 - '|'
 - Gb7
@@ -129,11 +78,8 @@
 - Bb7sus4
 - Bb7
 - '|'
-- - section
-  - [style]
-  - [body, "Eb | Gb7 B | Bb7sus4 | / Bb7 | \n\n"]
-- - phrase
-  - [style]
+- [section, [style], [body, "Eb | Gb7 B | Bb7sus4 | / Bb7 | \n\n"]]
+- [phrase, [style]]
 - Eb
 - '|'
 - Eb7
@@ -142,8 +88,7 @@
 - '|'
 - Db7
 - '|'
-- - phrase
-  - [style]
+- [phrase, [style]]
 - GbM7
 - '|'
 - BM7
@@ -153,8 +98,7 @@
 - /
 - Bb7
 - '|'
-- - phrase
-  - [style]
+- [phrase, [style]]
 - Eb
 - '|'
 - Eb7
@@ -163,11 +107,8 @@
 - '|'
 - Db7
 - '|'
-- - section
-  - [style]
-  - [body, "Gb6 | BM7 | Bb7sus4 | Bb7 | \n\n"]
-- - phrase
-  - [style]
+- [section, [style], [body, "Gb6 | BM7 | Bb7sus4 | Bb7 | \n\n"]]
+- [phrase, [style]]
 - Eb
 - '|'
 - Gb7
@@ -177,15 +118,5 @@
 - Bb7sus4
 - Bb7
 - '|'
-- - section
-  - [style]
-  - [body, "Eb | Gb7 B | Bb7sus4 | / Bb7 | \n\n"]
-- - part
-  - [type, melody]
-  - [title]
-  - [composer]
-  - [instrument, 11]
-  - [volume, 85]
-  - [key, 1]
-  - [stave, treble]
-  - [body, "r2 g8 r1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+4+8\n"]
+- [section, [style], [body, "Eb | Gb7 B | Bb7sus4 | / Bb7 | \n\n"]]
+- [part, [type, melody], [title], [composer], [instrument, 11], [volume, 85], [key, 1], [stave, treble], [body, "r2 g8 r1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+4+8\n"]]

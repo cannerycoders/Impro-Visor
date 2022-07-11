@@ -3,18 +3,18 @@
 // nb: to run within node, this file must have a file extension
 // our converted is intended to be run manually from this directory
 
-import PlistParser from "./polya/parser.js";
+import PlistParser from "./parser.js";
 import yaml from "js-yaml";
 import path from "path";
 import fs from "fs";
 import glob from "glob";
 
 let patlist = [
-    "../fractals/*.fractal",
-    "../grammars/*.grammar",
-    "../leadsheets/*.ls",
-    "../leadsheets/*/*.ls",
-    "../vocab/My.*",  
+    "../../fractals/*.fractal",
+    "../../grammars/*.grammar",
+    "../../leadsheets/*.ls",
+    "../../leadsheets/*/*.ls",
+    "../../vocab/My.*",  
 ];
 
 async function convertFile(ifile)
@@ -34,7 +34,7 @@ async function convertFile(ifile)
             }
             else
             {
-                let ofile = path.join("data", ifile.slice(3));
+                let ofile = path.join("../data", ifile.slice(6)); // remove "../../"
                 try
                 {
                     fs.mkdirSync(path.dirname(ofile), {recursive: true});
@@ -43,7 +43,7 @@ async function convertFile(ifile)
                 let opts =
                 {
                     noArrayIndent: false,
-                    flowLevel: 2, /* lower numbers means more (shorter) lines */
+                    flowLevel: 1, /* higher numbers means more (shorter) lines */
                 };
                 let str = yaml.dump(plist, opts);
                 console.log(`    -> ${ofile.replace(/\\/g, "/")} ${plist.length} ${str.length}`);

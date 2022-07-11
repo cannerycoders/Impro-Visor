@@ -1,65 +1,23 @@
-# Converted from Impro-Visor src on 2022-07-10T22:13:11.836Z
+# Converted from Impro-Visor src on 2022-07-11T18:12:09.933Z
 # Impro-Visor is GPL-3, copyright 2005-2017 Robert Keller and Harvey Mudd College
 # see: https://github.com/Impro-Visor/Impro-Visor
-- - title
-  - You
-  - Make
-  - Me
-  - Feel
-  - Like
-  - Dancing
-- - composer
-- - show
-- - year
-- - comments
-- - meter
-  - 4
-  - 4
-- - key
-  - 0
-- - tempo
-  - 160
-- - volume
-  - 127
-- - playback-transpose
-  - 0
-- - bass-instrument
-  - 33
-- - bass-volume
-  - 60
-- - drum-volume
-  - 60
-- - chord-volume
-  - 60
-- - breakpoint
-  - 54
-- - layout
-- - style
-  - rock-medium
-  - [swing, 0.5]
-  - [comp-swing, 0.5]
-  - [bass-high, c-]
-  - [bass-low, c--]
-  - [bass-base, g--]
-  - [chord-high, c]
-  - [chord-low, c-]
-  - [chord-base, c-, e-, g-]
-- - part
-  - [type, chords]
-  - [title]
-  - [composer]
-  - [instrument, 0]
-  - [volume, 65]
-  - [key, 0]
-- - section
-  - [style, rock-medium]
-  - [body, "F Dm | Gm7 C7sus | F Dm | Gm7 C7sus | \nF Dm | Gm7 C7sus | F Dm | Gm7 C7sus | \nEb | F Gbdim | G Em | Am7 D7sus | \nG Em | Am7 D7sus | G Em | Am7 D7sus | \nGm7 | / | C7 | Gm7 C7sus | \nF Ebmaj7 | Abmaj7 / C7sus C7 | F69 | \n"]
-- - part
-  - [type, melody]
-  - [title]
-  - [composer]
-  - [instrument, 11]
-  - [volume, 85]
-  - [key, 0]
-  - [stave, treble]
-  - [body, 'r1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1 ']
+- [title, You, Make, Me, Feel, Like, Dancing]
+- [composer]
+- [show]
+- [year]
+- [comments]
+- [meter, 4, 4]
+- [key, 0]
+- [tempo, 160]
+- [volume, 127]
+- [playback-transpose, 0]
+- [bass-instrument, 33]
+- [bass-volume, 60]
+- [drum-volume, 60]
+- [chord-volume, 60]
+- [breakpoint, 54]
+- [layout]
+- [style, rock-medium, [swing, 0.5], [comp-swing, 0.5], [bass-high, c-], [bass-low, c--], [bass-base, g--], [chord-high, c], [chord-low, c-], [chord-base, c-, e-, g-]]
+- [part, [type, chords], [title], [composer], [instrument, 0], [volume, 65], [key, 0]]
+- [section, [style, rock-medium], [body, "F Dm | Gm7 C7sus | F Dm | Gm7 C7sus | \nF Dm | Gm7 C7sus | F Dm | Gm7 C7sus | \nEb | F Gbdim | G Em | Am7 D7sus | \nG Em | Am7 D7sus | G Em | Am7 D7sus | \nGm7 | / | C7 | Gm7 C7sus | \nF Ebmaj7 | Abmaj7 / C7sus C7 | F69 | \n"]]
+- [part, [type, melody], [title], [composer], [instrument, 11], [volume, 85], [key, 0], [stave, treble], [body, 'r1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1 ']]

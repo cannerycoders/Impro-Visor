@@ -1,65 +1,23 @@
-# Converted from Impro-Visor src on 2022-07-10T22:13:09.301Z
+# Converted from Impro-Visor src on 2022-07-11T18:12:07.586Z
 # Impro-Visor is GPL-3, copyright 2005-2017 Robert Keller and Harvey Mudd College
 # see: https://github.com/Impro-Visor/Impro-Visor
-- - title
-  - Fancy
-  - Meeting
-  - You
-- - composer
-  - Harold
-  - Arlen
-- - show
-- - year
-  - 1936
-- - comments
-- - meter
-  - 4
-  - 4
-- - key
-  - -4
-- - tempo
-  - 120
-- - volume
-  - 127
-- - playback-transpose
-  - 0
-- - bass-instrument
-  - 33
-- - bass-volume
-  - 60
-- - drum-volume
-  - 60
-- - chord-volume
-  - 40
-- - breakpoint
-  - 54
-- - layout
-- - style
-  - swing
-  - [swing, 0.67]
-  - [comp-swing, 0.67]
-  - [bass-high, g-]
-  - [bass-low, g--]
-  - [bass-base, c--]
-  - [chord-high, a]
-  - [chord-low, a--]
-  - [chord-base, c-, e-, g-]
-- - part
-  - [type, chords]
-  - [title]
-  - [composer]
-  - [instrument, 0]
-  - [volume, 65]
-  - [key, -4]
-- - section
-  - [style, swing]
-  - [body, "Ab | Bbm7 Eb7 | Ab | Fbo7 Bbm6 | \nAbM7 Ab6 | Bbm6 G7 | AbM7 Ab | Ebm6 / Gbm6 Gbo7 | \nBbm7 | Dbm | AbM7 Ab6 | Ab | \nFm7 | AbM7 / Bbm Bbo7 | Fm7 Bb7add6 | E9 / Eb9 Eb7 | \nAb | Bbm7 Eb7 | Ab | Fo7 Bbm6 | \nAbM7 Ab6 | Bbm6 G7 | Cm Ab | Cm F7 | \nBbm | Db Bb7b5 | Ab / Gb9 F9 | / | \nBbm7 | / Bbm6 Db Eb7b9 | Ab | Fm7 Eb7 | \n\n"]
-- - part
-  - [type, melody]
-  - [title]
-  - [composer]
-  - [instrument, 11]
-  - [volume, 85]
-  - [key, -4]
-  - [stave, auto]
-  - [body, "ab2+4 r1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+4\n"]
+- [title, Fancy, Meeting, You]
+- [composer, Harold, Arlen]
+- [show]
+- [year, 1936]
+- [comments]
+- [meter, 4, 4]
+- [key, -4]
+- [tempo, 120]
+- [volume, 127]
+- [playback-transpose, 0]
+- [bass-instrument, 33]
+- [bass-volume, 60]
+- [drum-volume, 60]
+- [chord-volume, 40]
+- [breakpoint, 54]
+- [layout]
+- [style, swing, [swing, 0.67], [comp-swing, 0.67], [bass-high, g-], [bass-low, g--], [bass-base, c--], [chord-high, a], [chord-low, a--], [chord-base, c-, e-, g-]]
+- [part, [type, chords], [title], [composer], [instrument, 0], [volume, 65], [key, -4]]
+- [section, [style, swing], [body, "Ab | Bbm7 Eb7 | Ab | Fbo7 Bbm6 | \nAbM7 Ab6 | Bbm6 G7 | AbM7 Ab | Ebm6 / Gbm6 Gbo7 | \nBbm7 | Dbm | AbM7 Ab6 | Ab | \nFm7 | AbM7 / Bbm Bbo7 | Fm7 Bb7add6 | E9 / Eb9 Eb7 | \nAb | Bbm7 Eb7 | Ab | Fo7 Bbm6 | \nAbM7 Ab6 | Bbm6 G7 | Cm Ab | Cm F7 | \nBbm | Db Bb7b5 | Ab / Gb9 F9 | / | \nBbm7 | / Bbm6 Db Eb7b9 | Ab | Fm7 Eb7 | \n\n"]]
+- [part, [type, melody], [title], [composer], [instrument, 11], [volume, 85], [key, -4], [stave, auto], [body, "ab2+4 r1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+4\n"]]

@@ -1,70 +1,23 @@
-# Converted from Impro-Visor src on 2022-07-10T22:13:10.589Z
+# Converted from Impro-Visor src on 2022-07-11T18:12:08.785Z
 # Impro-Visor is GPL-3, copyright 2005-2017 Robert Keller and Harvey Mudd College
 # see: https://github.com/Impro-Visor/Impro-Visor
-- - title
-  - Now
-  - He
-  - Beats
-  - the
-  - Drum,
-  - Now
-  - He
-  - Stops
-- - composer
-  - Chic
-  - k
-  - Corea
-- - show
-- - year
-- - comments
-- - meter
-  - 4
-  - 4
-- - key
-  - -3
-- - tempo
-  - 160
-- - volume
-  - 127
-- - playback-transpose
-  - 0
-- - bass-instrument
-  - 33
-- - bass-volume
-  - 60
-- - drum-volume
-  - 60
-- - chord-volume
-  - 40
-- - breakpoint
-  - 54
-- - layout
-- - style
-  - swing
-  - [swing, 0.67]
-  - [comp-swing, 0.67]
-  - [bass-high, g-]
-  - [bass-low, g---]
-  - [bass-base, c--]
-  - [chord-high, a]
-  - [chord-low, c-]
-  - [chord-base, c-, e-, g-]
-- - part
-  - [type, chords]
-  - [title]
-  - [composer]
-  - [instrument, 0]
-  - [volume, 65]
-  - [key, -3]
-- - section
-  - [style, swing]
-  - [body, "Ebm69 / / Cm7 | G7 | Cm69 | G/A D7#9 | \nEm7 | Cm7 Bbm7 | Gm7 Gbm7 | Fm7 Bb7 | \nEb/F Db/Eb | Eb/F Db/Eb | Db/Eb B/Db | Db/Eb B/Db | \nB/C / / A/B / / B/C# / | A/B | Ebm7b5 | G7 | \nCm | G7+ | Cm69 | G/A D7#9 | \nBm7 | Cm7 Bbm7 | Gm7 Gbm7 | Fm7 Bb7b9 | \nEb7#9 D7#9 | Db7#9 C7#9 | Ab69 | Db7sus | \nEb69 | F7 | Fm7 Bb7 | Ab7 G7+ | \n\n"]
-- - part
-  - [type, melody]
-  - [title]
-  - [composer]
-  - [instrument, 11]
-  - [volume, 85]
-  - [key, -3]
-  - [stave, treble]
-  - [body, "g+2+4 r1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+4\n"]
+- [title, Now, He, Beats, the, 'Drum,', Now, He, Stops]
+- [composer, Chic, k, Corea]
+- [show]
+- [year]
+- [comments]
+- [meter, 4, 4]
+- [key, -3]
+- [tempo, 160]
+- [volume, 127]
+- [playback-transpose, 0]
+- [bass-instrument, 33]
+- [bass-volume, 60]
+- [drum-volume, 60]
+- [chord-volume, 40]
+- [breakpoint, 54]
+- [layout]
+- [style, swing, [swing, 0.67], [comp-swing, 0.67], [bass-high, g-], [bass-low, g---], [bass-base, c--], [chord-high, a], [chord-low, c-], [chord-base, c-, e-, g-]]
+- [part, [type, chords], [title], [composer], [instrument, 0], [volume, 65], [key, -3]]
+- [section, [style, swing], [body, "Ebm69 / / Cm7 | G7 | Cm69 | G/A D7#9 | \nEm7 | Cm7 Bbm7 | Gm7 Gbm7 | Fm7 Bb7 | \nEb/F Db/Eb | Eb/F Db/Eb | Db/Eb B/Db | Db/Eb B/Db | \nB/C / / A/B / / B/C# / | A/B | Ebm7b5 | G7 | \nCm | G7+ | Cm69 | G/A D7#9 | \nBm7 | Cm7 Bbm7 | Gm7 Gbm7 | Fm7 Bb7b9 | \nEb7#9 D7#9 | Db7#9 C7#9 | Ab69 | Db7sus | \nEb69 | F7 | Fm7 Bb7 | Ab7 G7+ | \n\n"]]
+- [part, [type, melody], [title], [composer], [instrument, 11], [volume, 85], [key, -3], [stave, treble], [body, "g+2+4 r1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+4\n"]]

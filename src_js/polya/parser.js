@@ -345,15 +345,17 @@ export default class PlistParser
         case tSymbol:
         case tString:
         case tNumber:
-            console.assert(this.stack.length);
             if(this.stack[0] != this.plist)
+            {
+                // a contained list...
                 this.stack[0].push(tok.value);
+            }
             else
             {
                 // handle the leadsheet case where we have outerscoped
-                // non-list tokens comprising the "body".  Currently we 
-                // create a new 'body' sublist which is a "<pre>" multiline 
-                // string
+                // non-list tokens comprising the section or part "body".  
+                // Currently we create a new 'body' sublist which contains
+                // a multiline string.
                 let last = this.plist[this.plist.length-1];
                 if(last)
                 {

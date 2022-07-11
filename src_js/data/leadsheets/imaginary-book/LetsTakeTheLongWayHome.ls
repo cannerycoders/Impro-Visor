@@ -1,72 +1,23 @@
-# Converted from Impro-Visor src on 2022-07-10T22:13:10.188Z
+# Converted from Impro-Visor src on 2022-07-11T18:12:08.392Z
 # Impro-Visor is GPL-3, copyright 2005-2017 Robert Keller and Harvey Mudd College
 # see: https://github.com/Impro-Visor/Impro-Visor
-- - title
-  - Let's
-  - Take
-  - the
-  - Long
-  - Way
-  - Home
-- - composer
-  - Harold
-  - Arlen
-- - show
-  - Here
-  - Come
-  - the
-  - Waves
-- - year
-  - 1944
-- - comments
-- - meter
-  - 4
-  - 4
-- - key
-  - -3
-- - tempo
-  - 120
-- - volume
-  - 127
-- - playback-transpose
-  - 0
-- - bass-instrument
-  - 33
-- - bass-volume
-  - 60
-- - drum-volume
-  - 60
-- - chord-volume
-  - 40
-- - breakpoint
-  - 54
-- - layout
-- - style
-  - swing
-  - [swing, 0.67]
-  - [comp-swing, 0.67]
-  - [bass-high, g-]
-  - [bass-low, g--]
-  - [bass-base, c--]
-  - [chord-high, a]
-  - [chord-low, a--]
-  - [chord-base, c-, e-, g-]
-- - part
-  - [type, chords]
-  - [title]
-  - [composer]
-  - [instrument, 0]
-  - [volume, 65]
-  - [key, -3]
-- - section
-  - [style, swing]
-  - [body, "Eb | Ab Bb7 | Eb | / Fm7 | \nEb Cm7 | Fm7 | / | Bb7 Bb9 | \nGm7 Eb | / Eo7 | Fm Db7 | Bb7 Do7 | \nGm7 / / Cm7 | / | Dm7 Bbm | G7 E9 | \nEb Cm | Fm7 Bb7 | Eb | / Fm | \nEb9 Ab | Fm7 | Gm Eb | C9 C7+ | \nAb | Fm | G / / C9+ | / / / C7b9 | \nF9 | Fm7 Bb7 | G7+ Cm7 | Ab9 | \nEb Cm7 | Fm7 Bb7 | Eb | / | \n/ / Ab Bb7sus | / | Bb7 / / Bb7sus | Eb | \n/ | Fm7 | Bb7 / / Bb7sus | Eb | \nCm Ab | F9 F7#5b9 | Bb | Fm7 | \nBb7 Bb7#5b9 | Eb Cm7 | Fm7 Bb9 | Eb | \n/ Fm7 | Eb Cm7 | Fm7 Bb7 | Eb | \nFm Fm7 Bb7 Bb7+ | \n"]
-- - part
-  - [type, melody]
-  - [title]
-  - [composer]
-  - [instrument, 11]
-  - [volume, 85]
-  - [key, -3]
-  - [stave, auto]
-  - [body, "g2 r1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+2\n"]
+- [title, Let's, Take, the, Long, Way, Home]
+- [composer, Harold, Arlen]
+- [show, Here, Come, the, Waves]
+- [year, 1944]
+- [comments]
+- [meter, 4, 4]
+- [key, -3]
+- [tempo, 120]
+- [volume, 127]
+- [playback-transpose, 0]
+- [bass-instrument, 33]
+- [bass-volume, 60]
+- [drum-volume, 60]
+- [chord-volume, 40]
+- [breakpoint, 54]
+- [layout]
+- [style, swing, [swing, 0.67], [comp-swing, 0.67], [bass-high, g-], [bass-low, g--], [bass-base, c--], [chord-high, a], [chord-low, a--], [chord-base, c-, e-, g-]]
+- [part, [type, chords], [title], [composer], [instrument, 0], [volume, 65], [key, -3]]
+- [section, [style, swing], [body, "Eb | Ab Bb7 | Eb | / Fm7 | \nEb Cm7 | Fm7 | / | Bb7 Bb9 | \nGm7 Eb | / Eo7 | Fm Db7 | Bb7 Do7 | \nGm7 / / Cm7 | / | Dm7 Bbm | G7 E9 | \nEb Cm | Fm7 Bb7 | Eb | / Fm | \nEb9 Ab | Fm7 | Gm Eb | C9 C7+ | \nAb | Fm | G / / C9+ | / / / C7b9 | \nF9 | Fm7 Bb7 | G7+ Cm7 | Ab9 | \nEb Cm7 | Fm7 Bb7 | Eb | / | \n/ / Ab Bb7sus | / | Bb7 / / Bb7sus | Eb | \n/ | Fm7 | Bb7 / / Bb7sus | Eb | \nCm Ab | F9 F7#5b9 | Bb | Fm7 | \nBb7 Bb7#5b9 | Eb Cm7 | Fm7 Bb9 | Eb | \n/ Fm7 | Eb Cm7 | Fm7 Bb7 | Eb | \nFm Fm7 Bb7 Bb7+ | \n"]]
+- [part, [type, melody], [title], [composer], [instrument, 11], [volume, 85], [key, -3], [stave, auto], [body, "g2 r1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+2\n"]]

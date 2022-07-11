@@ -1,67 +1,27 @@
-# Converted from Impro-Visor src on 2022-07-10T22:13:12.024Z
+# Converted from Impro-Visor src on 2022-07-11T18:12:10.106Z
 # Impro-Visor is GPL-3, copyright 2005-2017 Robert Keller and Harvey Mudd College
 # see: https://github.com/Impro-Visor/Impro-Visor
-- - title
-  - Here's
-  - That
-  - Rainy
-  - Day
-- - composer
-  - Jimmy
-  - Van
-  - Heusen
-- - show
-  - Carnival
-  - in
-  - Flanders
-- - year
-  - 1953
-- - comments
-- - meter
-  - 4
-  - 4
-- - key
-  - 1
-- - tempo
-  - 140
-- - volume
-  - 80
-- - playback-transpose
-  - 0
-- - chord-font-size
-  - 16
-- - bass-instrument
-  - 33
-- - bass-volume
-  - 60
-- - drum-volume
-  - 60
-- - chord-volume
-  - 40
-- - breakpoint
-  - 54
-- - layout
-- - roadmap-layout
-  - 8
-- - style
-  - latin
-  - [swing, 0.55]
-  - [comp-swing, 0.55]
-  - [bass-high, g-]
-  - [bass-low, c---]
-  - [bass-base, c--]
-  - [chord-high, a]
-  - [chord-low, c-]
-  - [chord-base, c-, e-, g-]
-- - part
-  - [type, chords]
-  - [title]
-  - [composer]
-  - [instrument, 0]
-  - [volume, 65]
-  - [key, 1]
-- - phrase
-  - [style, latin]
+- [title, Here's, That, Rainy, Day]
+- [composer, Jimmy, Van, Heusen]
+- [show, Carnival, in, Flanders]
+- [year, 1953]
+- [comments]
+- [meter, 4, 4]
+- [key, 1]
+- [tempo, 140]
+- [volume, 80]
+- [playback-transpose, 0]
+- [chord-font-size, 16]
+- [bass-instrument, 33]
+- [bass-volume, 60]
+- [drum-volume, 60]
+- [chord-volume, 40]
+- [breakpoint, 54]
+- [layout]
+- [roadmap-layout, 8]
+- [style, latin, [swing, 0.55], [comp-swing, 0.55], [bass-high, g-], [bass-low, c---], [bass-base, c--], [chord-high, a], [chord-low, c-], [chord-base, c-, e-, g-]]
+- [part, [type, chords], [title], [composer], [instrument, 0], [volume, 65], [key, 1]]
+- [phrase, [style, latin]]
 - GM7
 - '|'
 - Bb7
@@ -70,11 +30,8 @@
 - '|'
 - AbM7
 - '|'
-- - section
-  - [style]
-  - [body, "Am7 | D7 | GM7 | Dm7 G7 | \n\n"]
-- - phrase
-  - [style]
+- [section, [style], [body, "Am7 | D7 | GM7 | Dm7 G7 | \n\n"]]
+- [phrase, [style]]
 - Cm7
 - '|'
 - F7
@@ -83,11 +40,8 @@
 - '|'
 - EbM7
 - '|'
-- - section
-  - [style]
-  - [body, "Am7 | D7 | GM7 E7 | Am7 D7 | \n\n"]
-- - phrase
-  - [style]
+- [section, [style], [body, "Am7 | D7 | GM7 E7 | Am7 D7 | \n\n"]]
+- [phrase, [style]]
 - GM7
 - '|'
 - Bb7
@@ -105,15 +59,5 @@
 - Dm7
 - G7
 - '|'
-- - section
-  - [style]
-  - [body, "CM7 | Am7 D7 | Bm7 | Bbo | \nAm7 | D7 | GM7 E7 | Am7 D7 | \n\n"]
-- - part
-  - [type, melody]
-  - [title]
-  - [composer]
-  - [instrument, 11]
-  - [volume, 85]
-  - [key, 1]
-  - [stave, treble]
-  - [body, 'r1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1 ']
+- [section, [style], [body, "CM7 | Am7 D7 | Bm7 | Bbo | \nAm7 | D7 | GM7 E7 | Am7 D7 | \n\n"]]
+- [part, [type, melody], [title], [composer], [instrument, 11], [volume, 85], [key, 1], [stave, treble], [body, 'r1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1 ']]

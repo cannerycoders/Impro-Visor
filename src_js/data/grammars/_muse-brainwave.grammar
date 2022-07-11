@@ -1,79 +1,34 @@
-# Converted from Impro-Visor src on 2022-07-10T22:12:35.074Z
+# Converted from Impro-Visor src on 2022-07-11T18:11:37.655Z
 # Impro-Visor is GPL-3, copyright 2005-2017 Robert Keller and Harvey Mudd College
 # see: https://github.com/Impro-Visor/Impro-Visor
-- - startsymbol
-  - P
-- - rule
-  - [P]
-  - [[muse-switch, 1, [[default, none], [0, v_low], [1, low], [2, mid], [3, high], [4, v_high]]]]
-  - 1
-- - rule
-  - [none]
-  - [R1]
-  - 1
-- - rule
-  - [v_low]
-  - [C1]
-  - 1
-- - rule
-  - [low]
-  - [C2]
-  - 1
-- - rule
-  - [mid]
-  - [C4]
-  - 1
-- - rule
-  - [high]
-  - [C8, C8]
-  - 1
-- - rule
-  - [v_high]
-  - [C16, C16, C16, C16]
-  - 1
-- - parameter
-  - [use-grammar, 'true']
-- - parameter
-  - [rectify, 'false']
-- - parameter
-  - [avoid-repeats, 'false']
-- - parameter
-  - [use-grammar, 'true']
-- - parameter
-  - [scale-type, Use_First_Scale]
-- - parameter
-  - [scale-1x, D]
-- - parameter
-  - [auto-fill, 'true']
-- - parameter
-  - [chord-tone-decay, 0]
-- - parameter
-  - [chord-tone-weight, 0.7]
-- - parameter
-  - [color-tone-weight, 0.15]
-- - parameter
-  - [leap-prob, 0.01]
-- - parameter
-  - [max-duration, 8]
-- - parameter
-  - [max-interval, 6]
-- - parameter
-  - [min-duration, 8]
-- - parameter
-  - [min-interval, 0]
-- - parameter
-  - [rest-prob, 0.1]
-- - parameter
-  - [scale-tone-prob, 0.05]
-- - parameter
-  - [use-syncopation, 'false']
-- - parameter
-  - [syncopation-type, C]
-- - parameter
-  - [syncopation-multiplier, 0]
-- - parameter
-  - [syncopation-constant, 0.2]
-- - parameter
-  - [expectancy-multiplier, 0]
-- - parameter
-  - [expectancy-constant, 0.7]
+- [startsymbol, P]
+- [rule, [P], [[muse-switch, 1, [[default, none], [0, v_low], [1, low], [2, mid], [3, high], [4, v_high]]]], 1]
+- [rule, [none], [R1], 1]
+- [rule, [v_low], [C1], 1]
+- [rule, [low], [C2], 1]
+- [rule, [mid], [C4], 1]
+- [rule, [high], [C8, C8], 1]
+- [rule, [v_high], [C16, C16, C16, C16], 1]
+- [parameter, [use-grammar, 'true']]
+- [parameter, [rectify, 'false']]
+- [parameter, [avoid-repeats, 'false']]
+- [parameter, [use-grammar, 'true']]
+- [parameter, [scale-type, Use_First_Scale]]
+- [parameter, [scale-1x, D]]
+- [parameter, [auto-fill, 'true']]
+- [parameter, [chord-tone-decay, 0]]
+- [parameter, [chord-tone-weight, 0.7]]
+- [parameter, [color-tone-weight, 0.15]]
+- [parameter, [leap-prob, 0.01]]
+- [parameter, [max-duration, 8]]
+- [parameter, [max-interval, 6]]
+- [parameter, [min-duration, 8]]
+- [parameter, [min-interval, 0]]
+- [parameter, [rest-prob, 0.1]]
+- [parameter, [scale-tone-prob, 0.05]]
+- [parameter, [use-syncopation, 'false']]
+- [parameter, [syncopation-type, C]]
+- [parameter, [syncopation-multiplier, 0]]
+- [parameter, [syncopation-constant, 0.2]]
+- [parameter, [expectancy-multiplier, 0]]
+- [parameter, [expectancy-constant, 0.7]]

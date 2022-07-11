@@ -1,67 +1,23 @@
-# Converted from Impro-Visor src on 2022-07-10T22:13:11.822Z
+# Converted from Impro-Visor src on 2022-07-11T18:12:09.920Z
 # Impro-Visor is GPL-3, copyright 2005-2017 Robert Keller and Harvey Mudd College
 # see: https://github.com/Impro-Visor/Impro-Visor
-- - title
-  - You
-  - Don't
-  - Have
-  - to
-  - Say
-  - You
-  - Love
-  - Me
-- - composer
-- - show
-- - year
-- - comments
-- - meter
-  - 4
-  - 4
-- - key
-  - 0
-- - tempo
-  - 110
-- - volume
-  - 127
-- - playback-transpose
-  - 0
-- - bass-instrument
-  - 33
-- - bass-volume
-  - 60
-- - drum-volume
-  - 60
-- - chord-volume
-  - 60
-- - breakpoint
-  - 54
-- - layout
-- - style
-  - rock-slow
-  - [swing, 0.5]
-  - [comp-swing, 0.5]
-  - [bass-high, c-]
-  - [bass-low, c--]
-  - [bass-base, g--]
-  - [chord-high, c]
-  - [chord-low, c-]
-  - [chord-base, c-, e-, g-]
-- - part
-  - [type, chords]
-  - [title]
-  - [composer]
-  - [instrument, 0]
-  - [volume, 65]
-  - [key, 0]
-- - section
-  - [style, rock-slow]
-  - [body, "Fm | Bbm/F Bbm | Bbm7 | C Db | \nFm | Fm | Bbm | Eb7 | \nAb | Db | Bbm | Gm7b5 G7b9 | \nC7 | Fm Fm7 | Bbm | Eb7 | \nAb | Db | Bbm | Gm7b5 | \nC7 | F Dm | Gm C7 | F Dm | \nGm7 C7 | F Am | Dm | Gm7 | \nC | Fm | Bbm | Eb7 | \nAb | Db | Bbm | Gm7b5 G7b9 | \nC7 C7 | Fm | Bbm | Eb | \nAb | Db | Bbm | Bbm7 | \nC | F | Dm C | F | \nGm C7/E | F | D | G | \nAm/E D | Bm/G | Am/E D7 | G/D F6 | \nG F6 | G/D F6 | G | \n"]
-- - part
-  - [type, melody]
-  - [title]
-  - [composer]
-  - [instrument, 11]
-  - [volume, 85]
-  - [key, 0]
-  - [stave, treble]
-  - [body, 'r1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1 ']
+- [title, You, Don't, Have, to, Say, You, Love, Me]
+- [composer]
+- [show]
+- [year]
+- [comments]
+- [meter, 4, 4]
+- [key, 0]
+- [tempo, 110]
+- [volume, 127]
+- [playback-transpose, 0]
+- [bass-instrument, 33]
+- [bass-volume, 60]
+- [drum-volume, 60]
+- [chord-volume, 60]
+- [breakpoint, 54]
+- [layout]
+- [style, rock-slow, [swing, 0.5], [comp-swing, 0.5], [bass-high, c-], [bass-low, c--], [bass-base, g--], [chord-high, c], [chord-low, c-], [chord-base, c-, e-, g-]]
+- [part, [type, chords], [title], [composer], [instrument, 0], [volume, 65], [key, 0]]
+- [section, [style, rock-slow], [body, "Fm | Bbm/F Bbm | Bbm7 | C Db | \nFm | Fm | Bbm | Eb7 | \nAb | Db | Bbm | Gm7b5 G7b9 | \nC7 | Fm Fm7 | Bbm | Eb7 | \nAb | Db | Bbm | Gm7b5 | \nC7 | F Dm | Gm C7 | F Dm | \nGm7 C7 | F Am | Dm | Gm7 | \nC | Fm | Bbm | Eb7 | \nAb | Db | Bbm | Gm7b5 G7b9 | \nC7 C7 | Fm | Bbm | Eb | \nAb | Db | Bbm | Bbm7 | \nC | F | Dm C | F | \nGm C7/E | F | D | G | \nAm/E D | Bm/G | Am/E D7 | G/D F6 | \nG F6 | G/D F6 | G | \n"]]
+- [part, [type, melody], [title], [composer], [instrument, 11], [volume, 85], [key, 0], [stave, treble], [body, 'r1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1 ']]
