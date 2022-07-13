@@ -1,0 +1,23 @@
+# Converted from Impro-Visor src on 2022-07-13T16:27:27.644Z
+# Impro-Visor is GPL-3, copyright 2005-2017 Robert Keller and Harvey Mudd College
+# see: https://github.com/Impro-Visor/Impro-Visor
+- [title, Fury]
+- [composer, Stephen, Jones]
+- [show]
+- [year]
+- [comments]
+- [meter, 4, 4]
+- [key, 0]
+- [tempo, 170]
+- [volume, 127]
+- [playback-transpose, 0]
+- [bass-instrument, 33]
+- [bass-volume, 60]
+- [drum-volume, 60]
+- [chord-volume, 60]
+- [breakpoint, 54]
+- [layout]
+- [style, swing, [swing, 0.67], [comp-swing, 0.67], [bass-high, g-], [bass-low, g---], [bass-base, c--], [chord-high, a], [chord-low, c-], [chord-base, c-, e-, g-]]
+- [part, [type, chords], [title, Untitled, Part], [composer], [instrument, 0], [volume, 42], [key, 0]]
+- [section, [style, swing], [body, "C7 Am7 | D+7 G9 | C7 Am7 | D+7 G9 | \nGm7 C7 | FM7 Fm7 | AbM7 G7#9 | C7 G7#9 | \nC7 Am7 | D+7 G9 | C7 Am7 | D+7 G9 | \nGm7 C7 | FM7 Fm7 | AbM7 G7#9 | C7 G7#9 | \nCM7 | EbM7 | FM7 | BbM7 | \nCM7 | EbM7 | FM7 | Bb7 | \nC7 Am7 | D+7 G9 | C7 Am7 | D+7 G9 | \nGm7 C7 | FM7 Fm7 | AbM7 G7#9 | C7 | \n\n"]]
+- [part, [type, melody], [title], [composer], [instrument, 73], [volume, 85], [key, 0], [stave, treble], [body, 'r1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1 ']]

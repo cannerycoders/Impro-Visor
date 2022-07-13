@@ -1,0 +1,23 @@
+# Converted from Impro-Visor src on 2022-07-13T16:27:29.762Z
+# Impro-Visor is GPL-3, copyright 2005-2017 Robert Keller and Harvey Mudd College
+# see: https://github.com/Impro-Visor/Impro-Visor
+- [title, 'Yeah,', Yeah]
+- [composer]
+- [show]
+- [year]
+- [comments]
+- [meter, 4, 4]
+- [key, 0]
+- [tempo, 160]
+- [volume, 127]
+- [playback-transpose, 0]
+- [bass-instrument, 33]
+- [bass-volume, 60]
+- [drum-volume, 60]
+- [chord-volume, 60]
+- [breakpoint, 54]
+- [layout]
+- [style, rock-medium, [swing, 0.5], [comp-swing, 0.5], [bass-high, c-], [bass-low, c--], [bass-base, g--], [chord-high, c], [chord-low, c-], [chord-base, c-, e-, g-]]
+- [part, [type, chords], [title], [composer], [instrument, 0], [volume, 65], [key, 0]]
+- [section, [style, rock-medium], [body, "C | Am | C | Am | \nC | D13 G9 | C F7 | C G7 | \nC | Am | C | Am | \nC | D13 G9 | C F7 | C C7 | \nF | Bb9 | C | Gm7b5 C7 | \nF | Bb9 | D7 | G7 | \nC | Am | C | Am | \nC | D13 G9 | C F7 | C / G7 | \n\n"]]
+- [part, [type, melody], [title], [composer], [instrument, 11], [volume, 85], [key, 0], [stave, treble], [body, 'r1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1 ']]

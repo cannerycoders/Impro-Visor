@@ -1,0 +1,23 @@
+# Converted from Impro-Visor src on 2022-07-13T16:27:28.985Z
+# Impro-Visor is GPL-3, copyright 2005-2017 Robert Keller and Harvey Mudd College
+# see: https://github.com/Impro-Visor/Impro-Visor
+- [title, Santurce]
+- [composer, Eddie, Gomez]
+- [show]
+- [year]
+- [comments]
+- [meter, 4, 4]
+- [key, -2]
+- [tempo, 160]
+- [volume, 127]
+- [playback-transpose, 0]
+- [bass-instrument, 33]
+- [bass-volume, 60]
+- [drum-volume, 60]
+- [chord-volume, 40]
+- [breakpoint, 54]
+- [layout]
+- [style, latin, [swing, 0.55], [comp-swing, 0.55], [bass-high, g-], [bass-low, g---], [bass-base, c--], [chord-high, a], [chord-low, c-], [chord-base, c-, e-, g-]]
+- [part, [type, chords], [title], [composer], [instrument, 0], [volume, 65], [key, -2]]
+- [section, [style, latin], [body, "BbM7 | BbM7#5 | Gm7 Gm7/F | Em7b5 A7+ | \nDm7 | Dm7/C | G/B | / | \nBbm7 | Bbm7 | Eb7sus | Eb7b9 | \nAbM7 | G7+ | Cm7 | F#7+ | \nBM7 | Bb7+ | Em9 | A7sus A7 | \nDM7 | F#7alt | Bm7 | Bb9 | \nEbM7 | D7alt | Gm7 | C7b9 | \nFm7 | Bb13 | EbM7 G7+ | Cm7 B7#11 | \nBbM7 | BbM7#5 | Gm7 Gm7/F | Em7b5 A7+ | \nDm7 | Dm7/C | G/B | / | \nBbm7 | / | Eb7sus | Eb7b9 | \nAbM7 | G7+ | Cm7 | F#7+ | \nBM7 | Bb7+ | Em9 | A7sus A7 | \nDM7 | F#7alt | Bm7 | Am7 D7 | \nGM7 | C#7#9 | F#m7 | B7sus B9 | \nEm9 | A7sus A13 | D7 G7 | C7 F7 | \nDm7 | F7 | BbM7 | A7alt | \nDm7 | F7 | BbM7 | A7alt | \n\n"]]
+- [part, [type, melody], [title], [composer], [instrument, 11], [volume, 85], [key, -2], [stave, treble], [body, "r4+8 f8 r1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+2\n"]]

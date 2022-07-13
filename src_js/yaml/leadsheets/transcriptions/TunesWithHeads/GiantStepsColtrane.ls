@@ -1,0 +1,23 @@
+# Converted from Impro-Visor src on 2022-07-13T16:27:31.323Z
+# Impro-Visor is GPL-3, copyright 2005-2017 Robert Keller and Harvey Mudd College
+# see: https://github.com/Impro-Visor/Impro-Visor
+- [title, Giant, Steps]
+- [composer, John, Coltrane]
+- [show]
+- [year]
+- [comments]
+- [meter, 4, 4]
+- [key, 0]
+- [tempo, 220]
+- [volume, 127]
+- [playback-transpose, 0]
+- [bass-instrument, 33]
+- [bass-volume, 50]
+- [drum-volume, 36]
+- [chord-volume, 54]
+- [breakpoint, 54]
+- [layout]
+- [style, swing, [swing, 0.67], [comp-swing, 0.67], [bass-high, g-], [bass-low, g---], [bass-base, c--], [chord-high, a], [chord-low, c-], [chord-base, c-, e-, g-]]
+- [part, [type, chords], [title], [composer], [instrument, 0], [volume, 65], [key, 0]]
+- [section, [style, swing], [body, "DbM7 E9 | AM7 C9 | FM7 | Bm9 E9 | \nAM7 C9 | FM7 Ab9 | DbM7 | Gm9 C9 | \nFM9 | Bm9 E9 | AM7 | Ebm7 Ab9 | \nDbM7 | Gm9 C9 | FM7 | Ebm7 Ab9 | \n\n"]]
+- [part, [type, melody], [title], [composer, John, Coltrane], [instrument, 66], [volume, 85], [key, 0], [stave, treble], [body, "ab2 e2\n\n db2 a-2\n\n c1\n\n db2 b-2\n\n e2 c2\n\n a-2 f-2\n\n ab-1\n\n a-2 g-2\n\n c1\n\n db2 b-2\n\n e1\n\n f2 f2\n\n ab1\n\n a2 a2\n\n c+1\n\n ab4+8 ab8 r2\n"]]

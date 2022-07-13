@@ -1,0 +1,23 @@
+# Converted from Impro-Visor src on 2022-07-13T16:27:27.796Z
+# Impro-Visor is GPL-3, copyright 2005-2017 Robert Keller and Harvey Mudd College
+# see: https://github.com/Impro-Visor/Impro-Visor
+- [title, Harlem, Nocturne]
+- [composer, Earle, Hagen]
+- [show]
+- [year]
+- [comments]
+- [meter, 4, 4]
+- [key, -2]
+- [tempo, 120]
+- [volume, 127]
+- [playback-transpose, 0]
+- [bass-instrument, 33]
+- [bass-volume, 60]
+- [drum-volume, 60]
+- [chord-volume, 60]
+- [breakpoint, 54]
+- [layout]
+- [style, swing, [swing, 0.67], [comp-swing, 0.67], [bass-high, g-], [bass-low, g---], [bass-base, c--], [chord-high, b], [chord-low, g--], [chord-base, c-, e-, g-]]
+- [part, [type, chords], [title, Untitled, Part], [composer], [instrument, 0], [volume, 65], [key, -2]]
+- [section, [style, swing], [body, "GmM7 | / | Cm6 | / | \nCmM7 | Eb7 / A7 D7 | Gm6 | / | \nGmM7 | / | Cm6 | / | \nCmM7 | Eb7 / A7 D7 | Gm6 | / F7 | \nBb7 Fm7 | Bb7 Fm7 | Bb7 Fm7 | Bb7 | \nEb7 Bbm7 | Eb7 Bbm7 | F7 | / | \nBb7 Fm7 | Bb7 Fm7 | Bb7 Fm7 | Bb7 | \nEb7 Bbm7 | Eb7 Bbm7 | F7 | / | \nGmM7 | / | Cm6 | / | \nCmM7 | Eb7 / A7 D7 | Gm6 | D7alt | \n\n"]]
+- [part, [type, melody], [title], [composer], [instrument, 73], [volume, 85], [key, -2], [stave, treble], [body, "f#1+8 \n r1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+2+4+8\n"]]

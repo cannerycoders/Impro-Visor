@@ -14,6 +14,7 @@ let patlist = [
     "../../grammars/*.grammar",
     "../../leadsheets/*.ls",
     "../../leadsheets/*/*.ls",
+    "../../leadsheets/*/*/*.ls",
     "../../vocab/My.*",  
 ];
 

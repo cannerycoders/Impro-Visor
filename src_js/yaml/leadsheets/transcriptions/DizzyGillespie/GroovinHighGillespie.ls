@@ -1,0 +1,23 @@
+# Converted from Impro-Visor src on 2022-07-13T16:27:31.234Z
+# Impro-Visor is GPL-3, copyright 2005-2017 Robert Keller and Harvey Mudd College
+# see: https://github.com/Impro-Visor/Impro-Visor
+- [title, Groovin', High]
+- [composer, Dizzy, Gillespie]
+- [show]
+- [year]
+- [comments]
+- [meter, 4, 4]
+- [key, -1]
+- [tempo, 180]
+- [volume, 127]
+- [playback-transpose, 0]
+- [bass-instrument, 33]
+- [bass-volume, 60]
+- [drum-volume, 60]
+- [chord-volume, 60]
+- [breakpoint, 54]
+- [layout]
+- [style, swing, [swing, 0.67], [comp-swing, 0.67], [bass-high, g-], [bass-low, g---], [bass-base, c--], [chord-high, a], [chord-low, c-], [chord-base, c-, e-, g-]]
+- [part, [type, chords], [title, Untitled, Part], [composer], [instrument, 0], [volume, 65], [key, -1]]
+- [section, [style, swing], [body, "NC | / | / | / | \nFM7 | / | Bm7 | E7 | \nFM7 | / | Am7 | D7 | \nG7 | / | Gm7 | C7 | \nAm7 | Abm7 | Gm7 | C7b9 | \nFM7 | / | Bm7 | E7 | \nFM7 | / | Am7 | D7 | \nG7 | / | Gm7 | C7 | \nGm7 | Eb7 | FM7 | Gm7 C7b9 | \n\n"]]
+- [part, [type, melody], [title, Chorus, 1], [composer, Dizzy, Gillespie], [instrument, 59], [volume, 85], [key, -1], [stave, treble], [body, "r8 c++8 f++8 eb++8 d++8 c++8 bb+8 a+8\n\n c++8 a+8 bb+8 c++8 a+8 f+8 d+8 db+8\n\n g+8 gb+8 f+8 eb+8 f#+16/3 g+16/3 f#+16/3 e+8 g#8 b8\n\n d#+8 d+8 c#+8 c+8 bb16/3 c+16/3 bb16/3 g8 f#4\n\n g8 g8 f8 c+8 e+8 g+8 f#+8 e+8\n\n f+8 c+8 a8 bb8 c+8 a8 bb8 c+8\n\n d+16 e+16 d+16 c+16 b8 a8 g#8 b8 d+8 f+8\n\n r8 e+8 r1+2\n\n c++4\n\n f++8 e++8 r8 g++8 f++4 e++8 d++8\n\n c++8 b+8 a+8 g+8 f#+8 a8 c+8 eb+4+8\n\n d+4 r4 f#8 a8\n\n c#+8 e+8 eb+8/3 d+8/3 c#+4/3+16/3 a8 f8 d8\n\n a4 r2+4+8\n\n d++16 db++16 c++8 bb+8 r8 a+8 r8 g+8\n\n f+8 eb+8 e+8 d+8 c+8 a8 bb8 c+8\n\n r8 f8 e8 d8 g8 e8 f8/3 a8/3 c+8/3\n\n e+8 g+8 eb+4 r1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+2\n"]]

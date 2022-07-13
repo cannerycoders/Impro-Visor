@@ -23,4 +23,16 @@ export default class Grammar
         }
     }
 
+    generate()
+    {
+        // default: noOutlines, noCritic, noAbstractMelody
+        let abstractMelody = this.generateRhythmFromGrammar(startSlot, nSlots);
+        let lick = this.generateLick(abstractMelody, startStop, nSlots-1);
+
+    }
+
+
+    // 0, 17280, false, false, 1920
+    run(startSlot, totalSlots, doTrades, first, tradingQuantum)
+
 }

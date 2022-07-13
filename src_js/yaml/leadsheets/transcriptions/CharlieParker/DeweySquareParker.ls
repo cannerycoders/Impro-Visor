@@ -1,0 +1,23 @@
+# Converted from Impro-Visor src on 2022-07-13T16:27:31.207Z
+# Impro-Visor is GPL-3, copyright 2005-2017 Robert Keller and Harvey Mudd College
+# see: https://github.com/Impro-Visor/Impro-Visor
+- [title, Dewey, Square]
+- [composer, Charlie, Parker]
+- [show]
+- [year]
+- [comments]
+- [meter, 4, 4]
+- [key, 0]
+- [tempo, 180]
+- [volume, 127]
+- [playback-transpose, 0]
+- [bass-instrument, 33]
+- [bass-volume, 60]
+- [drum-volume, 60]
+- [chord-volume, 60]
+- [breakpoint, 54]
+- [layout]
+- [style, swing, [swing, 0.67], [comp-swing, 0.67], [bass-high, g-], [bass-low, g---], [bass-base, c--], [chord-high, a], [chord-low, c-], [chord-base, c-, e-, g-]]
+- [part, [type, chords], [title, Untitled, Part], [composer], [instrument, 0], [volume, 50], [key, 0]]
+- [section, [style, swing], [body, "FM7 | Bbm7 Eb7 | Am7 | D7 | \nG7 | C7 | Am7 D7 | Gm7 C7 | \nFM7 | Bbm7 Eb7 | Am7 | D7 | \nG7 | C7 | FM7 | Cm7 F7+ | \nBbM7 | Eb7 | FM7 | Dm7 | \nG7 | / | Gm7 | C7 | \nFM7 | Bbm7 Eb7 | Am7 | D7 | \nG7 | C7 | FM7 D7 | Gm7 C7 | \n\n"]]
+- [part, [type, melody], [title], [composer], [instrument, 66], [volume, 94], [key, 0], [stave, treble], [body, "r8 d16 c#16 c8 bb-8 a-8 c8 e8 g8\n\n f8 c8 eb8 c#4 c8 bb-4\n\n a-4 r2+4+8\n\n e+16 d+16 c+8 bb8 a8 g8 f#8 e16 eb16\n\n d8 c8 b-8/3 d8/3 f8/3 e+8 c#+8 d+8 a+8\n\n c+8 a8 bb8 g#+4 e+32 d+32 c+32 b32 bb4\n\n r8 g#8 a8/3 c+8/3 d+8/3 g+8 f+8 e+8 d+8\n\n c+8 b8 bb8 d8 a4 d+4\n\n g8 g8 g8 g8 g4 r2+8\n\n f8 g#8 a8 bb8 b8\n\n c+8 bb8 a16/3 bb16/3 a16/3 g8 f8 c8 eb8 d4\n\n c8 bb-8 a-16 g-16 f#-8 a-8 c8 eb8\n\n f8 c8 b-16 d16 f16 a16 e+8 d+8 r2+8\n\n d8 a4 c+8 bb8\n\n a8 g8 f8 c8 c#4 bb-8 ab-8\n\n a-8 f2+8 r4+8\n\n c#8 d8/3 f8/3 a8/3 c+8 bb8 r4+8\n\n g8 bb8/3 c#+8/3 f+8/3 ab+8 e+8 r4+8\n\n g+4+8 f+8 e+8 d+16/3 e+16/3 d+16/3 c#+8\n\n c+8 bb8 a8 g8 f#8 a8 c+8 e+8\n\n r4 d+16/3 e+16/3 d+16/3 c+8 b8 a8 g8 f#8\n\n f8 a8 e8 d8 g8 f8 e8 d8\n\n f8 a-8 bb-16 d16 f16 a16 c+8 bb8 f8/3 d8/3 b-8/3\n\n a8 ab2+4+8\n\n r4+8 e4+8 g8 f#8\n\n f8 d#8 e8/3 g8/3 bb8/3 c#+8/3 d+8/3 c#+8/3 c+8 bb8\n\n a8 g8 f8 c8 eb8 c#8 d8 bb4\n\n a16 g16 f#8 a-8 c8 eb8 d8 c8\n\n b-16 d16 f16 a16 e+8 d+8 r1\n\n c+8 d+8 f+8 eb+4\n\n f+16 eb+16 c+8 d+8 c+8 b8 bb8 a8\n\n g8 f8 e8/3 g8/3 bb8/3 c#+8/3 eb+8/3 c#+8/3 c+8 b8\n"]]

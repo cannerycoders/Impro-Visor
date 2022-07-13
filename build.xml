@@ -352,10 +352,15 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA
     </javac>
 </target>
 
+<target name="echoVariables" depends="init">
+    <pathconvert property="cpath" refid="base.classpath" />
+	<echo>Classpath is ${cpath}</echo>
+</target>
 
 <target name="improvisor" depends="compile" description="impro-visor program">
    <java classname="${improvisorClass}" fork="true">
        <classpath refid="base.classpath" />
+       <jvmarg value="-agentlib:jdwp=transport=dt_socket,server=y,address=5005"/> 
    </java>
 </target>
 

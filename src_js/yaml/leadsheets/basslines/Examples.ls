@@ -1,0 +1,23 @@
+# Converted from Impro-Visor src on 2022-07-13T16:27:25.989Z
+# Impro-Visor is GPL-3, copyright 2005-2017 Robert Keller and Harvey Mudd College
+# see: https://github.com/Impro-Visor/Impro-Visor
+- [title, Various, Bass, Figures]
+- [composer]
+- [show]
+- [year]
+- [comments]
+- [meter, 4, 4]
+- [key, 0]
+- [tempo, 160]
+- [volume, 127]
+- [playback-transpose, 0]
+- [bass-instrument, 33]
+- [bass-volume, 60]
+- [drum-volume, 60]
+- [chord-volume, 60]
+- [breakpoint, 54]
+- [layout]
+- [style, swing, [swing, 0.67], [comp-swing, 0.67], [bass-high, g-], [bass-low, g---], [bass-base, c--], [chord-high, a], [chord-low, c-], [chord-base, c-, e-, g-]]
+- [part, [type, chords], [title, Untitled, Part], [composer], [instrument, 0], [volume, 65], [key, 0]]
+- [section, [style, swing], [body, "Dm7 | G13 | CM7 | / | \nDm7 | G13 | CM7 | / | \nC7 | / | C7 | / | \nC7 | / | / | / | \n/ | / | / | / | \n/ | / | / | / | \n/ | / | / | / | \n/ | / | / | / | \n\n"]]
+- [part, [type, melody], [title], [composer], [instrument, 33], [volume, 85], [key, 0], [stave, bass], [body, "d--4 e--4 f--4 f#--4\n\n g--4 a--4 bb--4 b--4\n\n c-4 b--4 a--4 ab--4\n\n g--4 f--4 e--4 d--4\n\n d-4 c-4 b--4 a--4\n\n g--4 f--4 e--4 d--4\n\n c--4 e--4 f--4 f#--4\n\n g--4 a--4 a#--4 b--4\n\n c--4 e--4 f--4 f#--4\n\n g--4 a--4 bb--4 b--4\n\n c-4 bb--4 a--4 ab--4\n\n g--4 f--4 e--4 d--4\n\n c--4 e--4 f--4 f#--4\n\n g--4 f--4 e--4 d--4\n\n c--4 c-4 bb--4 a--4\n\n g--4 f--4 e--4 d--4\n\n c--4 f#--4 g--4 a--4\n\n bb--4 a--4 g--4 f#--4\n\n g--4 c-4 bb--4 d-4\n\n c-4 bb--4 g--4 e--4\n\n bb--4 g--4 a--4 g--4\n\n gb--4 a--4 g--4 e--4\n\n c--4 g--4 c-4 bb--4\n\n a--4 g--4 e--4 c--4\n\n r1+1+1+1+1+1+1+1\n"]]

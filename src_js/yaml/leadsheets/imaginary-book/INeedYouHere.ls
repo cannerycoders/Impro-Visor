@@ -1,0 +1,23 @@
+# Converted from Impro-Visor src on 2022-07-13T16:27:28.040Z
+# Impro-Visor is GPL-3, copyright 2005-2017 Robert Keller and Harvey Mudd College
+# see: https://github.com/Impro-Visor/Impro-Visor
+- [title, I, Need, You, Here]
+- [composer, Makoto, Ozone]
+- [show]
+- [year]
+- [comments]
+- [meter, 4, 4]
+- [key, -5]
+- [tempo, 110]
+- [volume, 127]
+- [playback-transpose, 0]
+- [bass-instrument, 33]
+- [bass-volume, 60]
+- [drum-volume, 60]
+- [chord-volume, 40]
+- [breakpoint, 54]
+- [layout]
+- [style, ballad, [swing, 0.67], [comp-swing, 0.67], [bass-high, g-], [bass-low, g---], [bass-base, c--], [chord-high, b], [chord-low, b--], [chord-base, c-, e-, g-]]
+- [part, [type, chords], [title], [composer], [instrument, 0], [volume, 65], [key, -5]]
+- [section, [style, ballad], [body, "DbM7 / / DbM7/C | Bbm7 / / Bbm7/Ab | Gbm7 | Gb/Ab / / Gbo7/Ab | \nDb/F | EM7#11 | DM7#11/A | Bbm7b5 Dbm/Eb | \nAbM7 | Gm7b5 C7#9 | Abm AbmM7 | Abm7b5 Db7b9 | \nGbM7 F7b9 | Bbm F#m7 | DbM7#5 / / DbM7 | Gm7 / C7 C7/Bb | \nAm7 D7#9 | Gm7 C7 | FM7 B7b9 | BbM7 Gb/Ab | \nDb/Ab G7#11 | GbM7 | F7b9 | Bbm7 / F7+ Bbm | \nEb7 Eo7 | DbM7/F | Bbm7 | Gbm7 | \nGb/Ab / Gbo7 Gbo7/Ab | DbM7 | Bbm7 / / Bbm7/Ab | GbM7 | \nBbm7/C C7b9 | Fm7 F7/A | Bbm7 BbmM7 | Eb7#11 | \nA/E | F7#9 Bbm7 | Eb7 Gbo7/Ab | Dbadd9 | \n\n"]]
+- [part, [type, melody], [title], [composer], [instrument, 11], [volume, 85], [key, -5], [stave, treble], [body, "ab2+4 r1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+4\n"]]

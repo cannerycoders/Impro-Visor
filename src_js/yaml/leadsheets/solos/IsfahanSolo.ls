@@ -1,0 +1,23 @@
+# Converted from Impro-Visor src on 2022-07-13T16:27:30.412Z
+# Impro-Visor is GPL-3, copyright 2005-2017 Robert Keller and Harvey Mudd College
+# see: https://github.com/Impro-Visor/Impro-Visor
+- [title, Isfahan]
+- [composer, Billy, Strayhorn]
+- [show]
+- [year]
+- [comments]
+- [meter, 4, 4]
+- [key, -5]
+- [tempo, 160]
+- [volume, 127]
+- [playback-transpose, 0]
+- [bass-instrument, 33]
+- [bass-volume, 60]
+- [drum-volume, 60]
+- [chord-volume, 60]
+- [breakpoint, 54]
+- [layout]
+- [style, swing, [swing, 0.67], [comp-swing, 0.67], [bass-high, g-], [bass-low, g---], [bass-base, c--], [chord-high, b], [chord-low, g--], [chord-base, c-, e-, g-]]
+- [part, [type, chords], [title, Untitled, Part], [composer], [instrument, 0], [volume, 65], [key, -5]]
+- [section, [style, swing], [body, "DbM7 | BbM7 Bb7alt | Eb7 | / | \nAM7 | Ab7b9 Ab7 | DbM7 | / | \nGm7b5 C7b9 | Fm6 | Am7b5 D7b9 | Gm6 | \nGm7b5 | C7alt | FM7 EM7 | EbM7 DM7 | \nDbM7 | BbM7 Bb7alt | Eb7 | / | \nAM7 | Ab7b9 | Db7#11 | / | \nGbM7 | C7alt | F7alt | Bb7 | \nEb7 | Ab7b9 | DbM7 | / | \n\n"]]
+- [part, [type, melody], [title], [composer], [instrument, 11], [volume, 85], [key, -5], [stave, treble], [body, "db8 eb8 f8 ab8 bb8 r4+8\n\n a8 bb8 a8 bb8 db+8 d+8 fb+8 gb+8\n\n g+8 r8 db+8 e+8 g+8 e+8 eb+8 db+8\n\n g8 c+8 eb+8 bb8 c+8 r4+8\n\n c#+8 e+8 a+8 b+8 c#++8 r4+8\n\n a8 f8 ab8 d+8 e+8 eb+8 b8 bb8\n\n ab2+4 r8 db8\n\n c8 db8 f8 ab8 c+8 bb8 g8 eb8\n\n c8 r4+8 e8 eb8 g8 bb8\n\n d+8 db+8 c+8 b8 bb8 ab2\n\n r8 d+8 eb+8 f+8 a+8 g+8 f#+8\n\n d+4+8 c+16 bb16 e4+8 d8\n\n db4+8 f16 a16 db+2\n\n gb+8 e+8 gb+8 e+8 db+8 bb4 ab8\n\n g2 g#2\n\n c+2 c#+2\n\n f+4+8 r8 eb+8/3 f+8/3 eb+8/3 c+8/3 ab8/3 f8/3\n\n a-4 bb-8/3 d8/3 f8/3 d8 f8 ab8 f8\n\n g8 r8 eb8 db8 eb+8 b8 g8 db+8\n\n a8 f8 b8 g8 eb8 r2\n\n g#8 b8 c#+8 eb+8 f#+4+8\n\n a+8 ab+8 gb+8 f+8 eb+4 c+8/3 a8/3 gb8/3\n\n f8 g4+8 a8 bb4+8\n\n db+8 f+2+8 r8 db+8\n\n bb2 db+8 f+8 bb+8 ab+8\n\n gb+4 e+8/3 db+8/3 c+8/3 bb4 r8 ab8\n\n db+8 a8 f+8 r2+8\n\n d+8 bb8 gb+8 r2 cb8\n\n c+8 a8 bb8 eb+8 bb2\n\n a8 gb8 ab8 c+8 f4 r8 eb8\n\n c8 db8 f8 ab8 eb+8 c+8 ab8 f8\n\n r8 c8 f8 ab8 c+8 bb8 ab8 f8\n"]]

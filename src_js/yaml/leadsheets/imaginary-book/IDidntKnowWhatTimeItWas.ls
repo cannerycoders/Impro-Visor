@@ -1,0 +1,23 @@
+# Converted from Impro-Visor src on 2022-07-13T16:27:27.907Z
+# Impro-Visor is GPL-3, copyright 2005-2017 Robert Keller and Harvey Mudd College
+# see: https://github.com/Impro-Visor/Impro-Visor
+- [title, I, Didn't, Know, What, Time, It, Was]
+- [composer, Richard, Rodgers]
+- [show]
+- [year]
+- [comments]
+- [meter, 4, 4]
+- [key, 1]
+- [tempo, 110]
+- [volume, 127]
+- [playback-transpose, 0]
+- [bass-instrument, 33]
+- [bass-volume, 60]
+- [drum-volume, 60]
+- [chord-volume, 60]
+- [breakpoint, 54]
+- [layout]
+- [style, ballad, [swing, 0.67], [comp-swing, 0.67], [bass-high, g-], [bass-low, g---], [bass-base, c--], [chord-high, b], [chord-low, b--], [chord-base, c-, e-, g-]]
+- [part, [type, chords], [title, Untitled, Part], [composer], [instrument, 0], [volume, 65], [key, 1]]
+- [section, [style, ballad], [body, "F#m7b5 B7 | Em | F#m7b5 B7 | Em | \nAm7 D7 | Em7 / / Bm | CM7 / / Bm | Am / Dm7 D7 | \nF#m7b5 B7 | Em | F#m7b5 B7 | Em | \nAm7 D7 | Em7 / / Bm | CM7 / / Bm | Am / F6 D7 | \nG | Am B7 | Am B7 | Em | \nCM7 D7 | G | Em7 A7 | D7 | \nF#m7b5 B7 | Em | F#m7b5 B7 | Em | \nAm7 | Em7 / / Bm | CM7 / / Bm | Am7 / / Cm6 | \nG / / B7 | Am7 D7 | G | Em6 D7 | \n\n"]]
+- [part, [type, melody], [title], [composer], [instrument, 13], [volume, 85], [key, 1], [stave, treble], [body, "b2+8 r1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+4+8\n"]]

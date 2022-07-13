@@ -1,0 +1,23 @@
+# Converted from Impro-Visor src on 2022-07-13T16:27:29.370Z
+# Impro-Visor is GPL-3, copyright 2005-2017 Robert Keller and Harvey Mudd College
+# see: https://github.com/Impro-Visor/Impro-Visor
+- [title, They, Were, You]
+- [composer, Harvey, Schmidt]
+- [show, 'musical:', Fantasticks]
+- [year, 1960]
+- [comments]
+- [meter, 3, 4]
+- [key, 0]
+- [tempo, 128]
+- [volume, 127]
+- [playback-transpose, 0]
+- [bass-instrument, 33]
+- [bass-volume, 60]
+- [drum-volume, 60]
+- [chord-volume, 60]
+- [breakpoint, 54]
+- [layout]
+- [style, waltz, [swing, 0.67], [comp-swing, 0.67], [bass-high, g-], [bass-low, g---], [bass-base, c--], [chord-high, a], [chord-low, c-], [chord-base, c-, e-, g-]]
+- [part, [type, chords], [title], [composer], [instrument, 0], [volume, 65], [key, 0]]
+- [section, [style, waltz], [body, "C | / | Dm7 | G7 | \nDm7 | G7 | C | / | \nGm7 | C7 | F | Dm | \nDm7 | G7 | C | / | \nC | / | Dm7 | G7 | \nDm7 | G7 | C | / | \nGm7 | C7 | F | Dm | \nDm7 | G7 | C | C7 | \nF | F#o7 | C | Am | \nDm7 | G7 | C | C7 | \nF | F#o7 | C | Am | \nG | D7sus / D7 | G7 | / | \nC | / | Dm7 | G7 | \nDm7 | G7 | C | / | \nGm7 | C7 | F | Dm | \nDm7 | G7 | Am | D9 | \nDm7 | / / G7 | C | / | \n\n"]]
+- [part, [type, melody], [title], [composer], [instrument, 11], [volume, 85], [key, 0], [stave, treble], [body, "a2 r1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+2\n"]]

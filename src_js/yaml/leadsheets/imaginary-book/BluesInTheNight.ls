@@ -1,0 +1,23 @@
+# Converted from Impro-Visor src on 2022-07-13T16:27:27.044Z
+# Impro-Visor is GPL-3, copyright 2005-2017 Robert Keller and Harvey Mudd College
+# see: https://github.com/Impro-Visor/Impro-Visor
+- [title, Blues, in, the, Night]
+- [composer, Harold, Arlen]
+- [show, Blues, in, the, Night]
+- [year, 1941]
+- [comments]
+- [meter, 4, 4]
+- [key, -2]
+- [tempo, 90]
+- [volume, 127]
+- [playback-transpose, 0]
+- [bass-instrument, 33]
+- [bass-volume, 60]
+- [drum-volume, 60]
+- [chord-volume, 40]
+- [breakpoint, 54]
+- [layout]
+- [style, swing-simple, [swing, 0.67], [comp-swing, 0.67], [bass-high, g-], [bass-low, g---], [bass-base, c--], [chord-high, a], [chord-low, a--], [chord-base, c-, e-, g-]]
+- [part, [type, chords], [title], [composer], [instrument, 0], [volume, 65], [key, -2]]
+- [section, [style, swing-simple], [body, "Bb6 | / | / | Bb7 | \nEb7 | / | / C7 F7 F+ | Bb | \nF7 | C7 F7 | Bb | / | \nBb7 | F7+ / Bbm7 Eb7 | Bb | / | \nEb9 | Em6 F7 | Bb | / | \nF7 | C7 F7 | Bb | / | \nEb9 | Ebm6 / / F7 | Db7 | C+ C7 | \nG+ G7b5 | Bbm6 C7 | F7 Ebm6 | Abm6 F7 | \nEb9 | Ebm6 F7 | Db7 | C7+ C7 | \nG+ G7b5 | Bbm6 C7 | F7 Ebm6 | Abm6 F7 | \nBb7 | C7 F7 | Bb | / | \n/ | Bb7 | Eb7 | / | \n/ C7 F7 F+ | Bb | F7 | C7 F7 | \nBb | / | \n"]]
+- [part, [type, melody], [title], [composer], [instrument, 11], [volume, 85], [key, -2], [stave, auto], [body, "a8/3 r1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+2+4+8+32+120+480\n"]]

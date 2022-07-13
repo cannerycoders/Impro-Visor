@@ -1,0 +1,23 @@
+# Converted from Impro-Visor src on 2022-07-13T16:27:30.161Z
+# Impro-Visor is GPL-3, copyright 2005-2017 Robert Keller and Harvey Mudd College
+# see: https://github.com/Impro-Visor/Impro-Visor
+- [title, Bluesette]
+- [composer, Jean, Thielmann]
+- [show]
+- [year]
+- [comments]
+- [meter, 3, 4]
+- [key, 0]
+- [tempo, 160]
+- [volume, 127]
+- [playback-transpose, 0]
+- [bass-instrument, 33]
+- [bass-volume, 60]
+- [drum-volume, 60]
+- [chord-volume, 34]
+- [breakpoint, 54]
+- [layout]
+- [style, waltz, [swing, 0.67], [comp-swing, 0.67], [bass-high, g-], [bass-low, g---], [bass-base, c--], [chord-high, a], [chord-low, c-], [chord-base, c-, e-, g-]]
+- [part, [type, chords], [title], [composer], [instrument, 0], [volume, 65], [key, 0]]
+- [section, [style, waltz], [body, "BbM7 | / | Am7b5 | D7 | \nGm7 | C7 | Fm7 | Bb7 | \nEbM7 | / | Ebm7 | Ab7 | \nDbM7 | / | Dbm7 | Gb7 | \nBM7 | / | Cm7b5 | F7 | \nDm7 | Db7 | Cm7 | F7 | \n\n"]]
+- [part, [type, melody], [title, Chorus, 1], [composer, Impro-Visor], [instrument, 11], [volume, 85], [key, 0], [stave, treble], [body, "d+8 e+8 f+8 bb+4 a+8 d#+8 c+8\n\n a4+8 d#8 g4+8 a8\n\n d#+4 f#+4 a+8 f+8 c+8 r8\n\n a#8 f8 g8 d8 e2\n\n c8 e8 bb8 g8 f8 eb8 ab8 c+8\n\n d+8 ab+8 bb+8 f+8 d#+8 g+8 d+8 bb8\n\n g8 eb8 d8 c8 eb8 g8 bb8 c+8\n\n eb+8/3 g+8/3 a+8/3 bb+8 f+8 g#+8 gb+8 db+8 eb+8\n\n c+2 ab8 b8 gb8 eb8\n\n f4+8 ab8 db+2\n\n f+8 c+8 db+8 a#8 r8 e+8 d#+8 r4\n\n ab+8 r4 a+8 g+8 db+8 gb+8\n\n f+8 r4 d#+8 b8 f#8 d#8 r8\n\n f4 r8 g#8 c+8 gb+8 bb+4\n\n g#+8 eb+8 f+8 c#+8 c+8 a8 f4\n\n c8 d8 f8 a8 c+8 f+8 ab+8 f+8\n\n g+4 d#+8 f+8 a+8 bb+8 r4\n\n g+8 bb+8 a+4 f+4+8 c+8\n"]]

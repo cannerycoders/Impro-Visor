@@ -1,0 +1,23 @@
+# Converted from Impro-Visor src on 2022-07-13T16:27:27.088Z
+# Impro-Visor is GPL-3, copyright 2005-2017 Robert Keller and Harvey Mudd College
+# see: https://github.com/Impro-Visor/Impro-Visor
+- [title, The, Boy, Next, Door]
+- [composer, Hugh, Martin, and, Ralph, Blane]
+- [show]
+- [year]
+- [comments]
+- [meter, 3, 4]
+- [key, -2]
+- [tempo, 110]
+- [volume, 127]
+- [playback-transpose, 0]
+- [bass-instrument, 33]
+- [bass-volume, 60]
+- [drum-volume, 60]
+- [chord-volume, 60]
+- [breakpoint, 54]
+- [layout]
+- [style, waltz, [swing, 0.67], [comp-swing, 0.67], [bass-high, g-], [bass-low, g---], [bass-base, c--], [chord-high, a], [chord-low, c-], [chord-base, c-, e-, g-]]
+- [part, [type, chords], [title, Untitled, Part], [composer], [instrument, 0], [volume, 65], [key, -2]]
+- [section, [style, waltz], [body, "BbM7 | G7#11 | Cm7 | F7#11 | \nBbM7 | Gm7 | Gm7/C | C7 | \nCm7 | F7 | BbM7 | Gm7 / Gm7/F | \nEm7b5 | A7b9 | Dm7 / Dbo7 | Cm7 / F7 | \nBbM7 | G7#11 | Cm7 | F7#11 | \nBbM7 | Gm7 | C7 | Gb7#11 | \nBb/F | / | Em7b5 | C7#11 | \nGb7 | F7 | BbM7 | Cm7 / F7 | \n\n"]]
+- [part, [type, melody], [title], [composer], [instrument, 73], [volume, 85], [key, -2], [stave, treble], [body, "f4 r1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+2+4\n"]]

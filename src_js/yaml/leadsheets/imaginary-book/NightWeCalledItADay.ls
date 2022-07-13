@@ -1,0 +1,23 @@
+# Converted from Impro-Visor src on 2022-07-13T16:27:28.675Z
+# Impro-Visor is GPL-3, copyright 2005-2017 Robert Keller and Harvey Mudd College
+# see: https://github.com/Impro-Visor/Impro-Visor
+- [title, The, Night, We, Called, It, A, Day]
+- [composer, Tom, Adair, and, Matt, Dennis]
+- [show]
+- [year]
+- [comments]
+- [meter, 4, 4]
+- [key, 1]
+- [tempo, 90]
+- [volume, 127]
+- [playback-transpose, 0]
+- [bass-instrument, 33]
+- [bass-volume, 60]
+- [drum-volume, 60]
+- [chord-volume, 60]
+- [breakpoint, 54]
+- [layout]
+- [style, swing, [swing, 0.67], [comp-swing, 0.67], [bass-high, g-], [bass-low, g---], [bass-base, c--], [chord-high, b], [chord-low, g--], [chord-base, c-, e-, g-]]
+- [part, [type, chords], [title, Untitled, Part], [composer], [instrument, 0], [volume, 65], [key, 1]]
+- [section, [style, swing], [body, "Cm6/D D7b9 | GM9 G6 | D9 D7b9 | GM7 | \nEm7 A7b9 | Bm7 Bb7 | Am7 Ab7 | GM7 G6 | \nCm6/D D7b9 | GM9 G6 | B7+ B7 | Em | \nEm7 A7b9 | Bm7 Bb7 | Am7 Ab7 | GM7 / Fm7 G7 | \nCM7 Dm7/C | B/C CM7 | B7+ B7b9 | EmM7 Em6 | \nAm7 B7+ | Em / B7+ Em7 | Em7b5 A7b9 | Bb / / D7 | \nCm/D / F#m6 Co | GM7 G6 | B7+ B7 | Em | \nEm Em7 | A9 A7b9 | Bm7 Bbm7 Am7 Ab9 | GM7 G6 | \n\n"]]
+- [part, [type, melody], [title], [composer], [instrument, 73], [volume, 85], [key, 1], [stave, treble], [body, "d+2 r1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+2\n"]]

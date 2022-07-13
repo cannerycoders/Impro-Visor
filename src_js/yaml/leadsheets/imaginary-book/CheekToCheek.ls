@@ -1,0 +1,23 @@
+# Converted from Impro-Visor src on 2022-07-13T16:27:27.208Z
+# Impro-Visor is GPL-3, copyright 2005-2017 Robert Keller and Harvey Mudd College
+# see: https://github.com/Impro-Visor/Impro-Visor
+- [title, Cheek, to, Cheek]
+- [composer, Irving, Berlin]
+- [show]
+- [year]
+- [comments]
+- [meter, 4, 4]
+- [key, 0]
+- [tempo, 160]
+- [volume, 127]
+- [playback-transpose, 0]
+- [bass-instrument, 33]
+- [bass-volume, 60]
+- [drum-volume, 60]
+- [chord-volume, 60]
+- [breakpoint, 54]
+- [layout]
+- [style, cha-cha-cha-2, [swing, 0.5], [comp-swing, 0.5], [bass-high, c-], [bass-low, c--], [bass-base, g--], [chord-high, c], [chord-low, c-], [chord-base, c-, e-, g-]]
+- [part, [type, chords], [title, Untitled, Part], [composer], [instrument, 0], [volume, 65], [key, 0]]
+- [section, [style, cha-cha-cha-2], [body, "C6 Am7 | Dm7 G7 | C6 Am7 | Dm7 G7 | \nC6 G7/D | Ebo7 Em7 | Em7b5 | A7 | \nD7 | G7 G7/F | E7 | A7 | \nDm7 | G7 | C6 Am7 | Dm7 G7 | \nC6 Am7 | Dm7 G7 | C6 Am7 | Dm7 G7 | \nC6 G7/D | Ebo7 Em7 | Em7b5 | A7 | \nD7 | G7 G7/F | E7 | A7 | \nDm7 | G7 | C6 FM7 | Em7 A7b9 | \nDm7 G7 | C6 | Dm7 G7 | C6 | \nDm7 G7 | C6 | Dm7 G7 | C6 A7b9 | \nDm7 G7 | C6 | Dm7 G7 | C6 | \nDm7 G7 | C6 | Dm7 G7 | C6 | \nC7 | / C7/Bb | Ab7 | / | \nG7 | / G7/F | C6/E Am | D7 G7 | \nC6 Am7 | Dm7 G7 | C6 Am7 | Dm7 G7 | \nC6 G7/D | Ebo7 Em7 | Em7b5 | A7 | \nD7 | G7 G7/F | E7 | A7 | \nDm7 | G7 | C6 Am7 | Dm7 G7 | \n\n"]]
+- [part, [type, melody], [title], [composer], [instrument, 73], [volume, 85], [key, 0], [stave, treble], [body, "a4 r1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+2+4\n"]]
