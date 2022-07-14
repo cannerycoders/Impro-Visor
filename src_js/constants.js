@@ -33,9 +33,7 @@ export class Constants
     static SIXTH_BEAT = 20;
     static DEFAULT_DURATION = this.HALF_BEAT;	// eighth note value
 
-    constructor()
-
-    {}
+    constructor() {}
 }
 
 export default Constants;
