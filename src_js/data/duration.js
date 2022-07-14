@@ -168,3 +168,5 @@ export class Duration
         return totdur;
     }
 }
+
+export default Duration;

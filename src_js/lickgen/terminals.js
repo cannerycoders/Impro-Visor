@@ -15,7 +15,7 @@ import Duration from "../data/duration.js";
 
 const sAbstractNoteCodes = "ACHLRSXY".split("").map(v => v.charCodeAt(0));
 
-export default class Terminals
+export class Terminals
 {
 
     static isTerminal(str)
@@ -37,8 +37,9 @@ export default class Terminals
      */
     static isAbstractNote(str)
     {
+        if(typeof(str) !== "string") return false;
         if(str.length == 0) return false;
-        let chr = s.charCodeAt(0);
+        let chr = str.charCodeAt(0);
         if(sAbstractNoteCodes.indexOf(chr) == -1) return false;
         return Duration.isDuration(str.slice(1));
     }
@@ -120,37 +121,28 @@ export default class Terminals
         return result;
     }
 
-    /*
-    static int getDurationAbstractMelody(Polylist L)
+    static getDurationAbstractMelody(pl) // unused
     {
-        int duration = 0;
-        while( L.nonEmpty() )
-        {
-            duration += getDuration(L.first());
-            L = L.rest();
-        }
+        let duration = 0;
+        for(l of pl)
+            duration += this.getDuration(l);
         return duration;
     }
-    */
 
-    /*
-    static truncateAbstractMelody(Polylist L, int desiredDuration)
+    static truncateAbstractMelody(pl, desiredDuration)
     {
-        PolylistBuffer buffer = new PolylistBuffer();
-        int duration = 0;
-        while( L.nonEmpty() )
+        let duration = 0;
+        let result = [];
+        for(l of pl)
         {
-            Object first = L.first();
-            int dur = getDuration(first);
+            let dur = this.getDuration(l);
             if( duration + dur > desiredDuration )
-            {
                 break;
-            }
-            buffer.append(first);
+            result.push(first);
             duration += dur;
-            L = L.rest();
         }
         return buffer.toPolylist();    
     }    
-    */
 }
+
+export default Terminals;
