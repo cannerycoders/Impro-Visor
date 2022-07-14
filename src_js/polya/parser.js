@@ -21,6 +21,7 @@ const tStringBlock = "stringblock";
 const tSlash = "/";
 const tStar = "*";
 const tSection = "section";
+const tPhrase = "phrase";
 const tPart = "part";
 const tJSON = "json";
 
@@ -371,6 +372,7 @@ export default class PlistParser
                     {
                     case tSection:
                     case tPart:
+                    case tPhrase:
                         {
                             let body = ["body", [tok.value+" "]];
                             last.push(body); // add to end of current section/part

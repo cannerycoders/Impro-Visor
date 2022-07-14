@@ -23,17 +23,7 @@
 - [part, [type, chords], [title, Untitled, Part], [composer], [instrument, 0], [volume, 65], [key, 1]]
 - [section, [style, ballad], [body, "GM7 CM7 | B7 Em7 | A7#11_ | / | \nAm7 | B7 E7 A7 D7 | GM7 E7 | Am7 D7 | \n\n\n"]]
 - [section, [style], [body, "GM7 CM7 | B7 Em7 | A7#11_ | / | \nAm7 | B7 E7 A7 D7 | GM7 | Dm7 G7 | \n\n"]]
-- [phrase, [style]]
-- CM7
-- '|'
-- /
-- '|'
-- F7
-- '|'
-- /
-- '|'
-- GM7
-- '|'
+- [phrase, [style], [body, "CM7 | / | F7 | / | \nGM7 | \n\n"]]
 - [section, [style], [body, "Bm7 E7 | Am7 | D7 | \n\n\n"]]
 - [section, [style], [body, "GM7 CM7 | B7 Em7 | A7#11_ | / | \nAm7 | B7 E7 A7 D7 | GM7 E7 | Am7 D7 | \n\n"]]
 - [part, [type, melody], [title], [composer], [instrument, 73], [volume, 85], [key, 1], [stave, treble], [body, 'r1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1 ']]

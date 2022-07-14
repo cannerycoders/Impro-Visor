@@ -24,15 +24,7 @@
 - [part, [type, chords], [title, Untitled, Part], [composer], [instrument, 0], [volume, 65], [key, 0]]
 - [section, [style, swing-BarryHarris], [body, "Am7b5 | D7#11 | GmM7 | / | \nEm7b5 | A7 | DM7 | / | \n\n\n"]]
 - [section, [style], [body, "Am7b5 | D7#11 | GmM7 | / | \nEm7b5 | A7 | DM7 | / | \n\n"]]
-- [phrase, [style]]
-- Dm7
-- '|'
-- G13b9#11
-- '|'
-- CM7
-- '|'
-- /
-- '|'
+- [phrase, [style], [body, "Dm7 | G13b9#11 | CM7 | / | \n\n\n"]]
 - [section, [style], [body, "Bb13b9#11 | / | A13b9#11 | / | \n\n\n"]]
 - [section, [style], [body, "Am7b5 | D7#11 | GmM7 | / | \nEm7b5 | A7 | DM7 | / | \n\n"]]
 - [part, [type, melody], [title, Head], [composer, Tadd, Dameron], [instrument, 73], [volume, 85], [key, 0], [stave, treble], [body, "c+4 b8 bb8 a4 ab8 g8\n\n f#8 g8 g#8 c+8 g#8 r4 bb4+8\n\n a8 ab8 g4 f#8 f8\n\n e8 f8 f#8 bb8 f#4 r4+8\n\n a8 bb8 c+8 bb8/3 c+8/3 bb8/3 a8 c#+8\n\n r8 c+8 r8 bb8 a8 g8 f8 eb8\n\n d8 ab8 g2+8 f#8\n\n r8 d8 r2+4+8\n\n a8 bb8 c+8 d+8 c+8 g#8 a8\n\n c+8/3 eb+8/3 b+8/3 g#+8 eb+8 r2+8\n\n g8 a8 bb8 c+8 bb8 f#8 g8\n\n bb8/3 c#+8/3 a+8/3 f#+8 d+8 r2\n\n a8 a8 g8 a8 c+8 bb8 a8 g8\n\n c#+8 c#+8 b8 c#+8 e+8 d+8 c#+8 bb8\n\n a4 e+16 f#+16 e+16 c#+16 d+4 b16 c#+16 b16 g#16\n\n a4 r2+4\n\n g8 d8 r8 e8 f8 g8 g#8 b8\n\n e+8 c#+8 g#8 f8 e+4 c#+8/3 g8/3 f8/3\n\n b16 c+16 b16 g#16 a8 b8 d+16 e+16 d+16 b16 c+8 d+8\n\n f+16 f#+16 f+16 d#+16 e+8 a+8 g+4 r4+8\n\n ab4 b16 e+16 g+8 e+8 b8 ab8\n\n g+4 e+8 b4+8 r4+8\n\n g4 a#16 d#+16 f#+8 d#+8 a#8 g8\n\n f#+4 d#+8 a#4+8 r8 c+4+8\n\n b8 bb8 a4 ab8 g8\n\n f#8 g8 g#8 c+8 g#8 r4 bb4+8\n\n a8 ab8 g4 f#8 f8\n\n e8 f8 f#8 bb8 f#4 r4+8\n\n a8 bb8 c+8 bb8/3 c+8/3 bb8/3 a8 c#+8\n\n r8 c+8 r8 bb8 a8 g8 f8 eb8\n\n d8 ab8 g2+8 f#8\n\n r8 d8 r2+4\n"]]

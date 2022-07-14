@@ -22,27 +22,9 @@
 - [melody-volume, 127]
 - [style, swing, [swing, 0.67], [comp-swing, 0.67], [bass-high, c], [bass-low, g--], [chord-high, a], [chord-low, c-], [voicing-name, default.fv], [chord-base, c-, e-, g-]]
 - [part, [type, chords], [title, Untitled, Part], [composer], [instrument, 0], [volume, 65], [key, -2]]
-- [phrase, [style, swing]]
-- EbM7
-- '|'
-- Ab7#11
-- '|'
-- BbM7
-- '|'
-- Dm7
-- G7
-- '|'
+- [phrase, [style, swing], [body, "EbM7 | Ab7#11 | BbM7 | Dm7 G7 | \n\n\n"]]
 - [section, [style], [body, "C7 | F7 | Bb6 | Bb7 | \n\n"]]
-- [phrase, [style]]
-- EbM7
-- '|'
-- Ab7#11
-- '|'
-- BbM7
-- '|'
-- Dm7
-- G7
-- '|'
+- [phrase, [style], [body, "EbM7 | Ab7#11 | BbM7 | Dm7 G7 | \n\n\n"]]
 - [section, [style], [body, "Cm7 G7 | Cm7 Ab7b5 | BbM7 D7/A | Gm7 Gm7/F Eo7 / | \n\n\n"]]
 - [section, [style], [body, "BbM7 G7 | Cm7 F7 | Bb6 | Bb7 | \n\n"]]
 - [part, [type, melody], [title], [composer], [instrument, 73], [volume, 85], [key, -2], [stave, treble], [body, 'r1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1 ']]

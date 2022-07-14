@@ -23,18 +23,8 @@
 - [part, [type, chords], [title], [composer], [instrument, 0], [volume, 65], [key, -2]]
 - [section, [style, swing], [body, "BbM7 | Eb7 | Ab7#11 | G7 | \nC7 | / | Cm7 | F7 | \n\n\n"]]
 - [section, [style], [body, "BbM7 | Eb7 | Ab7#11 | G7 | \nC7 | Cm7 F7 | BbM7 | / | \n\n"]]
-- [phrase, [style, pedal-bass-5]]
-- Am7b5/G
-- D7/G
-- '|'
-- Gm
-- '|'
-- [phrase, [style]]
-- Am7b5/G
-- D7/G
-- '|'
-- Gm
-- '|'
+- [phrase, [style, pedal-bass-5], [body, "Am7b5/G D7/G | Gm | \n"]]
+- [phrase, [style], [body, "Am7b5/G D7/G | Gm | \n\n\n"]]
 - [section, [style], [body, "Am7b5/G D7/G | Gm | \n\n"]]
 - [section, [style, swing], [body, "C7 | F7 | \n\n\n"]]
 - [section, [style, swing], [body, "BbM7 | Eb7 | Ab7#11 | G7 | \nC7 | Cm7 F7 | BbM7 | / | \n\n"]]

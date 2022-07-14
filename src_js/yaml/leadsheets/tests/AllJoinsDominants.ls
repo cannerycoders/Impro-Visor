@@ -20,53 +20,29 @@
 - [layout]
 - [style, swing, [swing, 0.67], [comp-swing, 0.67], [bass-high, g-], [bass-low, g---], [bass-base, c--], [chord-high, a], [chord-low, c-], [chord-base, c-, e-, g-]]
 - [part, [type, chords], [title], [composer], [instrument, 0], [volume, 65], [key, 0]]
-- [phrase, [style, swing]]
-- C
-- '|'
+- [phrase, [style, swing], [body, "C | \n\n"]]
 - [section, [style, swing], [body, "G7 | \n"]]
-- [phrase, [style, swing]]
-- C
-- '|'
+- [phrase, [style, swing], [body, "C | \n\n"]]
 - [section, [style, swing], [body, "Ab7 | \n\n"]]
-- [phrase, [style, swing]]
-- C
-- '|'
+- [phrase, [style, swing], [body, "C | \n\n"]]
 - [section, [style, swing], [body, "A7 | \n"]]
-- [phrase, [style, swing]]
-- C
-- '|'
+- [phrase, [style, swing], [body, "C | \n\n"]]
 - [section, [style, swing], [body, "Bb7 | \n\n"]]
-- [phrase, [style, swing]]
-- C
-- '|'
+- [phrase, [style, swing], [body, "C | \n\n"]]
 - [section, [style, swing], [body, "B7 | \n"]]
-- [phrase, [style, swing]]
-- C
-- '|'
+- [phrase, [style, swing], [body, "C | \n\n"]]
 - [section, [style, swing], [body, "C7 | \n\n"]]
-- [phrase, [style, swing]]
-- C
-- '|'
+- [phrase, [style, swing], [body, "C | \n\n"]]
 - [section, [style, swing], [body, "Db7 | \n"]]
-- [phrase, [style, swing]]
-- C
-- '|'
+- [phrase, [style, swing], [body, "C | \n\n"]]
 - [section, [style, swing], [body, "D7 | \n\n"]]
-- [phrase, [style, swing]]
-- C
-- '|'
+- [phrase, [style, swing], [body, "C | \n\n"]]
 - [section, [style, swing], [body, "Eb7 | \n"]]
-- [phrase, [style, swing]]
-- C
-- '|'
+- [phrase, [style, swing], [body, "C | \n\n"]]
 - [section, [style, swing], [body, "E7 | \n\n"]]
-- [phrase, [style, swing]]
-- C
-- '|'
+- [phrase, [style, swing], [body, "C | \n\n"]]
 - [section, [style, swing], [body, "F7 | \n"]]
-- [phrase, [style, swing]]
-- C
-- '|'
+- [phrase, [style, swing], [body, "C | \n\n"]]
 - [section, [style, swing], [body, "Gb7 | \n\n\n"]]
 - [section, [style, swing], [body, "C | \n"]]
 - [part, [type, melody], [title], [composer], [instrument, 11], [volume, 85], [key, 0], [stave, treble], [body, 'r1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1 ']]

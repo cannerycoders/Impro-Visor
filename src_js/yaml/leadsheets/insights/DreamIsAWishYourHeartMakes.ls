@@ -22,15 +22,7 @@
 - [style, waltz, [swing, 0.67], [comp-swing, 0.67], [bass-high, g-], [bass-low, g---], [bass-base, c--], [chord-high, a], [chord-low, c-], [chord-base, c-, e-, g-]]
 - [part, [type, chords], [title, Untitled, Part], [composer], [instrument, 0], [volume, 65], [key, -3]]
 - [section, [style, waltz], [body, "EbM7 | Bb7/Eb | EbM7 | Bb7/Eb | \nEbM7 | G7 | AbM7 | Gm7 / C7 | \n\n"]]
-- [phrase, [style]]
-- Fm7
-- '|'
-- C7
-- '|'
-- Fm7
-- '|'
-- C7
-- '|'
+- [phrase, [style], [body, "Fm7 | C7 | Fm7 | C7 | \n\n\n"]]
 - [section, [style], [body, "Fm7 | Bb7 | EbM7 | BM7 Bb7 | \n\n\n"]]
 - [section, [style], [body, "EbM7 | Bb7/Eb | EbM7 | Bb7/Eb | \nBbm7 | Eb7 | AbM7 | / | \n\n\n"]]
 - [section, [style], [body, "AbM7 | Db7 | EbM7 | Cm7 / F7 | \nFm7 | Bb7 | EbM7 | / | \n\n"]]

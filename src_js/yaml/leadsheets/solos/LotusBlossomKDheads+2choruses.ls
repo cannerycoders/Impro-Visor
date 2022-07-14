@@ -28,14 +28,7 @@
 - [section, [style, swing-SonnyClark], [body, "Bo7 Bb7 | A7 | Dm7 | / | \n\n\n"]]
 - [section, [style, swing-SonnyClark], [body, "Ah7 | D7 | Gm7 | / | \nGh7 | C7 | FM7 | Eh7 A7 | \n\n\n"]]
 - [section, [style, african-slow], [body, "Dm7 C7 | Dm7 | Cm7 F7 | BbM7 | \n\n"]]
-- [phrase, [style, swing-SonnyClark]]
-- Bo7
-- Bb7
-- '|'
-- A7
-- '|'
-- Dm7
-- '|'
+- [phrase, [style, swing-SonnyClark], [body, "Bo7 Bb7 | A7 | Dm7 | \n\n"]]
 - [section, [style, drum-roll], [body, "Dm7 | \n\n\n"]]
 - [section, [style, swing-SonnyClark], [body, "Dm7 C7 | Dm7 | Cm7 F7 | BbM7 | \nBo7 Bb7 | A7 | Dm7 C7 | Dh7 A7 | \nDm7 C7 | Dm7 | Cm7 F7 | BbM7 | \nBo7 Bb7 | A7 | Dm7 | / | \nAh7 | D7 | Gm7 | / | \nGh7 | C7 | FM7 | Eh7 A7 | \nDm7 C7 | Dm7 | Cm7 F7 | BbM7 | \nBo7 Bb7 | A7 | Dm7 | A7 | \n\n\n"]]
 - [section, [style], [body, "Dm7 C7 | Dm7 | Cm7 F7 | BbM7 | \nBo7 Bb7 | A7 | Dm7 C7 | Dh7 A7 | \nDm7 C7 | Dm7 | Cm7 F7 | BbM7 | \nBo7 Bb7 | A7 | Dm7 | / | \nAh7 | D7 | Gm7 | / | \nGh7 | C7 | FM7 | Eh7 A7 | \nDm7 C7 | Dm7 | Cm7 F7 | BbM7 | \nBo7 Bb7 | A7 | Dm7 | A7 | \n\n\n"]]

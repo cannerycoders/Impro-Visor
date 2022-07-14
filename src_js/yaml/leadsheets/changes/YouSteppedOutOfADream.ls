@@ -22,42 +22,12 @@
 - [style, latin, [swing, 0.55], [comp-swing, 0.55], [bass-high, g-], [bass-low, c---], [bass-base, c--], [chord-high, a], [chord-low, c-], [chord-base, c-, e-, g-]]
 - [part, [type, chords], [title], [composer], [instrument, 0], [volume, 65], [key, 0]]
 - [section, [style, latin], [body, "CM7 | / | DbM7 | / | \n\n"]]
-- [phrase, [style, swing]]
-- Bbm7
-- '|'
-- Eb7
-- '|'
-- AbM7
-- '|'
-- /
-- '|'
-- [phrase, [style]]
-- Gm7
-- '|'
-- C7
-- '|'
-- FM7
-- '|'
-- /
-- '|'
+- [phrase, [style, swing], [body, "Bbm7 | Eb7 | AbM7 | / | \n\n"]]
+- [phrase, [style], [body, "Gm7 | C7 | FM7 | / | \n\n\n"]]
 - [section, [style], [body, "Am7 | D7 | Ebm7 Ab7 | Dm7 G7 | \n\n\n"]]
 - [section, [style, latin], [body, "CM7 | / | DbM7 | / | \n\n\n"]]
 - [section, [style, swing], [body, "Bbm7 | Eb7 | Gb7 | F7 | \n\n"]]
-- [phrase, [style]]
-- Dm7b5
-- '|'
-- G7
-- '|'
-- CM7
-- '|'
-- A7
-- '|'
-- [phrase, [style]]
-- Dm7
-- '|'
-- G7
-- '|'
-- CM7
-- '|'
+- [phrase, [style], [body, "Dm7b5 | G7 | CM7 | A7 | \n\n"]]
+- [phrase, [style], [body, "Dm7 | G7 | CM7 | \n\n"]]
 - [section, [style], [body, "Dm7 G7 | \n\n"]]
 - [part, [type, melody], [title], [composer], [instrument, 11], [volume, 85], [key, 0], [stave, treble], [body, "e8 r1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+2+4+8\n"]]

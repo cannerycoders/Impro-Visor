@@ -23,15 +23,7 @@
 - [part, [type, chords], [title, Untitled, Part], [composer], [instrument, 0], [volume, 65], [key, 0]]
 - [section, [style, swing], [body, "CM7 | / | D7#11 | / | \nDm7 | G7 | CM7 A7 | Dm7 G7 | \n\n\n"]]
 - [section, [style], [body, "CM7 | / | D7#11 | / | \nDm7 | G7 | CM7 | C7 | \n\n"]]
-- [phrase, [style]]
-- FM7
-- '|'
-- /
-- '|'
-- /
-- '|'
-- /
-- '|'
+- [phrase, [style], [body, "FM7 | / | / | / | \n\n\n"]]
 - [section, [style], [body, "D7 | / | Dm7 | G7 | \n\n\n"]]
 - [section, [style], [body, "CM7 | / | D7#11 | / | \nDm7 | G7 | CM7 A7 | Dm7 G7 | \n\n"]]
 - [part, [type, melody], [title], [composer], [instrument, 73], [volume, 85], [key, 0], [stave, treble], [body, "r1+4 \n r1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+2+4\n"]]

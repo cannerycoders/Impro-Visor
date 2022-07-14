@@ -24,17 +24,8 @@
 - [section, [style, ballad], [body, "Eb6 Cm7 | Fm7 E7#9 | Eb6 Cm7 | Db9 | \nFm7 Bb7sus4 | Eb6 / Fm7 E7 | \n\n"]]
 - [section, [style, ballad], [body, "Eb6 Cm7 | Fm7 E7#9 | \nEb6 Cm7 | Db9 | Fm7 Bb7sus4 | EbM7 | \n\n\n"]]
 - [section, [style, ballad], [body, "Am7 D7 | GM7 G#o7 | Am7 Ab9 | GM7 | \n\n"]]
-- [phrase, [style, ballad]]
-- Bbm7
-- Eb7
-- '|'
-- AbM7
-- Ao7
-- '|'
-- [phrase, [style, ballad]]
-- Bbm7
-- Eb7
-- '|'
+- [phrase, [style, ballad], [body, "Bbm7 Eb7 | AbM7 Ao7 | \n"]]
+- [phrase, [style, ballad], [body, "Bbm7 Eb7 | \n\n"]]
 - [section, [style, ballad], [body, "AbM7 Bb7alt | \n\n\n"]]
 - [section, [style, ballad], [body, "Eb6 Cm7 | Fm7 E7#9 | Eb6 Cm7 | Db9 | \nFm7 Bb7sus4 | EbM7 | \n\n"]]
 - [section, [style, ballad], [body, "F9 E7#9 | EbM7 | \n\n"]]

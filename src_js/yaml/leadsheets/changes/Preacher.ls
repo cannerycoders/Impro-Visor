@@ -21,41 +21,10 @@
 - [roadmap-layout, 8]
 - [style, swing, [swing, 0.67], [comp-swing, 0.67], [bass-high, g-], [bass-low, g---], [bass-base, c--], [chord-high, a], [chord-low, c-], [chord-base, c-, e-, g-]]
 - [part, [type, chords], [title], [composer], [instrument, 0], [volume, 65], [key, -1]]
-- [phrase, [style, swing]]
-- F
-- '|'
-- F7
-- '|'
-- Bb7
-- Bo7
-- '|'
-- F
-- '|'
-- [phrase, [style]]
-- F
-- '|'
-- /
-- '|'
-- [phrase, [style]]
-- G7
-- '|'
-- C7
-- '|'
-- [phrase, [style]]
-- F
-- '|'
-- F7
-- '|'
-- Bb7
-- '|'
-- A7
-- '|'
-- [phrase, [style]]
-- Bb
-- Bo7
-- '|'
-- F
-- D7
-- '|'
+- [phrase, [style, swing], [body, "F | F7 | Bb7 Bo7 | F | \n\n"]]
+- [phrase, [style], [body, "F | / | \n"]]
+- [phrase, [style], [body, "G7 | C7 | \n\n"]]
+- [phrase, [style], [body, "F | F7 | Bb7 | A7 | \n\n"]]
+- [phrase, [style], [body, "Bb Bo7 | F D7 | \n\n"]]
 - [section, [style], [body, "Gm7 C7 | F | \n\n"]]
 - [part, [type, melody], [title], [composer], [instrument, 11], [volume, 85], [key, -1], [stave, treble], [body, "a8 r1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+2+4+8\n"]]

@@ -25,12 +25,6 @@
 - [section, [style], [body, "Cm7 | Fm7 | Bb7 | EbM7 | \nAbM7 | Am7b5 D7 | GM7 | / | \n\n\n"]]
 - [section, [style], [body, "Am7 | D7 | GM7 | / | \nF#m7 | B7 | EM7 | C7+ | \n\n\n"]]
 - [section, [style], [body, "Fm7 | Bbm7 | Eb7 | AbM7 | \nDbM7 | Gb7 | Cm7 | F7 | \n\n"]]
-- [phrase, [style]]
-- Bbm7
-- '|'
-- Eb7
-- '|'
-- AbM7
-- '|'
+- [phrase, [style], [body, "Bbm7 | Eb7 | AbM7 | \n\n"]]
 - [section, [style], [body, "Gm7 C7 | \n\n"]]
 - [part, [type, melody], [title], [composer], [instrument, 0], [volume, 85], [key, -4], [stave, treble], [body, "ab1 \n r1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1\n"]]

@@ -20,53 +20,29 @@
 - [layout]
 - [style, swing, [swing, 0.67], [comp-swing, 0.67], [bass-high, g-], [bass-low, g---], [bass-base, c--], [chord-high, a], [chord-low, c-], [chord-base, c-, e-, g-]]
 - [part, [type, chords], [title], [composer], [instrument, 0], [volume, 65], [key, 0]]
-- [phrase, [style, swing]]
-- C
-- '|'
+- [phrase, [style, swing], [body, "C | \n\n"]]
 - [section, [style, swing], [body, "Dm7 G7 | \n"]]
-- [phrase, [style, swing]]
-- C
-- '|'
+- [phrase, [style, swing], [body, "C | \n\n"]]
 - [section, [style, swing], [body, "Ebm7 Ab7 | \n\n"]]
-- [phrase, [style, swing]]
-- C
-- '|'
+- [phrase, [style, swing], [body, "C | \n\n"]]
 - [section, [style, swing], [body, "Em7 A7 | \n"]]
-- [phrase, [style, swing]]
-- C
-- '|'
+- [phrase, [style, swing], [body, "C | \n\n"]]
 - [section, [style, swing], [body, "Fm7 Bb7 | \n\n"]]
-- [phrase, [style, swing]]
-- C
-- '|'
+- [phrase, [style, swing], [body, "C | \n\n"]]
 - [section, [style, swing], [body, "F#m7 B7 | \n"]]
-- [phrase, [style, swing]]
-- C
-- '|'
+- [phrase, [style, swing], [body, "C | \n\n"]]
 - [section, [style, swing], [body, "Gm7 C7 | \n\n"]]
-- [phrase, [style, swing]]
-- C
-- '|'
+- [phrase, [style, swing], [body, "C | \n\n"]]
 - [section, [style, swing], [body, "Abm7 Db7 | \n"]]
-- [phrase, [style, swing]]
-- C
-- '|'
+- [phrase, [style, swing], [body, "C | \n\n"]]
 - [section, [style, swing], [body, "Am7 D7 | \n\n"]]
-- [phrase, [style, swing]]
-- C
-- '|'
+- [phrase, [style, swing], [body, "C | \n\n"]]
 - [section, [style, swing], [body, "Bbm7 Eb7 | \n"]]
-- [phrase, [style, swing]]
-- C
-- '|'
+- [phrase, [style, swing], [body, "C | \n\n"]]
 - [section, [style, swing], [body, "Bm7 E7 | \n\n"]]
-- [phrase, [style, swing]]
-- C
-- '|'
+- [phrase, [style, swing], [body, "C | \n\n"]]
 - [section, [style, swing], [body, "Cm7 F7 | \n"]]
-- [phrase, [style, swing]]
-- C
-- '|'
+- [phrase, [style, swing], [body, "C | \n\n"]]
 - [section, [style, swing], [body, "Dbm7 Gb7 | \n\n\n"]]
 - [section, [style, swing], [body, "C | \n"]]
 - [part, [type, melody], [title], [composer], [instrument, 0], [volume, 85], [key, 0], [stave, treble], [body, 'r1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1 ']]

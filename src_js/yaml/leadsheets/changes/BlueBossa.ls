@@ -21,32 +21,8 @@
 - [roadmap-layout, 4]
 - [style, latin, [swing, 0.55], [comp-swing, 0.55], [bass-high, g-], [bass-low, c---], [bass-base, c--], [chord-high, a], [chord-low, c-], [chord-base, c-, e-, g-]]
 - [part, [type, chords], [title], [composer], [instrument, 0], [volume, 65], [key, -3]]
-- [phrase, [style, latin]]
-- Cm69
-- '|'
-- /
-- '|'
-- Fm7
-- '|'
-- /
-- '|'
-- [phrase, [style]]
-- Dm7b5
-- '|'
-- G7alt
-- '|'
-- Cm69
-- '|'
-- /
-- '|'
-- [phrase, [style]]
-- Ebm7
-- '|'
-- Ab7
-- '|'
-- DbM7
-- '|'
-- /
-- '|'
+- [phrase, [style, latin], [body, "Cm69 | / | Fm7 | / | \n\n"]]
+- [phrase, [style], [body, "Dm7b5 | G7alt | Cm69 | / | \n\n"]]
+- [phrase, [style], [body, "Ebm7 | Ab7 | DbM7 | / | \n\n\n"]]
 - [section, [style], [body, "Dm7b5 | G7alt | Cm69 | Dm7b5 G7alt | \n\n"]]
 - [part, [type, melody], [title], [composer], [instrument, 11], [volume, 85], [key, -3], [stave, treble], [body, 'r1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1 ']]

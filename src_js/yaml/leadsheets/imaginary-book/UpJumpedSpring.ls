@@ -23,34 +23,14 @@
 - [style, waltz, [swing, 0.67], [comp-swing, 0.67], [bass-high, c], [bass-low, g--], [chord-high, a], [chord-low, c-], [voicing-name, default.fv], [chord-base, c-, e-, g-]]
 - [part, [type, chords], [title, Untitled, Part], [composer], [instrument, 0], [volume, 65], [key, -2]]
 - [section, [style, waltz], [body, "BbM7 | G7alt | Cm7 | F7 | \nGm7 | Fm7 | Em7b5 | A7alt | \n\n"]]
-- [phrase, [style]]
-- Dm7
-- '|'
-- Ebm7
-- '|'
-- Dm7
-- '|'
-- Ebm7
-- '|'
+- [phrase, [style], [body, "Dm7 | Ebm7 | Dm7 | Ebm7 | \n\n\n"]]
 - [section, [style], [body, "Bm7b5 | E7 | Cm7b5 | F7 | \n\n\n"]]
 - [section, [style], [body, "BbM7 | G7alt | Cm7 | F7 | \nGm7 | Fm7 | Em7b5 | A7alt | \n\n"]]
-- [phrase, [style]]
-- Dm7
-- '|'
-- Ebm7
-- '|'
-- Dm7
-- '|'
-- Ebm7
-- '|'
+- [phrase, [style], [body, "Dm7 | Ebm7 | Dm7 | Ebm7 | \n\n\n"]]
 - [section, [style], [body, "Cm7 | F7 | BbM7 | Am7b5 / D7b9 | \n\n\n"]]
 - [section, [style], [body, "Gm7 | C7 | FM7 | D7 | \nAbm7 | Db7 | Cm7 | F7 | \n\n\n"]]
 - [section, [style], [body, "BbM7 | G7alt | Cm7 | F7 | \nGm7 | Fm7 | Em7b5 | A7alt | \n\n"]]
-- [phrase, [style]]
-- Dm7
-- '|'
-- Ebm7
-- '|'
+- [phrase, [style], [body, "Dm7 | Ebm7 | \n\n"]]
 - [section, [style], [body, "Dm7 | Ebm7 | \n\n\n"]]
 - [section, [style], [body, "Cm7 | F7 | BM7 | BM7 BbM7 / | \n\n"]]
 - [part, [type, melody], [title], [composer], [instrument, 73], [volume, 85], [key, -2], [stave, treble], [body, 'r1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1 ']]

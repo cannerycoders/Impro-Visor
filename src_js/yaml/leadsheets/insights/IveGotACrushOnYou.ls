@@ -22,13 +22,9 @@
 - [style, ballad, [swing, 0.67], [comp-swing, 0.67], [bass-high, g-], [bass-low, c---], [bass-base, c--], [chord-high, b], [chord-low, b--], [chord-base, c-, e-, g-]]
 - [part, [type, chords], [title], [composer], [instrument, 0], [volume, 65], [key, -2]]
 - [section, [style, ballad], [body, "Dm7 Dbo | Cm7 F7 | Dm7 Dbo | Cm7 F7 | \n\n"]]
-- [phrase, [style]]
-- BbM7
-- '|'
+- [phrase, [style], [body, "BbM7 | \n\n"]]
 - [section, [style], [body, "Gm7 C7 | Gm7 C7 | Cm7 F7 | \n\n\n"]]
 - [section, [style], [body, "Dm7 Dbo | Cm7 F7 | Dm7 Dbo | Cm7 / Am7b5 D7 | \n\n"]]
-- [phrase, [style]]
-- Gm7
-- '|'
+- [phrase, [style], [body, "Gm7 | \n\n"]]
 - [section, [style], [body, "Em7b5 Eb7#11 | Dm7 G7 | Cm7 F7 | \nBbM7 | / | \n"]]
 - [part, [type, melody], [title], [composer], [instrument, 73], [volume, 85], [key, -2], [stave, treble], [body, 'r1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1 ']]

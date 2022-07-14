@@ -26,11 +26,7 @@
 - [section, [style], [body, "Gm7 C7 F#m7 B7 | Fm7 Bb7 Em7 A7 | Ebm7 Ab7#5 | B7b5 Bb7#11 | \n\n\n"]]
 - [section, [style], [body, "Eb7 D7 | DbM7 Eb7#11 | Ebm7 Ab7b9 | Db6 | \n\n\n"]]
 - [section, [style], [body, "Ebm7 Ab7 | DbM7 / Fm7 E7 | Ebm7 D9 | DbM7 | \n\n"]]
-- [phrase, [style]]
-- Eb7
-- '|'
-- /
-- '|'
+- [phrase, [style], [body, "Eb7 | / | \n\n"]]
 - [section, [style], [body, "Ebm7/Ab Ab7b9 | Gb13#11 | \n\n\n"]]
 - [section, [style], [body, "Gm7 C7 F#m7 B7 | Fm7 Bb7 Em7 A7 | Ebm7 Ab7#5 | B7b5 Bb7#11 | \n\n\n"]]
 - [section, [style], [body, "Eb7 D7 | C#M7 Eb7#11 | Ebm7 Ab7b9 | Db6 | \n\n"]]

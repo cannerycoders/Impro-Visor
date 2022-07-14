@@ -21,117 +21,17 @@
 - [roadmap-layout, 8]
 - [style, swing, [swing, 0.67], [comp-swing, 0.67], [bass-high, g-], [bass-low, g---], [bass-base, c--], [chord-high, b], [chord-low, g--], [chord-base, c-, e-, g-]]
 - [part, [type, chords], [title], [composer], [instrument, 0], [volume, 65], [key, 1]]
-- [phrase, [style, swing]]
-- G
-- F7
-- E7
-- /
-- '|'
-- A7
-- /
-- D7
-- B7
-- '|'
-- [phrase, [style]]
-- Em
-- '|'
-- C7
-- B7
-- '|'
-- [phrase, [style]]
-- E7
-- A7
-- '|'
-- Am7
-- D7
-- '|'
-- Bm7b5
-- E7
-- '|'
-- Am7
-- D7+
-- '|'
-- [phrase, [style]]
-- G
-- F7
-- E7
-- /
-- '|'
-- A7
-- /
-- D7
-- B7
-- '|'
-- [phrase, [style]]
-- Em
-- '|'
-- C7
-- B7
-- '|'
-- [phrase, [style]]
-- E7
-- A7
-- '|'
-- Am7
-- D7
-- '|'
-- G
-- '|'
-- Dm7
-- G7
-- '|'
-- [phrase, [style]]
-- C
-- E7
-- '|'
-- Am
-- C7
-- '|'
-- [phrase, [style]]
-- F
-- E7
-- '|'
-- Am
-- C7
-- '|'
-- [phrase, [style]]
-- F7
-- E7
-- '|'
-- Eb7
-- D7
-- '|'
-- F7
-- E7
-- '|'
-- A7
-- D7
-- '|'
-- [phrase, [style]]
-- G
-- F7
-- E7
-- /
-- '|'
-- A7
-- /
-- D7
-- B7
-- '|'
-- [phrase, [style]]
-- Em
-- '|'
-- C7
-- B7
-- '|'
-- [phrase, [style]]
-- E7
-- A7
-- '|'
-- Am7
-- D7
-- '|'
-- G
-- '|'
+- [phrase, [style, swing], [body, "G F7 E7 / | A7 / D7 B7 | \n"]]
+- [phrase, [style], [body, "Em | C7 B7 | \n\n"]]
+- [phrase, [style], [body, "E7 A7 | Am7 D7 | Bm7b5 E7 | Am7 D7+ | \n\n"]]
+- [phrase, [style], [body, "G F7 E7 / | A7 / D7 B7 | \n"]]
+- [phrase, [style], [body, "Em | C7 B7 | \n\n"]]
+- [phrase, [style], [body, "E7 A7 | Am7 D7 | G | Dm7 G7 | \n\n"]]
+- [phrase, [style], [body, "C E7 | Am C7 | \n"]]
+- [phrase, [style], [body, "F E7 | Am C7 | \n\n"]]
+- [phrase, [style], [body, "F7 E7 | Eb7 D7 | F7 E7 | A7 D7 | \n\n"]]
+- [phrase, [style], [body, "G F7 E7 / | A7 / D7 B7 | \n"]]
+- [phrase, [style], [body, "Em | C7 B7 | \n\n"]]
+- [phrase, [style], [body, "E7 A7 | Am7 D7 | G | \n\n"]]
 - [section, [style], [body, "Am7 D7 | \n\n"]]
 - [part, [type, melody], [title], [composer], [instrument, 0], [volume, 85], [key, 1], [stave, treble], [body, "b4 r1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+2+4\n"]]

@@ -22,11 +22,6 @@
 - [style, swing, [swing, 0.67], [comp-swing, 0.67], [bass-high, g-], [bass-low, g---], [bass-base, c--], [chord-high, a], [chord-low, c-], [chord-base, c-, e-, g-]]
 - [part, [type, chords], [title], [composer], [instrument, 0], [volume, 65], [key, 0]]
 - [section, [style, swing], [body, "CM7 | F7 | CM7 | Dbm7 Gb7 | \n\n"]]
-- [phrase, [style]]
-- F7
-- '|'
-- F#m7
-- B7
-- '|'
+- [phrase, [style], [body, "F7 | F#m7 B7 | \n\n"]]
 - [section, [style], [body, "Em7 | A7 | \nDm7 G7 | Abm7 Db7 | CM7 | / | \n\n"]]
 - [part, [type, melody], [title], [composer], [instrument, 11], [volume, 85], [key, 0], [stave, treble], [body, 'r1+1+1+1+1+1+1+1+1+1+1+1 ']]

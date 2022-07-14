@@ -21,15 +21,7 @@
 - [roadmap-layout, 8]
 - [style, swing, [swing, 0.67], [comp-swing, 0.67], [bass-high, g-], [bass-low, g---], [bass-base, c--], [chord-high, a], [chord-low, c-], [chord-base, c-, e-, g-]]
 - [part, [type, chords], [title], [composer], [instrument, 0], [volume, 65], [key, 0]]
-- [phrase, [style, swing]]
-- Am
-- '|'
-- AmM7
-- '|'
-- Am7
-- '|'
-- Am6
-- '|'
+- [phrase, [style, swing], [body, "Am | AmM7 | Am7 | Am6 | \n\n\n"]]
 - [section, [style], [body, "Am7 | / | Bb7 | / | \n\n\n"]]
 - [section, [style], [body, "Gm7 Gm7/F | Em7b5 A7b9 | Dm7 | / D#o7 | \nDm7 | G7 | CM7 | Bm7b5 E7b9 | \n\n\n"]]
 - [section, [style], [body, "Am | AmM7 | Am7 | Am6 | \nAm7 | / | Bb7 | / | \n\n\n"]]

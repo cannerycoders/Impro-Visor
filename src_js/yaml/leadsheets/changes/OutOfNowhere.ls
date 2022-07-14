@@ -21,53 +21,13 @@
 - [roadmap-layout, 8]
 - [style, swing, [swing, 0.67], [comp-swing, 0.67], [bass-high, g-], [bass-low, c---], [bass-base, e--], [chord-high, a], [chord-low, d-], [chord-base, c-, e-, g-]]
 - [part, [type, chords], [title], [composer], [instrument, 0], [volume, 65], [key, 1]]
-- [phrase, [style, swing]]
-- GM7
-- '|'
-- /
-- '|'
-- Bbm7
-- '|'
-- Eb7
-- '|'
+- [phrase, [style, swing], [body, "GM7 | / | Bbm7 | Eb7 | \n\n\n"]]
 - [section, [style], [body, "GM7 | / | Bm7 | E7 | \n\n"]]
-- [phrase, [style]]
-- Am7
-- '|'
-- E7
-- '|'
-- Am7
-- '|'
-- /
-- '|'
+- [phrase, [style], [body, "Am7 | E7 | Am7 | / | \n\n\n"]]
 - [section, [style], [body, "Bbm7 | Eb7 | Am7 | D7 | \n\n"]]
-- [phrase, [style]]
-- GM7
-- '|'
-- /
-- '|'
-- Bbm7
-- '|'
-- Eb7
-- '|'
+- [phrase, [style], [body, "GM7 | / | Bbm7 | Eb7 | \n\n\n"]]
 - [section, [style], [body, "GM7 | / | Bm7 | E7 | \n\n"]]
-- [phrase, [style]]
-- Am7
-- '|'
-- E7
-- '|'
-- Am7
-- '|'
-- F7#11
-- '|'
-- [phrase, [style]]
-- Bm7
-- Bbo
-- '|'
-- Am7
-- D7
-- '|'
-- GM7
-- '|'
+- [phrase, [style], [body, "Am7 | E7 | Am7 | F7#11 | \n\n"]]
+- [phrase, [style], [body, "Bm7 Bbo | Am7 D7 | GM7 | \n\n"]]
 - [section, [style], [body, "Am7 D7 | \n\n"]]
 - [part, [type, melody], [title], [composer], [instrument, 11], [volume, 85], [key, 1], [stave, treble], [body, "d8 r1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+2+4+8\n"]]
