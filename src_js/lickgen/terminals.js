@@ -86,7 +86,7 @@ export class Terminals
      * This is used in calculating chordSlot, for example.
      * @param ob
      * @return 
-     $j*/
+     */
     static getDuration(plistOrStr)
     {
         //System.out.print("duration of " + ob + " = ");

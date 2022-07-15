@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 import {Duration} from "../data/duration.js";
-import {Notes} from "./notes.js";
+import {Notes} from "./noteData.js";
 import {Constants} from "../constants.js";
 
 let whole = Constants.WHOLE;
