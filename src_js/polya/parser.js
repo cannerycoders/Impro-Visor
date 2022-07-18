@@ -60,6 +60,7 @@ class tokenizer
             "(": tBegin,
             ")": tEnd,
             " ": tSpace,
+            "\t": tSpace,
             "\n": tEOL,
             "\r": tEOL,
         };

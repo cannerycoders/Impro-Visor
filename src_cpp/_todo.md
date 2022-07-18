@@ -1,10 +1,15 @@
 # src_js to-do
 
-* voicing
-* style (requires voicings)
+* (done) voicing (only needed for custom _chord_ voicings)
+* data
+    * NoteSymbol
+* style/patterns
+    * chord
+    * bass
+    * drum
+* style (requires voicings, patterns, NoteSymbol)
     * sectionRecord
     * sectionInfo
-    * patterns
 * part
   * chordPart (requires chordPatterns)
   * melodyPart

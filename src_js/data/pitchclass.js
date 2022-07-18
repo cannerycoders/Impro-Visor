@@ -13,7 +13,7 @@ export class PitchClass
     /*------------------------------------------------------------------------ */
     /* 20 PitchClasses some of which are enharmonic 
      */
-    static pitchClass = 
+    static pitchClassList = 
     [
         //        name, index, semis, natural, #, #pref, chord
         new PitchClass("fb",  0,  4, false, false, false, "E"),
@@ -57,11 +57,17 @@ export class PitchClass
             return sPitches.indexOf(s);
     }
 
-    static getPitchClass(s)
+    static get(str)
     {
-        if(s.length == 0) return null;
-        let lcName = s.toLowerCase();
-        return this.pitchClass[this[lcName]];
+        return this.getPitchClass(str);
+    }
+
+    static getPitchClass(str)
+    {
+        if(str.length == 0) return null;
+        let lcName = str.toLowerCase();
+        // this[lcName] finds our index
+        return this.pitchClassList[this[lcName]];
     }
 
     /*------------------------------------------------------------------------ */
