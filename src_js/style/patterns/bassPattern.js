@@ -1,4 +1,5 @@
 import {Pattern} from "./pattern.js";
+import {Duration} from "../../data/duration.js";
 import {Constants} from "../../constants.js";
 
 const sRuleTypes = [
@@ -18,7 +19,7 @@ const sRuleTypes = [
 const sBaseRuleCodes = ["A", "B", 'C', 'N', 'R', 'S', 'V', 'X', '='].map(v => v.charCodeAt(0));
 const sFlatten = 100;
 const sSharpen = 200;
-const sFlat_Sstr = "b";
+const sFlat_Str = "b";
 const sSharp_Str = "#";
 const sNotePlus = "U";
 const sNoteMinus = "d";
@@ -116,6 +117,33 @@ export class BassPattern extends Pattern
         }
         this.durations.push(duration);
         this.modifiers.push(modifier);
+    }
+
+    getDuration() // override
+    {
+        let duration = 0;
+        for(let dstr of this.durations)
+            duration += Duration.getDuration0(dstr);
+        return duration;
+    }
+
+    /**
+     * Realizes the Pattern into a sequencable Polylist
+     *
+     * @param chord the ChordSymbol to use for the bassline
+     * @param nextChord the ChordSymbol that comes next in the progression
+     * @param lastNote a NoteSymbol containing the previous bassline note
+     * @return A list of NoteSymbol objects that make up the bassline. 
+     */
+    applyRules(chord, nextChord, lastNote)
+    {
+        let result = [];
+        let chordRoot = chord.getRootString();
+        let chordForm = chord.getForm();
+        let key = chordForm.getKey();
+
+
+        return result;
     }
 }
 

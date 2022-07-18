@@ -10,10 +10,14 @@ const sRestPitch = -1;
 
 export class NoteSymbol
 {
-    static makeList(slist)
+    static makeList(slist, rise=0)
     {
-        return slist.map((s) => NoteSymbol.make(s));
-
+        let result = slist.map((s) => NoteSymbol.make(s));
+        if(rise != 0)
+        {
+            result.forEach((v) => v.transpose(rise, true) );
+        }
+        return result;
     }
     static make(str, transposition=0)
     {
@@ -57,6 +61,12 @@ export class NoteSymbol
             return new NoteSymbol(pc, octave, duration);
     }
 
+    static isValidNote(n)
+    {
+        let x = this.make(n);
+        return x ? true : false;
+    }
+
     /* ----------------------------------------------------------- */
     constructor(pitchClass, octave, duration, volume)
     {
@@ -82,6 +92,35 @@ export class NoteSymbol
         return this.getSemitones() == other.getSemitones();
     }
 
+    transpose(r, inplace)
+    {
+        if(this.isRest() || r == 0) return;
+        let newOctave = this.octave;
+        let newSemitones = this.pitchClass.getSemitones() + rise;
+        while(newSemitones >= 12)
+        {
+            newOctave++;
+            newSemitones -= 12;
+        }
+        while( newSemitones < 0 )
+        {
+            newOctave--;
+            newSemitones += 12;
+        }
+        if(inplace)
+        {
+            this.pitchClass = this.pitchClass.transpose(rise);
+            this.octave = newOctave;
+            return this;
+        }
+        else
+        {
+            let newNoteSymbol = new NoteSymbol(this.pitchClass.transpose(rise), 
+                                                newOctave, this.duration);
+            newNoteSymbol.setProbability(this.getProbability());
+            return newNoteSymbol;
+        }
+    }
 }
 
 export default NoteSymbol;

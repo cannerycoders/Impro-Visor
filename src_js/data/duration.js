@@ -99,10 +99,11 @@ export class Duration
      */
     static getDuration0(item)
     {
-        if(item.trim() == "")
+        let d = item.trim();
+        if(d == "")
             return 0;
         else
-            return this.getDuration(item);
+            return this.getDuration(d);
     }
   
     /**
