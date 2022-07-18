@@ -33,11 +33,11 @@ import {PitchClass} from "./pitchclass.js";
 import {Constants} from "../constants.js";
 
 const sTestDur = /^[\d\.\/\+]*$/;  // list of valid chars
-const sParseDur = /^(\d*)\/*(\d*)(\.*)$/; // parse 3 fields (num, denom, mult)
 const sDefaultNote = 8;
 
 export class Duration
 {
+    static sParseDur = /^(\d*)\/*(\d*)(\.*)$/; // parse 3 fields (num, denom, mult)
     static isDuration(str)
     {
         // charcodes: 0-9: 48-57
@@ -127,7 +127,7 @@ export class Duration
                 // Check for zero by trying to convert to a number.
                 // If conversion is unsuccessful or value is 0, 0 will be returned
                 let slots = Constants.WHOLE;
-                let match = sParseDur.exec(f); // three r-matches at [1-3]
+                let match = this.sParseDur.exec(f); // three r-matches at [1-3]
                 if(!match)
                 {
                     console.log("No match for " + f);

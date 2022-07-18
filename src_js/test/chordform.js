@@ -2,6 +2,13 @@
 
 import {ChordForm} from "../data/chordForm.js";
 
+let chord = "CM#5add9";
+for(let c of [chord, chord+"/d#"])
+{
+    let x = ChordForm.Explode(c);
+    console.log(`explode ${c} ${x}`);
+}
+
 console.log("chordForm -------");
 
 let cf = new ChordForm(["chord", 

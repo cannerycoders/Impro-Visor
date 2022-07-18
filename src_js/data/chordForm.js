@@ -3,6 +3,34 @@ import {Key} from "./key.js";
 
 export class ChordForm
 {
+    // CmMaj7b6 => [C mMaj7b6]
+    static sParseChord = /^([A-G][b#]*)([A-z0-9#]*)(\/[A-Ga-g][b#]*)?/
+
+    /**
+     * Explode a chord from the leadsheet notation into four parts:
+     * the root, the type of chord, the string after a slash, if any,
+     * and the bass note.
+     * If there is no slash, the third component is the null string, and
+     * the bass note is the same as the root.
+     * If the chord doen't make sense, then null is returned.
+     *
+     * @param chord the string naming the chord.
+     */
+    static Explode(chordStr)
+    {
+        let match = this.sParseChord.exec(chordStr);
+        if(!match) return null;
+        let root = match[1];
+        let body = match[2];
+        let afterSlash = match[3] ? match[3].slice(1) : null;
+        let bass;
+        if(afterSlash)
+            bass = afterSlash.toLowerCase();
+        else
+            bass =root.toLowerCase();
+        return [root, body, afterSlash, bass];
+    }
+
     // [chord, 
     //      [name, CM9], 
     //      [pronounce, C, major, nine], 
@@ -64,7 +92,7 @@ export class ChordForm
             case "avoid":
                 {
                     let a = p.slice(1);
-                    if(Key.invalidNotes(a))
+                    if(a.length && Key.invalidNotes(a))
                         console.warn(`ChordForm ${this.name} bad avoid notes in ` + a);
                     else
                         this.avoid = NoteSymbol.makeList(a, 0);
@@ -73,8 +101,8 @@ export class ChordForm
             case "color":
                 {
                     let c = p.slice(1);
-                    if(Key.invalidNotes(c))
-                        console.warn(`ChordForm ${this.name} bad color notes in ` + a);
+                    if(c.length && Key.invalidNotes(c))
+                        console.warn(`ChordForm ${this.name} bad color notes in ` + c);
                     else
                         this.color = NoteSymbol.makeList(c, 0);
                 }

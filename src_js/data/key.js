@@ -1,4 +1,8 @@
 import {NoteSymbol} from "./noteSymbol.js";
+import {PitchClass} from "./pitchClass.js";
+import {ChordForm} from "./chordForm.js";
+
+const sStems = ["A", "B", "C", "D", "E", "F", "G"];
 
 export class Key
 {
@@ -34,6 +38,32 @@ export class Key
 
     static getKey(nm) { return this.sKeyMap[nm]; }
 
+    static makeCroot(chord)
+    {
+        return this.makeRoot("C", chord);
+    }
+
+    // Change the root of the chord to specified note
+    static makeRoot(root, chord)
+    {
+        let exploded = ChordForm.Explode(chord);
+        if(!exploded) return null;
+
+        let origRoot = exploded[0];
+        let body = exploded[1];
+        let afterSlash = exploded[2];
+        if(!afterSlash || afterSlash.equals("") )
+            return root + body;
+
+        let rise = PitchClass.findRise(root.toLowerCase(), origRoot);
+        // Deal with slash-chord
+        let bass = PitchClass.getPitchClass(exploded[3]);
+        console.assert(bass != null);
+        let newBass = bass.transpose(rise).getChordBase();
+        return root + body + "/" + newBass;
+    }
+
+
     static invalidNotes(nlist)
     {
         if(nlist.length == 0) return true;
@@ -43,6 +73,11 @@ export class Key
                 return true;
         }
         return false; // means all valid
+    }
+
+    static isValidStem(c)
+    {
+        return sStems.indexOf(c) != -1;
     }
 
     /* --------------------------------------------------------------------- */

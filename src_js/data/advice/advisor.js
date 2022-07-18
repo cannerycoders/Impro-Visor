@@ -1,5 +1,6 @@
 import {Scale} from "../../data/scale.js";
 import {ChordForm} from "../../data/chordform.js";
+import {Key} from "../../data/key.js";
 
 import yaml from "js-yaml";
 import fs from "fs";
@@ -13,13 +14,22 @@ export class Advisor
         this.chords = {};
         this.extensions = {}; // for each chord, the chords it extends
         this.invertedExtension = {}; // for each chord, chords that extend it
-        this.cells = {}; // collections of notes: "plain", "idiom", "rhythm"
-        this.licks = {}; // "plain", "quote", "brick"
+        this.cells = {
+            "plain": [],
+            "idiom": [],
+            "rhythm": []
+        };
+        this.licks = {
+            "plain": [],
+            "quote": [],
+            "brick": [],
+        }; 
         this.styles = [];
+        this.rhythms = [];
 
-        /* associated with rules file ---- */
+        /* total vocabulary contents ... */
         this.rules = [];
-        this.marks = [];
+        this.marks = []; // bool
     }
 
     loadVocabulary(file)
@@ -46,8 +56,19 @@ export class Advisor
                     this.chords[c.name] = c;
                 }
                 break;
+            case "style":
+                break;
+            case "cell":
+            case "idiom":
+            case "lick":
+            case "quote":
+            case "brick":
+            case "rhythm":
             }
         }
+
+        // ? build extensions
+
     }
 
     getKnownScales()
@@ -55,8 +76,31 @@ export class Advisor
         return Object.keys(this.scales);
     }
 
-    loadRules(rulesfile)
+    getKnownChords()
     {
+        return Object.keys(this.chords);
+    }
+
+    getSubExtensions(chordName) // eg: Am7b5
+    {
+        let cnm = Key.makeCroot(chordName);
+        let csym = this.chords[cnm];
+        if(!csym)
+        {
+            console.log(`${chordName} => ${cnm} -> ${csym}`);
+            return [];
+        }
+        else
+        if(csym.extensions)
+        {
+            return csym.extensions;
+        }
+
+        /*
+        vs
+        let ext = this.m_extensions[cnm];
+        */
+
     }
 
 }

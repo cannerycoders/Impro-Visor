@@ -28,6 +28,9 @@ export class Constants
     static PLUSCHAR = "+".charCodeAt(0);
     static MINUSCHAR = "-".charCodeAt(0);
     static UCHAR = "u".charCodeAt(0);
+    static FLAT_SHARP = ["#", "b"];
+
+    static IsFlatOrSharp(c) { return this.FLAT_SHARP.indexOf(c) != -1; }
 
     static SEMITONES = 12;
     static MODF = 5;
