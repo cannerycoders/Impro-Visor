@@ -11,4 +11,4 @@ for(let x of ["bb", "f", "c", "g", "d", "a", "cb", "e#", "f#", "fs"])
 }
 
 console.log("pitchclass by semitone: " + JSON.stringify(PitchClass.pitchClassBySemitone));
-console.log("upTranpositions: " + JSON.stringify(PitchClass.upTranspositions));
+console.log("upTranpositions (should contain values on [0,20]:\n" + JSON.stringify(PitchClass.sUpTranspositions));

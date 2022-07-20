@@ -1,10 +1,11 @@
 import {NoteSymbol} from "./noteSymbol.js";
 import {Key} from "./key.js";
+import {Constants} from "../constants.js";
 
 export class ChordForm
 {
     // CmMaj7b6 => [C mMaj7b6]
-    static sParseChord = /^([A-G][b#]*)([A-z0-9#]*)(\/[A-Ga-g][b#]*)?/
+    static sParseChord = /^([A-G][b#]*)([A-z0-9#]*)([\/\\][A-Ga-g][b#]*)?/
 
     /**
      * Explode a chord from the leadsheet notation into four parts:
@@ -163,6 +164,32 @@ export class ChordForm
                 break;
             }
         }
+    }
+
+    getSame()
+    {
+        return this.same;
+    }
+
+    /**
+     * Return the color type associated with a given note and transposition.
+     */
+    getTypeIndex(note, transpose)
+    {
+        // 8 is to accomodate the way notes are
+        // currently stored.
+        let noteName = note.getPitchClassName() + "8";
+        if(noteName == Constants.EIGHTH_REST_STRING)
+            return Constants.NoteTypes.ChordTone;
+        
+        let ns = NoteSymbol.make(noteName, transpose);
+        if(ns.enhMember(this.spell))
+            return Constants.NoteTypes.ChordTone;
+        else
+        if(ns.enhMember(this.color))
+            return Constants.NoteTypes.ColorTone;
+        else
+            return Constants.NoteTypes.ForeignTone;
     }
 
 }

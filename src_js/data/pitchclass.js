@@ -39,6 +39,8 @@ export class PitchClass
         new PitchClass("b#", 20,  0, false, true,  false, "C")   // prefer c
     ];
 
+    static cClass = this.pitchClassList[8];
+
     static upperCaseNote(s)
     {
         return s.toUpper(); // works for +,-,N, ...
@@ -91,6 +93,37 @@ export class PitchClass
         }
     }
 
+    toString()
+    {
+        return this.name;
+    }
+
+    getSemitones()
+    {
+        return this.semitonesAboveC;
+    }
+
+    transpose(semis)
+    {
+        let newIndex;
+        if(semis >= 0)
+        {
+            semis = semis % 12;
+            if(semis == 0)
+                return this;
+            else
+                newIndex = PitchClass.sUpTranspositions[semis][this.index];
+        }
+        else
+        {
+            semis = (-semis % 12);
+            if(semis == 0)
+                return this;
+            else
+                newIndex = PitchClass.sDnTranspositions[semis][this.index];
+        }
+        return PitchClass.pitchClassList[newIndex];
+    }
 
     /*
     static fb = 12;
@@ -142,7 +175,7 @@ export class PitchClass
     // the tonality by some number of semitones (0-11).  This is an attempt to get sharps and
     // flats to be coordinated when transposing.  We don't want to see sharps and flats mixed
     // in the same column.
-    static upTranspositions = 
+    static sUpTranspositions = 
     [
     /* 0*/ [
         this.fb, this.cb, this.gb, this.db, this.ab, this.eb, this.bb,  
@@ -206,7 +239,7 @@ export class PitchClass
     ]
     ];
 
-    static downTranspositions = 
+    static sDnTranspositions = 
     [
     /*0*/ [
         this.fb, this.cb, this.gb, this.db, this.ab, this.eb, this.bb,  
@@ -269,8 +302,6 @@ export class PitchClass
         this.g,  this.d,  this.a,  this.e,  this.b, this.gb, this.db
     ]
     ];
-    
-
 }
 
 export default PitchClass;

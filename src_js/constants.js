@@ -29,6 +29,8 @@ export class Constants
     static MINUSCHAR = "-".charCodeAt(0);
     static UCHAR = "u".charCodeAt(0);
     static FLAT_SHARP = ["#", "b"];
+    static CROOT = "C";
+    static EIGHTH_REST_STRING = "r8";
 
     static IsFlatOrSharp(c) { return this.FLAT_SHARP.indexOf(c) != -1; }
 
@@ -41,12 +43,22 @@ export class Constants
     static MODE = 4;
     static MODB = 11;
 
-    static ACCIDENTALS = {
+    static ACCIDENTALS = 
+    {
         natural: 0,
         sharp: 1,
         flat: 2,
         nothing: 3
     };
+
+    static NoteTypes =
+    {
+        ChordTone: 0,
+        ColorTone: 1,
+        ApproachTone: 2,
+        ForeignTone: 3
+    };
+
     
     static BEAT = 120; // slots in a beat
     static WHOLE = 4 * this.BEAT;  // 480, "ticks"

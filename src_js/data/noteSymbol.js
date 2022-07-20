@@ -58,7 +58,11 @@ export class NoteSymbol
         if(!pc)
             return null;
         else
+        {
+            if(transposition != 0)
+                pc = pc.transpose(transposition);
             return new NoteSymbol(pc, octave, duration);
+        }
     }
 
     static isValidNote(n)

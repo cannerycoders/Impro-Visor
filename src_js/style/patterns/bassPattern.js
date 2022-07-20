@@ -1,5 +1,8 @@
 import {Pattern} from "./pattern.js";
 import {Duration} from "../../data/duration.js";
+import {NoteSymbol} from "../../data/noteSymbol.js";
+import {ChordForm} from "../../data/chordForm.js";
+import {Key} from "../../data/Key.js";
 import {Constants} from "../../constants.js";
 
 const sRuleTypes = [
@@ -31,6 +34,12 @@ const sSoftMargin = 6;
 export class BassPattern extends Pattern
 {
     /* -------------------------------------------------------------- */
+    /**
+     * constructor implements static makePattern
+     * @param {Style} style 
+     * @param {Array} plist 
+     * @param {Object} definedMap - ie syle's bassPatternMap
+     */
     constructor(style, plist, definedMap)
     {
         super(style);
@@ -43,7 +52,6 @@ export class BassPattern extends Pattern
 
         // [bass-pattern, [name], [rules, B4, S4, C4, V90, A4], [weight, 10.0]
         // [bass-pattern, [rules, B4/3+16+64/3, R8/3+64/3, B8, [X, 5, 4+32/3], R8/3+32/3, A8, R16/3], [weight, 50]]
-        console.assert(Array.isArray(plist));
         for(let p of plist)
         {
             switch(p[0])
@@ -71,7 +79,6 @@ export class BassPattern extends Pattern
                     }
                     else
                     {
-                        console.assert(typeof(r) == "string")
                         let rule = r[0];
                         let duration = r.slice(1);
                         let ruleCode = rule.charCodeAt(0);
@@ -119,6 +126,10 @@ export class BassPattern extends Pattern
         this.modifiers.push(modifier);
     }
 
+    /**
+     * 
+     * @returns total duration of this pattern
+     */
     getDuration() // override
     {
         let duration = 0;
@@ -137,14 +148,266 @@ export class BassPattern extends Pattern
      */
     applyRules(chord, nextChord, lastNote)
     {
-        let result = [];
-        let chordRoot = chord.getRootString();
+        let result = []; // array of NoteSymbol
+        let chordRoot = chord.getRootString(); 
         let chordForm = chord.getForm();
-        let key = chordForm.getKey();
+        let key = chordForm.getKey(chordRoot);
+        let rise = PitchClass.findRise(chordRoot);
 
+        // indicator for directional placement
+        int indicator = STAY;
+
+        int volume = 127;
+
+        while( i.hasNext() )
+        {
+            int rule = i.next();
+            String duration = j.next();
+            String modifier = m.next();
+            MelodySymbol melodySymbol;
+    //System.out.println("applying bass rule " + rule + ", duration = " + duration + ", modifier = " + modifier);
+            switch( rule )
+            {
+                case VOLUME:
+                {
+                    melodySymbol = new VolumeSymbol(duration);
+                    //System.out.println("creating VolumeSymbol: " + melodySymbol);
+                    break;
+                }
+
+                case PITCH: // Allow X for bass too, 
+                // as a convenience in cutting and pasting in editor
+                case BASS:
+                {
+                    melodySymbol = new NoteSymbol(chord.getBass());
+                    break;
+                }
+
+                case NEXT:
+                {
+                    // FIX: This may be broken (octave jumps). Please check
+                    NoteSymbol noteSymbol = new NoteSymbol(nextChord.getBass());
+                    if( i.hasNext() )
+                    {
+                        melodySymbol = noteSymbol;
+                    }
+                    else
+                    {
+                        melodySymbol = new NoteSymbol(
+                                noteSymbol.getPitchClass(),
+                                noteSymbol.getOctave(),
+                                Duration.getDuration0(duration));
+                    }
+                    Polylist L = Polylist.list(duration, melodySymbol);
+                    basslineSegment.add(L);
+                    return basslineSegment;
+                }
+
+                case CHORD:
+                {
+                    Polylist chordTones =
+                            (Polylist) chordForm.getSpell(chordRoot, key);
+                    if( chordTones.length() > 1 )
+                    {
+                        chordTones = lastNote.enhDrop(chordTones);
+                    }
+                    melodySymbol = (NoteSymbol) getRandomItem(chordTones);
+
+                    break;
+                }
+
+                case SCALE:
+                {
+                    Polylist scales = (Polylist) chordForm.getScales();
+                    if( scales == null || scales.isEmpty() )
+                    {
+                        Polylist chordTones =
+                                (Polylist) chordForm.getSpell(chordRoot, key);
+                        if( chordTones.length() > 1 )
+                        {
+                            chordTones = lastNote.enhDrop(chordTones);
+                        }
+                        melodySymbol = (NoteSymbol) getRandomItem(chordTones);
+                        break;
+                    }
+                    Polylist scale = (Polylist) scales.first();
+
+                    NoteSymbol tonic =
+                            NoteSymbol.makeNoteSymbol((String) scale.first());
+
+                    String scaleType =
+                            Advisor.concatListWithSpaces(scale.rest());
+
+                    ScaleForm scaleForm = Advisor.getScale(scaleType);
+
+                    Polylist tones = scaleForm.getSpell(tonic);
+                    tones = NoteSymbol.transposeNoteSymbolList(tones, rise);
+                    tones = tones.reverse().rest().reverse();
+
+                    Polylist seconds = getIntervals(2, tones, lastNote);
+                    Polylist thirds = getIntervals(3, tones, lastNote);
+                    tones = seconds.append(thirds);
+
+                    if( tones.length() > 1 )
+                    {
+                        tones = lastNote.enhDrop(tones);
+                    }
+                    melodySymbol = (NoteSymbol) getRandomItem(tones);
+
+
+                    break;
+                }
+
+                case APPROACH:
+                {
+                    NoteSymbol noteSymbol = new NoteSymbol(nextChord.getBass());
+                    Polylist approach = Polylist.list(noteSymbol.transpose(1),
+                                                    noteSymbol.transpose(-1));
+                    if( approach.length() > 1 )
+                    {
+                        approach = lastNote.enhDrop(approach);
+                    }
+
+                    melodySymbol = (NoteSymbol) getRandomItem(approach);
+                    break;
+                }
+
+                case REST:
+                {
+                    melodySymbol = NoteSymbol.makeNoteSymbol("r");
+                    break;
+                }
+
+                case EQUAL:
+                {
+                    melodySymbol = new NoteSymbol(lastNote); 
+                    break;
+                }
+
+                default:
+                {                             // higher than 99 means flat/sharp
+                    if( (rule > 0 && rule < 11) || rule > 99 )
+                    {
+                        Polylist scales = chordForm.getScales();
+
+                        if( scales == null || scales.isEmpty() )
+                        {
+                            Polylist chordTones =
+                                    chordForm.getSpell(chordRoot, key);
+                            if( chordTones.length() > 1 )
+                            {
+                                chordTones = lastNote.enhDrop(chordTones);
+                            }
+                            melodySymbol = (NoteSymbol) getRandomItem(chordTones);
+                            break;
+                        }
+
+                        Polylist scale = (Polylist) scales.first();
+
+                        NoteSymbol tonic =
+                                NoteSymbol.makeNoteSymbol((String) scale.first());
+
+                        String scaleType =
+                                Advisor.concatListWithSpaces(scale.rest());
+
+                        ScaleForm scaleForm = Advisor.getScale(scaleType);
+
+                        Polylist tones = scaleForm.getSpell(tonic);
+                        tones = NoteSymbol.transposeNoteSymbolList(tones, rise);
+                        tones = tones.reverse().rest().reverse();
+
+                        // flattened notes
+                        if( rule > FLATTEN && rule < FLATTEN + 11 )
+                        {
+                            rule = rule - FLATTEN;
+                            NoteSymbol noteSymbol = getInterval(rule, tones);
+                            melodySymbol = noteSymbol.transpose(-1);
+                        }   // sharpened notes
+                        else if( rule > SHARPEN && rule < SHARPEN + 11 )
+                        {
+                            rule = rule - SHARPEN;
+                            NoteSymbol noteSymbol = getInterval(rule, tones);
+                            melodySymbol = noteSymbol.transpose(1);
+                        }
+                        else
+                        {
+                            melodySymbol = getInterval(rule, tones);
+                        }
+                    }
+                    else
+                    {
+                        melodySymbol = new NoteSymbol(chord.getBass());
+                    }
+
+                    break;
+                }
+
+            }
+            
+            if( melodySymbol != null )
+            {
+                if( melodySymbol instanceof NoteSymbol )
+                {
+                    NoteSymbol noteSymbol = (NoteSymbol) melodySymbol;
+
+                    if( !noteSymbol.isRest() && rule != EQUAL )
+                    {
+                        // System.out.println("Original melodySymbol is " + melodySymbol.getMIDI() );
+
+                        // Why -24??
+
+                        noteSymbol = noteSymbol.transpose(-24);
+                        //pitch = placePitchNear(melodySymbol, lastNote, style);
+
+                        if( modifier.equals("U") )
+                        {
+                            noteSymbol = placePitchAbove(noteSymbol, lastNote);
+                        }
+                        else if( modifier.equals("D") )
+                        {
+                            noteSymbol = placePitchBelow(noteSymbol, lastNote);
+                        }
+                        else if( modifier.equals("DD") )
+                        {
+                            noteSymbol = placePitchOctaveBelow(noteSymbol, lastNote);
+                        }
+                        else
+                        {
+                            noteSymbol = placePitchNear(noteSymbol, lastNote, style);
+                            noteSymbol = pressure(noteSymbol, style);
+                        }
+                    }
+
+                    NoteSymbol note = new NoteSymbol(
+                            noteSymbol.getPitchClass(),
+                            noteSymbol.getOctave(),
+                            Duration.getDuration0(duration),
+                            volume);
+
+                    basslineSegment.add(note);
+
+                    if( !note.isRest() )
+                    {
+                        lastNote = note;
+                    }
+                }
+                else if( melodySymbol instanceof VolumeSymbol )
+                {
+                    basslineSegment.add(melodySymbol);
+                }
+                else
+                {
+                    assert false;
+                }
+            }
+        //System.out.println("rule = " + ruleTypes[rule] + " melodySymbol = " + melodySymbol);
+        }
+        
+        return basslineSegment;
 
         return result;
     }
+
 }
 
 export default BassPattern;

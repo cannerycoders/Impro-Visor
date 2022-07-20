@@ -132,13 +132,13 @@ export class Note extends IUnit
         {
             if(keySig > 0)
             {
-                return this.accidental == sAcc.FLAT //|| accidental == Accidental.NATURAL)  // See if this can be fixed.
+                return this.accidental == sAcc.flat //|| accidental == Accidental.NATURAL)  // See if this can be fixed.
                         && keySig > sSharpInKeysAbove[this.pitch % 12];
 
             }
             if(keySig < 0)
             {
-                return accidental == sAcc.SHARP //           || accidental == Accidental.NATURAL) // See if this can be fixed.
+                return accidental == sAcc.sharp //           || accidental == Accidental.NATURAL) // See if this can be fixed.
                         && keySig <= -sFlatInKeysBelow[this.pitch % 12];
             }
         }

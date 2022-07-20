@@ -8,6 +8,10 @@
 
 export class Pattern
 {
+    /**
+     * 
+     * @param {Style} style 
+     */
     constructor(style)
     {
         this.style = style;
