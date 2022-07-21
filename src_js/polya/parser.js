@@ -27,6 +27,13 @@ const tJSON = "json";
 
 class tokenizer
 {
+    /**
+     * 
+     * @param {*} stream  set to null to block on calls to parseChunk.
+     * @param {*} onToken callback to dispense with tokens
+     * @param {*} onDone  optional callback for on done, only called if
+     *                    stream is non-null
+     */
     constructor(stream, onToken, onDone)
     {
         this.rstream = stream;
@@ -64,28 +71,31 @@ class tokenizer
             "\n": tEOL,
             "\r": tEOL,
         };
-
-        this.rstream.on("readable", () =>
+        if(this.rstream != null)
         {
-            let chunk;
-            while(null !== (chunk = stream.read()))
-                this.processChunk(chunk);
-        });
-        this.rstream.on("end", () =>
-        {
-            if(this.parseCtx.state == tCaptureBlock ||
-               this.parseCtx.state == tCaptureLine)
+            this.rstream.on("readable", () =>
             {
-                let tok = {
-                    type: tStringBlock,
-                    value: this.parseCtx.processed.join("")
-                };
-                this.onToken(tok, this.parseCtx);
-                this.parseCtx.reset();
-            }
-            this.finish();
-        });
+                let chunk;
+                while(null !== (chunk = stream.read()))
+                    this.processChunk(chunk);
+            });
+            this.rstream.on("end", () =>
+            {
+                if(this.parseCtx.state == tCaptureBlock ||
+                this.parseCtx.state == tCaptureLine)
+                {
+                    let tok = {
+                        type: tStringBlock,
+                        value: this.parseCtx.processed.join("")
+                    };
+                    this.onToken(tok, this.parseCtx);
+                    this.parseCtx.reset();
+                }
+                this.finish();
+            });
+        }
     }
+
     /* deliver as many tokens as we find in the active
      * chunklist.  A token may exist across multiple 
      * chunks and getToken is responsible for bookkeeping.
@@ -281,13 +291,23 @@ class tokenizer
         if(this.parseCtx.state != tInit)
         {
             console.warn("invalid parse session\n" + JSON.stringify(this.parseCtx));
+            err = -1;
         }
-        this.onDone(err);
+        if(this.onDone)
+            this.onDone(err);
+        return err;
     }
 }
 
-export default class PlistParser
+export class PlistParser
 {
+    static ParsePlist(str)
+    {
+        let p = new PlistParser();
+        return p.parseSync(str);
+    }
+
+    /* ---------------------------------------------------- */
     constructor()
     {
     }
@@ -315,6 +335,15 @@ export default class PlistParser
         this.tokenizer = new tokenizer(stream, 
                             this.getTokenHandler(),
                             this.onDone.bind(this));
+    }
+
+    parseSync(str)
+    {
+        this.begin();
+        this.tokenizer = new tokenizer(null, this.getTokenHandler());
+        this.tokenizer.processChunk(str);
+        this.tokenizer.finish();
+        return this.plist;
     }
 
     getTokenHandler()
@@ -420,75 +449,4 @@ export default class PlistParser
     }
 }
 
-function testString()
-{
-    let p = new PlistParser();
-    p.parse(`
-        // a comment
-        // another comment
-        (rhythm-cluster-filename default.cluster)
-        (my-rhythms-file "My Little.rhythms")
-        (default-aux-instrument 57)
-        /* a
-         * block comment
-         */
-        (audio-in-latency 1.0)
-        (advice-cache-size 10)
-        (cache-enabled true) (default-load-stave/*comment*/ 1)
-        (my-list (one 2 3))
-    `);
-}
-
-function testFile()
-{
-    let p = new PlistParser();
-    p.load("../../vocab/My.voc")
-    .then((plist) =>
-    {
-        let opts =
-        {
-            noArrayIndent: false,
-            flowLevel: 2, /* lower numbers means more (shorter) lines */
-        };
-        console.log(yaml.dump(plist, opts));
-    });
-}
-
-function testLeadsheet()
-{
-    let p = new PlistParser();
-    p.load("../../leadsheets/_test.ls")
-    .then((plist) =>
-    {
-        let opts =
-        {
-            noArrayIndent: false,
-            flowLevel: 2, /* lower numbers means more (shorter) lines */
-        };
-        console.log(yaml.dump(plist, opts));
-    });
-}
-
-function testGrammar()
-{
-    let p = new PlistParser();
-    p.load("../../grammars/ParkerMotif.grammar")
-    .then((plist) =>
-    {
-        let opts =
-        {
-            noArrayIndent: false,
-            flowLevel: 2, /* lower numbers means more (shorter) lines */
-        };
-        console.log(yaml.dump(plist, opts));
-    });
-}
-
-
-if(path.basename(process.argv[1]) == "parser.js")
-{
-    // testFile();
-    // testString();
-    // testLeadsheet();
-    testGrammar();
-}
+export default PlistParser;

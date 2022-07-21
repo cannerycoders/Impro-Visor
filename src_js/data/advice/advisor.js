@@ -85,7 +85,6 @@ export class Advisor
         }
 
         // ? build extensions
-
     }
 
     getKnownScales()

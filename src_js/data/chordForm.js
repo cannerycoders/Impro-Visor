@@ -77,7 +77,7 @@ export class ChordForm
                     if(Key.invalidNotes(s))
                         console.warn(`ChordForm ${this.name} bad notes in ` + s);
                     else
-                        this.spell = NoteSymbol.makeList(s, 0);
+                        this.spell = NoteSymbol.MakeList(s, 0);
                 }
                 break;
             case "priority":
@@ -87,7 +87,7 @@ export class ChordForm
                     if(Key.invalidNotes(x))
                         console.warn(`ChordForm ${this.name} bad priority in ` + x);
                     else
-                        this.priority = NoteSymbol.makeList(x, 0);
+                        this.priority = NoteSymbol.MakeList(x, 0);
                 }
                 break;
             case "avoid":
@@ -96,7 +96,7 @@ export class ChordForm
                     if(a.length && Key.invalidNotes(a))
                         console.warn(`ChordForm ${this.name} bad avoid notes in ` + a);
                     else
-                        this.avoid = NoteSymbol.makeList(a, 0);
+                        this.avoid = NoteSymbol.MakeList(a, 0);
                 }
                 break;
             case "color":
@@ -105,7 +105,7 @@ export class ChordForm
                     if(c.length && Key.invalidNotes(c))
                         console.warn(`ChordForm ${this.name} bad color notes in ` + c);
                     else
-                        this.color = NoteSymbol.makeList(c, 0);
+                        this.color = NoteSymbol.MakeList(c, 0);
                 }
                 break;
             case "approach":
@@ -118,7 +118,7 @@ export class ChordForm
                         if(Key.invalidNotes(i))
                             console.warn(`ChordForm ${this.name} bad approach notess in ` + a);
                         else
-                            this.approach.push(NoteSymbol.makeList(i, 0));
+                            this.approach.push(NoteSymbol.MakeList(i, 0));
                     }
                 }
                 break;
@@ -140,10 +140,10 @@ export class ChordForm
                             o.type = sv[1];
                             break;
                         case "notes":
-                            o.notes = NoteSymbol.makeList(sv.slice(1), 0);
+                            o.notes = NoteSymbol.MakeList(sv.slice(1), 0);
                             break;
                         case "extension":
-                            o.extension = sv.length == 1 ? [] : NoteSymbol.makeList(sv.slice(1), 0);
+                            o.extension = sv.length == 1 ? [] : NoteSymbol.MakeList(sv.slice(1), 0);
                             break;
                         }
                     }
@@ -182,7 +182,7 @@ export class ChordForm
         if(noteName == Constants.EIGHTH_REST_STRING)
             return Constants.NoteTypes.ChordTone;
         
-        let ns = NoteSymbol.make(noteName, transpose);
+        let ns = NoteSymbol.Make(noteName, transpose);
         if(ns.enhMember(this.spell))
             return Constants.NoteTypes.ChordTone;
         else

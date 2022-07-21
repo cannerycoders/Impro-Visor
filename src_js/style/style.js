@@ -27,6 +27,7 @@ const sNullStyle = "";
 const sDefaultDrumPatternDuration = 480;
 const sChordInstrument = 1; // General MIDI
 const sBassInstrument = 33; 
+const sDefaultStyleName = "no-style";
 
 export class Style
 {
@@ -71,7 +72,7 @@ export class Style
         let sty = yaml.load(fs.readFileSync(file, "utf8"));
         if(!sty || sty[0] != "style")
         {
-            console.warn("Invalid style file " + file);
+            console.warn("Invalid style file " + file + `, sty[0]: ${sty[0]}`);
             return null;
         }
         else
@@ -86,13 +87,13 @@ export class Style
                     s.name = l[1];
                     break;
                 case "bass-high":
-                    s.bassHigh = NoteSymbol.make(l[1]);
+                    s.bassHigh = NoteSymbol.Make(l[1]);
                     break;
                 case "bass-low":
-                    s.bassLow = NoteSymbol.make(l[1]);
+                    s.bassLow = NoteSymbol.Make(l[1]);
                     break;
                 case "bass-base":
-                    s.bassBase = NoteSymbol.make(l[1]);
+                    s.bassBase = NoteSymbol.Make(l[1]);
                     break;
                 case "swing":
                     s.swing = Number(l[1]);
@@ -104,13 +105,13 @@ export class Style
                     s.voicingType = l[1];
                     break;
                 case "chord-high":
-                    s.chordHigh = NoteSymbol.make(l[1]);
+                    s.chordHigh = NoteSymbol.Make(l[1]);
                     break;
                 case "chord-low":
-                    s.chordLow = NoteSymbol.make(l[1]);
+                    s.chordLow = NoteSymbol.Make(l[1]);
                     break;
                 case "chord-base":
-                    s.chordBase = NoteSymbol.makeList(l.slice(1)); // unused
+                    s.chordBase = NoteSymbol.MakeList(l.slice(1)); // unused
                     break;
                 case "comments":
                     s.comments = l.slice(1).join(" ");
@@ -139,9 +140,6 @@ export class Style
     /* -------------------------------------------------------- */
     constructor()
     {
-        this.bassDefinedRules = {};
-        this.chordDefinedRules = {};
-        this.drumDefinedRules = {};
         this.name = sDefaultStyleName;
         this.vgen = new VoicingGenerator();
         this.noStyle = false; // whether to use "no-style" behavior
@@ -151,12 +149,12 @@ export class Style
         this.voicingType = "closed";
         this.voicingFileName = "default.fv";
         this.useExtensions = false; // auto-extend chords
-        this.chordBase = NoteSymbol.makeList(["c-", "e-", "g-"]);
-        this.chordLow = NoteSymbol.make("c-"); // lower range of chord prog
-        this.chordHigh = NoteSymbol.make("a"); // upper range of chord prog
-        this.bassBase = NoteSymbol.make("g---"); // unused
-        this.bassLow = NoteSymbol.make("g---");
-        this.bassHigh = NoteSymbol.make("g-");
+        this.chordBase = NoteSymbol.MakeList(["c-", "e-", "g-"]);
+        this.chordLow = NoteSymbol.Make("c-"); // lower range of chord prog
+        this.chordHigh = NoteSymbol.Make("a"); // upper range of chord prog
+        this.bassBase = NoteSymbol.Make("g---"); // unused
+        this.bassLow = NoteSymbol.Make("g---");
+        this.bassHigh = NoteSymbol.Make("g-");
         this.chordPatterns = []; // of ChordPattern
         this.bassPatterns = []; // of BassPattern
         this.drumPatterns = []; // of DrumPattern
@@ -167,10 +165,9 @@ export class Style
         this.definedInterpolables = [];
         this.definedSubstitutions = [];
 
-        // save rules defined outside the patterns
-        this.bassDefinedRules = {};
-        this.chordDefinedRules = {};
-        this.drumDefinedRules = {};
+        this.bassPatterns = []
+        this.chordPatterns = []
+        this.drumPatterns = []
     }
 
     usePreviousStyle()
@@ -185,15 +182,20 @@ export class Style
 
     addBassPattern(plist)
     {
-        new BassPattern(this, plist, this.bassPatterns); // adds itself to our map
-    }
-
-    addDrumPattern(plist)
-    {
+        let bp = new BassPattern(this, plist, this.bassDefinedRules); // adds itself to our map
+        this.bassPatterns.push(bp);
     }
 
     addChordPattern(plist)
     {
+        let cp = new ChordPattern(this, plist, this.chordDefinedRules);
+        this.chordPatterns.push(cp);
+    }
+
+    addDrumPattern(plist)
+    {
+        let cp = new DrumPattern(this, plist, this.drumDefinedRules);
+        this.drumPatterns.push(cp);
     }
 
     getBP() { return this.bassPatterns; }

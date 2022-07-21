@@ -8,18 +8,18 @@ const sDefaultVolume = 127; // ie max
 const sDefaultProbability = 1.0;
 const sRestPitch = -1;
 
-export class NoteSymbol
+export class NoteSymbol // extends MelodySymbol along with VolumeSymbol
 {
-    static makeList(slist, rise=0)
+    static MakeList(slist, rise=0)
     {
-        let result = slist.map((s) => NoteSymbol.make(s));
+        let result = slist.map((s) => NoteSymbol.Make(s));
         if(rise != 0)
         {
             result.forEach((v) => v.transpose(rise, true) );
         }
         return result;
     }
-    static make(str, transposition=0)
+    static Make(str, transposition=0)
     {
         let lstr = str.toLowerCase();
         let fchr = lstr.charCodeAt(0);
@@ -67,7 +67,7 @@ export class NoteSymbol
 
     static isValidNote(n)
     {
-        let x = this.make(n);
+        let x = this.Make(n);
         return x ? true : false;
     }
 
